@@ -1,0 +1,3 @@
+[submodule "ARCS-HPC-News"]
+	path = ARCS-HPC-News
+	url = https://github.com/arcs-njit-edu/ARCS-HPC-News.git

@@ -1,6 +1,3 @@
 [submodule "docs/news"]
 	path = docs/news
 	url = https://github.com/arcs-njit-edu/news.git
-[submodule "news"]
-	path = news
-	url = https://github.com/arcs-njit-edu/news.git

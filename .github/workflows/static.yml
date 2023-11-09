@@ -4,11 +4,11 @@ on:
     branches:
       - main
       - alex_patch 
-      - abhi_patch
+      - abhi-new-patch
     workflow_dispatch:
       - main
       - alex_patch
-      - abhi_patch
+      - abhi-new-patch
 permissions:
   contents: write
 jobs:

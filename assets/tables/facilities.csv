@@ -1,0 +1,9 @@
+﻿Category,Lochness,Wulver
+Total Nodes,224,127
+Total Cores,5600,16256
+Total RAM / GB,65291,68096
+Total GPUs,64,100
+Total GPU RAM / GB,888,8000
+Access,General,General
+Network (Infiniband; Ethernet),"mix of HDR100, EDR, and FDR",HDR100 and 10Gig
+Theoretical Peak Performance (TFLOPs),514.79,1584.19

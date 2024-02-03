@@ -1,0 +1,3431 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://arcs-njit-edu.github.io/Docs/Software/programming/python/conda/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../jupyter/">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>Conda - NJIT HPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="njit" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conda" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="NJIT HPC" class="md-header__button md-logo" aria-label="NJIT HPC" data-md-component="logo">
+      
+  <img src="../../../../img/Logo_NJIT.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NJIT HPC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Conda
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="njit" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arcs-njit-edu/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    arcs-njit-edu/Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="NJIT HPC" class="md-nav__button md-logo" aria-label="NJIT HPC" data-md-component="logo">
+      
+  <img src="../../../../img/Logo_NJIT.png" alt="logo">
+
+    </a>
+    NJIT HPC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arcs-njit-edu/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    arcs-njit-edu/Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    About Us
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About Us
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../clusters/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Clusters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Clusters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clusters/wulver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wulver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clusters/lochness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Decommissioned
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Decommissioned
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clusters/decommissioned/stheno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stheno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clusters/cluster_access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User access to clusters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clusters/get_started_on_Wulver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started on Wulver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clusters/Wulver_filesystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wulver Filesystems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Policies/lochness_policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness user policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Policies/wulver_policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wulver usage and Condo policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../facilities/facilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Facilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Services
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Services/hpc-course/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Resources for Courses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            CFD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CFD/ansys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANSYS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CFD/comsol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMSOL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CFD/fluent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FLUENT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CFD/openfoam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenFOAM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IDE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            IDE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IDE/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chemistry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chemistry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chemistry/cp2k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CP2K
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chemistry/gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chemistry/orca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ORCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chemistry/qe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum Espresso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../chemistry/siesta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SIESTA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../math/MATLAB/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MATLAB
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_5_1" id="__nav_7_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            MATLAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../math/MATLAB/matlab_local/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use MATLAB on NJIT HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Md
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Md
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../md/gromacs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GROMACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../md/lammps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAMMPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../md/plumed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLUMED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compilers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilers and Toolchains
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_7_2" id="__nav_7_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Conda
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Conda
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-activate-a-conda-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create and Activate a Conda Virtual Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create and Activate a Conda Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-environment-with-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Environment with conda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-and-deactivate-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activate and Deactivate Conda Environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-python-packages-via-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Python Packages Via Conda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Python Packages Via Conda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda Channel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tensorflow-with-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install TensorFlow with GPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-pytorch-with-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install PyTorch with GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mamba-the-conda-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mamba: The Conda Alternative
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-import-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export and Import Conda Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export and Import Conda Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Conda Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-environment-on-new-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Environment on New Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-to-a-different-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing to a Different Location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda-user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda User Commands
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7_2_4" id="__nav_7_7_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_7_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/arrow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/biopython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biopython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/h5py/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    H5py
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/ipython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ipython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/matplotlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/molmod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Molmod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/scikit-build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scikit build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/scipy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scipy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/spark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slurm
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/slurm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utilities/apptainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utilities/dmtcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DMTCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../utilities/parallel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GNU Parallel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/ase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/gnuplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GNUPlot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/ovito/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OVITO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/paraview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paraview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../migration/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Migration
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../migration/Lochness_node_owners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness Node Owners Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../migration/faqs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Faqs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../migration/lochness_filesystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness to Wulver Migration: File Directory Changes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../news/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            News
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-activate-a-conda-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create and Activate a Conda Virtual Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create and Activate a Conda Virtual Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-environment-with-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Environment with conda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-and-deactivate-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activate and Deactivate Conda Environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-python-packages-via-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install Python Packages Via Conda
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Python Packages Via Conda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conda-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda Channel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-tensorflow-with-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install TensorFlow with GPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-pytorch-with-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install PyTorch with GPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mamba-the-conda-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mamba: The Conda Alternative
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-import-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export and Import Conda Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export and Import Conda Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-conda-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export Conda Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-environment-on-new-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import Environment on New Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-to-a-different-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing to a Different Location
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda-user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda User Commands
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>Since Python supports a wide range of additional libraries in machine learning or data science research, it is not always possible to install every package on HPC. Also, users sometimes need to use a specific version of Python or its libraries to conduct their research. Therefore, in that case, users can build their own Python version along with a specific library. One of the ways to accomplish this is to use Conda.</p>
+<h1 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h1>
+<p>Conda as a package manager helps you find and install packages. If you need a package that requires a different version of Python, you do not need to switch to a different environment manager, because conda is also an environment manager. </p>
+<h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
+<p>Conda can be accessed on the cluster as <code>Anaconda3</code> or <code>Miniconda3</code> module.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><input id="availability-lochness" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label><label for="availability-lochness">Lochness</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><table>
+<thead>
+<tr>
+<th style="text-align: left;">Software</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Dependent Toolchain</th>
+<th style="text-align: left;">Module Load Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Anaconda3</td>
+<td style="text-align: left;">2023.09-0</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>module load Anaconda3/2023.09-0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Anaconda3</td>
+<td style="text-align: left;">5.3.0</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>module load Anaconda3/5.3.0</code></td>
+</tr>
+</tbody>
+</table><div class="markdown-exec"></div>
+</p>
+</div>
+<div class="tabbed-block">
+<p><table>
+<thead>
+<tr>
+<th style="text-align: left;">Software</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Dependent Toolchain</th>
+<th style="text-align: left;">Module Load Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Anaconda3</td>
+<td style="text-align: left;">2022.05</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>module load Anaconda3/2022.05</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Miniconda3</td>
+<td style="text-align: left;">4.9.2</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>module load Miniconda3/4.9.2</code></td>
+</tr>
+</tbody>
+</table><div class="markdown-exec"></div>
+</p>
+</div>
+</div>
+</div>
+<p>Users can use conda after using any of the modules mentioned above</p>
+<p>module a <code>Anaconda3</code> module. Users can use <code>Anaconda3</code> to create virtual Python environments to manage Python modules.</p>
+<h2 id="create-and-activate-a-conda-virtual-environment">Create and Activate a Conda Virtual Environment<a class="headerlink" href="#create-and-activate-a-conda-virtual-environment" title="Permanent link">&para;</a></h2>
+<p>Load the Anaconda Module</p>
+<div class="highlight"><pre><span></span><code>module load Anaconda3
+</code></pre></div>
+<h3 id="create-environment-with-conda">Create Environment with <code>conda</code><a class="headerlink" href="#create-environment-with-conda" title="Permanent link">&para;</a></h3>
+<p>To create an environment use the <code>conda create</code> command. Once the environment is created, you need to use <code>source conda.sh</code> to activate the path.
+To create an environment use <code>conda create --name ENV python=3.9</code> where <code>ENV</code> is the name of the environment. You can choose any environment name of your choice.</p>
+<h3 id="activate-and-deactivate-conda-environment">Activate and Deactivate Conda Environment<a class="headerlink" href="#activate-and-deactivate-conda-environment" title="Permanent link">&para;</a></h3>
+<p>Once you create an environment, you need to activate the environment to install python packages
+Use <code>conda activate ENV</code> to activate the Conda environment (<code>ENV</code> is the name of the environment). Following the activation of the conda environment, the name of the environment appears at the left of the hostname in the terminal. </p>
+<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span><span class="nb">source</span><span class="w"> </span>conda.sh
+login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>ENV<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>ENV
+<span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span>login-41<span class="w"> </span>~<span class="w"> </span>&gt;:
+</code></pre></div>
+<p>Once you finish the installation of Python packages, deactivate the conda environment using <code>conda deactivate ENV</code>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that you may need to create multiple Conda environments, as some packages may not work in a single environment. For example, if you want to install PyTorch and TensorFlow, it's advisable to create separate environments as sometimes both packages in a single environment can cause errors. To create another environment make sure to deactivate the previous environment by using the <code>conda deactivate</code> command. </p>
+</div>
+<h2 id="install-python-packages-via-conda">Install Python Packages Via Conda<a class="headerlink" href="#install-python-packages-via-conda" title="Permanent link">&para;</a></h2>
+<p>Once Conda environment is activated, you can install packages via <code>conda install package_name</code> command. For example, if you want to install <code>matplotlib</code>, you need to use</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span>login-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>matplotlib
+</code></pre></div>
+Make sure to activate the conda environment prior to installing Python packages. </p>
+<h3 id="conda-channel">Conda Channel<a class="headerlink" href="#conda-channel" title="Permanent link">&para;</a></h3>
+<p>Conda Channel refers to a repository or collection of software packages that are available for installation using Conda. Conda Channels are used to organize and distribute packages, and they play a crucial role in the Conda ecosystem. Channels can be specified using the <code>--channel</code> or <code>-c</code> option with the conda install command i.e. 
+<code>conda install -c channel_name package_name</code>. In the above example, if you want to specify the channel name to install <code>matplotlib</code>, you need to use</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span>login-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>matplotlib
+</code></pre></div>
+This will install <code>matplotlib</code> from <code>conda-forge</code> channel which is a community-maintained collection of Conda packages where a wide range of packages contributed by the community are available. 
+Users can prioritize channels by listing them in a specific order, so that Conda searches channels in the order they are listed, installing the first version of a package that it finds. To list the channels, create a file <code>.condarc</code> in the <code>$HOME</code> directory and add the following</p>
+<p><div class="highlight"><pre><span></span><code>auto_activate_base: false
+channels:
+  - conda-forge
+  - defaults
+</code></pre></div>
+The advantage of using <code>.condarc</code> is that you don't have to mention the channel name every time you install a package. However, please note that you still need to use the channel name if you want to install Python packages that require a specific channel other than the default channels (<code>conda-forge</code> and <code>defaults</code>).</p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>Here, we provide some examples of how to use <code>conda</code> to install application </p>
+<h4 id="install-tensorflow-with-gpu">Install TensorFlow with GPU<a class="headerlink" href="#install-tensorflow-with-gpu" title="Permanent link">&para;</a></h4>
+<p>The following example will create a new conda environment based on Python 3.9 and install TensorFlow in the environment.</p>
+<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+Collecting<span class="w"> </span>package<span class="w"> </span>metadata<span class="w"> </span><span class="o">(</span>current_repodata.json<span class="o">)</span>:<span class="w"> </span><span class="k">done</span>
+Solving<span class="w"> </span>environment:<span class="w"> </span><span class="k">done</span>
+
+<span class="c1">## Package Plan ##</span>
+
+<span class="w">  </span>environment<span class="w"> </span>location:<span class="w"> </span>/home/g/guest24/.conda/envs/tf
+
+<span class="w">  </span>added<span class="w"> </span>/<span class="w"> </span>updated<span class="w"> </span>specs:
+<span class="w">    </span>-<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+
+
+The<span class="w"> </span>following<span class="w"> </span>packages<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>downloaded:
+
+<span class="w"> </span>&lt;output<span class="w"> </span>snipped&gt;
+
+Proceed<span class="w"> </span><span class="o">([</span>y<span class="o">]</span>/n<span class="o">)</span>?y
+
+<span class="w"> </span>&lt;output<span class="w"> </span>snipped&gt;
+<span class="c1">#</span>
+<span class="c1"># To activate this environment, use</span>
+<span class="c1">#</span>
+<span class="c1">#     $ conda activate tf</span>
+<span class="c1">#</span>
+<span class="c1"># To deactivate an active environment, use</span>
+<span class="c1">#</span>
+<span class="c1">#     $ conda deactivate</span>
+</code></pre></div>
+<p>Activate the new 'tf' environment
+<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span><span class="nb">source</span><span class="w"> </span>conda.sh
+login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>tf
+<span class="o">(</span>tf<span class="o">)</span><span class="w"> </span>login-41<span class="w"> </span>~<span class="w"> </span>&gt;:
+</code></pre></div>
+Install tensorflow-gpu
+<div class="highlight"><pre><span></span><code><span class="o">(</span>tf<span class="o">)</span><span class="w"> </span>node430-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>anaconda<span class="w"> </span>tensorflow-gpu
+Collecting<span class="w"> </span>package<span class="w"> </span>metadata<span class="w"> </span><span class="o">(</span>current_repodata.json<span class="o">)</span>:<span class="w"> </span><span class="k">done</span>
+Solving<span class="w"> </span>environment:<span class="w"> </span><span class="k">done</span>
+
+<span class="c1">## Package Plan ##</span>
+
+<span class="w">  </span>environment<span class="w"> </span>location:<span class="w"> </span>/home/g/guest24/miniconda3/envs/tf
+
+<span class="w">  </span>added<span class="w"> </span>/<span class="w"> </span>updated<span class="w"> </span>specs:
+<span class="w">    </span>-<span class="w"> </span>tensorflow-gpu
+
+&lt;output<span class="w"> </span>snipped&gt;
+
+The<span class="w"> </span>following<span class="w"> </span>packages<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>SUPERSEDED<span class="w"> </span>by<span class="w"> </span>a<span class="w"> </span>higher-priority<span class="w"> </span>channel:
+
+<span class="w">  </span>ca-certificates<span class="w">                                 </span>pkgs/main<span class="w"> </span>--&gt;<span class="w"> </span>anaconda
+<span class="w">  </span>certifi<span class="w">                                         </span>pkgs/main<span class="w"> </span>--&gt;<span class="w"> </span>anaconda
+<span class="w">  </span>openssl<span class="w">                                         </span>pkgs/main<span class="w"> </span>--&gt;<span class="w"> </span>anaconda
+
+
+Proceed<span class="w"> </span><span class="o">([</span>y<span class="o">]</span>/n<span class="o">)</span>?y
+
+&lt;output<span class="w"> </span>snipped&gt;
+
+mkl_fft-1.1.0<span class="w">        </span><span class="p">|</span><span class="w"> </span><span class="m">143</span><span class="w"> </span>KB<span class="w">    </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+urllib3-1.25.9<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">98</span><span class="w"> </span>KB<span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+cudatoolkit-10.1.243<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">513</span>.2<span class="w"> </span>MB<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+protobuf-3.12.3<span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="m">711</span><span class="w"> </span>KB<span class="w">    </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+blinker-1.4<span class="w">          </span><span class="p">|</span><span class="w"> </span><span class="m">21</span><span class="w"> </span>KB<span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+requests-2.24.0<span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="m">54</span><span class="w"> </span>KB<span class="w">     </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+werkzeug-1.0.1<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="m">243</span><span class="w"> </span>KB<span class="w">    </span><span class="p">|</span><span class="w"> </span><span class="c1">####################################################################################### | 100%</span>
+Preparing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Verifying<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Executing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+</code></pre></div>
+Check to see if TensorFlow can be loaded
+<div class="highlight"><pre><span></span><code>(tf) login1-41 ~ &gt;: python
+Python 3.9.13 (main, Oct 13 2022, 21:15:33)
+[GCC 11.2.0] :: Anaconda, Inc. on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre></div>
+Simple TensorFlow test program to make sure the virtual env can access a GPU. Program is called </p>
+<details class="example">
+<summary>tf.gpu.test.py</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="k">if</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">():</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Default GPU Device: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">()))</span>
+
+<span class="k">else</span><span class="p">:</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please install GPU version of TF&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Slurm script to submit the job</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="install-tensorflow-with-gpu-wulver" name="__tabbed_2" type="radio" /><input id="install-tensorflow-with-gpu-lochness" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="install-tensorflow-with-gpu-wulver">Wulver</label><label for="install-tensorflow-with-gpu-lochness">Lochness</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+<span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
+<span class="kp">#SBATCH --partition=gpu</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks-per-node=1</span>
+<span class="kp">#SBATCH --gres=gpu:1</span>
+<span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
+<span class="kp">#SBATCH --qos=standard</span>
+<span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+<span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
+
+<span class="c1"># Purge any module loaded by default</span>
+module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
+module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<span class="nb">source</span><span class="w"> </span>conda.sh
+conda<span class="w"> </span>activate<span class="w"> </span>tf
+<span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>tf.gpu.test.py
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --job-name=tf_test</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to JobName.JobID</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --tasks-per-node=1</span>
+<span class="kp">#SBATCH --partition=datasci</span>
+<span class="kp">#SBATCH --gres=gpu:1</span>
+<span class="kp">#SBATCH --mem=4G</span>
+
+<span class="c1"># Purge any module loaded by default</span>
+module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/conda3.sh
+conda<span class="w"> </span>activate<span class="w"> </span>tf
+<span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>tf.gpu.test.py
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<p>Result:
+<div class="highlight"><pre><span></span><code>Starting /home/g/guest24/.bash_profile ... standard AFS bash profile
+
+Home directory : /home/g/guest24 is not in AFS -- skipping quota check
+
+On host node430 :
+         17:14:13 up 1 day,  1:17,  0 users,  load average: 0.01, 0.07, 0.06
+
+      Your Kerberos ticket and AFS token status 
+klist: No credentials cache found (filename: /tmp/krb5cc_22967_HvCVvuvMMX)
+Kerberos :
+AFS      :
+
+Loading default modules ...
+Create file : &quot;/home/g/guest24/.modules&quot; to customize.
+
+No modules loaded
+2020-07-29 17:14:19.047276: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-07-29 17:14:19.059941: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2200070000 Hz
+2020-07-29 17:14:19.060093: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ea8ebfdb90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-07-29 17:14:19.060136: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-07-29 17:14:19.061484: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+
+&lt;ouput snipped&gt;
+
+2020-07-29 17:14:19.817386: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-07-29 17:14:19.817392: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0
+2020-07-29 17:14:19.817397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N
+2020-07-29 17:14:19.819082: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/device:GPU:0 with 15064 MB memory) -&gt; physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:02:00.0, compute capability: 6.0)
+Default GPU Device: /device:GPU:0
+</code></pre></div>
+Next, deactivate the environment using <code>conda deactivate tf</code> command.</p>
+<h4 id="install-pytorch-with-gpu">Install PyTorch with GPU<a class="headerlink" href="#install-pytorch-with-gpu" title="Permanent link">&para;</a></h4>
+<p>To install PyTorch with GPU, load the <code>Anaconda3</code> module as described above and then use the following</p>
+<div class="highlight"><pre><span></span><code>conda create --name torch-cuda python=3.7
+source conda.sh
+conda activate torch-cuda
+conda install -c &quot;nvidia/label/cuda-11.7.0&quot; cuda-toolkit
+conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=11.7
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the example above, we mentioned the channel name as we intend to install PyTorch and PyTorch-CUDA from a specific channel. For the default channel please see <a href="./#conda-channel">Channels</a>.</p>
+</div>
+<p>A simple PyTorch test program is given below to check whether PyTorch has been installed properly. Program is called</p>
+<details class="program">
+<summary>torch_tensor.py</summary>
+<div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float</span>
+<span class="c1">#device = torch.device(&quot;cpu&quot;)   # Uncomment this to run on CPU</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span><span class="p">)</span> <span class="c1"># Uncomment this to run on GPU</span>
+
+<span class="c1"># Create random input and output data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Randomly initialize weights</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-6</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+    <span class="c1"># Forward pass: compute predicted y</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+
+    <span class="c1"># Compute and print loss</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">99</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+
+    <span class="c1"># Backprop to compute gradients of a, b, c, d with respect to loss</span>
+    <span class="n">grad_y_pred</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">grad_a</span> <span class="o">=</span> <span class="n">grad_y_pred</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">grad_b</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">grad_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">grad_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Update weights using gradient descent</span>
+    <span class="n">a</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_a</span>
+    <span class="n">b</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_b</span>
+    <span class="n">c</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_c</span>
+    <span class="n">d</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_d</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Result: y = </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x + </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x^2 + </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x^3&#39;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>User can use the following job script to run the script.</p>
+<details class="example">
+<summary>torch-cuda.submit.sh</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="install-pytorch-with-gpu-wulver" name="__tabbed_3" type="radio" /><input id="install-pytorch-with-gpu-lochness" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="install-pytorch-with-gpu-wulver">Wulver</label><label for="install-pytorch-with-gpu-lochness">Lochness</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --job-name=torch_test</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to JobName.JobID</span>
+<span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
+<span class="kp">#SBATCH --partition=gpu</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks-per-node=1</span>
+<span class="kp">#SBATCH --gres=gpu:1</span>
+<span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
+<span class="kp">#SBATCH --qos=standard</span>
+<span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+<span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
+
+<span class="c1"># Purge any module loaded by default</span>
+module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
+module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<span class="nb">source</span><span class="w"> </span>conda.sh
+conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
+<span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>touch_tensor.py
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --job-name=torch_test</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to JobName.JobID</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --tasks-per-node=1</span>
+<span class="kp">#SBATCH --partition=datasci</span>
+<span class="kp">#SBATCH --gres=gpu:1</span>
+<span class="kp">#SBATCH --mem=4G</span>
+
+<span class="c1"># Purge any module loaded by default</span>
+module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/conda3.sh
+conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
+<span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>touch_tensor.py
+</code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When working with Python, it is generally advised to avoid mixing package management tools such as pip and conda within the same environment. Pip and Conda manage dependencies differently, and their conflict can lead to compatibility issues and unexpected behavior. Mixing the two can result in an environment where packages installed with one tool may not interact seamlessly with those installed using the other. </p>
+</div>
+<h2 id="mamba-the-conda-alternative">Mamba: The Conda Alternative<a class="headerlink" href="#mamba-the-conda-alternative" title="Permanent link">&para;</a></h2>
+<p>Mamba is a fast, robust, and cross-platform package manager and particularly useful for building complicated environments, where <code>conda</code> is unable to 'solve' the required set of packages within a reasonable amount of time.
+Users can install packages with <code>mamba</code> in the same way as with <code>conda</code>.
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Mamba<span class="w"> </span>Anaconda3
+
+<span class="c1"># create new environment</span>
+mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>env_name<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>
+<span class="nb">source</span><span class="w"> </span>conda.sh
+<span class="c1"># install a new package into an existing environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>env_name
+mamba<span class="w"> </span>install<span class="w"> </span>scipy
+</code></pre></div></p>
+<h2 id="export-and-import-conda-environment">Export and Import Conda Environment<a class="headerlink" href="#export-and-import-conda-environment" title="Permanent link">&para;</a></h2>
+<p>Exporting and importing Conda environments allows users to capture and reproduce the exact set of dependencies for a project. With Conda, a popular package and environment management system, users can export an environment, including all installed packages, into a YAML file. This file can then be shared or version-controlled. Importing the environment from the YAML file on another system ensures consistent dependencies, making it easier to recreate the development or execution environment. </p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>When installing Python packages via Conda, ensure that you perform the installation on the compute node rather than the login node. The CPU and memory resources on login nodes are limited, and installing Python packages on the login node can be time-consuming. To avoid this, initiate an <a href="../../../slurm/slurm/#interactive-session-on-a-compute-node">tnteractive session with compute node</a>.</p>
+</div>
+<h3 id="export-conda-environment">Export Conda Environment<a class="headerlink" href="#export-conda-environment" title="Permanent link">&para;</a></h3>
+<p>To export a conda environment to a new directory or a different machine, you need to activate the environment first that you intend to export. Please see <a href="#activate-and-deactivate-conda-environment">Conda environment</a> on how to activate the environment. Once your environment is activated, you can export it to a YAML file:
+<div class="highlight"><pre><span></span><code><span class="go">conda env export &gt; my_environment.yml</span>
+</code></pre></div>
+The YAML should look like this</p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_env</span>
+<span class="nt">channels</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+<span class="nt">dependencies</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_libgcc_mutex=0.1=main</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_openmp_mutex=5.1=1_gnu</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blas=1.0=mkl</span>
+
+<span class="l l-Scalar l-Scalar-Plain">&lt;ouput snipped&gt;</span>
+
+<span class="c1">#the last line is the path of the env</span>
+<span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/a/abc3/.conda/envs/my_env.</span>
+</code></pre></div>
+Next, edit the <code>my_environment.yml</code> file to make sure it has the correct environment name and other settings. The last line of the file specifies the path of the environment.</p>
+<p>Once the YAML file is ready, you can transfer the <code>my_environment.yml</code> file to the new machine or directory where you want to replicate the environment. See <a href="../../../../clusters/cluster_access/#transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa">cluster file transfer</a> for details on transferring the files to clusters.</p>
+<h3 id="import-environment-on-new-machine">Import Environment on New Machine<a class="headerlink" href="#import-environment-on-new-machine" title="Permanent link">&para;</a></h3>
+<p>On the new machine, first load Anaconda and initialize conda as before. Then, create the
+environment from the YAML file:</p>
+<p><div class="highlight"><pre><span></span><code>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>my_environment.yml
+Collecting<span class="w"> </span>package<span class="w"> </span>metadata<span class="w"> </span><span class="o">(</span>repodata.json<span class="o">)</span>:<span class="w"> </span><span class="k">done</span>
+Solving<span class="w"> </span>environment:<span class="w"> </span><span class="k">done</span>
+
+&lt;ouput<span class="w"> </span>snipped&gt;
+
+Downloading<span class="w"> </span>and<span class="w"> </span>Extracting<span class="w"> </span>Packages
+Preparing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Verifying<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Executing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+<span class="c1">#</span>
+<span class="c1"># To activate this environment, use</span>
+<span class="c1">#</span>
+<span class="c1"># $ conda activate my_env</span>
+<span class="c1">#</span>
+<span class="c1"># To deactivate an active environment, use</span>
+<span class="c1">#</span>
+<span class="c1"># $ conda deactivate</span>
+</code></pre></div>
+After running this command, Conda will set up the environment as it was on the original machine, including downloading and installing packages. To activate the New Environment use <code>conda activate my_env</code> where <code>my_env</code> is the environment name.
+You can check your current environments using <code>conda env list</code>.</p>
+<h3 id="importing-to-a-different-location">Importing to a Different Location<a class="headerlink" href="#importing-to-a-different-location" title="Permanent link">&para;</a></h3>
+<p>If you want to import the conda environment to a different location, use the <code>--prefix</code> or <code>-p</code> option
+<div class="highlight"><pre><span></span><code><span class="go">conda env create -f my_environment.yml -p /project/hpcadmins/abc3/conda_env/my_env</span>
+</code></pre></div>
+This will create the environment in the specified directory instead of the default conda environment directory. Please note that in that case, you need to provide the full path of the environment to activate it.</p>
+<p><div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
+<span class="o">(</span>/project/hpcadmins/abc3/conda_env/my_env<span class="o">)</span><span class="w"> </span>abc3@login01:~$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
+<span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+base<span class="w"> </span>/apps/easybuild/software/Anaconda3/2023.09-0
+*<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
+</code></pre></div>
+By following these steps, you can successfully export a conda environment from one machine and import it to another, ensuring a consistent working environment across different machines or directories.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is advisable to use the <code>/project</code> directory to store the Conda environment rather than using the <code>$HOME</code> directory. On Wulver, the storage space on <code>$HOME</code> is limited (50G) and cannot be increased. See <a href="../../../../clusters/get_started_on_Wulver/#wulver-filesystems">Wulver Filesystems</a> for details. </p>
+</div>
+<h2 id="conda-user-commands">Conda User Commands<a class="headerlink" href="#conda-user-commands" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th style="text-align: center;">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activate environment:</td>
+<td style="text-align: center;"><code>conda activate [environment_name]</code></td>
+</tr>
+<tr>
+<td>Deactivate environment:</td>
+<td style="text-align: center;"><code>conda deactivate [environment_name]</code></td>
+</tr>
+<tr>
+<td>Show the list of environments:</td>
+<td style="text-align: center;"><code>conda env list</code></td>
+</tr>
+<tr>
+<td>Delete environment:</td>
+<td style="text-align: center;"><code>conda remove [environment_name]</code></td>
+</tr>
+<tr>
+<td>Export environment:</td>
+<td style="text-align: center;"><code>conda env export &gt; [environment_name].yml</code></td>
+</tr>
+<tr>
+<td>Import environment from YAML:</td>
+<td style="text-align: center;"><code>conda env create -f [environment_name].yml</code></td>
+</tr>
+<tr>
+<td>Import environment to different location:</td>
+<td style="text-align: center;"><code>conda env create -f [environment_name].yml -p [PATH]</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arcs-njit-edu/Docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:hpc@njit.edu" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+        <script src="../../../../assets/_markdown_exec_pyodide.js"></script>
+      
+    
+  </body>
+</html>

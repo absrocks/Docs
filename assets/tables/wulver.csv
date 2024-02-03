@@ -1,0 +1,17 @@
+ ,Regular,Bigmem,GPU
+Partition,regular,bigmem,gpu
+Nodes,100,2,25
+CPU Type,AMD EPYC 7753,AMD EPYC 7753,AMD EPYC 7713
+CPU Speed (GHZ),2.45,2.45,2.0
+CPUs/Socket,64,64,64
+Sockets/Node,2,2,2
+RAM/Node (GB),512,2048,512
+GPU Type,-,-,nVIDIA A100
+GPUs/Node,-,-,4
+GPU Memory (GB),-,-,80
+Total CPUs,12800,256,3200
+Total RAM (TB),50,4,12.5
+Total SUs/year,112128000,2242560,28032000
+Peak Performance (TFLOPs),501.76,10.035,1072.4
+HPL (TFLOPs/Node),-,-,-
+

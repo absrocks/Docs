@@ -1,0 +1,3098 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://arcs-njit-edu.github.io/Docs/migration/faqs/">
+      
+      
+        <link rel="prev" href="../Lochness_node_owners/">
+      
+      
+        <link rel="next" href="../lochness_filesystem/">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>Faqs - NJIT HPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="njit" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-following-are-questions-we-have-received-over-the-last-several-weeks-regarding-the-migration-from-lochness-to-wulver" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NJIT HPC" class="md-header__button md-logo" aria-label="NJIT HPC" data-md-component="logo">
+      
+  <img src="../../img/Logo_NJIT.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NJIT HPC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Faqs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="njit" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arcs-njit-edu/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    arcs-njit-edu/Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NJIT HPC" class="md-nav__button md-logo" aria-label="NJIT HPC" data-md-component="logo">
+      
+  <img src="../../img/Logo_NJIT.png" alt="logo">
+
+    </a>
+    NJIT HPC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arcs-njit-edu/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    arcs-njit-edu/Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    About Us
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About Us
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../clusters/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Clusters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Clusters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/wulver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wulver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/lochness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Decommissioned
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Decommissioned
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/decommissioned/stheno/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stheno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/cluster_access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User access to clusters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/get_started_on_Wulver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started on Wulver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/Wulver_filesystems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wulver Filesystems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/lochness_policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness user policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/wulver_policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wulver usage and Condo policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facilities/facilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Facilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Services
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Services/hpc-course/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Resources for Courses
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            CFD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/ansys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANSYS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/comsol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMSOL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/fluent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FLUENT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/openfoam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenFOAM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IDE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            IDE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/IDE/VSCode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chemistry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chemistry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/cp2k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CP2K
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/gaussian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/orca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ORCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/qe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum Espresso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/siesta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SIESTA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/math/MATLAB/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MATLAB
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_5_1" id="__nav_7_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            MATLAB
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/math/MATLAB/matlab_local/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use MATLAB on NJIT HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Md
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Md
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/md/gromacs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GROMACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/md/lammps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAMMPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/md/plumed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLUMED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/compilers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilers and Toolchains
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/programming/python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_7_2" id="__nav_7_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/jupyter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7_2_4" id="__nav_7_7_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libraries
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_7_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/arrow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/biopython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biopython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/h5py/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    H5py
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/ipython/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ipython
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/matplotlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/molmod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Molmod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/scikit-build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scikit build
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/scipy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scipy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/python/libraries/spark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slurm
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/slurm/slurm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/utilities/apptainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/utilities/dmtcp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DMTCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/utilities/parallel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GNU Parallel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visualization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/ase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/gnuplot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GNUPlot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/ovito/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OVITO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/paraview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paraview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Migration
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Migration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lochness_node_owners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness Node Owners Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Faqs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Faqs
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-following-are-questions-we-have-received-over-the-last-several-weeks-regarding-the-migration-from-lochness-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      The following are questions we have received over the last several weeks regarding the migration from Lochness to Wulver.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The following are questions we have received over the last several weeks regarding the migration from Lochness to Wulver.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-timeline-for-the-migration-from-lochness-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the timeline for the migration from Lochness to Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-will-the-migration-impact-my-existing-workflows-and-computations" class="md-nav__link">
+    <span class="md-ellipsis">
+      How will the migration impact my existing workflows and computations?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-specific-steps-should-i-take-to-prepare-for-the-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      What specific steps should I take to prepare for the migration?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-there-be-any-downtime-during-the-migration-and-how-will-it-affect-my-research-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Will there be any downtime during the migration, and how will it affect my research activities?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-there-a-plan-for-backing-up-and-restoring-data-during-the-migration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is there a plan for backing up and restoring data during the migration process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-changes-will-occur-in-the-file-directory-structure-especially-regarding-the-research-and-home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      What changes will occur in the file directory structure, especially regarding the /research and /home directories?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-will-the-migration-impact-access-to-specialized-software-or-applications-that-i-currently-use-on-lochness" class="md-nav__link">
+    <span class="md-ellipsis">
+      How will the migration impact access to specialized software or applications that I currently use on Lochness?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-continue-using-lochness-for-specific-tasks-during-the-migration-or-will-it-be-completely-inaccessible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can I continue using Lochness for specific tasks during the migration, or will it be completely inaccessible?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-to-my-existing-job-submissions-and-queued-jobs-during-the-migration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens to my existing job submissions and queued jobs during the migration process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-there-any-adjustments-needed-for-code-or-scripts-to-ensure-compatibility-with-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are there any adjustments needed for code or scripts to ensure compatibility with Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-there-be-training-sessions-or-documentation-available-to-help-faculty-and-researchers-transition-smoothly-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Will there be training sessions or documentation available to help faculty and researchers transition smoothly to Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-request-additional-resources-or-discuss-specific-requirements-for-my-research-projects-on-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I request additional resources or discuss specific requirements for my research projects on Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-support-services-will-be-available-during-and-after-the-migration-to-address-any-issues-or-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      What support services will be available during and after the migration to address any issues or concerns?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-test-my-applications-or-simulations-on-wulver-before-the-migration-to-ensure-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can I test my applications or simulations on Wulver before the migration to ensure compatibility?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-long-will-the-oldhome-directory-on-lochness-be-accessible-after-the-migration-and-what-actions-should-i-take-regarding-data-stored-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      How long will the /oldhome directory on Lochness be accessible after the migration, and what actions should I take regarding data stored there?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-afs-be-available-on-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Will AFS be available on Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-have-several-conda-environments-on-lochness-should-i-perform-a-fresh-installation-or-copy-the-environment-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      I have several Conda environments on Lochness. Should I perform a fresh installation or copy the environment to Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lochness_filesystem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lochness to Wulver Migration: File Directory Changes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../news/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            News
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-following-are-questions-we-have-received-over-the-last-several-weeks-regarding-the-migration-from-lochness-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      The following are questions we have received over the last several weeks regarding the migration from Lochness to Wulver.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The following are questions we have received over the last several weeks regarding the migration from Lochness to Wulver.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-timeline-for-the-migration-from-lochness-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the timeline for the migration from Lochness to Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-will-the-migration-impact-my-existing-workflows-and-computations" class="md-nav__link">
+    <span class="md-ellipsis">
+      How will the migration impact my existing workflows and computations?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-specific-steps-should-i-take-to-prepare-for-the-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      What specific steps should I take to prepare for the migration?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-there-be-any-downtime-during-the-migration-and-how-will-it-affect-my-research-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Will there be any downtime during the migration, and how will it affect my research activities?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-there-a-plan-for-backing-up-and-restoring-data-during-the-migration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is there a plan for backing up and restoring data during the migration process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-changes-will-occur-in-the-file-directory-structure-especially-regarding-the-research-and-home-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      What changes will occur in the file directory structure, especially regarding the /research and /home directories?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-will-the-migration-impact-access-to-specialized-software-or-applications-that-i-currently-use-on-lochness" class="md-nav__link">
+    <span class="md-ellipsis">
+      How will the migration impact access to specialized software or applications that I currently use on Lochness?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-continue-using-lochness-for-specific-tasks-during-the-migration-or-will-it-be-completely-inaccessible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can I continue using Lochness for specific tasks during the migration, or will it be completely inaccessible?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-to-my-existing-job-submissions-and-queued-jobs-during-the-migration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What happens to my existing job submissions and queued jobs during the migration process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-there-any-adjustments-needed-for-code-or-scripts-to-ensure-compatibility-with-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Are there any adjustments needed for code or scripts to ensure compatibility with Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-there-be-training-sessions-or-documentation-available-to-help-faculty-and-researchers-transition-smoothly-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Will there be training sessions or documentation available to help faculty and researchers transition smoothly to Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-request-additional-resources-or-discuss-specific-requirements-for-my-research-projects-on-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      How can I request additional resources or discuss specific requirements for my research projects on Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-support-services-will-be-available-during-and-after-the-migration-to-address-any-issues-or-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      What support services will be available during and after the migration to address any issues or concerns?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-test-my-applications-or-simulations-on-wulver-before-the-migration-to-ensure-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Can I test my applications or simulations on Wulver before the migration to ensure compatibility?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-long-will-the-oldhome-directory-on-lochness-be-accessible-after-the-migration-and-what-actions-should-i-take-regarding-data-stored-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      How long will the /oldhome directory on Lochness be accessible after the migration, and what actions should I take regarding data stored there?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#will-afs-be-available-on-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Will AFS be available on Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-have-several-conda-environments-on-lochness-should-i-perform-a-fresh-installation-or-copy-the-environment-to-wulver" class="md-nav__link">
+    <span class="md-ellipsis">
+      I have several Conda environments on Lochness. Should I perform a fresh installation or copy the environment to Wulver?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Faqs</h1>
+
+<h2 id="the-following-are-questions-we-have-received-over-the-last-several-weeks-regarding-the-migration-from-lochness-to-wulver">The following are questions we have received over the last several weeks regarding the migration from Lochness to Wulver.<a class="headerlink" href="#the-following-are-questions-we-have-received-over-the-last-several-weeks-regarding-the-migration-from-lochness-to-wulver" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-the-timeline-for-the-migration-from-lochness-to-wulver">What is the timeline for the migration from Lochness to Wulver?<a class="headerlink" href="#what-is-the-timeline-for-the-migration-from-lochness-to-wulver" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>We anticipate the migration process to be complete by the end of February 2024. The migration will commence on January 16, 2024, and our team is dedicated to ensuring a smooth transition for all users. We will keep you informed about any updates or changes to the timeline as the migration progresses. Your cooperation and understanding during this period are greatly appreciated. If you have any specific concerns about the timeline, please feel free to reach out to our support team for further clarification.</p>
+</details>
+<h3 id="how-will-the-migration-impact-my-existing-workflows-and-computations">How will the migration impact my existing workflows and computations?<a class="headerlink" href="#how-will-the-migration-impact-my-existing-workflows-and-computations" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>The research facilitation team is committed to assisting you during the migration process. Our team will work closely with you to ensure that your existing workflows and computations are seamlessly transferred to Wulver. We understand the importance of minimizing disruptions to your research activities, and our experts will provide guidance and support to address any compatibility issues that may arise. You can expect personalized assistance to make the transition as smooth as possible. If you have specific concerns about your workflows, please don't hesitate to reach out to our team for tailored support.</p>
+</details>
+<h3 id="what-specific-steps-should-i-take-to-prepare-for-the-migration">What specific steps should I take to prepare for the migration?<a class="headerlink" href="#what-specific-steps-should-i-take-to-prepare-for-the-migration" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>To prepare for the migration, there are a few crucial steps:</p>
+<ul>
+<li>
+<p>Provide a List of Current Students and Postdocs: </p>
+<ul>
+<li>Please share with us an updated list of current students, postdocs, and external collaborators who are actively using the HPC resources on Lochness. This information will ensure that user accounts are accurately migrated to Wulver, and access is maintained for the relevant individuals.</li>
+</ul>
+</li>
+<li>
+<p>List of Required Software: </p>
+<ul>
+<li>Compile a list of software applications that are essential for your research. This includes both commonly used software and any specialized tools unique to your work. Knowing your software requirements enables us to ensure that the necessary applications are available and properly configured on Wulver. You can find the list of software applications installed on Wulver in <a href="../../Software/">Software</a>. If you don't find your applications in the list, submit a request for <a href="https://njit.service-now.com/sp?id=sc_cat_item&amp;sys_id=0746c1f31b6691d04c82cddf034bcbe2&amp;sysparm_category=405f99b41b5b1d507241400abc4bcb6b">HPC Software Installation</a> by visiting the <a href="https://njit.service-now.com/sp?id=sc_category">Service Catalog</a>.</li>
+</ul>
+</li>
+<li>
+<p>Planning for Former Students: </p>
+<ul>
+<li>If you have former students who may still have data or files on Lochness, it's essential to plan for their data migration or archival. We recommend reaching out to former students to coordinate any necessary data transfers or backups to avoid potential data loss.</li>
+</ul>
+</li>
+</ul>
+<p>These steps will contribute to a successful migration, allowing us to tailor the process to your specific needs. If you have any questions or need assistance with these preparations, please contact our support team.</p>
+</details>
+<h3 id="will-there-be-any-downtime-during-the-migration-and-how-will-it-affect-my-research-activities">Will there be any downtime during the migration, and how will it affect my research activities?<a class="headerlink" href="#will-there-be-any-downtime-during-the-migration-and-how-will-it-affect-my-research-activities" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>Once the migration has started for your group, Lochness will be inaccessible. If access to Lochness is critical for specific tasks during this period, we strongly encourage you to reach out to us. We understand that some users may have time-sensitive activities or dependencies on Lochness, and we are committed to working with you to find solutions that meet your needs. Please contact our support team by sending an email to <a href="mailto:hpc@njit.edu">hpc@njit.edu</a> to discuss your specific requirements, and we will do our best to accommodate your situation during the migration process. You can check <a href="../../about/contact/">Contact Us</a> to see how to create tickets with us and what information is required to create tickets. </p>
+</details>
+<h3 id="is-there-a-plan-for-backing-up-and-restoring-data-during-the-migration-process">Is there a plan for backing up and restoring data during the migration process?<a class="headerlink" href="#is-there-a-plan-for-backing-up-and-restoring-data-during-the-migration-process" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>Yes, there is a plan in place for data continuity. The data on Lochness resides on a shared filesystem, and these same filesystems will be mounted and available on Wulver post-migration. This approach ensures that your data remains accessible and seamlessly transfers to the new cluster.</p>
+<p>There is no need for a separate backup and restoration process as the shared filesystem continuity facilitates a smooth transition. If you have specific data-related concerns or requirements, please feel free to reach out to our support team (<a href="../../about/contact/">Contact Us</a>) for further clarification and assistance. Your data integrity and accessibility are our top priorities throughout the migration process.</p>
+</details>
+<h3 id="what-changes-will-occur-in-the-file-directory-structure-especially-regarding-the-research-and-home-directories">What changes will occur in the file directory structure, especially regarding the <code>/research</code> and <code>/home</code> directories?<a class="headerlink" href="#what-changes-will-occur-in-the-file-directory-structure-especially-regarding-the-research-and-home-directories" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>With the migration to Wulver, there will be changes in the file directory structure:</p>
+<p>Filesystems on Wulver: Wulver will have three filesystems available for use: <code>/home</code>, <code>/project</code>, and <code>/scratch</code>.</p>
+<ul>
+<li>
+<p>Availability of <code>/research</code> Directory: The <code>/research</code> directory from Lochness will be mounted on Wulver and will be available for use. This ensures continuity for research-related files and data.</p>
+</li>
+<li>
+<p>Lochness <code>/home</code> Directory on Wulver: The Lochness <code>/home</code> directory will be mounted on the Wulver login node as <code>/oldhome</code>. Users will be able to read files in this directory and move files from this directory but will not be able to write files into this deirectory. This allows users to access their personal home directories from Lochness during the migration period. The Lochness files under <code>/oldhome</code> will be available until 1-Jan-2025. Users should move needed files into <code>/project/PI_UCID</code> directory (replace PI_UCID with the UCID of PI). </p>
+</li>
+</ul>
+<p>These changes are designed to optimize the file organization on Wulver while maintaining accessibility to critical research data. The research facilitation team will work closely with users to ensure a smooth transition of data and assist in adapting to the new file directory structure. If you have specific questions or require assistance with data migration, please don't hesitate to contact our support team.</p>
+</details>
+<h3 id="how-will-the-migration-impact-access-to-specialized-software-or-applications-that-i-currently-use-on-lochness">How will the migration impact access to specialized software or applications that I currently use on Lochness?<a class="headerlink" href="#how-will-the-migration-impact-access-to-specialized-software-or-applications-that-i-currently-use-on-lochness" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>The research facilitation team is dedicated to ensuring a smooth transition for users in terms of software and applications:</p>
+<ul>
+<li>Installation Support: <ul>
+<li>The research facilitation team will handle the installation of necessary software on Wulver, ensuring that essential tools and applications are available for your research. You can request for <a href="https://njit.service-now.com/sp?id=sc_cat_item&amp;sys_id=0746c1f31b6691d04c82cddf034bcbe2&amp;sysparm_category=405f99b41b5b1d507241400abc4bcb6b">HPC Software Installation</a> by visiting the <a href="https://njit.service-now.com/sp?id=sc_category">Service Catalog</a>. Please visit <a href="../../Software/">Software</a> to see the list of applications isntalled on Wulver.</li>
+</ul>
+</li>
+<li>Code Compilation Assistance: <ul>
+<li>If your research involves custom code that needs compilation, the research facilitation team will provide assistance to ensure a successful compilation on Wulver. This support extends to helping users adapt their code to the new environment.</li>
+</ul>
+</li>
+</ul>
+<p>Our goal is to minimize any disruptions to your research activities and provide the necessary support for a seamless transition. If you have specific software requirements or need assistance with code compilation, please reach out to the research facilitation team, and they will be happy to assist you.</p>
+</details>
+<h3 id="can-i-continue-using-lochness-for-specific-tasks-during-the-migration-or-will-it-be-completely-inaccessible">Can I continue using Lochness for specific tasks during the migration, or will it be completely inaccessible?<a class="headerlink" href="#can-i-continue-using-lochness-for-specific-tasks-during-the-migration-or-will-it-be-completely-inaccessible" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>Once the migration has started for your group, Lochness will be inaccessible. If access to Lochness is critical for specific tasks during this period, we strongly encourage you to reach out to us. We understand that some users may have time-sensitive activities or dependencies on Lochness, and we are committed to working with you to find solutions that meet your needs. Please contact our support team to discuss your specific requirements, and we will do our best to accommodate your situation during the migration process.</p>
+</details>
+<h3 id="what-happens-to-my-existing-job-submissions-and-queued-jobs-during-the-migration-process">What happens to my existing job submissions and queued jobs during the migration process?<a class="headerlink" href="#what-happens-to-my-existing-job-submissions-and-queued-jobs-during-the-migration-process" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>For the most part, the migration will start after all running jobs have been completed. We understand the importance of job completion for ongoing research activities. Accommodations will be made for long-running jobs that cannot be checkpointed.
+  Our aim is to minimize disruptions to your computational tasks and ensure a smooth transition. If you have specific concerns about job submissions or if you anticipate long-running jobs during the migration period, please communicate with our support team. We are here to work collaboratively and make necessary accommodations to facilitate the completion of your jobs during the migration process.</p>
+</details>
+<h3 id="are-there-any-adjustments-needed-for-code-or-scripts-to-ensure-compatibility-with-wulver">Are there any adjustments needed for code or scripts to ensure compatibility with Wulver?<a class="headerlink" href="#are-there-any-adjustments-needed-for-code-or-scripts-to-ensure-compatibility-with-wulver" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>Yes, adjustments will be required for code or submission scripts to ensure compatibility with Wulver:</p>
+<ul>
+<li>Submit Script Changes: <ul>
+<li>Submit scripts will need to be modified to accommodate changes in partitions, hardware configurations, policies, and filesystems on Wulver. The research facilitation team will provide guidance and support in updating your submit scripts for seamless job submissions. Check the sample submit scipts for Wulver in <a href="../../Software/slurm/slurm/">SLURM</a>.</li>
+</ul>
+</li>
+<li>Code Recompilation: <ul>
+<li>Due to differences in hardware, code may need to be recompiled to ensure optimal performance on Wulver. The research facilitation team is ready to assist you in this process, offering support to recompile code and address any related issues.</li>
+<li>If you code is compiled based on <a href="../../Software/programming/compilers/#free-open-source-software-(foss)">FOSS Toolchain</a> (GCC and OpenMPI), you need to compile the code the same way you did in Lochness. Just make sure all the dependency libraries are installed on Wulver. Please visit <a href="../../Software/">Software</a> to check the list of applications installed on Wulver.</li>
+<li>If your code is based on the <a href="../../Software/programming/compilers/#intel">Intel toolchain</a>, you need to add the following while configuring your code. 
+    <div class="highlight"><pre><span></span><code><span class="go">./configure CFLAGS=&quot;-march=core-avx2&quot;</span>
+</code></pre></div></li>
+<li>When installing codes, ensure that you perform the installation on the compute node rather than the login node. Since the hardware architecture is different on the login node, it's best practice to compile your code on the compute node. You need to initiate an <a href="../../Software/slurm/slurm/#interactive-session-on-a-compute-node">interactive session with compute node</a> before compiling your code.</li>
+</ul>
+</li>
+</ul>
+<p>Assistance will be provided to help you adapt your code and scripts to the new environment on Wulver. If you have specific concerns or require support in making these adjustments, please reach out to our <a href="../../about/contact/">research facilitation team</a>, and they will work with you to ensure a smooth transition.</p>
+</details>
+<h3 id="will-there-be-training-sessions-or-documentation-available-to-help-faculty-and-researchers-transition-smoothly-to-wulver">Will there be training sessions or documentation available to help faculty and researchers transition smoothly to Wulver?<a class="headerlink" href="#will-there-be-training-sessions-or-documentation-available-to-help-faculty-and-researchers-transition-smoothly-to-wulver" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>While there are no official training sessions scheduled at this point, comprehensive documentation is available at <a href="https://hpc.njit.edu">NJIT HPC Documentation</a> to assist faculty and researchers during the transition to Wulver.
+  In addition to documentation, the research facilitation team is committed to providing personal assistance to faculty and researchers. If you have specific questions, require hands-on support, or need guidance on using Wulver effectively for your research, please do not hesitate to reach out to the <a href="../../about/contact/">research facilitation team</a>. We are here to ensure that you receive the assistance you need for a successful transition.</p>
+</details>
+<h3 id="how-can-i-request-additional-resources-or-discuss-specific-requirements-for-my-research-projects-on-wulver">How can I request additional resources or discuss specific requirements for my research projects on Wulver?<a class="headerlink" href="#how-can-i-request-additional-resources-or-discuss-specific-requirements-for-my-research-projects-on-wulver" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>To request additional resources or discuss specific requirements for your research projects on Wulver, please reach out to us at <a href="mailto:hpc@njit.edu">hpc@njit.edu</a>. Our team is ready to assist you with any inquiries related to resource allocation, project needs, or any other aspects that can enhance your experience on the Wulver cluster. Your requests will be promptly addressed, and we are committed to providing the support necessary for the success of your research endeavors.</p>
+</details>
+<h3 id="what-support-services-will-be-available-during-and-after-the-migration-to-address-any-issues-or-concerns">What support services will be available during and after the migration to address any issues or concerns?<a class="headerlink" href="#what-support-services-will-be-available-during-and-after-the-migration-to-address-any-issues-or-concerns" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>The research facilitation team is committed to providing personalized assistance and support services during and after the migration:</p>
+<ul>
+<li>
+<ul>
+<li>The research facilitation team is dedicated to offering personal assistance to each user. Whether you need help with data migration, code adjustments, or understanding the new environment, our team is here to provide tailored support.</li>
+</ul>
+<p>Personal Assistance:</p>
+<ul>
+<li>Issue Resolution:</li>
+<li>
+<p>Any issues or concerns that arise during or after the migration will be promptly addressed by the research facilitation team. We aim to ensure a smooth transition for all users and are ready to tackle any challenges that may arise.</p>
+</li>
+<li>
+<p>Ongoing Support:</p>
+</li>
+<li>Support services will continue to be available after the migration to address ongoing needs, answer questions, and assist with any further optimizations or adjustments required for your research projects.</li>
+</ul>
+</li>
+</ul>
+<p>Your success is our priority, and the research facilitation team is here to guide you through the migration process and beyond. If you encounter any issues or have specific concerns, please reach out to the team for personalized assistance.</p>
+</details>
+<h3 id="can-i-test-my-applications-or-simulations-on-wulver-before-the-migration-to-ensure-compatibility">Can I test my applications or simulations on Wulver before the migration to ensure compatibility?<a class="headerlink" href="#can-i-test-my-applications-or-simulations-on-wulver-before-the-migration-to-ensure-compatibility" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>Yes, absolutely! We encourage users to proactively test their applications or simulations on Wulver before the migration to ensure compatibility and identify any potential issues. This testing phase allows you to familiarize yourself with the new environment and address any concerns in advance.</p>
+<p>If you encounter challenges or have questions during the testing process, please don't hesitate to reach out to us. Our team is here to provide guidance, answer queries, and assist you in ensuring a smooth transition for your research activities on Wulver. Your proactive testing will contribute to a successful migration experience.</p>
+</details>
+<h3 id="how-long-will-the-oldhome-directory-on-lochness-be-accessible-after-the-migration-and-what-actions-should-i-take-regarding-data-stored-there">How long will the <code>/oldhome</code> directory on Lochness be accessible after the migration, and what actions should I take regarding data stored there?<a class="headerlink" href="#how-long-will-the-oldhome-directory-on-lochness-be-accessible-after-the-migration-and-what-actions-should-i-take-regarding-data-stored-there" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>The <code>/oldhome</code> directory on Lochness will be accessible for 6 months after the migration is complete. During this period, users are advised to review and move their data to other locations on Wulver or archive it as needed. This timeframe provides a reasonable window for users to organize and transfer their data while ensuring a smooth transition.</p>
+<p>If you have specific questions about data migration or need assistance during this post-migration period, please reach out to our support team. We are here to help you with any further steps or considerations related to your data on Lochness.</p>
+</details>
+<h3 id="will-afs-be-available-on-wulver">Will AFS be available on Wulver?<a class="headerlink" href="#will-afs-be-available-on-wulver" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>The AFS will not be available on Wulver. However we will setup a self-serve procedure for researchers to move AFS files to <code>/research</code>. We can do this as part of the full migration process. Please reach out to us at <a href="mailto:hpc@njit.edu">hpc@njit.edu</a> for any questions.</p>
+</details>
+<h3 id="i-have-several-conda-environments-on-lochness-should-i-perform-a-fresh-installation-or-copy-the-environment-to-wulver">I have several Conda environments on Lochness. Should I perform a fresh installation or copy the environment to Wulver?<a class="headerlink" href="#i-have-several-conda-environments-on-lochness-should-i-perform-a-fresh-installation-or-copy-the-environment-to-wulver" title="Permanent link">&para;</a></h3>
+<details class="answer">
+<summary>Answer</summary>
+<p>We recommend a fresh installation since the hardware architecture is different on Wulver. However, you can export the existing Conda environment to a YAML file, transfer it to Wulver, and then install the environment using this YAML file. See <a href="../../Software/programming/python/conda/#export-and-import-conda-environment">Conda Export Environment</a> for details.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/arcs-njit-edu/Docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:hpc@njit.edu" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+    
+  </body>
+</html>

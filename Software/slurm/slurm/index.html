@@ -2831,14 +2831,13 @@
 <h2 id="using-slurm-on-wulver">Using SLURM on Wulver<a class="headerlink" href="#using-slurm-on-wulver" title="Permanent link">&para;</a></h2>
 <p>In Wulver, SLURM submission will have new requirements, intended for a more fair sharing of resources without impinging on investor/owner rights to computational resources.  All jobs must now be charged to a PI-group (Principal Investigator) account.</p>
 <ol>
-<li>To specify the job use <code>--account=PI_ucid</code>, for example, <code>--account=doctorx</code>.  You can specify <code>--account</code> as either a <code>sbatch</code> or <code>#SBATCH</code> parameter. If you don't know the UCID of PI, use<code>sacctmgr show user $LOGNAME</code>.</li>
+<li>To specify the job use <code>--account=PI_ucid</code>.  You can specify <code>--account</code> as either a <code>sbatch</code> or <code>#SBATCH</code> parameter. If you don't know the UCID of PI, use<code>sacctmgr show user $LOGNAME</code>, and you can find PI's UCID under <code>Def Acct</code> column.</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><span class="w">   </span><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>user<span class="w"> </span><span class="nv">$LOGNAME</span>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>user<span class="w"> </span><span class="nv">$LOGNAME</span>
 <span class="w">      </span>User<span class="w">   </span>Def<span class="w"> </span>Acct<span class="w">    </span>Admin
 ----------<span class="w"> </span>----------<span class="w">  </span>---------
 <span class="w">    </span>ab1234<span class="w">     </span>xy1234<span class="w">      </span>None
 </code></pre></div>
-Your PI's UCID is <code>xy1234</code>.</p>
 <ol>
 <li>Wulver has three partitions, differing in GPUs or RAM available:</li>
 </ol>

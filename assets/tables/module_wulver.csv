@@ -10,11 +10,13 @@ CUDA,12.0.0,-,`module load CUDA/12.0.0`
 CUDA,11.4.1,-,`module load CUDA/11.4.1`
 gettext,0.21,-,`module load gettext/0.21`
 gettext,0.21.1,-,`module load gettext/0.21.1`
+gettext,0.22,-,`module load gettext/0.22`
 NVHPC,23.1-CUDA-12.0.0,-,`module load NVHPC/23.1-CUDA-12.0.0`
 OptiX,6.5.0,-,`module load OptiX/6.5.0`
 Autoconf,2.71,-,`module load Autoconf/2.71`
 Bison,3.8.2,-,`module load Bison/3.8.2`
 Autotools,20220317,-,`module load Autotools/20220317`
+apptainer,1.1.9,-,`module load apptainer/1.1.9`
 intel,2022b,-,`module load intel/2022b`
 intel,2022a,-,`module load intel/2022a`
 intel,2021b,-,`module load intel/2021b`
@@ -23,19 +25,23 @@ ParaView,5.11.0-osmesa,-,`module load ParaView/5.11.0-osmesa`
 ParaView,5.11.0-egl,-,`module load ParaView/5.11.0-egl`
 Mamba,4.14.0-0,-,`module load Mamba/4.14.0-0`
 PyCharm,2022.3.2,-,`module load PyCharm/2022.3.2`
+DMTCP,3.0.0,-,`module load DMTCP/3.0.0`
 DMTCP,2.6.0,-,`module load DMTCP/2.6.0`
 flex,2.6.4,-,`module load flex/2.6.4`
 foss,2022b,-,`module load foss/2022b`
+foss,2023b,-,`module load foss/2023b`
 foss,2021b,-,`module load foss/2021b`
 EasyBuild,4.8.2,-,`module load EasyBuild/4.8.2`
+EasyBuild,4.9.0,-,`module load EasyBuild/4.9.0`
 EasyBuild,4.8.0,-,`module load EasyBuild/4.8.0`
+Avogadro2,1.97.0-linux-x86_64,-,`module load Avogadro2/1.97.0-linux-x86_64`
 imkl,2022.1.0,-,`module load imkl/2022.1.0`
 imkl,2022.2.1,-,`module load imkl/2022.2.1`
 imkl,2021.4.0,-,`module load imkl/2021.4.0`
 Automake,1.16.5,-,`module load Automake/1.16.5`
 OpenSSL,1.1,-,`module load OpenSSL/1.1`
 libtool,2.4.7,-,`module load libtool/2.4.7`
-Gaussian,16.A.03-AVX2,-,`module load Gaussian/16.A.03-AVX2`
+Gaussian,16.C.01-AVX2~,-,`module load Gaussian/16.C.01-AVX2~`
 Gaussian,16.C.01-AVX2,-,`module load Gaussian/16.C.01-AVX2`
 Spack,0.17.2,-,`module load Spack/0.17.2`
 Spack,0.20.0,-,`module load Spack/0.20.0`
@@ -49,16 +55,21 @@ intel-compilers,2021.4.0,intel/2021b,`module load intel-compilers/2021.4.0`
 Java,11.0.16,-,`module load Java/11.0.16`
 Java,.modulerc,-,`module load Java/.modulerc`
 gompi,2022b,-,`module load gompi/2022b`
+gompi,2023b,-,`module load gompi/2023b`
 gompi,2021b,-,`module load gompi/2021b`
 ncurses,6.3,-,`module load ncurses/6.3`
 ncurses,6.4,-,`module load ncurses/6.4`
 ncurses,6.2,-,`module load ncurses/6.2`
 gfbf,2022b,-,`module load gfbf/2022b`
+gfbf,2023b,-,`module load gfbf/2023b`
 p7zip,17.04,-,`module load p7zip/17.04`
 libevent,2.1.12,-,`module load libevent/2.1.12`
 git-lfs,3.2.0,-,`module load git-lfs/3.2.0`
 GCC,12.2.0,foss/2022b,`module load GCC/12.2.0`
 GCC,11.2.0,foss/2021b,`module load GCC/11.2.0`
+opendihu,2204,-,`module load opendihu/2204`
+git,2.33.1,-,`module load git/2.33.1`
+rclone,1.57.0,-,`module load rclone/1.57.0`
 tmux,3.3a,-,`module load tmux/3.3a`
 iimpi,2022b,-,`module load iimpi/2022b`
 iimpi,2022a,-,`module load iimpi/2022a`
@@ -73,6 +84,7 @@ GCCcore,13.2.0,-,`module load GCCcore/13.2.0`
 GCCcore,11.2.0,-,`module load GCCcore/11.2.0`
 COMSOL,5.6,-,`module load COMSOL/5.6`
 tecplot360ex,2022R2,-,`module load tecplot360ex/2022R2`
+Go,1.17.3,-,`module load Go/1.17.3`
 Go,1.17.6,-,`module load Go/1.17.6`
 pkgconf,1.8.0,-,`module load pkgconf/1.8.0`
 matplotlib,3.4.3,intel/2021b,`module load intel/2021b matplotlib/3.4.3`
@@ -86,6 +98,7 @@ Libint,2.7.2-lmax-6-cp2k,intel/2021b,`module load intel/2021b Libint/2.7.2-lmax-
 SuperLU,5.3.0,intel/2021b,`module load intel/2021b SuperLU/5.3.0`
 ELPA,2021.11.001,intel/2021b,`module load intel/2021b ELPA/2021.11.001`
 imkl-FFTW,2021.4.0,intel/2021b,`module load intel/2021b imkl-FFTW/2021.4.0`
+HPL,2.3,intel/2022b,`module load intel/2022b HPL/2.3`
 HDF5,1.14.0,intel/2022b,`module load intel/2022b HDF5/1.14.0`
 imkl-FFTW,2022.2.1,intel/2022b,`module load intel/2022b imkl-FFTW/2022.2.1`
 VASP,6.4.2,intel/2022b,`module load intel/2022b VASP/6.4.2`
@@ -124,21 +137,30 @@ ScaLAPACK,2.1.0-fb,foss/2021b,`module load foss/2021b ScaLAPACK/2.1.0-fb`
 GROMACS,2023.1-CUDA-12.0.0,foss/2022b,`module load foss/2022b GROMACS/2023.1-CUDA-12.0.0`
 R,4.2.2,foss/2022b,`module load foss/2022b R/4.2.2`
 ncview,2.1.8,foss/2022b,`module load foss/2022b ncview/2.1.8`
+CP2K,2023.1,foss/2022b,`module load foss/2022b CP2K/2023.1`
+PLUMED,2.9.0,foss/2022b,`module load foss/2022b PLUMED/2.9.0`
 MDAnalysis,2.4.2,foss/2022b,`module load foss/2022b MDAnalysis/2.4.2`
 PnetCDF,1.12.3,foss/2022b,`module load foss/2022b PnetCDF/1.12.3`
 netCDF-Fortran,4.6.0,foss/2022b,`module load foss/2022b netCDF-Fortran/4.6.0`
 Biopython,1.81,foss/2022b,`module load foss/2022b Biopython/1.81`
+PyTables,3.8.0,foss/2022b,`module load foss/2022b PyTables/3.8.0`
 mpi4py,3.1.4,foss/2022b,`module load foss/2022b mpi4py/3.1.4`
 netCDF,4.9.0,foss/2022b,`module load foss/2022b netCDF/4.9.0`
 ParaView,5.11.0-mpi,foss/2022b,`module load foss/2022b ParaView/5.11.0-mpi`
+IQ-TREE,2.2.2.6,foss/2022b,`module load foss/2022b IQ-TREE/2.2.2.6`
+chapel,1.33.0,foss/2022b,`module load foss/2022b chapel/1.33.0`
 SuperLU_DIST,8.1.0,foss/2022b,`module load foss/2022b SuperLU_DIST/8.1.0`
 Armadillo,11.4.3,foss/2022b,`module load foss/2022b Armadillo/11.4.3`
+HPL,2.3,foss/2022b,`module load foss/2022b HPL/2.3`
 HDF5,1.14.0,foss/2022b,`module load foss/2022b HDF5/1.14.0`
+xtb,6.6.1,foss/2022b,`module load foss/2022b xtb/6.6.1`
 perm-md-count,main,foss/2022b,`module load foss/2022b perm-md-count/main`
 ParMETIS,4.0.3,foss/2022b,`module load foss/2022b ParMETIS/4.0.3`
 MPAS,8.0.1,foss/2022b,`module load foss/2022b MPAS/8.0.1`
 SuperLU,5.3.0,foss/2022b,`module load foss/2022b SuperLU/5.3.0`
 ORCA,5.0.4,foss/2022b,`module load foss/2022b ORCA/5.0.4`
+VMD,1.9.4a57,foss/2022b,`module load foss/2022b VMD/1.9.4a57`
+arkouda,2023.11.15,foss/2022b,`module load foss/2022b arkouda/2023.11.15`
 GDAL,3.6.2,foss/2022b,`module load foss/2022b GDAL/3.6.2`
 ParallelIO,2.5.10,foss/2022b,`module load foss/2022b ParallelIO/2.5.10`
 Grace,5.1.25,foss/2022b,`module load foss/2022b Grace/5.1.25`
@@ -170,18 +192,27 @@ FlexiBLAS,3.0.4,foss/2021b,`module load foss/2021b FlexiBLAS/3.0.4`
 libxc,5.1.6,foss/2021b,`module load foss/2021b libxc/5.1.6`
 GEOS,3.9.1,foss/2021b,`module load foss/2021b GEOS/3.9.1`
 matplotlib,3.7.0,foss/2022b,`module load foss/2022b matplotlib/3.7.0`
+libxsmm,1.17,foss/2022b,`module load foss/2022b libxsmm/1.17`
+packmol,20.14.3,foss/2022b,`module load foss/2022b packmol/20.14.3`
 NTL,11.5.1,foss/2022b,`module load foss/2022b NTL/11.5.1`
 Arb,2.23.0,foss/2022b,`module load foss/2022b Arb/2.23.0`
 SciPy-bundle,2023.02,foss/2022b,`module load foss/2022b SciPy-bundle/2023.02`
+Libint,2.7.2-lmax-6-cp2k,foss/2022b,`module load foss/2022b Libint/2.7.2-lmax-6-cp2k`
 OpenMPI,4.1.4,foss/2022b,`module load foss/2022b`
+xtb,6.6.1,foss/2022b,`module load foss/2022b xtb/6.6.1`
 OpenBLAS,0.3.21,foss/2022b,`module load foss/2022b OpenBLAS/0.3.21`
 GSL,2.7,foss/2022b,`module load foss/2022b GSL/2.7`
 networkx,2.8.8,foss/2022b,`module load foss/2022b networkx/2.8.8`
 networkx,3.0,foss/2022b,`module load foss/2022b networkx/3.0`
 BLIS,0.9.0,foss/2022b,`module load foss/2022b BLIS/0.9.0`
+CREST,2.12,foss/2022b,`module load foss/2022b CREST/2.12`
+Arrow,11.0.0,foss/2022b,`module load foss/2022b Arrow/11.0.0`
 Boost,1.81.0,foss/2022b,`module load foss/2022b Boost/1.81.0`
 FFTW,3.3.10,foss/2022b,`module load foss/2022b FFTW/3.3.10`
+POV-Ray,3.7.0.10,foss/2022b,`module load foss/2022b POV-Ray/3.7.0.10`
+silo,4.10.2,foss/2022b,`module load foss/2022b silo/4.10.2`
 FlexiBLAS,3.2.1,foss/2022b,`module load foss/2022b FlexiBLAS/3.2.1`
+libxc,6.1.0,foss/2022b,`module load foss/2022b libxc/6.1.0`
 FLINT,2.9.0,foss/2022b,`module load foss/2022b FLINT/2.9.0`
 FLINT,3.0.1,foss/2022b,`module load foss/2022b FLINT/3.0.1`
 GEOS,3.11.1,foss/2022b,`module load foss/2022b GEOS/3.11.1`
@@ -350,6 +381,7 @@ libgd,2.3.3,foss/2022b,`module load foss/2022b libgd/2.3.3`
 lz4,1.9.4,foss/2022b,`module load foss/2022b lz4/1.9.4`
 motif,2.3.8,foss/2022b,`module load foss/2022b motif/2.3.8`
 libarchive,3.6.1,foss/2022b,`module load foss/2022b libarchive/3.6.1`
+libidn2,2.3.2,foss/2022b,`module load foss/2022b libidn2/2.3.2`
 Ninja,1.11.1,foss/2022b,`module load foss/2022b Ninja/1.11.1`
 Perl,5.36.0-minimal,foss/2022b,`module load foss/2022b Perl/5.36.0-minimal`
 Perl,5.36.0,foss/2022b,`module load foss/2022b Perl/5.36.0`
@@ -357,7 +389,9 @@ M4,1.4.19,foss/2022b,`module load foss/2022b M4/1.4.19`
 GLib,2.75.0,foss/2022b,`module load foss/2022b GLib/2.75.0`
 ICU,72.1,foss/2022b,`module load foss/2022b ICU/72.1`
 giflib,5.2.1,foss/2022b,`module load foss/2022b giflib/5.2.1`
+libsodium,1.0.18,foss/2022b,`module load foss/2022b libsodium/1.0.18`
 groff,1.22.4,foss/2022b,`module load foss/2022b groff/1.22.4`
+py-cpuinfo,9.0.0,foss/2022b,`module load foss/2022b py-cpuinfo/9.0.0`
 Meson,0.64.0,foss/2022b,`module load foss/2022b Meson/0.64.0`
 at-spi2-core,2.46.0,foss/2022b,`module load foss/2022b at-spi2-core/2.46.0`
 UDUNITS,2.2.28,foss/2022b,`module load foss/2022b UDUNITS/2.2.28`
@@ -369,6 +403,7 @@ wxWidgets,3.2.2.1,foss/2022b,`module load foss/2022b wxWidgets/3.2.2.1`
 Szip,2.1.1,foss/2022b,`module load foss/2022b Szip/2.1.1`
 libffi,3.4.4,foss/2022b,`module load foss/2022b libffi/3.4.4`
 PCRE,8.45,foss/2022b,`module load foss/2022b PCRE/8.45`
+LZO,2.10,foss/2022b,`module load foss/2022b LZO/2.10`
 Eigen,3.4.0,foss/2022b,`module load foss/2022b Eigen/3.4.0`
 GObject-Introspection,1.74.0,foss/2022b,`module load foss/2022b GObject-Introspection/1.74.0`
 LAME,3.100,foss/2022b,`module load foss/2022b LAME/3.100`
@@ -377,21 +412,26 @@ NSS,3.85,foss/2022b,`module load foss/2022b NSS/3.85`
 expat,2.4.9,foss/2022b,`module load foss/2022b expat/2.4.9`
 Autoconf,2.71,foss/2022b,`module load foss/2022b Autoconf/2.71`
 Xvfb,21.1.6,foss/2022b,`module load foss/2022b Xvfb/21.1.6`
+xxd,9.0.1696,foss/2022b,`module load foss/2022b xxd/9.0.1696`
 GStreamer,1.22.1,foss/2022b,`module load foss/2022b GStreamer/1.22.1`
+utf8proc,2.8.0,foss/2022b,`module load foss/2022b utf8proc/2.8.0`
 XZ,5.2.7,foss/2022b,`module load foss/2022b XZ/5.2.7`
 cppy,1.2.1,foss/2022b,`module load foss/2022b cppy/1.2.1`
 X11,20221110,foss/2022b,`module load foss/2022b X11/20221110`
 Mesa,22.2.4,foss/2022b,`module load foss/2022b Mesa/22.2.4`
 GLPK,5.0,foss/2022b,`module load foss/2022b GLPK/5.0`
 Bison,3.8.2,foss/2022b,`module load foss/2022b Bison/3.8.2`
+LSD2,2.4.1,foss/2022b,`module load foss/2022b LSD2/2.4.1`
 Lua,5.4.4,foss/2022b,`module load foss/2022b Lua/5.4.4`
 Autotools,20220317,foss/2022b,`module load foss/2022b Autotools/20220317`
+ZeroMQ,4.3.4,foss/2022b,`module load foss/2022b ZeroMQ/4.3.4`
 re2c,3.0,foss/2022b,`module load foss/2022b re2c/3.0`
 libtirpc,1.3.3,foss/2022b,`module load foss/2022b libtirpc/1.3.3`
 LibTIFF,4.4.0,foss/2022b,`module load foss/2022b LibTIFF/4.4.0`
 gperf,3.1,foss/2022b,`module load foss/2022b gperf/3.1`
 Tcl,8.6.12,foss/2022b,`module load foss/2022b Tcl/8.6.12`
 at-spi2-atk,2.38.0,foss/2022b,`module load foss/2022b at-spi2-atk/2.38.0`
+ACTC,1.1,foss/2022b,`module load foss/2022b ACTC/1.1`
 x265,3.5,foss/2022b,`module load foss/2022b x265/3.5`
 libdrm,2.4.114,foss/2022b,`module load foss/2022b libdrm/2.4.114`
 Tkinter,3.10.8,foss/2022b,`module load foss/2022b Tkinter/3.10.8`
@@ -401,7 +441,9 @@ SQLite,3.39.4,foss/2022b,`module load foss/2022b SQLite/3.39.4`
 Graphene,1.10.8,foss/2022b,`module load foss/2022b Graphene/1.10.8`
 libreadline,8.2,foss/2022b,`module load foss/2022b libreadline/8.2`
 numactl,2.0.16,foss/2022b,`module load foss/2022b numactl/2.0.16`
+libvori,220621,foss/2022b,`module load foss/2022b libvori/220621`
 intltool,0.51.0,foss/2022b,`module load foss/2022b intltool/0.51.0`
+Blosc,1.21.3,foss/2022b,`module load foss/2022b Blosc/1.21.3`
 double-conversion,3.2.1,foss/2022b,`module load foss/2022b double-conversion/3.2.1`
 libunwind,1.6.2,foss/2022b,`module load foss/2022b libunwind/1.6.2`
 Python,3.10.8-bare,foss/2022b,`module load foss/2022b Python/3.10.8-bare`
@@ -413,6 +455,7 @@ help2man,1.49.2,foss/2022b,`module load foss/2022b help2man/1.49.2`
 GDRCopy,2.3,foss/2022b,`module load foss/2022b GDRCopy/2.3`
 JasPer,4.0.0,foss/2022b,`module load foss/2022b JasPer/4.0.0`
 elfutils,0.189,foss/2022b,`module load foss/2022b elfutils/0.189`
+RapidJSON,1.1.0,foss/2022b,`module load foss/2022b RapidJSON/1.1.0`
 flex,2.6.4,foss/2022b,`module load foss/2022b flex/2.6.4`
 FriBidi,1.0.12,foss/2022b,`module load foss/2022b FriBidi/1.0.12`
 UCC,1.1.0,foss/2022b,`module load foss/2022b UCC/1.1.0`
@@ -424,6 +467,7 @@ tqdm,4.64.1,foss/2022b,`module load foss/2022b tqdm/4.64.1`
 nettle,3.8.1,foss/2022b,`module load foss/2022b nettle/3.8.1`
 libiconv,1.17,foss/2022b,`module load foss/2022b libiconv/1.17`
 MPFR,4.2.0,foss/2022b,`module load foss/2022b MPFR/4.2.0`
+xprop,1.2.5,foss/2022b,`module load foss/2022b xprop/1.2.5`
 Xerces-C++,3.2.4,foss/2022b,`module load foss/2022b Xerces-C++/3.2.4`
 CMake,3.24.3,foss/2022b,`module load foss/2022b CMake/3.24.3`
 fontconfig,2.14.1,foss/2022b,`module load foss/2022b fontconfig/2.14.1`
@@ -443,6 +487,7 @@ GST-plugins-base,1.22.1,foss/2022b,`module load foss/2022b GST-plugins-base/1.22
 Automake,1.16.5,foss/2022b,`module load foss/2022b Automake/1.16.5`
 libGLU,9.0.2,foss/2022b,`module load foss/2022b libGLU/9.0.2`
 HarfBuzz,5.3.1,foss/2022b,`module load foss/2022b HarfBuzz/5.3.1`
+Blosc2,2.8.0,foss/2022b,`module load foss/2022b Blosc2/2.8.0`
 GMP,6.2.1,foss/2022b,`module load foss/2022b GMP/6.2.1`
 SDL2,2.26.3,foss/2022b,`module load foss/2022b SDL2/2.26.3`
 libtool,2.4.7,foss/2022b,`module load foss/2022b libtool/2.4.7`
@@ -485,6 +530,7 @@ HDF,4.2.15,foss/2022b,`module load foss/2022b HDF/4.2.15`
 libxml2,2.10.3,foss/2022b,`module load foss/2022b libxml2/2.10.3`
 NASM,2.15.05,foss/2022b,`module load foss/2022b NASM/2.15.05`
 git,2.38.1-nodocs,foss/2022b,`module load foss/2022b git/2.38.1-nodocs`
+PyZMQ,25.1.0,foss/2022b,`module load foss/2022b PyZMQ/25.1.0`
 UnZip,6.0,foss/2022b,`module load foss/2022b UnZip/6.0`
 Qt5,5.15.7,foss/2022b,`module load foss/2022b Qt5/5.15.7`
 graphite2,1.3.14,foss/2022b,`module load foss/2022b graphite2/1.3.14`
@@ -492,9 +538,12 @@ PROJ,9.1.1,foss/2022b,`module load foss/2022b PROJ/9.1.1`
 LERC,4.0.0,foss/2022b,`module load foss/2022b LERC/4.0.0`
 hypothesis,6.68.2,foss/2022b,`module load foss/2022b hypothesis/6.68.2`
 OpenJPEG,2.5.0,foss/2022b,`module load foss/2022b OpenJPEG/2.5.0`
+RE2,2023-03-01,foss/2022b,`module load foss/2022b RE2/2023-03-01`
 Highway,1.0.3,foss/2022b,`module load foss/2022b Highway/1.0.3`
 UCX-CUDA,1.13.1-CUDA-12.0.0,foss/2022b,`module load foss/2022b UCX-CUDA/1.13.1-CUDA-12.0.0`
+FLTK,1.3.8,foss/2022b,`module load foss/2022b FLTK/1.3.8`
 Qhull,2020.2,foss/2022b,`module load foss/2022b Qhull/2020.2`
+OpenPGM,5.2.122,foss/2022b,`module load foss/2022b OpenPGM/5.2.122`
 DB,18.1.40,foss/2022b,`module load foss/2022b DB/18.1.40`
 ImageMagick,7.1.0-53,foss/2022b,`module load foss/2022b ImageMagick/7.1.0-53`
 Tk,8.6.12,foss/2022b,`module load foss/2022b Tk/8.6.12`

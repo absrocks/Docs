@@ -2833,14 +2833,12 @@
 <ol>
 <li>To specify the job, use <code>--account=PI_ucid</code>.  You can specify <code>--account</code> as either an <code>sbatch</code> or <code>#SBATCH</code> parameter. If you don't know the UCID of PI, use<code>sacctmgr show user $LOGNAME</code>, and you can find the PI's UCID under <code>Def Acct</code> column.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>user<span class="w"> </span><span class="nv">$LOGNAME</span>
+<p><div class="highlight"><pre><span></span><code><span class="w">   </span><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>user<span class="w"> </span><span class="nv">$LOGNAME</span>
 <span class="w">      </span>User<span class="w">   </span>Def<span class="w"> </span>Acct<span class="w">    </span>Admin
 ----------<span class="w"> </span>----------<span class="w">  </span>---------
 <span class="w">    </span>ab1234<span class="w">     </span>xy1234<span class="w">      </span>None
 </code></pre></div>
-<ol>
-<li>Wulver has three partitions, differing in GPUs or RAM available:</li>
-</ol>
+2. Wulver has three partitions, differing in GPUs or RAM available:</p>
 <p><table>
 <thead>
 <tr>

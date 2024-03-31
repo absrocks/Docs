@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -48,7 +48,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_markdown_exec_pyodide.css">
+      <link rel="stylesheet" href="../../../assets/_markdown_exec_ansi.css">
     
       <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
@@ -2878,7 +2878,7 @@ Your PI's UCID is <code>xy1234</code>.
 <td style="text-align: left;">2.0 GHz AMD EPYC 7713 (2)</td>
 <td style="text-align: left;">NVIDIA A100 GPUs (4)</td>
 <td style="text-align: left;">512 GB</td>
-<td style="text-align: left;">2 SU per hour per GPU</td>
+<td style="text-align: left;">3 SU per hour per GPU</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>--partition=bigmem</code></td>
@@ -2927,14 +2927,14 @@ Your PI's UCID is <code>xy1234</code>.
 <tr>
 <td style="text-align: left;"><code>--qos=debug</code></td>
 <td style="text-align: left;">Intended for debugging and testing jobs</td>
-<td style="text-align: left;">No SU Charges, maximum 4 CPUs are allowed</td>
+<td style="text-align: left;">No SU Charges, maximum 4 CPUs are allowed, must be used with <code>--partition=debug</code></td>
 <td style="text-align: right;">8</td>
 <td style="text-align: left;">Everyone</td>
 </tr>
 </tbody>
 </table>
 4. Check Quota
-Faculty PIs are allocated 300,000 Service Units (SU) per year upon request at no cost, which can be utilized via <code>--qos=standard</code> on the SLURM job. It's important to regularly check the usage of SUs so that users can be aware of their consumption and switch to <code>--qos=low</code> to prevent exhausting all allocated SUs. Users can check their quota using the <code>quota_info UCID</code> command.
+Faculty PIs are allocated 300,000 Service Units (SU) per year upon request at no cost, which can be utilized via <code>--qos=standard</code> on the SLURM job. It's important to regularly check the usage of SUs so that users can be aware of their consumption and switch to <code>--qos=low</code> to prevent exhausting all allocated SUs. Users can check their quota using the <code>quota_info UCID</code> command. 
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2942,16 +2942,18 @@ Faculty PIs are allocated 300,000 Service Units (SU) per year upon request at no
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>ab1234@login01<span class="w"> </span>slurm_report<span class="o">]</span>$<span class="w"> </span>quota_info<span class="w"> </span>ab1234
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>wulver
+<span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>quota_info.sh<span class="w"> </span><span class="nv">$LOGNAME</span>
 Usage<span class="w"> </span><span class="k">for</span><span class="w"> </span>account:<span class="w"> </span>xy1234
-<span class="w">   </span>SLURM<span class="w"> </span>Service<span class="w"> </span>Units:<span class="w"> </span><span class="m">277557</span><span class="w"> </span>CPU<span class="w"> </span>Hours<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">300000</span><span class="w"> </span>CPU<span class="w"> </span>Hour<span class="w"> </span>quota<span class="o">)</span>
+<span class="w">   </span>SLURM<span class="w"> </span>Service<span class="w"> </span>Units<span class="w"> </span><span class="o">(</span>CPU<span class="w"> </span>Hours<span class="o">)</span>:<span class="w"> </span><span class="m">277557</span><span class="w"> </span><span class="o">(</span><span class="m">300000</span><span class="w"> </span>Quota<span class="o">)</span>
 <span class="w">   </span>PROJECT<span class="w"> </span>Storage:<span class="w"> </span><span class="m">867</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">2048</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
-<span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">448</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
-<span class="w">   </span>SCRATCH<span class="w"> </span>Storage:<span class="w"> </span><span class="m">341</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">2048</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
-<span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">241</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
-HOME<span class="w"> </span>Storage<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">20</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
+<span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">11</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
+<span class="w">   </span>SCRATCH<span class="w"> </span>Storage:<span class="w"> </span><span class="m">791</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">10240</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
+<span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
+HOME<span class="w"> </span>Storage<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">0</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
 </code></pre></div></td></tr></table></div>
-Here, <code>xy1234</code> and <code>ab1234</code> are the UCIDs of PI and user respectively. <code>SLURM Service Units (CPU Hours): 277557 (300000 Quota)</code> indicates that members of the PI group have already utilized 277,557 CPU hours out of the allocated 300,000 SUs (line number 3). This command also displays the storage usage of the <code>$HOME</code> and <code>/project</code> directories. Users can check the usage of individual and PI group allocations for the <code>/project</code> directory. In the example provided, the group members of PI <code>xy1234</code> utilized 867 GB out of a 2TB quota (line 4), and the individual user consumed 448 GB, contributing to the total group usage of 867 GB (line 5). For more detailed information on filesystem usage, refer to the <a href="../../../clusters/get_started_on_Wulver/#wulver-filesystems">Wulver Filesystem</a>.</p>
+Here, 'xy1234' represents the UCID of the PI, and 'SLURM Service Units (CPU Hours): 277557 (300000 Quota)' indicates that members of the PI group have already utilized 277,557 CPU hours out of the allocated 300,000 SUs. Please ensure that you load the 'wulver' module before running the 'quota_info' command. This command also displays the storage usage of directories such as $HOME, /project, and /scratch. Users can view both the group usage and individual usage of each storage. In the given example, the group usage from the 2TB project quota is 867 GB, with the user's usage being 11 GB out of that 867 GB. For more details file system quota, see <a href="../../../clusters/get_started_on_Wulver/#wulver-filesystems">Wulver Filesystem</a>.</p>
 <h3 id="example-of-slurm-script">Example of slurm script<a class="headerlink" href="#example-of-slurm-script" title="Permanent link">&para;</a></h3>
 <h4 id="submitting-jobs-on-cpu-nodes">Submitting Jobs on CPU Nodes<a class="headerlink" href="#submitting-jobs-on-cpu-nodes" title="Permanent link">&para;</a></h4>
 <details class="example">
@@ -3127,12 +3129,10 @@ Here, the <code>ST</code> stands for the status of the job. You may see the stat
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.caa56a14.min.js"></script>
-      
-        <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>

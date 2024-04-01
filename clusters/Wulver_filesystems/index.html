@@ -2479,26 +2479,82 @@
 <li>Users can also store temporary files under the <code>/scratch</code> directory, likewise under a PI-group directory. For example, PI’s UCID is <code>doctorx</code>, so students need to use the <code>/scratch/doctorx/</code> directory.  Please note that the files under <code>/scratch</code> will be periodically deleted. To store files for longer than computations, please use the <code>/project</code> directory.  Files under <code>/scratch</code> are not backed up. For best performance simulations should be performed in the <code>/scratch</code> directory. Once the simulation is complete, the results should be copied into the <code>$HOME</code> or <code>/project</code> directory.  Files are deleted from <code>/scratch</code> after they are 30 days old.</li>
 <li>The <code>/research</code> and <code>$HOME</code> directory from <a href="../lochness/">Lochness</a> will be mounted on <a href="../wulver/">Wulver</a> as <code>/research</code> and <code>/oldhome</code> respectively. For details, see <a href="../../migration/lochness_filesystem/">Migration</a>.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/abhishek/miniconda3/envs/mkdocs/lib/python3.9/site-packages/markdown_exec/formatters/python.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">59</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_run_python</span>
-    <span class="n">exec</span><span class="p">(</span><span class="n">compiled</span><span class="p">,</span> <span class="n">exec_globals</span><span class="p">)</span>  <span class="c1"># noqa: S102</span>
-  <span class="n">File</span> <span class="s2">&quot;&lt;code block: n57&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;docs/assets/tables/Wulver_filesystems.csv&#39;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/abhishek/miniconda3/envs/mkdocs/lib/python3.9/site-packages/pandas/io/parsers/readers.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">948</span><span class="p">,</span> <span class="ow">in</span> <span class="n">read_csv</span>
-    <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/abhishek/miniconda3/envs/mkdocs/lib/python3.9/site-packages/pandas/io/parsers/readers.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">617</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_read</span>
-    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/abhishek/miniconda3/envs/mkdocs/lib/python3.9/site-packages/pandas/io/parsers/readers.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1748</span><span class="p">,</span> <span class="ow">in</span> <span class="n">read</span>
-    <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>  <span class="c1"># type: ignore[attr-defined]</span>
-  <span class="n">File</span> <span class="s2">&quot;/Users/abhishek/miniconda3/envs/mkdocs/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">234</span><span class="p">,</span> <span class="ow">in</span> <span class="n">read</span>
-    <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">read_low_memory</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
-  <span class="n">File</span> <span class="s2">&quot;parsers.pyx&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">843</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="o">.</span><span class="n">read_low_memory</span>
-  <span class="n">File</span> <span class="s2">&quot;parsers.pyx&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">904</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="o">.</span><span class="n">_read_rows</span>
-  <span class="n">File</span> <span class="s2">&quot;parsers.pyx&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">879</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="o">.</span><span class="n">_tokenize_rows</span>
-  <span class="n">File</span> <span class="s2">&quot;parsers.pyx&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">890</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="o">.</span><span class="n">_check_tokenize_status</span>
-  <span class="n">File</span> <span class="s2">&quot;parsers.pyx&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2058</span><span class="p">,</span> <span class="ow">in</span> <span class="n">pandas</span><span class="o">.</span><span class="n">_libs</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">raise_parser_error</span>
-<span class="n">pandas</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">ParserError</span><span class="p">:</span> <span class="n">Error</span> <span class="n">tokenizing</span> <span class="n">data</span><span class="o">.</span> <span class="n">C</span> <span class="n">error</span><span class="p">:</span> <span class="n">Expected</span> <span class="mi">8</span> <span class="n">fields</span> <span class="ow">in</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="n">saw</span> <span class="mi">9</span>
-</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Filesystem</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Characterics</th>
+<th style="text-align: left;">Backup policy</th>
+<th style="text-align: left;">Total Size</th>
+<th style="text-align: left;">Default Quota</th>
+<th style="text-align: left;">Deletion Policy</th>
+<th style="text-align: left;">Cost per TB per five years</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/home</code></td>
+<td style="text-align: left;">Non-research user files, such as profile, history, etc., files not intended for sharing.  Not for actual research files.</td>
+<td style="text-align: left;">Kalray Pixstor / GPFS (expensive)</td>
+<td style="text-align: left;">Daily</td>
+<td style="text-align: left;">~1 PB</td>
+<td style="text-align: left;">50GB per user (locked)</td>
+<td style="text-align: left;">One year after owner leaves NJIT</td>
+<td style="text-align: left;">Not possible to increase size, use <code>/project</code> or <code>/research</code> instead</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/project</code></td>
+<td style="text-align: left;">Active research by groups. Deployed as <code>/project/$PI_UCID/$LOGIN/</code></td>
+<td style="text-align: left;">Kalray Pixstor / GPFS (expensive)</td>
+<td style="text-align: left;">Daily</td>
+<td style="text-align: left;">~1 PB</td>
+<td style="text-align: left;">2TB per group</td>
+<td style="text-align: left;">TBD</td>
+<td style="text-align: left;">$200 per TB for a duration of 5 years, minimum storage allocation of 5TB is required</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/scratch</code></td>
+<td style="text-align: left;">Temporary space for intermediate results, downloads, checkpoints, and such. MOVE YOUR RESULTS &amp; IMPORTANT FILES TO <code>/project</code> or <code>/research</code></td>
+<td style="text-align: left;">Nvme  (very expensive)</td>
+<td style="text-align: left;">NEVER</td>
+<td style="text-align: left;">~ 150 TB</td>
+<td style="text-align: left;">NONE</td>
+<td style="text-align: left;">Files deleted after 30 days or sooner if 80% full</td>
+<td style="text-align: left;">No charge, but files are automatically deleted</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tmp</code></td>
+<td style="text-align: left;">Very high speed temporary storage</td>
+<td style="text-align: left;">Node-local SSD or NVME (very expensive)</td>
+<td style="text-align: left;">NEVER</td>
+<td style="text-align: left;">1 TB per node shared by all users</td>
+<td style="text-align: left;">NONE</td>
+<td style="text-align: left;">Files deleted after job completion</td>
+<td style="text-align: left;">No charge, but files are automatically deleted</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/research</code></td>
+<td style="text-align: left;">Long term archive. Users can buy as much as they need. The users need to buy this space.  Existing purchases/quotas will be kept over from Lochness.</td>
+<td style="text-align: left;">NFS (inexpensive)</td>
+<td style="text-align: left;">Daily</td>
+<td style="text-align: left;">8 TB</td>
+<td style="text-align: left;">Whatever the PI purchases.</td>
+<td style="text-align: left;">TBD</td>
+<td style="text-align: left;">TBD</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/oldhome</code></td>
+<td style="text-align: left;">Lochness <code>/home</code> is mounted as read-only on Wulver login nodes</td>
+<td style="text-align: left;">NFS</td>
+<td style="text-align: left;">CSO</td>
+<td style="text-align: left;">8 TB</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">All to be deleted one year after last login is migrated from Lochness to Wulver.</td>
+<td style="text-align: left;">NA</td>
+</tr>
+</tbody>
+</table>
 
 
 

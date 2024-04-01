@@ -66,6 +66,7 @@ p7zip,17.04,-,`module load p7zip/17.04`
 libevent,2.1.12,-,`module load libevent/2.1.12`
 git-lfs,3.2.0,-,`module load git-lfs/3.2.0`
 GCC,12.2.0,foss/2022b,`module load GCC/12.2.0`
+GCC,13.2.0,foss/2023b,`module load GCC/13.2.0`
 GCC,11.2.0,foss/2021b,`module load GCC/11.2.0`
 opendihu,2204,-,`module load opendihu/2204`
 git,2.33.1,-,`module load git/2.33.1`
@@ -134,6 +135,10 @@ ELPA,2021.05.001,foss/2021b,`module load foss/2021b ELPA/2021.05.001`
 GDAL,3.3.2,foss/2021b,`module load foss/2021b GDAL/3.3.2`
 ScaFaCoS,1.0.1,foss/2021b,`module load foss/2021b ScaFaCoS/1.0.1`
 ScaLAPACK,2.1.0-fb,foss/2021b,`module load foss/2021b ScaLAPACK/2.1.0-fb`
+GROMACS,2024.1,foss/2023b,`module load foss/2023b GROMACS/2024.1`
+mpi4py,3.1.5,foss/2023b,`module load foss/2023b mpi4py/3.1.5`
+FFTW.MPI,3.3.10,foss/2023b,`module load foss/2023b FFTW.MPI/3.3.10`
+ScaLAPACK,2.2.0-fb,foss/2023b,`module load foss/2023b ScaLAPACK/2.2.0-fb`
 GROMACS,2023.1-CUDA-12.0.0,foss/2022b,`module load foss/2022b GROMACS/2023.1-CUDA-12.0.0`
 R,4.2.2,foss/2022b,`module load foss/2022b R/4.2.2`
 ncview,2.1.8,foss/2022b,`module load foss/2022b ncview/2.1.8`
@@ -191,6 +196,13 @@ POV-Ray,3.7.0.10,foss/2021b,`module load foss/2021b POV-Ray/3.7.0.10`
 FlexiBLAS,3.0.4,foss/2021b,`module load foss/2021b FlexiBLAS/3.0.4`
 libxc,5.1.6,foss/2021b,`module load foss/2021b libxc/5.1.6`
 GEOS,3.9.1,foss/2021b,`module load foss/2021b GEOS/3.9.1`
+SciPy-bundle,2023.11,foss/2023b,`module load foss/2023b SciPy-bundle/2023.11`
+OpenMPI,4.1.6,foss/2023b,`module load foss/2023b`
+OpenBLAS,0.3.24,foss/2023b,`module load foss/2023b OpenBLAS/0.3.24`
+networkx,3.2.1,foss/2023b,`module load foss/2023b networkx/3.2.1`
+BLIS,0.9.0,foss/2023b,`module load foss/2023b BLIS/0.9.0`
+FFTW,3.3.10,foss/2023b,`module load foss/2023b FFTW/3.3.10`
+FlexiBLAS,3.3.1,foss/2023b,`module load foss/2023b FlexiBLAS/3.3.1`
 matplotlib,3.7.0,foss/2022b,`module load foss/2022b matplotlib/3.7.0`
 libxsmm,1.17,foss/2022b,`module load foss/2022b libxsmm/1.17`
 packmol,20.14.3,foss/2022b,`module load foss/2022b packmol/20.14.3`
@@ -371,6 +383,66 @@ DB,18.1.40,foss/2021b,`module load foss/2021b DB/18.1.40`
 ImageMagick,7.1.0-4,foss/2021b,`module load foss/2021b ImageMagick/7.1.0-4`
 Tk,8.6.11,foss/2021b,`module load foss/2021b Tk/8.6.11`
 pkgconf,1.8.0,foss/2021b,`module load foss/2021b pkgconf/1.8.0`
+Rust,1.73.0,foss/2023b,`module load foss/2023b Rust/1.73.0`
+zlib,1.2.13,foss/2023b,`module load foss/2023b zlib/1.2.13`
+libarchive,3.7.2,foss/2023b,`module load foss/2023b libarchive/3.7.2`
+virtualenv,20.24.6,foss/2023b,`module load foss/2023b virtualenv/20.24.6`
+Ninja,1.11.1,foss/2023b,`module load foss/2023b Ninja/1.11.1`
+Perl,5.38.0,foss/2023b,`module load foss/2023b Perl/5.38.0`
+M4,1.4.19,foss/2023b,`module load foss/2023b M4/1.4.19`
+groff,1.23.0,foss/2023b,`module load foss/2023b groff/1.23.0`
+Meson,1.2.3,foss/2023b,`module load foss/2023b Meson/1.2.3`
+gettext,0.22,foss/2023b,`module load foss/2023b gettext/0.22`
+scikit-build,0.17.6,foss/2023b,`module load foss/2023b scikit-build/0.17.6`
+libffi,3.4.4,foss/2023b,`module load foss/2023b libffi/3.4.4`
+Eigen,3.4.0,foss/2023b,`module load foss/2023b Eigen/3.4.0`
+expat,2.5.0,foss/2023b,`module load foss/2023b expat/2.5.0`
+Autoconf,2.71,foss/2023b,`module load foss/2023b Autoconf/2.71`
+hatchling,1.18.0,foss/2023b,`module load foss/2023b hatchling/1.18.0`
+flit,3.9.0,foss/2023b,`module load foss/2023b flit/3.9.0`
+XZ,5.4.4,foss/2023b,`module load foss/2023b XZ/5.4.4`
+Bison,3.8.2,foss/2023b,`module load foss/2023b Bison/3.8.2`
+setuptools-rust,1.8.0,foss/2023b,`module load foss/2023b setuptools-rust/1.8.0`
+Autotools,20220317,foss/2023b,`module load foss/2023b Autotools/20220317`
+Tcl,8.6.13,foss/2023b,`module load foss/2023b Tcl/8.6.13`
+patchelf,0.18.0,foss/2023b,`module load foss/2023b patchelf/0.18.0`
+Perl-bundle-CPAN,5.38.0,foss/2023b,`module load foss/2023b Perl-bundle-CPAN/5.38.0`
+SQLite,3.43.1,foss/2023b,`module load foss/2023b SQLite/3.43.1`
+cryptography,41.0.5,foss/2023b,`module load foss/2023b cryptography/41.0.5`
+libreadline,8.2,foss/2023b,`module load foss/2023b libreadline/8.2`
+numactl,2.0.16,foss/2023b,`module load foss/2023b numactl/2.0.16`
+Python,3.11.5,foss/2023b,`module load foss/2023b Python/3.11.5`
+help2man,1.49.3,foss/2023b,`module load foss/2023b help2man/1.49.3`
+flex,2.6.4,foss/2023b,`module load foss/2023b flex/2.6.4`
+UCC,1.2.0,foss/2023b,`module load foss/2023b UCC/1.2.0`
+cURL,8.3.0,foss/2023b,`module load foss/2023b cURL/8.3.0`
+libfabric,1.19.0,foss/2023b,`module load foss/2023b libfabric/1.19.0`
+libiconv,1.17,foss/2023b,`module load foss/2023b libiconv/1.17`
+CMake,3.27.6,foss/2023b,`module load foss/2023b CMake/3.27.6`
+bzip2,1.0.8,foss/2023b,`module load foss/2023b bzip2/1.0.8`
+Automake,1.16.5,foss/2023b,`module load foss/2023b Automake/1.16.5`
+libtool,2.4.7,foss/2023b,`module load foss/2023b libtool/2.4.7`
+pybind11,2.11.1,foss/2023b,`module load foss/2023b pybind11/2.11.1`
+xorg-macros,1.20.0,foss/2023b,`module load foss/2023b xorg-macros/1.20.0`
+cffi,1.15.1,foss/2023b,`module load foss/2023b cffi/1.15.1`
+binutils,2.40,foss/2023b,`module load foss/2023b binutils/2.40`
+libpciaccess,0.17,foss/2023b,`module load foss/2023b libpciaccess/0.17`
+make,4.4.1,foss/2023b,`module load foss/2023b make/4.4.1`
+UCX,1.15.0,foss/2023b,`module load foss/2023b UCX/1.15.0`
+PMIx,4.2.6,foss/2023b,`module load foss/2023b PMIx/4.2.6`
+ncurses,6.4,foss/2023b,`module load foss/2023b ncurses/6.4`
+Perl-bundle-njit,5.38.0,foss/2023b,`module load foss/2023b Perl-bundle-njit/5.38.0`
+libevent,2.1.12,foss/2023b,`module load foss/2023b libevent/2.1.12`
+hwloc,2.9.2,foss/2023b,`module load foss/2023b hwloc/2.9.2`
+libxml2,2.11.5,foss/2023b,`module load foss/2023b libxml2/2.11.5`
+git,2.42.0,foss/2023b,`module load foss/2023b git/2.42.0`
+UnZip,6.0,foss/2023b,`module load foss/2023b UnZip/6.0`
+poetry,1.6.1,foss/2023b,`module load foss/2023b poetry/1.6.1`
+hypothesis,6.90.0,foss/2023b,`module load foss/2023b hypothesis/6.90.0`
+Catch2,2.13.9,foss/2023b,`module load foss/2023b Catch2/2.13.9`
+meson-python,0.15.0,foss/2023b,`module load foss/2023b meson-python/0.15.0`
+Python-bundle-PyPI,2023.10,foss/2023b,`module load foss/2023b Python-bundle-PyPI/2023.10`
+pkgconf,2.0.3,foss/2023b,`module load foss/2023b pkgconf/2.0.3`
 libsndfile,1.2.0,foss/2022b,`module load foss/2022b libsndfile/1.2.0`
 nodejs,18.12.1,foss/2022b,`module load foss/2022b nodejs/18.12.1`
 Rust,1.65.0,foss/2022b,`module load foss/2022b Rust/1.65.0`

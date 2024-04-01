@@ -2627,6 +2627,12 @@
 </tr>
 <tr>
 <td style="text-align: left;">GROMACS</td>
+<td style="text-align: left;">2024.1</td>
+<td style="text-align: left;">foss/2023b</td>
+<td style="text-align: left;"><code>module load foss/2023b GROMACS/2024.1</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">GROMACS</td>
 <td style="text-align: left;">2023.1-CUDA-12.0.0</td>
 <td style="text-align: left;">foss/2022b</td>
 <td style="text-align: left;"><code>module load foss/2022b GROMACS/2023.1-CUDA-12.0.0</code></td>
@@ -2682,16 +2688,16 @@
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 <span class="c1"># NOTE the -l (login) flag!</span>
 <span class="kp">#SBATCH -J gmx2023</span>
-<span class="kp">#SBATCH -o test.out</span>
-<span class="kp">#SBATCH -e test.err</span>
+<span class="kp">#SBATCH -o test.%x.%j.out</span>
+<span class="kp">#SBATCH -e test.%x.%j.err</span>
 <span class="kp">#SBATCH --mail-type=ALL</span>
 <span class="kp">#SBATCH --partition=gpu</span>
 <span class="kp">#SBATCH --qos=standard</span>
 <span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
-<span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks-per-node=4</span>
+<span class="kp">#SBATCH --nodes=2</span>
+<span class="kp">#SBATCH --ntasks-per-node=2</span>
 <span class="kp">#SBATCH --cpus-per-task=2</span>
-<span class="kp">#SBATCH --gres=gpu:2  </span>
+<span class="kp">#SBATCH --gpus-per-node=4  </span>
 <span class="kp">#SBATCH --account=PI_ucid  # Replace PI_ucid with the UCID of PI, if you don&#39;t know PI&#39;s UCID use &quot;sacctmgr show user username&quot; on the login screen, replace &quot;username&quot; with your UCID</span>
 
 module<span class="w"> </span>purge
@@ -2704,7 +2710,7 @@ module<span class="w"> </span>load<span class="w"> </span>foss/2022b<span class=
 cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
 
-gmx<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-ntmpi<span class="w"> </span><span class="m">8</span><span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-nb<span class="w"> </span>gpu
+<span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-nb<span class="w"> </span>gpu<span class="w"> </span>-noappend
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2757,15 +2763,14 @@ gmx<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </spa
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
 <span class="c1"># NOTE the -l (login) flag!</span>
 <span class="kp">#SBATCH -J gmx2021</span>
-<span class="kp">#SBATCH -o test.out</span>
-<span class="kp">#SBATCH -e test.err</span>
+<span class="kp">#SBATCH -o test.%x.%j.out</span>
+<span class="kp">#SBATCH -e test.%x.%j.err</span>
 <span class="kp">#SBATCH --mail-type=ALL</span>
 <span class="kp">#SBATCH --partition=general</span>
 <span class="kp">#SBATCH --qos=standard</span>
 <span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
 <span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks-per-node=4</span>
-<span class="kp">#SBATCH --cpus-per-task=2</span>
+<span class="kp">#SBATCH --ntasks-per-node=8</span>
 <span class="kp">#SBATCH --account=PI_ucid  # Replace PI_ucid with the UCID of PI, if you don&#39;t know PI&#39;s UCID use &quot;sacctmgr show user username&quot; on the login screen, replace &quot;username&quot; with your UCID</span>
 
 module<span class="w"> </span>purge
@@ -2778,7 +2783,7 @@ module<span class="w"> </span>load<span class="w"> </span>foss/2021b<span class=
 cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
 
-gmx<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-ntmpi<span class="w"> </span><span class="m">8</span><span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-nb<span class="w"> </span>gpu
+<span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2817,7 +2822,7 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR<
 <span class="c1"># Run simulation</span>
 <span class="c1">#</span>
 <span class="c1">##############################################</span>
-gmx<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-nt<span class="w"> </span><span class="m">16</span><span class="w"> </span>-nb<span class="w"> </span>gpu
+<span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-nb<span class="w"> </span>gpu<span class="w"> </span>-noappend
 </code></pre></div>
 </div>
 </div>

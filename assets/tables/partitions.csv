@@ -1,5 +1,5 @@
 Partition,Nodes,Cores/Node,CPU,GPU,Memory,Service Unit (SU) Charge
 `--partition=general`,100,128,2.5G GHz AMD EPYC 7763 (2),NA,512 GB,1 SU per hour per cpu
 `--partition=debug`,1,4,2.5G GHz AMD EPYC 7763 (2),NA,512 GB,"No charges, must be used with `--qos=debug`"
-`--partition=gpu`,25,128,2.0 GHz AMD EPYC 7713 (2),NVIDIA A100 GPUs (4),512 GB,3 SU per hour per GPU
+`--partition=gpu`,25,128,2.0 GHz AMD EPYC 7713 (2),NVIDIA A100 GPUs (4),512 GB,3 SU per hour per GPU node
 `--partition=bigmem`,2,128,2.5G GHz AMD EPYC 7763 (2),NA,2 TB,1.5 SU per CPU hour

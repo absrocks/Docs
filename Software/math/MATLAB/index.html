@@ -2605,7 +2605,7 @@
 <span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
 <span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
 <span class="kp">#SBATCH --partition=general</span>
-<span class="kp">#SBATCH -nodes=1</span>
+<span class="kp">#SBATCH --nodes=1</span>
 <span class="kp">#SBATCH --ntasks-per-node=1</span>
 <span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
 <span class="kp">#SBATCH --qos=standard</span>
@@ -2617,14 +2617,14 @@ module<span class="w"> </span>purge
 module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load the slurm, easybuild </span>
 module<span class="w"> </span>load<span class="w"> </span>MATLAB
 
-matlab<span class="w"> </span>--nodisplay<span class="w"> </span>--nosplash<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
+matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="kp">#SBATCH -J test_matlab</span>
 <span class="kp">#SBATCH --partition=public</span>
-<span class="kp">#SBATCH -nodes=1</span>
+<span class="kp">#SBATCH --nodes=1</span>
 <span class="kp">#SBATCH --ntasks-per-node=1</span>
 <span class="kp">#SBATCH - t 30:00</span>
 
@@ -2632,7 +2632,7 @@ matlab<span class="w"> </span>--nodisplay<span class="w"> </span>--nosplash<span
 module<span class="w"> </span>purge
 module<span class="w"> </span>load<span class="w"> </span>MATLAB/2022a
 
-matlab<span class="w"> </span>--nodisplay<span class="w"> </span>--nosplash<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
+matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 </div>
 </div>
@@ -2653,8 +2653,10 @@ matlab<span class="w"> </span>--nodisplay<span class="w"> </span>--nosplash<span
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="kp">#SBATCH -J test_matlab</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+<span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
 <span class="kp">#SBATCH --partition=general</span>
-<span class="kp">#SBATCH -nodes=1</span>
+<span class="kp">#SBATCH --nodes=1</span>
 <span class="kp">#SBATCH --ntasks-per-node=32</span>
 <span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
 <span class="kp">#SBATCH --qos=standard</span>
@@ -2667,23 +2669,23 @@ module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w">
 module<span class="w"> </span>load<span class="w"> </span>MATLAB
 
 <span class="c1"># Run matlab</span>
-matlab<span class="w"> </span>-nodisplay<span class="w"> </span>--nosplash<span class="w"> </span>-r<span class="w"> </span>for_loop.m
+matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;for_loop; quit&#39;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="kp">#SBATCH -J test_matlab</span>
 <span class="kp">#SBATCH --partition=public</span>
-<span class="kp">#SBATCH -nodes=1</span>
+<span class="kp">#SBATCH --nodes=1</span>
 <span class="kp">#SBATCH --ntasks-per-node=32</span>
-<span class="kp">#SBATCH - t 30:00</span>
+<span class="kp">#SBATCH --time=30:00</span>
 
 <span class="c1"># Load matlab module</span>
 module<span class="w"> </span>purge
 module<span class="w"> </span>load<span class="w"> </span>MATLAB/2022a
 
 <span class="c1"># Run matlab</span>
-matlab<span class="w"> </span>-nodisplay<span class="w"> </span>--nosplash<span class="w"> </span>-r<span class="w"> </span>for_loop.m
+matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;for_loop; quit&#39;</span>
 </code></pre></div>
 </div>
 </div>

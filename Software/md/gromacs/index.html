@@ -2583,7 +2583,7 @@
 <p><a href="https://www.gromacs.org">GROMACS</a> is a versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.</p>
 <p>It is primarily designed for biochemical molecules like proteins, lipids, and nucleic acids that have a lot of complicated bonded interactions, but since GROMACS is extremely fast at calculating the nonbonded interactions (that usually dominate simulations) many groups are also using it for research on non-biological systems, e.g. polymers.</p>
 <h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><input id="availability-lochness" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label><label for="availability-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><table>
@@ -2624,39 +2624,6 @@
 </table><div class="markdown-exec"></div>
 </p>
 </div>
-<div class="tabbed-block">
-<p><table>
-<thead>
-<tr>
-<th style="text-align: left;">Software</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">Dependent Toolchain</th>
-<th style="text-align: left;">Module Load Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">GROMACS</td>
-<td style="text-align: left;">2020.4-Python-3.8.2</td>
-<td style="text-align: left;">foss/2020a</td>
-<td style="text-align: left;"><code>module load foss/2020a GROMACS/2020.4-Python-3.8.2</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">GROMACS</td>
-<td style="text-align: left;">2021.5-CUDA-11.4.1</td>
-<td style="text-align: left;">foss/2021b</td>
-<td style="text-align: left;"><code>module load foss/2021b GROMACS/2021.5-CUDA-11.4.1</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">GROMACS</td>
-<td style="text-align: left;">2021.5</td>
-<td style="text-align: left;">foss/2021b</td>
-<td style="text-align: left;"><code>module load foss/2021b GROMACS/2021.5</code></td>
-</tr>
-</tbody>
-</table><div class="markdown-exec"></div>
-</p>
-</div>
 </div>
 </div>
 <h2 id="application-information-documentation">Application Information, Documentation<a class="headerlink" href="#application-information-documentation" title="Permanent link">&para;</a></h2>
@@ -2665,7 +2632,7 @@
 <p>GROMACS can be used on CPU or GPU. When using GROMACS with GPUs (Graphics Processing Units), the calculations can be significantly accelerated, allowing for faster simulations. You can use GROMACS with GPU acceleration, but you need to use GPU nodes on our cluster. </p>
 <details class="example">
 <summary>Sample Batch Script to Run GROMACS on GPU gmx_gpu.submit.sh</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="using-gromacs-wulver" name="__tabbed_2" type="radio" /><input id="using-gromacs-lochness" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-wulver">Wulver</label><label for="using-gromacs-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="using-gromacs-wulver" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
@@ -2696,51 +2663,12 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR<
 <span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-nb<span class="w"> </span>gpu<span class="w"> </span>-noappend
 </code></pre></div>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
-<span class="kp">#SBATCH --job-name=gpu-esculentin</span>
-<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-<span class="kp">#SBATCH --partition=datasci</span>
-<span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks-per-node=16</span>
-<span class="kp">#SBATCH --gres=gpu:1 # Number of GPUs per node</span>
-<span class="kp">#SBATCH --time=24:59:00  # D-HH:MM:SS</span>
-<span class="kp">#SBATCH --mail-type=ALL</span>
-
-<span class="c1">################################################</span>
-<span class="c1">#</span>
-<span class="c1"># Purge and load modules needed to run</span>
-<span class="c1">#</span>
-<span class="c1">################################################</span>
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>foss/2021b<span class="w"> </span>CUDA/11.4.1
-module<span class="w"> </span>load<span class="w"> </span>GROMACS/2021.5-CUDA-11.4.1
-
-<span class="c1">###############################################</span>
-<span class="c1">#</span>
-<span class="c1"># cd into case directory if required</span>
-<span class="c1">#</span>
-<span class="c1">################################################</span>
-<span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/input_files_v2020
-<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/output
-
-cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
-
-<span class="c1">###############################################</span>
-<span class="c1">#</span>
-<span class="c1"># Run simulation</span>
-<span class="c1">#</span>
-<span class="c1">##############################################</span>
-gmx<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-nt<span class="w"> </span><span class="m">16</span><span class="w"> </span>-nb<span class="w"> </span>gpu
-</code></pre></div>
-</div>
 </div>
 </div>
 </details>
 <details class="example">
 <summary>Sample Batch Script to Run GROMACS on CPU gmx_cpu.submit.sh</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="using-gromacs-wulver_1" name="__tabbed_3" type="radio" /><input id="using-gromacs-lochness_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-wulver_1">Wulver</label><label for="using-gromacs-lochness_1">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="using-gromacs-wulver_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-wulver_1">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
@@ -2769,56 +2697,14 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR<
 <span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
 </code></pre></div>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
-<span class="kp">#SBATCH --job-name=gpu-esculentin</span>
-<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-<span class="kp">#SBATCH --partition=datasci</span>
-<span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks-per-node=16</span>
-<span class="kp">#SBATCH --gres=gpu:1 # Number of GPUs per node</span>
-<span class="kp">#SBATCH --time=24:59:00  # D-HH:MM:SS</span>
-<span class="kp">#SBATCH --mail-type=ALL</span>
-
-<span class="c1">################################################</span>
-<span class="c1">#</span>
-<span class="c1"># Purge and load modules needed to run</span>
-<span class="c1">#</span>
-<span class="c1">################################################</span>
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>foss/2021b<span class="w"> </span>
-module<span class="w"> </span>load<span class="w"> </span>GROMACS/2021.5
-
-<span class="c1">###############################################</span>
-<span class="c1">#</span>
-<span class="c1"># cd into case directory if required</span>
-<span class="c1">#</span>
-<span class="c1">################################################</span>
-<span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/input_files_v2020
-<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/output
-
-cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
-
-<span class="c1">###############################################</span>
-<span class="c1">#</span>
-<span class="c1"># Run simulation</span>
-<span class="c1">#</span>
-<span class="c1">##############################################</span>
-<span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-nb<span class="w"> </span>gpu<span class="w"> </span>-noappend
-</code></pre></div>
-</div>
 </div>
 </div>
 </details>
 <p>The tutorial in the above-mentioned job script can be found in </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="using-gromacs-wulver_2" name="__tabbed_4" type="radio" /><input id="using-gromacs-lochness_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-wulver_2">Wulver</label><label for="using-gromacs-lochness_2">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="using-gromacs-wulver_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-wulver_2">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><code>/apps/testjobs/gromacs</code></p>
-</div>
-<div class="tabbed-block">
-<p><code>/opt/site/examples/gromacs</code></p>
 </div>
 </div>
 </div>

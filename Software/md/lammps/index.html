@@ -2603,7 +2603,7 @@ polymers), solid-state materials (metals, semiconductors) and coarse-grained or
 mesoscopic systems. It can be used to model atoms or, more generically, as a
 parallel particle simulator at the atomic, meso, or continuum scale.</p>
 <h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><input id="availability-lochness" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label><label for="availability-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><table>
@@ -2632,33 +2632,6 @@ parallel particle simulator at the atomic, meso, or continuum scale.</p>
 </table><div class="markdown-exec"></div>
 </p>
 </div>
-<div class="tabbed-block">
-<p><table>
-<thead>
-<tr>
-<th style="text-align: left;">Software</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">Dependent Toolchain</th>
-<th style="text-align: left;">Module Load Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">LAMMPS</td>
-<td style="text-align: left;">3Mar2020-Python-3.8.2-kokkos</td>
-<td style="text-align: left;">foss/2020a</td>
-<td style="text-align: left;"><code>module load foss/2020a LAMMPS/3Mar2020-Python-3.8.2-kokkos</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">LAMMPS</td>
-<td style="text-align: left;">23Jun2022-kokkos-CUDA-11.4.1</td>
-<td style="text-align: left;">foss/2021b</td>
-<td style="text-align: left;"><code>module load foss/2021b LAMMPS/23Jun2022-kokkos-CUDA-11.4.1</code></td>
-</tr>
-</tbody>
-</table><div class="markdown-exec"></div>
-</p>
-</div>
 </div>
 </div>
 <div class="admonition note">
@@ -2675,7 +2648,7 @@ with the module, please file a ticket with <a href="mailto:hpc@njit.edu">Service
 <h2 id="using-lammps">Using LAMMPS<a class="headerlink" href="#using-lammps" title="Permanent link">&para;</a></h2>
 <details class="example">
 <summary>Sample Batch Script to Run LAMMPS</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="using-lammps-wulver" name="__tabbed_2" type="radio" /><input id="using-lammps-lochness" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="using-lammps-wulver">Wulver</label><label for="using-lammps-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="using-lammps-wulver" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="using-lammps-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2685,7 +2658,7 @@ with the module, please file a ticket with <a href="mailto:hpc@njit.edu">Service
 <span class="kp">#SBATCH --partition=general </span>
 <span class="kp">#SBATCH --nodes=1</span>
 <span class="kp">#SBATCH --ntasks-per-node=128</span>
-<span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
+<span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable memory per CPU 4G</span>
 <span class="kp">#SBATCH --qos=standard</span>
 <span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
 <span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
@@ -2699,28 +2672,7 @@ module<span class="w"> </span>purge
 module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
 module<span class="w"> </span>load<span class="w"> </span>foss/2021b<span class="w"> </span>LAMMPS
 
-<span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span>test.in
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="kp">#SBATCH -J test_lammps</span>
-<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-<span class="kp">#SBATCH --partition=public</span>
-<span class="kp">#SBATCH --nodes=2</span>
-<span class="kp">#SBATCH --ntasks-per-node=32</span>
-<span class="kp">#SBATCH --mem-per-cpu=10G # Adjust as necessary</span>
-<span class="kp">#SBATCH --time=00:01:00  # D-HH:MM:SS</span>
-
-<span class="c1">###############################################</span>
-<span class="c1">#</span>
-<span class="c1"># Purge and load modules needed for run</span>
-<span class="c1">#</span>
-<span class="c1">################################################</span>
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>foss/2021b<span class="w"> </span>LAMMPS
-
-<span class="nb">srun</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span>test.in
+<span class="nb">srun</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span>test.in
 </code></pre></div>
 </div>
 </div>

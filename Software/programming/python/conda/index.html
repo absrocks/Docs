@@ -1754,6 +1754,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Mamba: The Conda Alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-installing-pytorch-via-mamba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Installing PyTorch via Mamba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2743,6 +2758,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Mamba: The Conda Alternative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-installing-pytorch-via-mamba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Installing PyTorch via Mamba
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2879,6 +2909,10 @@ Make sure to activate the conda environment prior to installing Python packages.
 <h3 id="conda-channel">Conda Channel<a class="headerlink" href="#conda-channel" title="Permanent link">&para;</a></h3>
 <p>Conda Channel refers to a repository or collection of software packages that are available for installation using Conda. Conda Channels are used to organize and distribute packages, and they play a crucial role in the Conda ecosystem. Channels can be specified using the <code>--channel</code> or <code>-c</code> option with the conda install command i.e. 
 <code>conda install -c channel_name package_name</code>. In the above example, if you want to specify the channel name to install <code>matplotlib</code>, you need to use</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since memory and CPU usage are limited, it's better to start an <a href="../../../slurm/slurm/#interactive-session-on-a-compute-node">interactive session with the compute node</a> whenever you are installing Python packages via Conda.</p>
+</div>
 <p><div class="highlight"><pre><span></span><code><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span>login-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>matplotlib
 </code></pre></div>
 This will install <code>matplotlib</code> from <code>conda-forge</code> channel which is a community-maintained collection of Conda packages where a wide range of packages contributed by the community are available. 
@@ -3014,40 +3048,40 @@ conda<span class="w"> </span>activate<span class="w"> </span>tf
 </div>
 </details>
 <p>Result:
-<div class="highlight"><pre><span></span><code>Starting /home/g/guest24/.bash_profile ... standard AFS bash profile
+<div class="highlight"><pre><span></span><code>Starting<span class="w"> </span>/home/g/guest24/.bash_profile<span class="w"> </span>...<span class="w"> </span>standard<span class="w"> </span>AFS<span class="w"> </span>bash<span class="w"> </span>profile
 
-Home directory : /home/g/guest24 is not in AFS -- skipping quota check
+Home<span class="w"> </span>directory<span class="w"> </span>:<span class="w"> </span>/home/g/guest24<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span><span class="k">in</span><span class="w"> </span>AFS<span class="w"> </span>--<span class="w"> </span>skipping<span class="w"> </span>quota<span class="w"> </span>check
 
-On host node430 :
-         17:14:13 up 1 day,  1:17,  0 users,  load average: 0.01, 0.07, 0.06
+On<span class="w"> </span>host<span class="w"> </span>node430<span class="w"> </span>:
+<span class="w">         </span><span class="m">17</span>:14:13<span class="w"> </span>up<span class="w"> </span><span class="m">1</span><span class="w"> </span>day,<span class="w">  </span><span class="m">1</span>:17,<span class="w">  </span><span class="m">0</span><span class="w"> </span>users,<span class="w">  </span>load<span class="w"> </span>average:<span class="w"> </span><span class="m">0</span>.01,<span class="w"> </span><span class="m">0</span>.07,<span class="w"> </span><span class="m">0</span>.06
 
-      Your Kerberos ticket and AFS token status 
-klist: No credentials cache found (filename: /tmp/krb5cc_22967_HvCVvuvMMX)
-Kerberos :
-AFS      :
+<span class="w">      </span>Your<span class="w"> </span>Kerberos<span class="w"> </span>ticket<span class="w"> </span>and<span class="w"> </span>AFS<span class="w"> </span>token<span class="w"> </span>status<span class="w"> </span>
+klist:<span class="w"> </span>No<span class="w"> </span>credentials<span class="w"> </span>cache<span class="w"> </span>found<span class="w"> </span><span class="o">(</span>filename:<span class="w"> </span>/tmp/krb5cc_22967_HvCVvuvMMX<span class="o">)</span>
+Kerberos<span class="w"> </span>:
+AFS<span class="w">      </span>:
 
-Loading default modules ...
-Create file : &quot;/home/g/guest24/.modules&quot; to customize.
+Loading<span class="w"> </span>default<span class="w"> </span>modules<span class="w"> </span>...
+Create<span class="w"> </span>file<span class="w"> </span>:<span class="w"> </span><span class="s2">&quot;/home/g/guest24/.modules&quot;</span><span class="w"> </span>to<span class="w"> </span>customize.
 
-No modules loaded
-2020-07-29 17:14:19.047276: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
-2020-07-29 17:14:19.059941: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2200070000 Hz
-2020-07-29 17:14:19.060093: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ea8ebfdb90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-07-29 17:14:19.060136: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-07-29 17:14:19.061484: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+No<span class="w"> </span>modules<span class="w"> </span>loaded
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.047276:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/platform/cpu_feature_guard.cc:143<span class="o">]</span><span class="w"> </span>Your<span class="w"> </span>CPU<span class="w"> </span>supports<span class="w"> </span>instructions<span class="w"> </span>that<span class="w"> </span>this<span class="w"> </span>TensorFlow<span class="w"> </span>binary<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>compiled<span class="w"> </span>to<span class="w"> </span>use:<span class="w"> </span>SSE4.1<span class="w"> </span>SSE4.2<span class="w"> </span>AVX<span class="w"> </span>AVX2<span class="w"> </span>FMA
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.059941:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/platform/profile_utils/cpu_utils.cc:102<span class="o">]</span><span class="w"> </span>CPU<span class="w"> </span>Frequency:<span class="w"> </span><span class="m">2200070000</span><span class="w"> </span>Hz
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.060093:<span class="w"> </span>I<span class="w"> </span>tensorflow/compiler/xla/service/service.cc:168<span class="o">]</span><span class="w"> </span>XLA<span class="w"> </span>service<span class="w"> </span>0x55ea8ebfdb90<span class="w"> </span>initialized<span class="w"> </span><span class="k">for</span><span class="w"> </span>platform<span class="w"> </span>Host<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>guarantee<span class="w"> </span>that<span class="w"> </span>XLA<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used<span class="o">)</span>.<span class="w"> </span>Devices:
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.060136:<span class="w"> </span>I<span class="w"> </span>tensorflow/compiler/xla/service/service.cc:176<span class="o">]</span><span class="w">   </span>StreamExecutor<span class="w"> </span>device<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="o">)</span>:<span class="w"> </span>Host,<span class="w"> </span>Default<span class="w"> </span>Version
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.061484:<span class="w"> </span>I<span class="w"> </span>tensorflow/stream_executor/platform/default/dso_loader.cc:44<span class="o">]</span><span class="w"> </span>Successfully<span class="w"> </span>opened<span class="w"> </span>dynamic<span class="w"> </span>library<span class="w"> </span>libcuda.so.1
 
-&lt;ouput snipped&gt;
+&lt;ouput<span class="w"> </span>snipped&gt;
 
-2020-07-29 17:14:19.817386: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
-2020-07-29 17:14:19.817392: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0
-2020-07-29 17:14:19.817397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N
-2020-07-29 17:14:19.819082: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/device:GPU:0 with 15064 MB memory) -&gt; physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:02:00.0, compute capability: 6.0)
-Default GPU Device: /device:GPU:0
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.817386:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1102<span class="o">]</span><span class="w"> </span>Device<span class="w"> </span>interconnect<span class="w"> </span>StreamExecutor<span class="w"> </span>with<span class="w"> </span>strength<span class="w"> </span><span class="m">1</span><span class="w"> </span>edge<span class="w"> </span>matrix:
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.817392:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1108<span class="o">]</span><span class="w">      </span><span class="m">0</span>
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.817397:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1121<span class="o">]</span><span class="w"> </span><span class="m">0</span>:<span class="w">   </span>N
+<span class="m">2020</span>-07-29<span class="w"> </span><span class="m">17</span>:14:19.819082:<span class="w"> </span>I<span class="w"> </span>tensorflow/core/common_runtime/gpu/gpu_device.cc:1247<span class="o">]</span><span class="w"> </span>Created<span class="w"> </span>TensorFlow<span class="w"> </span>device<span class="w"> </span><span class="o">(</span>/device:GPU:0<span class="w"> </span>with<span class="w"> </span><span class="m">15064</span><span class="w"> </span>MB<span class="w"> </span>memory<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span>physical<span class="w"> </span>GPU<span class="w"> </span><span class="o">(</span>device:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>name:<span class="w"> </span>Tesla<span class="w"> </span>P100-PCIE-16GB,<span class="w"> </span>pci<span class="w"> </span>bus<span class="w"> </span>id:<span class="w"> </span><span class="m">0000</span>:02:00.0,<span class="w"> </span>compute<span class="w"> </span>capability:<span class="w"> </span><span class="m">6</span>.0<span class="o">)</span>
+Default<span class="w"> </span>GPU<span class="w"> </span>Device:<span class="w"> </span>/device:GPU:0
 </code></pre></div>
 Next, deactivate the environment using <code>conda deactivate tf</code> command.</p>
 <h4 id="install-pytorch-with-gpu">Install PyTorch with GPU<a class="headerlink" href="#install-pytorch-with-gpu" title="Permanent link">&para;</a></h4>
 <p>To install PyTorch with GPU, load the <code>Anaconda3</code> module as described above and then use the following</p>
-<div class="highlight"><pre><span></span><code>conda create --name torch-cuda python=3.7
+<div class="highlight"><pre><span></span><code>conda create --name torch-cuda python=3.8
 source conda.sh
 conda activate torch-cuda
 conda install -c &quot;nvidia/label/cuda-11.7.0&quot; cuda-toolkit
@@ -3154,6 +3188,19 @@ mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"
 conda<span class="w"> </span>activate<span class="w"> </span>env_name
 mamba<span class="w"> </span>install<span class="w"> </span>scipy
 </code></pre></div></p>
+<h3 id="example-of-installing-pytorch-via-mamba">Example of Installing PyTorch via Mamba<a class="headerlink" href="#example-of-installing-pytorch-via-mamba" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>torch-cuda
+<span class="nb">source</span><span class="w"> </span>conda.sh
+conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
+module<span class="w"> </span>load<span class="w"> </span>Mamba
+mamba<span class="w"> </span>install<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.1<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
+</code></pre></div>
+<p>This will install pytorch in the <code>torch-cuda</code> environment.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure to unload the Mamba module, as when you use <code>Anaconda3</code> and <code>Mamba</code> together, Mamba installs the PyTorch packages within the Conda environment. Consequently, the next time you activate this environment, there's no need to load the 'Mamba' module. Only employ 'Mamba' when installing the packages.</p>
+</div>
 <h2 id="export-and-import-conda-environment">Export and Import Conda Environment<a class="headerlink" href="#export-and-import-conda-environment" title="Permanent link">&para;</a></h2>
 <p>Exporting and importing Conda environments allows users to capture and reproduce the exact set of dependencies for a project. With Conda, a popular package and environment management system, users can export an environment, including all installed packages, into a YAML file. This file can then be shared or version-controlled. Importing the environment from the YAML file on another system ensures consistent dependencies, making it easier to recreate the development or execution environment. </p>
 <div class="admonition tips">

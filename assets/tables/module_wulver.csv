@@ -434,12 +434,14 @@ UCX,1.15.0,foss/2023b,`module load foss/2023b UCX/1.15.0`
 PMIx,4.2.6,foss/2023b,`module load foss/2023b PMIx/4.2.6`
 ncurses,6.4,foss/2023b,`module load foss/2023b ncurses/6.4`
 Perl-bundle-njit,5.38.0,foss/2023b,`module load foss/2023b Perl-bundle-njit/5.38.0`
+makeinfo,7.1,foss/2023b,`module load foss/2023b makeinfo/7.1`
 libevent,2.1.12,foss/2023b,`module load foss/2023b libevent/2.1.12`
 hwloc,2.9.2,foss/2023b,`module load foss/2023b hwloc/2.9.2`
 libxml2,2.11.5,foss/2023b,`module load foss/2023b libxml2/2.11.5`
 git,2.42.0,foss/2023b,`module load foss/2023b git/2.42.0`
 UnZip,6.0,foss/2023b,`module load foss/2023b UnZip/6.0`
 poetry,1.6.1,foss/2023b,`module load foss/2023b poetry/1.6.1`
+PyInstaller,6.3.0,foss/2023b,`module load foss/2023b PyInstaller/6.3.0`
 hypothesis,6.90.0,foss/2023b,`module load foss/2023b hypothesis/6.90.0`
 Catch2,2.13.9,foss/2023b,`module load foss/2023b Catch2/2.13.9`
 meson-python,0.15.0,foss/2023b,`module load foss/2023b meson-python/0.15.0`
@@ -581,6 +583,7 @@ binutils,2.39,foss/2022b,`module load foss/2022b binutils/2.39`
 Brotli,1.0.9,foss/2022b,`module load foss/2022b Brotli/1.0.9`
 PCRE2,10.40,foss/2022b,`module load foss/2022b PCRE2/10.40`
 Imath,3.1.6,foss/2022b,`module load foss/2022b Imath/3.1.6`
+parallel,20230722,foss/2022b,`module load foss/2022b parallel/20230722`
 libpciaccess,0.17,foss/2022b,`module load foss/2022b libpciaccess/0.17`
 FFmpeg,5.1.2,foss/2022b,`module load foss/2022b FFmpeg/5.1.2`
 FFmpeg,6.1.1,foss/2022b,`module load foss/2022b FFmpeg/6.1.1`

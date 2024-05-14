@@ -2528,7 +2528,7 @@
 <h1 id="matlab">MATLAB<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h1>
 <p>MATLAB (matrix laboratory) is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages. Although MATLAB is intended primarily for numerical computing, an optional toolbox uses the MuPAD symbolic engine allowing access to symbolic computing abilities. An additional package, Simulink, adds graphical multi-domain simulation and model-based design for dynamic and embedded systems.</p>
 <h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><input id="availability-lochness" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label><label for="availability-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="availability-wulver" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="availability-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><table>
@@ -2551,36 +2551,15 @@
 </table><div class="markdown-exec"></div>
 </p>
 </div>
-<div class="tabbed-block">
-<p><table>
-<thead>
-<tr>
-<th style="text-align: left;">Software</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">Dependent Toolchain</th>
-<th style="text-align: left;">Module Load Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">MATLAB</td>
-<td style="text-align: left;">2022a</td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;"><code>module load MATLAB/2022a</code></td>
-</tr>
-</tbody>
-</table><div class="markdown-exec"></div>
-</p>
-</div>
 </div>
 </div>
 <h2 id="application-information-documentation">Application Information, Documentation<a class="headerlink" href="#application-information-documentation" title="Permanent link">&para;</a></h2>
-<p>The documentation of MATLAB is available at <a href="https://www.mathworks.com/support/learn-with-matlab-tutorials.html">MATLAB Tutorial</a></p>
+<p>The documentation of MATLAB is available at <a href="https://www.mathworks.com/support/learn-with-matlab-tutorials.html">MATLAB Tutorial</a>.</p>
 <h2 id="using-matlab">Using MATLAB<a class="headerlink" href="#using-matlab" title="Permanent link">&para;</a></h2>
 <h3 id="serial-job">Serial Job<a class="headerlink" href="#serial-job" title="Permanent link">&para;</a></h3>
 <details class="exmaple">
 <summary>Sample Batch Script to run MATLAB: matlab-serial.sh</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="serial-job-wulver" name="__tabbed_2" type="radio" /><input id="serial-job-lochness" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="serial-job-wulver">Wulver</label><label for="serial-job-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="serial-job-wulver" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="serial-job-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2603,21 +2582,6 @@ module<span class="w"> </span>load<span class="w"> </span>MATLAB
 matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="kp">#SBATCH -J test_matlab</span>
-<span class="kp">#SBATCH --partition=public</span>
-<span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks-per-node=1</span>
-<span class="kp">#SBATCH - t 30:00</span>
-
-<span class="c1"># Load matlab module</span>
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>MATLAB/2022a
-
-matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span>
-</code></pre></div>
-</div>
 </div>
 </div>
 </details>
@@ -2631,7 +2595,7 @@ matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span c
 <h3 id="single-node-parallelization">Single node parallelization<a class="headerlink" href="#single-node-parallelization" title="Permanent link">&para;</a></h3>
 <details class="exmaple">
 <summary>Sample Batch Script to run MATLAB: matlab_parallel.sh</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="single-node-parallelization-wulver" name="__tabbed_3" type="radio" /><input id="single-node-parallelization-lochness" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="single-node-parallelization-wulver">Wulver</label><label for="single-node-parallelization-lochness">Lochness</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="single-node-parallelization-wulver" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="single-node-parallelization-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2650,22 +2614,6 @@ matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span c
 module<span class="w"> </span>purge
 module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load the slurm, easybuild</span>
 module<span class="w"> </span>load<span class="w"> </span>MATLAB
-
-<span class="c1"># Run matlab</span>
-matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;for_loop; quit&#39;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="kp">#SBATCH -J test_matlab</span>
-<span class="kp">#SBATCH --partition=public</span>
-<span class="kp">#SBATCH --nodes=1</span>
-<span class="kp">#SBATCH --ntasks-per-node=32</span>
-<span class="kp">#SBATCH --time=30:00</span>
-
-<span class="c1"># Load matlab module</span>
-module<span class="w"> </span>purge
-module<span class="w"> </span>load<span class="w"> </span>MATLAB/2022a
 
 <span class="c1"># Run matlab</span>
 matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;for_loop; quit&#39;</span>

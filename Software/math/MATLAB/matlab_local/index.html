@@ -1407,9 +1407,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-a-profile-for-lochness-or-stheno" class="md-nav__link">
+  <a href="#creating-a-profile-for-wulver" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a Profile for Lochness or Stheno
+      Creating a Profile for Wulver
     </span>
   </a>
   
@@ -2591,9 +2591,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#creating-a-profile-for-lochness-or-stheno" class="md-nav__link">
+  <a href="#creating-a-profile-for-wulver" class="md-nav__link">
     <span class="md-ellipsis">
-      Creating a Profile for Lochness or Stheno
+      Creating a Profile for Wulver
     </span>
   </a>
   
@@ -2672,7 +2672,7 @@
 <h2 id="installation-steps-of-matlab-on-local-machine">Installation steps of MATLAB on local machine<a class="headerlink" href="#installation-steps-of-matlab-on-local-machine" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Go to <a href="https://www.mathworks.com/downloads/">Mathworks Download</a> and register with your NJIT email address.</li>
-<li>Select the <strong>R2022a</strong> version to download. </li>
+<li>Select the <a href="../#availability">MATLAB version</a> installed on Wulver.</li>
 <li>User needs to select the correct installer based on the OS (Mac or Windows). </li>
 <li>Run the installer.</li>
 </ul>
@@ -2686,41 +2686,75 @@
 <li>Continue by selecting <strong>Next</strong> and MATLAB will be installed on your computer.</li>
 </ul>
 <h2 id="setup-slurm-profile-to-run-matlab-on-lochness">Setup Slurm profile to run MATLAB on Lochness<a class="headerlink" href="#setup-slurm-profile-to-run-matlab-on-lochness" title="Permanent link">&para;</a></h2>
-<p>Following this procedure a user will be able to submit jobs to lochness or stheno from Matlab running locally on the user's computer.</p>
+<p>Following this procedure a user will be able to submit jobs on Wulver from Matlab running locally on the user's computer.</p>
 <h3 id="installing-the-add-on">Installing the Add-On<a class="headerlink" href="#installing-the-add-on" title="Permanent link">&para;</a></h3>
-<p>From the Matlab window, click on "Add-ons" and select "Get Add-Ons."</p>
-<p><img alt="matlab_addon1" height="70%" src="../img/ClickOnAddons.png" width="70%" /></p>
-<p>In the search box enter "slurm" and click on the magnifying glass icon. Select "Parallel Computing Toolbox plugin for MATLAB Parallel Server with Slurm". Alternatively, this Add-On can be downloaded directly from the <a href="https://www.mathworks.com/matlabcentral/fileexchange/52807-parallel-computing-toolbox-plugin-for-matlab-parallel-server-with-slurm">Mathworks</a> site.</p>
-<p><img 70_="70%" alt="matlab_slurm" height="height" src="../img/SlurmAddOn.png" width="70%" /></p>
-<p>Click on "Install."</p>
-<p><img 70_="70%" alt="matlab_addons_install" height="height" src="../img/ClickOnInstall.png" width="70%" /></p>
-<h3 id="creating-a-profile-for-lochness-or-stheno">Creating a Profile for Lochness or Stheno<a class="headerlink" href="#creating-a-profile-for-lochness-or-stheno" title="Permanent link">&para;</a></h3>
+<p>Download the <a href="../../../../assets/parallel_slurm.mlpkginstall">Slurm-Add-on</a> and double-click on it to install. Make sure to keep the MATLAB window open while installing it.</p>
+<h3 id="creating-a-profile-for-wulver">Creating a Profile for Wulver<a class="headerlink" href="#creating-a-profile-for-wulver" title="Permanent link">&para;</a></h3>
 <p>The following steps will create a profile for lochness (or stheno). Click <kbd>Next</kbd> to begin.</p>
 <p><img 50_="50%" alt="matlab_profile1" height="height" src="../img/GenericProfile1.png" width="50%" /></p>
 <p>In the "Operating System" screen <code>Unix</code> is already selected. Click <kbd>Next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile2" height="height" src="../img/GenericProfile2.png" width="50%" /></p>
-<p>This "Submission Mode" screen determines whether or not to use a <code>shared</code> or <code>nonshared</code> submission mode. Since Matlab installed on your personal computer or laptop does not use a shared job location storage, select "No" where indicated and click <kbd>Next</kbd> to continue.</p>
+<p>This "Submission Mode" screen determines whether to use a <code>shared</code> or <code>nonshared</code> submission mode. Since Matlab installed on your personal computer or laptop does not use a shared job location storage, select "No" where indicated and click <kbd>Next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile3" height="height" src="../img/GenericProfile3.png" width="50%" /></p>
 <p>Click <kbd>Next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile4" height="height" src="../img/GenericProfile4.png" width="50%" /></p>
-<p>In the "Connection Details" screen, enter the cluster host, either "lochness.njit.edu" or "stheno.njit.edu." Enter your UCID for the username. Select "No" for the "Do you want to use an identity file to log in to the cluster" option and click next to continue.</p>
+<p>In the <code>Connection Details</code> screen, enter the cluster host as <code>wulver.njit.edu</code>. Enter your UCID for the <code>username</code>. Select <code>No</code> for the <code>Do you want to use an identity file to log in to the cluster</code> option and click <kbd>next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile5" height="height" src="../img/GenericProfile5.png" width="50%" /></p>
-<p>In the "Cluster Details" screen enter the full path to the directory on lochness to store the Matlab job files. In the case the directory is $HOME/MDCS. MDCS stands for Matlab Distributed Computing Server. It is not necessary to name this directory MDCS. This directory can be named anything you wish. To determine the value of $HOME, logon to lochness. For details on how to Logon to Lochness from local computer please see this <a href="https://hackmd.io/@absrocks/BJRlQtBVi">link</a>. Once connected to Lochness run the following:</p>
+<p>In the <code>Cluster Details</code> screen enter the full path to the directory on lochness to store the Matlab job files. In the case the directory is <code>$HOME/MDCS</code>. <code>MDCS</code> stands for Matlab Distributed Computing Server. It is not necessary to name this directory as <code>MDCS</code>. This directory can be named anything you wish. To determine the value of <code>$HOME</code>, connect to Wulver and run the following:</p>
 <div class="highlight"><pre><span></span><code>  login-1-45 ~ &gt;: echo $HOME
   /home/g/guest24
 </code></pre></div>
 <p>Make sure to check the box <kbd>Use unique subfolders</kbd> . Click <kbd>Next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile6" height="height" src="../img/GenericProfile6.png" width="50%" /></p>
-<p>In the "Workers" screen enter <code>512</code> for the number of workers and <code>/opt/site/easybuild/software/MATLAB/2022a</code> for <code>MATLAB installation folders for workers</code>. Click <kbd>Next</kbd> to continue.</p>
+<p>In the <code>Workers</code>, enter <code>512</code> for the number of workers. For <code>MATLAB installation folders for workers</code>, use <code>module av MATLAB</code> command first.</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">  </span>login-1-45<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>av<span class="w"> </span>MATLAB
+<span class="w">  </span>------------------------------------/apps/easybuild/modules/all/Core---------------------------------------------------------
+<span class="w">   </span>MATLAB/2023a
+
+Use<span class="w"> </span><span class="s2">&quot;module spider&quot;</span><span class="w"> </span>to<span class="w"> </span>find<span class="w"> </span>all<span class="w"> </span>possible<span class="w"> </span>modules<span class="w"> </span>and<span class="w"> </span>extensions.
+Use<span class="w"> </span><span class="s2">&quot;module keyword key1 key2 ...&quot;</span><span class="w"> </span>to<span class="w"> </span>search<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>possible<span class="w"> </span>modules<span class="w"> </span>matching<span class="w"> </span>any<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;keys&quot;</span>.
+</code></pre></div>
+This will show you the list of MATLAB versions installed on Wulver. Next, use <code>module show MATLAB/2023a</code> to check MATLAB installation path.</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">   </span>login-1-45<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>show<span class="w"> </span>MATLAB/2023a
+---------------------------------------------------------------------------------------------------------------------------------
+<span class="w">   </span>/apps/easybuild/modules/all/Core/MATLAB/2023a.lua:
+---------------------------------------------------------------------------------------------------------------------------------
+help<span class="o">([[</span>
+<span class="nv">Description</span>
+<span class="o">===========</span>
+The<span class="w"> </span>MATLAB<span class="w"> </span>Parallel<span class="w"> </span>Server<span class="w"> </span>Toolbox.
+
+
+More<span class="w"> </span><span class="nv">information</span>
+<span class="o">================</span>
+<span class="w"> </span>-<span class="w"> </span>Homepage:<span class="w"> </span>https://www.mathworks.com/help/matlab/matlab-engine-for-python.html
+<span class="o">]])</span>
+whatis<span class="o">(</span><span class="s2">&quot;Description: The MATLAB Parallel Server Toolbox.&quot;</span><span class="o">)</span>
+whatis<span class="o">(</span><span class="s2">&quot;Homepage: https://www.mathworks.com/help/matlab/matlab-engine-for-python.html&quot;</span><span class="o">)</span>
+whatis<span class="o">(</span><span class="s2">&quot;URL: https://www.mathworks.com/help/matlab/matlab-engine-for-python.html&quot;</span><span class="o">)</span>
+conflict<span class="o">(</span><span class="s2">&quot;MATLAB&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;CMAKE_PREFIX_PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a/bin&quot;</span><span class="o">)</span>
+setenv<span class="o">(</span><span class="s2">&quot;EBROOTMATLAB&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a&quot;</span><span class="o">)</span>
+setenv<span class="o">(</span><span class="s2">&quot;EBVERSIONMATLAB&quot;</span>,<span class="s2">&quot;R2023a&quot;</span><span class="o">)</span>
+setenv<span class="o">(</span><span class="s2">&quot;EBDEVELMATLAB&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a/easybuild/Core-MATLAB-2023a-easybuild-devel&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a/toolbox/parallel/bin&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a/runtime/glnxa64&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a/bin/glnxa64&quot;</span><span class="o">)</span>
+prepend_path<span class="o">(</span><span class="s2">&quot;LD_LIBRARY_PATH&quot;</span>,<span class="s2">&quot;/apps/easybuild/software/MATLAB/R2023a/sys/os/glnxa64&quot;</span><span class="o">)</span>
+setenv<span class="o">(</span><span class="s2">&quot;_JAVA_OPTIONS&quot;</span>,<span class="s2">&quot;-Xmx2048m&quot;</span><span class="o">)</span>
+</code></pre></div>
+The MATLAB installation path is defined by the EBROOTMATLAB environment variable, which, in the above example, is set to <code>/apps/easybuild/software/MATLAB/R2023a</code>. Mention that path in <code>MATLAB installation folders for workers</code> and click <kbd>Next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile7" height="height" src="../img/GenericProfile7.png" width="50%" /></p>
 <p>In the "License" screen make sure to select "Network license manager" and click <kbd>Next</kbd> to continue.</p>
 <p><img 50_="50%" alt="matlab_profile8" height="height" src="../img/GenericProfile8.png" width="50%" /></p>
-<p>In the "Profile Details" screen enter either "Lochness" or "Stheno" depending on which cluster you are making a profile for. The "Cluster description" is optional and may be left blank. Click <kbd>Next</kbd> to continue.</p>
-<p><img 50_="50%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/4/4d/GenericProfile9.png" width="50%" /></p>
-<p>In the "Summary" screen make sure everything is correct and click "Create."</p>
+<p>In the <code>Profile Details</code> screen enter "Wulver". The "Cluster description" is optional and may be left blank. Click <kbd>Next</kbd> to continue.</p>
+<p><img 50_="50%" alt="matlab_profile9" height="height" src="../img/GenericProfile9.png" width="50%" /></p>
+<p>In the <code>Summary</code> screen make sure everything is correct and click <kbd>Create</kbd>.</p>
 <p><img 50_="50%" alt="matlab_profile10" height="height" src="../img/GenericProfile10.png" width="50%" /></p>
-<p>In the "Profile Created Successfully" screen, check the "Set the new profile as default" box and click on "Finish."</p>
-<p><img 50_="50%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/b/b8/GenericProfile11.png" width="50%" /></p>
+<p>In the <code>Profile Created Successfully</code> screen, check the <code>Set the new profile as default</code> box and click on <kbd>Finish</kbd>.</p>
+<p><img 50_="50%" alt="matlab_profile11" height="height" src="../img/GenericProfile11.png" width="50%" /></p>
 <h2 id="submitting-a-serial-job">Submitting a Serial Job<a class="headerlink" href="#submitting-a-serial-job" title="Permanent link">&para;</a></h2>
 <p>This section will demonstrate how to create a cluster object and submit a simple job to the cluster. The job will run the 'hostname' command on the node assigned to the job. The output will indicate clearly that the job ran on the cluster and not on the local computer.</p>
 <p>The hostname.m file used in this demonstration can be downloaded <a href="https://www.mathworks.com/matlabcentral/fileexchange/24096-hostname-m">here</a>.</p>
@@ -2728,19 +2762,30 @@
 </code></pre></div>
  <img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/2/22/C%3Dparcluster_1.png" width="70%" /></p>
 <p>Certain arguments need to be passed to SLURM in order for the job to run properly. Here we will set values for partion, mem-per-cpu and time. In the Matlab window enter:
-<div class="highlight"><pre><span></span><code> &gt;&gt; c.AdditionalProperties.AdditionalSubmitArgs=[&#39;--partition=public --mem-per-cpu=10G --time=2-00:00:00&#39;] 
+<div class="highlight"><pre><span></span><code> &gt;&gt; c.AdditionalProperties.AdditionalSubmitArgs=[&#39;--partition=general --qos=standard --account=PI_UCID --mem-per-cpu=4G --time=2-00:00:00&#39;] 
 </code></pre></div>
+Replace <code>PI_UCID</code> with the UCID of PI. Check the <a href="../../../slurm/slurm/">SLURM Documentation</a> for other SLURM parameters.
 To make this persistent between Matlab sessions these arguments need to be saved to the profile. In the Matlab window enter:
 <div class="highlight"><pre><span></span><code> &gt;&gt; c.saveProfile 
 </code></pre></div>
  <img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/5/51/AdditionalArguments.png" width="70%" /></p>
 <p>We will now submit the hostname.m function to the cluster. In the Matlab window enter the following:
 <div class="highlight"><pre><span></span><code>&gt;&gt; j=c.batch(@hostname, 1, {}, &#39;AutoAddClientPath&#39;, false); 
-</code></pre></div>
-@: Submitting a function.\
-1: The number of output arguments from the evaluated function.\
-{}: Cell array of input arguments to the function. In this case empty.\
-'AutoAddClientPath', false: The client path is not available on the cluster.</p>
+</code></pre></div></p>
+<ul>
+<li>
+<p><code>@</code>: Submitting a function.</p>
+</li>
+<li>
+<p><code>1</code>: The number of output arguments from the evaluated function.</p>
+</li>
+<li>
+<p><code>{}</code>: Cell array of input arguments to the function. In this case empty.</p>
+</li>
+<li>
+<p><code>'AutoAddClientPath', false</code>: The client path is not available on the cluster.</p>
+</li>
+</ul>
 <p>When the job is submitted, you will be prompted for your password.</p>
 <p>For more information see the Mathworks page: <a href="https://www.mathworks.com/help/parallel-computing/batch.html">batch</a> </p>
 <p><img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/6/6a/BatchEnterPasswd.png" width="70%" /></p>
@@ -2753,8 +2798,8 @@ Finally, to get the results:
 As can be seen, this job ran on node720</p>
 <p><img 70_="70%" align="left," alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/e/e5/BatchHostname.png" width="70%" /></p>
 <h3 id="submitting-a-parallel-function">Submitting a Parallel Function<a class="headerlink" href="#submitting-a-parallel-function" title="Permanent link">&para;</a></h3>
-<p>The "Job Monitor" is a convenient way to monitor jobs submitted to the cluster. In the Matlab window select "Parallel" and then "Monitor Jobs."</p>
-<p>For more information see the Mathworks page: <a href="https://www.mathworks.com/help/parallel-computing/job-monitor.html">Job Monitor</a></p>
+<p>The <code>Job Monitor</code> is a convenient way to monitor jobs submitted to the cluster. In the Matlab window select <code>Parallel</code> and then <code>Monitor Jobs</code>.</p>
+<p>For more information see the Mathworks page: <a href="https://www.mathworks.com/help/parallel-computing/job-monitor.html">Job Monitor</a>.</p>
 <p><img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/c/c4/MonitorJobs.png" width="70%" /></p>
 <p>Here we will submit a simple function using a "parfor" loop. The code for this example is as follows:
 <div class="highlight"><pre><span></span><code>function t = parallel_example
@@ -2770,16 +2815,16 @@ t=toc(t0);
 To submit this job:
 <div class="highlight"><pre><span></span><code> &gt;&gt; j=c.batch(@parallel_example, 1, {}, &#39;AutoAddClientPath&#39;, false, &#39;Pool&#39;, 7)
 </code></pre></div>
-Since this is a parallel job a 'Pool' must be started. The actual number of tasks started will be one more than requested in the pool. I this case, the batch command calls for a pool of seven. Eight tasks will be started on the cluster.</p>
-<p>Also see that the state of the job in the "Job Monitor" is "running."
-<img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/d/db/SubmitParallel.png" width="70%" /></p>
-<p>The job takes a few minutes to run and the state of the job changes to "finished."
-<img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/0/0f/JobFinished.png" width="70%" /></p>
+Since this is a parallel job a 'Pool' must be started. The actual number of tasks started will be one more than requested in the pool. In this case, the batch command calls for a pool of seven. Eight tasks will be started on the cluster.</p>
+<p>Also see that the state of the job in the <code>Job Monitor</code> is <code>running</code>.</p>
+<p><img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/d/db/SubmitParallel.png" width="70%" /></p>
+<p>The job takes a few minutes to run and the state of the job changes to "finished."</p>
+<p><img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/0/0f/JobFinished.png" width="70%" /></p>
 <p>Once again to get the results enter:
 <div class="highlight"><pre><span></span><code> &gt;&gt; fetchOutputs(j) 
 </code></pre></div>
-As can be seen the parfor loop was completed in 6.7591 seconds.
-<img 70_="70%" alt="" height="height" src="https://wiki.hpc.arcs.njit.edu/images/7/7d/FetchOutputs.png" width="70%" /></p>
+As can be seen the parfor loop was completed in 6.7591 seconds.</p>
+<p><img 70_="70%" alt="matlab_fetch" height="height" src="../img/FetchOutputs.png" width="70%" /></p>
 <h2 id="submitting-a-script-requiring-a-gpu">Submitting a Script Requiring a GPU<a class="headerlink" href="#submitting-a-script-requiring-a-gpu" title="Permanent link">&para;</a></h2>
 <p>In this section we will submit a matlab script using a GPU. The results will be written to the job diary. The code for this example is as follows:
 <div class="highlight"><pre><span></span><code>% MATLAB script that defines a random matrix and does FFT
@@ -2827,10 +2872,10 @@ disp(time2);
 % Will be greater than 1 if GPU is faster
 speedup = time1/time2 
 </code></pre></div>
-We will need to change the partition to datasci and request a gpu. In the Matlab window enter:
-<div class="highlight"><pre><span></span><code> &gt;&gt; c.AdditionalProperties.AdditionalSubmitArgs=[&#39;--partition=datasci --gres=gpu:1 --mem-per-cpu=10G --time=2-00:00:00&#39;] 
+We will need to change the partition to <code>gpu</code> to request a gpu. In the Matlab window enter:
+<div class="highlight"><pre><span></span><code> &gt;&gt; c.AdditionalProperties.AdditionalSubmitArgs=[&#39;--partition=gpu --qos=standard --account=PI_UCID --gres=gpu:1 --mem-per-cpu=4G --time=2-00:00:00&#39;] 
 </code></pre></div>
-<img alt="" src="https://i.imgur.com/md8jfxI.jpg" /></p>
+ <img 70_="70%" alt="matlab_profile12" height="height" src="../img/md8jfxI.jpeg" width="70%" /></p>
 <p>Submit the job as before. Since a script is submitted as opposed to a function, only the name of the script is included in the batch command. Do not include the '@' symbol. In a script there are no inputs or ouptuts.
 <div class="highlight"><pre><span></span><code> &gt;&gt; j=c.batch(&#39;gpu&#39;, &#39;AutoAddClientPath&#39;, false) 
 </code></pre></div>

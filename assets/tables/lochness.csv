@@ -1,0 +1,34 @@
+Current Partitions,Number of Nodes,Processor Family,Cores Per Node,Total Cores,Number of GPU per node,Total GPUs,Model of GPU
+bader,1,Sky Lake,20,20,4,4,Titan V
+cld,11,Sandy Bridge,20,220,0,9,
+cld-gpu,2,Sandy Bridge,20,40,2,4,K20Xm
+datasci,7,Sandy Bridge,20,140,2,14,P100
+datasci,1,Sky Lake,20,20,4,4,Titan RTX
+datasci3,1,Sky Lake,20,20,4,4,Titan RTX
+datasci4,1,Sky Lake,20,20,4,4,Titan RTX
+davidsw,1,Cascade Lake,32,32,2,2,A100
+ddlab,1,Sandy Bridge,20,20,0,0,
+ddlab,1,Cascade Lake,20,20,2,2,V100
+esratoy,2,Cascade Lake,32,64,0,0,
+fahmadpo,14,Cascade Lake,64,896,0,0,
+fahmadpo-gpu,1,Cascade Lake,24,24,4,4,Titan RTX
+gor,28,Broadwell,20,560,0,0,
+gperry,3,Cascade Lake,36,108,0,0,
+hrjin,1,Sky Lake,32,32,4,3,Titan XP
+jyoung,3,Cascade Lake,96,288,0,0,
+phan,1,Cascade Lake,20,20,4,4,"1 Titan X,3 Ge Force"
+project,1,Cascade Lake,32,32,0,0,
+public,37,Cascade Lake,32,1184,0,0,
+samaneh,16,Cascade Lake,40,640,0,0,
+shakib,20,Cascade Lake,24,480,0,0,
+singhp,1,Ice Lake,56,56,0,0,
+smarras,4,Cascade Lake,48,192,0,0,
+smarras,2,Cascade Lake,48,96,2,2,A100
+solarlab,1,Cascade Lake,48,48,2,2,A100
+solarlab,4,Cascade Lake,48,192,0,0,
+solarlab,1,Ice Lake,48,48,1,1,A100
+solarlab,2,Ice Lake,48,96,0,0,
+solarlab,1,Ice Lake,48,48,0,0,
+xt3,11,Cascade Lake,32,352,0,0,
+xye,1,Cascade Lake,16,16,5,5,3 types of GPUs
+zhiwei,1,Ice Lake,56,56,4,4,A40

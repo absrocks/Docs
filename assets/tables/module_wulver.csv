@@ -77,6 +77,8 @@ tmux,3.3a,-,`module load tmux/3.3a`
 iimpi,2022b,-,`module load iimpi/2022b`
 iimpi,2022a,-,`module load iimpi/2022a`
 iimpi,2021b,-,`module load iimpi/2021b`
+MATLAB,2024a,-,`module load MATLAB/2024a`
+MATLAB,2024a~,-,`module load MATLAB/2024a~`
 MATLAB,2023a,-,`module load MATLAB/2023a`
 ANSYS,2022,-,`module load ANSYS/2022`
 Anaconda3,2023.09-0,-,`module load Anaconda3/2023.09-0`

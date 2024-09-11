@@ -31,6 +31,7 @@ PyCharm,2022.3.2,-,`module load PyCharm/2022.3.2`
 DMTCP,3.0.0,-,`module load DMTCP/3.0.0`
 DMTCP,2.6.0,-,`module load DMTCP/2.6.0`
 flex,2.6.4,-,`module load flex/2.6.4`
+Miniforge3,24.1.2-0,-,`module load Miniforge3/24.1.2-0`
 foss,2022b,-,`module load foss/2022b`
 foss,2023b,-,`module load foss/2023b`
 foss,2021b,-,`module load foss/2021b`
@@ -81,7 +82,6 @@ iimpi,2022b,-,`module load iimpi/2022b`
 iimpi,2022a,-,`module load iimpi/2022a`
 iimpi,2021b,-,`module load iimpi/2021b`
 MATLAB,2024a,-,`module load MATLAB/2024a`
-MATLAB,2024a~,-,`module load MATLAB/2024a~`
 MATLAB,2023a,-,`module load MATLAB/2023a`
 ANSYS,2022,-,`module load ANSYS/2022`
 Anaconda3,2023.09-0,-,`module load Anaconda3/2023.09-0`
@@ -90,6 +90,7 @@ GCCcore,12.2.0,-,`module load GCCcore/12.2.0`
 GCCcore,11.3.0,-,`module load GCCcore/11.3.0`
 GCCcore,13.2.0,-,`module load GCCcore/13.2.0`
 GCCcore,11.2.0,-,`module load GCCcore/11.2.0`
+COMSOL,6.2,-,`module load COMSOL/6.2`
 COMSOL,5.6,-,`module load COMSOL/5.6`
 tecplot360ex,2022R2,-,`module load tecplot360ex/2022R2`
 Go,1.17.3,-,`module load Go/1.17.3`
@@ -189,6 +190,7 @@ Grace,5.1.25,foss/2022b,`module load foss/2022b Grace/5.1.25`
 FFTW.MPI,3.3.10,foss/2022b,`module load foss/2022b FFTW.MPI/3.3.10`
 RASPA2,2.0.47,foss/2022b,`module load foss/2022b RASPA2/2.0.47`
 arpack-ng,3.8.0,foss/2022b,`module load foss/2022b arpack-ng/3.8.0`
+Valgrind,3.21.0,foss/2022b,`module load foss/2022b Valgrind/3.21.0`
 ScaLAPACK,2.2.0-fb,foss/2022b,`module load foss/2022b ScaLAPACK/2.2.0-fb`
 Hypre,2.27.0,foss/2022b,`module load foss/2022b Hypre/2.27.0`
 libxsmm,1.17,intel/2021b,`module load intel/2021b libxsmm/1.17`
@@ -578,6 +580,8 @@ Autoconf,2.71,foss/2022b,`module load foss/2022b Autoconf/2.71`
 Xvfb,21.1.6,foss/2022b,`module load foss/2022b Xvfb/21.1.6`
 xxd,9.0.1696,foss/2022b,`module load foss/2022b xxd/9.0.1696`
 GStreamer,1.22.1,foss/2022b,`module load foss/2022b GStreamer/1.22.1`
+glew,2.2.0-osmesa,foss/2022b,`module load foss/2022b glew/2.2.0-osmesa`
+glew,2.2.0-egl,foss/2022b,`module load foss/2022b glew/2.2.0-egl`
 utf8proc,2.8.0,foss/2022b,`module load foss/2022b utf8proc/2.8.0`
 XZ,5.2.7,foss/2022b,`module load foss/2022b XZ/5.2.7`
 cppy,1.2.1,foss/2022b,`module load foss/2022b cppy/1.2.1`

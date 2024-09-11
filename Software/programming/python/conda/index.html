@@ -885,6 +885,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -920,7 +926,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Events/2024/1_nvidia/" class="md-nav__link">
+      <a href="../../../../Events/2024/1_slurm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM Batch System Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Events/2024/2_containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Containers on Wulver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Events/2024/3_slurm_advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Arrays and Advanced Submission Techniques for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Events/2024/4_nvidia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -941,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Events/2024/2_symposium/" class="md-nav__link">
+      <a href="../../../../Events/2024/5_symposium/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -962,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Events/2024/3_slurm_workshop/" class="md-nav__link">
+      <a href="../../../../Events/2024/6_slurm_workshop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2221,7 +2290,7 @@
           <li class="md-nav__item">
   <a href="#example-of-installing-pytorch-via-mamba" class="md-nav__link">
     <span class="md-ellipsis">
-      Example of Installing PyTorch via Mamba
+      Example of Installing PyTorch via mamba
     </span>
   </a>
   
@@ -3245,7 +3314,7 @@
           <li class="md-nav__item">
   <a href="#example-of-installing-pytorch-via-mamba" class="md-nav__link">
     <span class="md-ellipsis">
-      Example of Installing PyTorch via Mamba
+      Example of Installing PyTorch via mamba
     </span>
   </a>
   
@@ -3343,6 +3412,12 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">Miniforge3</td>
+<td style="text-align: left;">24.1.2-0</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><code>module load Miniforge3/24.1.2-0</code></td>
+</tr>
+<tr>
 <td style="text-align: left;">Anaconda3</td>
 <td style="text-align: left;">2023.09-0</td>
 <td style="text-align: left;">-</td>
@@ -3360,10 +3435,13 @@
 </div>
 </div>
 </div>
-<p>Users can use conda after using any of the modules mentioned above. Once <code>Anaconda3</code> module is loaded, users can create virtual Python environments to manage Python modules.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Users can use conda after using any of the modules mentioned above. However, please note that in future, the <code>Anaconda</code> module may be removed as Anaconda is no longer free for non-profit academic research use at institutions with more than 200 employees. While we have not recived any offical communication from Ananconda yet, please use <code>Miniforge3</code> module instead of Anaconda. You don't need to reinstall or recreate any environmnt if you already created Conda environment with Anaconda. Just load Miniforge3 and the remaining steps are same.</p>
+</div>
 <h2 id="create-and-activate-a-conda-virtual-environment">Create and Activate a Conda Virtual Environment<a class="headerlink" href="#create-and-activate-a-conda-virtual-environment" title="Permanent link">&para;</a></h2>
-<p>Load the Anaconda Module</p>
-<div class="highlight"><pre><span></span><code>module load Anaconda3
+<p>Load the Miniforge3 Module</p>
+<div class="highlight"><pre><span></span><code>module load Miniforge3
 </code></pre></div>
 <h3 id="create-environment-with-conda">Create Environment with <code>conda</code><a class="headerlink" href="#create-environment-with-conda" title="Permanent link">&para;</a></h3>
 <p>To create an environment use the <code>conda create</code> command. Once the environment is created, you need to use <code>source conda.sh</code> to activate the path.
@@ -3371,7 +3449,7 @@ To create an environment use <code>conda create --name ENV python=3.9</code> whe
 <h3 id="activate-and-deactivate-conda-environment">Activate and Deactivate Conda Environment<a class="headerlink" href="#activate-and-deactivate-conda-environment" title="Permanent link">&para;</a></h3>
 <p>Once you create an environment, you need to activate the environment to install python packages
 Use <code>conda activate ENV</code> to activate the Conda environment (<code>ENV</code> is the name of the environment). Following the activation of the conda environment, the name of the environment appears at the left of the hostname in the terminal. </p>
-<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
 login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span><span class="nb">source</span><span class="w"> </span>conda.sh
 login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>ENV<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>ENV
@@ -3401,14 +3479,13 @@ Users can prioritize channels by listing them in a specific order, so that Conda
 <p><div class="highlight"><pre><span></span><code>auto_activate_base: false
 channels:
   - conda-forge
-  - defaults
 </code></pre></div>
-The advantage of using <code>.condarc</code> is that you don't have to mention the channel name every time you install a package. However, please note that you still need to use the channel name if you want to install Python packages that require a specific channel other than the default channels (<code>conda-forge</code> and <code>defaults</code>).</p>
+The advantage of using <code>.condarc</code> is that you don't have to mention the channel name every time you install a package. However, please note that you still need to use the channel name if you want to install Python packages that require a specific channel other than the <code>conda-forge</code> channel.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <p>Here, we provide some examples of how to use <code>conda</code> to install application </p>
 <h4 id="install-tensorflow-with-gpu">Install TensorFlow with GPU<a class="headerlink" href="#install-tensorflow-with-gpu" title="Permanent link">&para;</a></h4>
 <p>The following example will create a new conda environment based on Python 3.9 and install TensorFlow in the environment.</p>
-<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<div class="highlight"><pre><span></span><code>login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
 login1-41<span class="w"> </span>~<span class="w"> </span>&gt;:<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
 Collecting<span class="w"> </span>package<span class="w"> </span>metadata<span class="w"> </span><span class="o">(</span>current_repodata.json<span class="o">)</span>:<span class="w"> </span><span class="k">done</span>
 Solving<span class="w"> </span>environment:<span class="w"> </span><span class="k">done</span>
@@ -3519,7 +3596,7 @@ Simple TensorFlow test program to make sure the virtual env can access a GPU. Pr
 <span class="c1"># Purge any module loaded by default</span>
 module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
-module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+module<span class="w"> </span>load<span class="w"> </span>Miniforge3
 <span class="nb">source</span><span class="w"> </span>conda.sh
 conda<span class="w"> </span>activate<span class="w"> </span>tf
 <span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>tf.gpu.test.py
@@ -3561,12 +3638,12 @@ Default<span class="w"> </span>GPU<span class="w"> </span>Device:<span class="w"
 </code></pre></div>
 Next, deactivate the environment using <code>conda deactivate tf</code> command.</p>
 <h4 id="install-pytorch-with-gpu">Install PyTorch with GPU<a class="headerlink" href="#install-pytorch-with-gpu" title="Permanent link">&para;</a></h4>
-<p>To install PyTorch with GPU, load the <code>Anaconda3</code> module as described above and then use the following</p>
-<div class="highlight"><pre><span></span><code>conda create --name torch-cuda python=3.8
+<p>To install PyTorch with GPU, load the <code>Miniforge3</code> module as described above and then use the following</p>
+<div class="highlight"><pre><span></span><code>conda create --name torch-cuda
 source conda.sh
 conda activate torch-cuda
-conda install -c &quot;nvidia/label/cuda-11.7.0&quot; cuda-toolkit
-conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=11.7
+conda install -c &quot;nvidia/label/cuda-12.2.0&quot; cuda-toolkit
+conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda -y
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3644,7 +3721,7 @@ conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=1
 <span class="c1"># Purge any module loaded by default</span>
 module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
-module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+module<span class="w"> </span>load<span class="w"> </span>Miniforge3
 <span class="nb">source</span><span class="w"> </span>conda.sh
 conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
 <span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>touch_tensor.py
@@ -3660,7 +3737,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
 <h2 id="mamba-the-conda-alternative">Mamba: The Conda Alternative<a class="headerlink" href="#mamba-the-conda-alternative" title="Permanent link">&para;</a></h2>
 <p>Mamba is a fast, robust, and cross-platform package manager and particularly useful for building complicated environments, where <code>conda</code> is unable to 'solve' the required set of packages within a reasonable amount of time.
 Users can install packages with <code>mamba</code> in the same way as with <code>conda</code>.
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Mamba<span class="w"> </span>Anaconda3
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
 
 <span class="c1"># create new environment</span>
 mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>env_name<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>
@@ -3669,12 +3746,11 @@ mamba<span class="w"> </span>create<span class="w"> </span>--name<span class="w"
 conda<span class="w"> </span>activate<span class="w"> </span>env_name
 mamba<span class="w"> </span>install<span class="w"> </span>scipy
 </code></pre></div></p>
-<h3 id="example-of-installing-pytorch-via-mamba">Example of Installing PyTorch via Mamba<a class="headerlink" href="#example-of-installing-pytorch-via-mamba" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Anaconda3
+<h3 id="example-of-installing-pytorch-via-mamba">Example of Installing PyTorch via mamba<a class="headerlink" href="#example-of-installing-pytorch-via-mamba" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
 conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>torch-cuda
 <span class="nb">source</span><span class="w"> </span>conda.sh
 conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
-module<span class="w"> </span>load<span class="w"> </span>Mamba
 mamba<span class="w"> </span>install<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.1<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
 </code></pre></div>
 <p>This will install pytorch in the <code>torch-cuda</code> environment.</p>
@@ -3741,7 +3817,7 @@ This will create the environment in the specified directory instead of the defau
 <span class="o">(</span>/project/hpcadmins/abc3/conda_env/my_env<span class="o">)</span><span class="w"> </span>abc3@login01:~$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
 <span class="c1"># conda environments:</span>
 <span class="c1">#</span>
-base<span class="w"> </span>/apps/easybuild/software/Anaconda3/2023.09-0
+base<span class="w"> </span>/apps/easybuild/software/Miniforge3/2023.09-0
 *<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
 </code></pre></div>
 By following these steps, you can successfully export a conda environment from one machine and import it to another, ensuring a consistent working environment across different machines or directories.</p>
@@ -3772,7 +3848,7 @@ By following these steps, you can successfully export a conda environment from o
 </tr>
 <tr>
 <td>Delete environment:</td>
-<td style="text-align: center;"><code>conda conda remove --name [environment_name] --all</code></td>
+<td style="text-align: center;"><code>conda remove --name [environment_name] --all</code></td>
 </tr>
 <tr>
 <td>Export environment:</td>

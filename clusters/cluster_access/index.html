@@ -597,20 +597,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-based-authentication-to-the-njit-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key based Authentication to the NJIT Cluster
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa" class="md-nav__link">
     <span class="md-ellipsis">
       Transfer the Data from the Local Machine to Clusters or vice versa
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Transfer the Data from the Local Machine to Clusters or vice versa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      rsync:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -963,6 +978,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -998,7 +1019,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Events/2024/1_nvidia/" class="md-nav__link">
+      <a href="../../Events/2024/1_slurm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SLURM Batch System Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/2024/2_containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Containers on Wulver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/2024/3_slurm_advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Arrays and Advanced Submission Techniques for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Events/2024/4_nvidia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1019,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Events/2024/2_symposium/" class="md-nav__link">
+      <a href="../../Events/2024/5_symposium/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1040,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Events/2024/3_slurm_workshop/" class="md-nav__link">
+      <a href="../../Events/2024/6_slurm_workshop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3010,20 +3094,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-based-authentication-to-the-njit-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key based Authentication to the NJIT Cluster
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa" class="md-nav__link">
     <span class="md-ellipsis">
       Transfer the Data from the Local Machine to Clusters or vice versa
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Transfer the Data from the Local Machine to Clusters or vice versa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      rsync:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3052,21 +3151,29 @@
 <h2 id="access-to-clusters">Access to Clusters<a class="headerlink" href="#access-to-clusters" title="Permanent link">&para;</a></h2>
 <p>Make sure the user is connected to <code>NJITsecure</code> if the user is on campus. If working off campus, NJIT VPN is required. Please find the details <a href="https://ist.njit.edu/vpn">here</a>.
 Here we will provide instructions for connecting to NJIT HPC on Mac/Linux and Windows OS.</p>
+<div class="admonition update">
+<p class="admonition-title">Update</p>
+<p>In the recent update (Sep 10<sup>th</sup> 2024) Cisco two-factor authentication (TFA) is deployed, similar to what is already deployed on NJIT websites and VPN. </p>
+</div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="access-to-clusters-maclinux" name="__tabbed_1" type="radio" /><input id="access-to-clusters-windows" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="access-to-clusters-maclinux">Mac/Linux</label><label for="access-to-clusters-windows">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Open terminal from <kbd>Launchpad</kbd> and select <kbd>terminal</kbd>.
 Type the following in the terminal by substituting <code>wulver</code> or <code>lochness</code> for <code>HPC_HOST</code> and <code>ucid</code> with your NJIT UCID.
 <div class="highlight"><pre><span></span><code>  localhost&gt; ssh -X -Y ucid@HPC_HOST.njit.edu  
+</code></pre></div></p>
+<p>Users will be prompted for your password. Enter your NJIT UCID password. Users can omit the <code>-X -Y</code> if you are not using a graphic interface. Once the password is provided, User will authenticate via Cisco two-factor authentication (TFA)</p>
+<div class="highlight"><pre><span></span><code>(guest@wulver.njit.edu) Duo two-factor login for guest
+
+Enter a passcode or select one of the following options:
+
+1. Duo Push to XXX-XXX-2332
+2. Phone call to XXX-XXX-2332
+3. SMS passcodes to XXX-XXX-2332 (next code starts with: 1)
+
+Passcode or option (1-3):
 </code></pre></div>
-If you don’t yet have a public SSH key for your local machine, you need to initialize one. The process of doing so differs across operating systems. The Linux and Mac system users simply need to run the command <code>ssh-keygen</code>, which will store the keys in the <code>~/.ssh</code> folder.</p>
-<p>Users will be prompted for your password. Enter your NJIT UCID password. Users can omit the <code>-X -Y</code> if you are not using a graphic interface.
-Once the password is provided, the user will see the following</p>
-<div class="highlight"><pre><span></span><code>The authenticity of host &#39;user@lochness.njit.edu&#39; cannot be established.
- DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:ba:98:76:54:32:10. 
- Are you sure you want to continue connecting (yes/no)?
-</code></pre></div>
-<p>Answering <code>yes</code> to the prompt will cause the session to continue. Once the host key has been stored in the known_hosts file, the client system can connect directly to that server again without the need for any approvals. </p>
+<p>Based on the option provided, user will be logged in after succesfull authetication.  </p>
 </div>
 <div class="tabbed-block">
 <p>Download the MobaXterm from this <a href="https://ist.njit.edu/software-available-download/">link</a>. 
@@ -3100,29 +3207,43 @@ login-1-41 ~ &gt;:
 </div>
 </div>
 </div>
-<h2 id="key-based-authentication-to-the-njit-cluster">Key based Authentication to the NJIT Cluster<a class="headerlink" href="#key-based-authentication-to-the-njit-cluster" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="key-based-authentication-to-the-njit-cluster-maclinux" name="__tabbed_2" type="radio" /><input id="key-based-authentication-to-the-njit-cluster-windows" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="key-based-authentication-to-the-njit-cluster-maclinux">Mac/Linux</label><label for="key-based-authentication-to-the-njit-cluster-windows">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>To access to NJIT cluster without the password, you need to have a public ssh key on your Mac or Linux system. If you don’t yet have a public SSH key for your local machine, you need to initialize one. The process of doing so differs across operating systems. The Linux and Mac system users simply need to run the command <code>ssh-keygen</code>, which will store the keys in the <code>~/.ssh</code> folder. The public key is typically <code>id_rsa.pub</code> which is located in <code>~/.ssh/</code>.
-Once you have a public SSH key, copy it to the set of authorized keys on the computing cluster. Since you’ve already connected to the cluster in the previous step, simply navigate to the <code>/.ssh</code> folder on the computing cluster and open the file <code>~/.ssh/authorized_keys</code> and paste the content of your public key from your local machine. Double-check that the pasted key begins with <code>ssh-rsa</code>.</p>
-</div>
-<div class="tabbed-block">
-<p>Windows users can save the public key through MobaXterm settings.</p>
-</div>
-</div>
-</div>
 <h2 id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa">Transfer the Data from the Local Machine to Clusters or vice versa<a class="headerlink" href="#transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-maclinux" name="__tabbed_3" type="radio" /><input id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-windows" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-maclinux">Mac/Linux</label><label for="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-windows">Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-maclinux" name="__tabbed_2" type="radio" /><input id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-windows" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-maclinux">Mac/Linux</label><label for="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-windows">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Users need to use the command in the terminal to transfer in and out the data </p>
-<p><div class="highlight"><pre><span></span><code>rsync -avzP /path/to/local/machine ucid@HPC_HOST.njit.edu:/path/to/destination
+<h3 id="rsync"><code>rsync</code>:<a class="headerlink" href="#rsync" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Transfer the data from local machine to HPC cluster
+<div class="highlight"><pre><span></span><code>rsync -avzP /path/to/local/machine ucid@wulver.njit.edu:/path/to/destination
+</code></pre></div></p>
+</li>
+<li>
+<p>To transfer the data from HPC cluster to local machine use
+<div class="highlight"><pre><span></span><code>rsync -avzP ucid@wulver.njit.edu:/path/to/source /path/to/local/machine
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="scp"><code>scp</code>:<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Copy files from remote machine to local machine
+<div class="highlight"><pre><span></span><code>scp [option] [ucid@wulver.njit.edu:path/to/source/file] [target/path]
+</code></pre></div></p>
+</li>
+<li>
+<p>Copy files from local machine to remote machine
+<div class="highlight"><pre><span></span><code>scp [option] [path/to/source/file] [ucid@wulver.njit.edu:target/path] 
+</code></pre></div></p>
+</li>
+<li>
+<p>Example of scp:
+<div class="highlight"><pre><span></span><code>scp -r example ucid@wulver.njit.edu:/home/dir 
 </code></pre></div>
-Replace <code>HPC_HOST</code> with <code>lochness</code> or <code>wulver</code>. This will transfer the data from the ocal machine to HPC cluster. 
-To transfer the data from HPC cluster to local machine use</p>
-<div class="highlight"><pre><span></span><code>rsync -avzP ucid@HPC_HOST.njit.edu:/path/to/source /path/to/local/machine
-</code></pre></div>
+Copy the “example” folder recursively to <code>/home/dir</code></p>
+</li>
+</ul>
 </div>
 <div class="tabbed-block">
 <p>User needs to select the <code>follow terminal folder</code> of the left pane of the MobaXterm terminal. </p>

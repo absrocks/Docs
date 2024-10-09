@@ -3638,7 +3638,9 @@ Default<span class="w"> </span>GPU<span class="w"> </span>Device:<span class="w"
 </code></pre></div>
 Next, deactivate the environment using <code>conda deactivate tf</code> command.</p>
 <h4 id="install-pytorch-with-gpu">Install PyTorch with GPU<a class="headerlink" href="#install-pytorch-with-gpu" title="Permanent link">&para;</a></h4>
-<p>To install PyTorch with GPU, load the <code>Miniforge3</code> module as described above and then use the following</p>
+<ul>
+<li>To install PyTorch with GPU, load the <code>Miniforge3</code> module as described above and then use the following</li>
+</ul>
 <div class="highlight"><pre><span></span><code>conda create --name torch-cuda
 source conda.sh
 conda activate torch-cuda
@@ -3649,7 +3651,24 @@ conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda -
 <p class="admonition-title">Note</p>
 <p>In the example above, we mentioned the channel name as we intend to install PyTorch and PyTorch-CUDA from a specific channel. For the default channel please see <a href="./#conda-channel">Channels</a>.</p>
 </div>
-<p>A simple PyTorch test program is given below to check whether PyTorch has been installed properly. Program is called</p>
+<ul>
+<li>Check the Torch version
+<div class="highlight"><pre><span></span><code>python -c &quot;import torch; print( torch.__version__)&quot;
+</code></pre></div></li>
+<li>Check the CUDA version
+<div class="highlight"><pre><span></span><code>python -c &quot;import torch; print(torch. version .cuda)&quot;
+</code></pre></div></li>
+<li>Check whether Torch is compiled with CUDA
+<div class="highlight"><pre><span></span><code>python -c &quot;import torch; print(torch.cuda. is_available())&quot;
+</code></pre></div></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>While checking the CUDA version or PyTorch compilation using the commands mentioned above, make sure to start an <a href="../../../slurm/slurm/#interactive-session-on-a-compute-node-gpu-nodes">interactive session on a GPU node</a>; otherwise, the command will not recognize CUDA or the GPU.</p>
+</div>
+<ul>
+<li>A simple PyTorch test program is given below to check whether PyTorch has been installed properly. Program is called</li>
+</ul>
 <details class="program">
 <summary>torch_tensor.py</summary>
 <div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>

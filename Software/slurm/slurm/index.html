@@ -3450,8 +3450,8 @@
 <td style="text-align: left;">Everyone</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>--qos=high</code></td>
-<td style="text-align: left;">Only available to owners/investors</td>
+<td style="text-align: left;"><code>--qos=high_$PI</code></td>
+<td style="text-align: left;">Replace <code>$PI</code> with the UCID of PI, only available to owners/investors</td>
 <td style="text-align: left;">Highest Priority Jobs, no SU Charges.</td>
 <td style="text-align: right;">72</td>
 <td style="text-align: left;">owner/investor PI Groups</td>
@@ -3490,17 +3490,17 @@ Here, 'xy1234' represents the UCID of the PI, and 'SLURM Service Units (CPU Hour
 <h4 id="submitting-jobs-on-cpu-nodes">Submitting Jobs on CPU Nodes<a class="headerlink" href="#submitting-jobs-on-cpu-nodes" title="Permanent link">&para;</a></h4>
 <details class="example">
 <summary>Sample Job Script to use: submit.sh</summary>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">#!/bin/bash -l</span>
-<span class="w">    </span><span class="kp">#SBATCH --job-name=job_nme</span>
-<span class="w">    </span><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-<span class="w">    </span><span class="kp">#SBATCH --error=%x.%j.err</span>
-<span class="w">    </span><span class="kp">#SBATCH --partition=general</span>
-<span class="w">    </span><span class="kp">#SBATCH --qos=standard</span>
-<span class="w">    </span><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-<span class="w">    </span><span class="kp">#SBATCH --nodes=1</span>
-<span class="w">    </span><span class="kp">#SBATCH --ntasks-per-node=8</span>
-<span class="w">    </span><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-<span class="w">    </span><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --job-name=job_nme</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+<span class="kp">#SBATCH --error=%x.%j.err</span>
+<span class="kp">#SBATCH --partition=general</span>
+<span class="kp">#SBATCH --qos=standard</span>
+<span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks-per-node=8</span>
+<span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+<span class="kp">#SBATCH --mem-per-cpu=4000M</span>
 </code></pre></div>
 </details>
 <ul>
@@ -3518,18 +3518,18 @@ Here, the <code>ST</code> stands for the status of the job. You may see the stat
 <p>In case of submitting the jobs on GPU, you can use the following SLURM script </p>
 <details class="example">
 <summary>Sample Job Script to use: gpu_submit.sh</summary>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">#!/bin/bash -l</span>
-<span class="w">    </span><span class="kp">#SBATCH --job-name=gpu_job</span>
-<span class="w">    </span><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-<span class="w">    </span><span class="kp">#SBATCH --error=%x.%j.err</span>
-<span class="w">    </span><span class="kp">#SBATCH --partition=gpu</span>
-<span class="w">    </span><span class="kp">#SBATCH --qos=standard</span>
-<span class="w">    </span><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-<span class="w">    </span><span class="kp">#SBATCH --nodes=1</span>
-<span class="w">    </span><span class="kp">#SBATCH --ntasks-per-node=8</span>
-<span class="w">    </span><span class="kp">#SBATCH --gres=gpu:2</span>
-<span class="w">    </span><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-<span class="w">    </span><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --job-name=gpu_job</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+<span class="kp">#SBATCH --error=%x.%j.err</span>
+<span class="kp">#SBATCH --partition=gpu</span>
+<span class="kp">#SBATCH --qos=standard</span>
+<span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks-per-node=8</span>
+<span class="kp">#SBATCH --gres=gpu:2</span>
+<span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+<span class="kp">#SBATCH --mem-per-cpu=4000M</span>
 </code></pre></div>
 </details>
 <p>This will request 2 GPUS per node on the <code>GPU</code> partition.</p>
@@ -3537,17 +3537,17 @@ Here, the <code>ST</code> stands for the status of the job. You may see the stat
 <p>The "debug" QoS in Slurm is intended for debugging and testing jobs. It usually provides a shorter queue wait time and quicker job turnaround. Jobs submitted with the "debug" QoS have access to a limited set of resources (Only 4 CPUS on Wulver), making it suitable for rapid testing and debugging of applications without tying up cluster resources for extended periods. </p>
 <details class="example">
 <summary>Sample Job Script to use: debug_submit.sh</summary>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">#!/bin/bash -l</span>
-<span class="w">    </span><span class="kp">#SBATCH --job-name=debug</span>
-<span class="w">    </span><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-<span class="w">    </span><span class="kp">#SBATCH --error=%x.%j.err</span>
-<span class="w">    </span><span class="kp">#SBATCH --partition=debug</span>
-<span class="w">    </span><span class="kp">#SBATCH --qos=debug</span>
-<span class="w">    </span><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-<span class="w">    </span><span class="kp">#SBATCH --nodes=1</span>
-<span class="w">    </span><span class="kp">#SBATCH --ntasks-per-node=4</span>
-<span class="w">    </span><span class="kp">#SBATCH --time=7:59:00  # D-HH:MM:SS, Maximum allowable Wall Time 8 hours</span>
-<span class="w">    </span><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l</span>
+<span class="kp">#SBATCH --job-name=debug</span>
+<span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+<span class="kp">#SBATCH --error=%x.%j.err</span>
+<span class="kp">#SBATCH --partition=debug</span>
+<span class="kp">#SBATCH --qos=debug</span>
+<span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+<span class="kp">#SBATCH --nodes=1</span>
+<span class="kp">#SBATCH --ntasks-per-node=4</span>
+<span class="kp">#SBATCH --time=7:59:00  # D-HH:MM:SS, Maximum allowable Wall Time 8 hours</span>
+<span class="kp">#SBATCH --mem-per-cpu=4000M</span>
 </code></pre></div>
 </details>
 <h3 id="interactive-session-on-a-compute-node">Interactive session on a compute node<a class="headerlink" href="#interactive-session-on-a-compute-node" title="Permanent link">&para;</a></h3>

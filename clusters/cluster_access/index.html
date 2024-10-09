@@ -3159,8 +3159,8 @@ Here we will provide instructions for connecting to NJIT HPC on Mac/Linux and Wi
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Open terminal from <kbd>Launchpad</kbd> and select <kbd>terminal</kbd>.
-Type the following in the terminal by substituting <code>wulver</code> or <code>lochness</code> for <code>HPC_HOST</code> and <code>ucid</code> with your NJIT UCID.
-<div class="highlight"><pre><span></span><code>  localhost&gt; ssh -X -Y ucid@HPC_HOST.njit.edu  
+Type the following in the terminal and replace <code>$UCID</code> with your NJIT UCID..
+<div class="highlight"><pre><span></span><code>  localhost&gt; ssh -X -Y $UCID@wulver.njit.edu  
 </code></pre></div></p>
 <p>Users will be prompted for your password. Enter your NJIT UCID password. Users can omit the <code>-X -Y</code> if you are not using a graphic interface. Once the password is provided, User will authenticate via Cisco two-factor authentication (TFA)</p>
 <div class="highlight"><pre><span></span><code>(guest@wulver.njit.edu) Duo two-factor login for guest
@@ -3180,7 +3180,7 @@ Passcode or option (1-3):
 Open MobaXterm after installation is completed. 
 Select <kbd>Start local terminal</kbd> to open the terminal.</p>
 <p><img alt="mobaxterm" src="../img/Mobaxterm.png" /></p>
-<p>Type <code>ssh ucid@HPC_HOST.njit.edu</code>. Replace <code>ucid</code> with your NJIT UCID and substitute <code>wulver</code> or <code>lochness</code> for <code>HPC_HOST</code>.</p>
+<p>Type <code>ssh $UCID@wulver.njit.edu</code>. Replace <code>$UCID</code> with your NJIT UCID.</p>
 <p><img alt="mobaxterm2" src="../img/Mobaxterm2.png" />. </p>
 <p>User will be prompted to type the password. The password is NJIT UCID password.
 After successful login, user will see the following in the terminal, which means the user is now connected to HPC.</p>
@@ -3211,17 +3211,17 @@ login-1-41 ~ &gt;:
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-maclinux" name="__tabbed_2" type="radio" /><input id="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-windows" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-maclinux">Mac/Linux</label><label for="transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa-windows">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Users need to use the command in the terminal to transfer in and out the data </p>
+<p>Users need to use the command in the terminal to transfer in and out the data.  </p>
 <h3 id="rsync"><code>rsync</code>:<a class="headerlink" href="#rsync" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Transfer the data from local machine to HPC cluster
-<div class="highlight"><pre><span></span><code>rsync -avzP /path/to/local/machine ucid@wulver.njit.edu:/path/to/destination
+<div class="highlight"><pre><span></span><code>rsync -avzP /path/to/local/machine $UCID@wulver.njit.edu:/path/to/destination
 </code></pre></div></p>
 </li>
 <li>
 <p>To transfer the data from HPC cluster to local machine use
-<div class="highlight"><pre><span></span><code>rsync -avzP ucid@wulver.njit.edu:/path/to/source /path/to/local/machine
+<div class="highlight"><pre><span></span><code>rsync -avzP $UCID@wulver.njit.edu:/path/to/source /path/to/local/machine
 </code></pre></div></p>
 </li>
 </ul>
@@ -3229,17 +3229,17 @@ login-1-41 ~ &gt;:
 <ul>
 <li>
 <p>Copy files from remote machine to local machine
-<div class="highlight"><pre><span></span><code>scp [option] [ucid@wulver.njit.edu:path/to/source/file] [target/path]
+<div class="highlight"><pre><span></span><code>scp [option] [$UCID@wulver.njit.edu:path/to/source/file] [target/path]
 </code></pre></div></p>
 </li>
 <li>
 <p>Copy files from local machine to remote machine
-<div class="highlight"><pre><span></span><code>scp [option] [path/to/source/file] [ucid@wulver.njit.edu:target/path] 
+<div class="highlight"><pre><span></span><code>scp [option] [path/to/source/file] [$UCID@wulver.njit.edu:target/path] 
 </code></pre></div></p>
 </li>
 <li>
 <p>Example of scp:
-<div class="highlight"><pre><span></span><code>scp -r example ucid@wulver.njit.edu:/home/dir 
+<div class="highlight"><pre><span></span><code>scp -r example $UCID@wulver.njit.edu:/home/dir 
 </code></pre></div>
 Copy the “example” folder recursively to <code>/home/dir</code></p>
 </li>
@@ -3248,9 +3248,9 @@ Copy the “example” folder recursively to <code>/home/dir</code></p>
 <div class="tabbed-block">
 <p>User needs to select the <code>follow terminal folder</code> of the left pane of the MobaXterm terminal. </p>
 <p><img alt="mobaxterm3" src="../img/Mobaxterm3.png" /></p>
-<p>Next, to transfer the data from the local machine to Lochness user needs to select the <code>Upload to current folder</code> option, as shown below. Selecting this option will open a dialogue box where user needs to select the files to upload.</p>
+<p>Next, to transfer the data from the local machine to Wulver user needs to select the <code>Upload to current folder</code> option, as shown below. Selecting this option will open a dialogue box where user needs to select the files to upload.</p>
 <p><img alt="mobaxterm4" src="../img/Mobaxterm4.png" /></p>
-<p>For transferring the data from Lochness to the local machine user needs to select the directory or the data from the left pane and then select <code>Download selected files</code>.</p>
+<p>For transferring the data from Wulver to the local machine user needs to select the directory or the data from the left pane and then select <code>Download selected files</code>.</p>
 </div>
 </div>
 </div>

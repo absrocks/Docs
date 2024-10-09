@@ -2200,9 +2200,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-jupyterlab" class="md-nav__link">
+  <a href="#using-jupyter-notebook-on-wulver" class="md-nav__link">
     <span class="md-ellipsis">
-      Using JupyterLab
+      Using Jupyter Notebook on Wulver
     </span>
   </a>
   
@@ -3047,9 +3047,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-jupyterlab" class="md-nav__link">
+  <a href="#using-jupyter-notebook-on-wulver" class="md-nav__link">
     <span class="md-ellipsis">
-      Using JupyterLab
+      Using Jupyter Notebook on Wulver
     </span>
   </a>
   
@@ -3084,14 +3084,19 @@
 
 <h1 id="jupyter-notebooks">Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permanent link">&para;</a></h1>
 <p>The Jupyter Notebook is a web-based interactive computing platform. The notebook combines live code, equations, narrative text, and visualizations. In our cluster, we have JupyterLab which is the next-generation user interface for Project Jupyter offering all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user interface. </p>
-<h2 id="using-jupyterlab">Using JupyterLab<a class="headerlink" href="#using-jupyterlab" title="Permanent link">&para;</a></h2>
-<p>Users can install Jupyter Notebook on the Conda Environment. Once the <a href="../conda/#activate-and-deactivate-conda-environment">Conda Environment</a> is activated users can install Jupyter Notebook via <code>conda install -c conda-forge jupyter notebook</code> command. Here we provide a sample SLURM script on how to start Jupyter Notebook session on Wulver.</p>
-<details class="example">
-<summary>Sample Batch Script to run Jupyter Notebook</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="using-jupyterlab-wulver" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="using-jupyterlab-wulver">Wulver</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l                                                                                                                                                                                                                          </span>
+<h2 id="using-jupyter-notebook-on-wulver">Using Jupyter Notebook on Wulver<a class="headerlink" href="#using-jupyter-notebook-on-wulver" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Jupyter Notebook via slurm on Wulver is deprecated </p>
+<p>Since two-factor authentication has been implemented on Wulver, the use of Jupyter Notebook via SLURM scripts has been discontinued and is no longer supported. Users should use <a href="ondemand.njit.edu">OnDemand</a> to use <a href="../../../../OnDemand/Apps/Notebook/">Jupyter Notebook on Wulver</a>. First, users need to install Jupyter Notebook in their Conda environment. Once the <a href="../conda/#activate-and-deactivate-conda-environment">Conda Environment</a> is activated, users can install Jupyter Notebook using the command <code>conda install -c conda-forge jupyter notebook</code>. Then, you need to specify the environment in OnDemand to start the Jupyter Notebook session. Check <a href="../../../../OnDemand/Apps/Notebook/">here</a> for details.</p>
+</div>
+<!-- 
+Users can install Jupyter Notebook on the Conda Environment. Once the [Conda Environment](conda.md#activate-and-deactivate-conda-environment) is activated users can install Jupyter Notebook via `conda install -c conda-forge jupyter notebook` command. Here we provide a sample SLURM script on how to start Jupyter Notebook session on Wulver.
+
+??? example "Sample Batch Script to run Jupyter Notebook"
+
+    === "Wulver"
+
+        <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash -l                                                                                                                                                                                                                          </span>
 <span class="kp">#SBATCH --job-name=jupyter_test                                                                         </span>
 <span class="kp">#SBATCH --output=%x.%j.out                                                                                    </span>
 <span class="kp">#SBATCH --tasks-per-node=1</span>
@@ -3139,11 +3144,9 @@ cat<span class="s">&lt;&lt;EOF</span>
 
 jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser<span class="w"> </span>--port<span class="w"> </span><span class="nv">$port</span><span class="w"> </span>--notebook-dir<span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
 </code></pre></div>
-</div>
-</div>
-</div>
-</details>
-<p>Once you submit this job script, you will see an output file indicating the port number that you need to use to connect to Wulver in a new terminal window. Please follow further instructions from the output file.</p>
+Once you submit this job script, you will see an output file indicating the port number that you need to use to connect to Wulver in a new terminal window. Please follow further instructions from the output file.
+-->
+
 <h2 id="user-contributed-information">User Contributed Information<a class="headerlink" href="#user-contributed-information" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Please help us improve this page</p>

@@ -32,6 +32,9 @@ Conda as a package manager helps you find and install packages. If you need a pa
 
 ## Create and Activate a Conda Virtual Environment
 
+!!! tip
+    The login node has limited memory and processing resources, which can slow down conda environment creation and package installation. It is recommended to start an [interactive session](../../Running_jobs/interactive-jobs.md/) on a compute node before creating or modifying your conda environment.
+
 Load the Miniforge3 Module
 
 ```
@@ -52,10 +55,10 @@ Once you create an environment, you need to activate the environment to install 
 Use `conda activate ENV` to activate the Conda environment (`ENV` is the name of the environment). Following the activation of the conda environment, the name of the environment appears at the left of the hostname in the terminal. 
 
 ```bash
-login1-41 ~ >: module load Miniforge3
-login1-41 ~ >: conda create --name ENV python=3.9
-login1-41 ~ >: conda activate ENV
-(ENV) login-41 ~ >:
+[ls565@n0058 ~]$ module load Miniforge3
+[ls565@n0058 ~]$ conda create --name ENV python=3.9
+[ls565@n0058 ~]$ conda activate ENV
+(ENV) [ls565@n0058 ~]$
 ```
 
 Once you finish the installation of Python packages, deactivate the conda environment using `conda deactivate ENV`. 
@@ -68,7 +71,7 @@ Once you finish the installation of Python packages, deactivate the conda enviro
 Once Conda environment is activated, you can install packages via `conda install package_name` command. For example, if you want to install `matplotlib`, you need to use
 
 ```bash
-(ENV) login-41 ~ >: conda install -c conda-forge matplotlib
+(ENV) [ls565@n0058 ~]$ conda install -c conda-forge matplotlib
 ```
 where `conda-forge` is the name of the conda channel. 
 
@@ -97,92 +100,38 @@ The advantage of using `.condarc` is that you don't have to mention the channel 
 ## Examples of Conda Environemnt 
 Here, we provide some examples of how to use `conda` to install applications. 
 
+!!! note
+    For the following examples please make sure to start an [interactive session](../../Running_jobs/interactive-jobs.md/#the-interactive-command-gpu-nodes) on GPU node.
+
 ### Install TensorFlow with GPU 
-The following example will create a new conda environment based on Python 3.9 and install TensorFlow in the environment.
-
+- The following example will create a new conda environment and install TensorFlow in the environment.
 ```bash
-login1-41 ~ >: module load Miniforge3
-login1-41 ~ >: conda create --name tf python=3.9
-Collecting package metadata (current_repodata.json): done
-Solving environment: done
-
-## Package Plan ##
-
-  environment location: /home/g/guest24/.conda/envs/tf
-
-  added / updated specs:
-    - python=3.9
-
-
-The following packages will be downloaded:
-
- <output snipped>
-
-Proceed ([y]/n)?y
-
- <output snipped>
-#
-# To activate this environment, use
-#
-#     $ conda activate tf
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
+[ls565@n0058 ~]$ module load Miniforge3
+[ls565@n0058 ~]$ conda create --name tf 
 ```
 
-
-Activate the new 'tf' environment
+- Activate the new 'tf' environment
 ```bash
-login1-41 ~ >: conda activate tf
-(tf) login-41 ~ >:
+[ls565@n0058 ~]$ conda activate tf
+(tf) [ls565@n0058 ~]$
 ```
-Install tensorflow-gpu
+
+- Install tensorflow-gpu
 ```bash
-(tf) node430-41 ~ >: conda install -c anaconda tensorflow-gpu
-Collecting package metadata (current_repodata.json): done
-Solving environment: done
-
-## Package Plan ##
-
-  environment location: /home/g/guest24/miniconda3/envs/tf
-
-  added / updated specs:
-    - tensorflow-gpu
-
-<output snipped>
-
-The following packages will be SUPERSEDED by a higher-priority channel:
-
-  ca-certificates                                 pkgs/main --> anaconda
-  certifi                                         pkgs/main --> anaconda
-  openssl                                         pkgs/main --> anaconda
-
-
-Proceed ([y]/n)?y
-
-<output snipped>
-
-mkl_fft-1.1.0        | 143 KB    | ####################################################################################### | 100%
-urllib3-1.25.9       | 98 KB     | ####################################################################################### | 100%
-cudatoolkit-10.1.243 | 513.2 MB  | ####################################################################################### | 100%
-protobuf-3.12.3      | 711 KB    | ####################################################################################### | 100%
-blinker-1.4          | 21 KB     | ####################################################################################### | 100%
-requests-2.24.0      | 54 KB     | ####################################################################################### | 100%
-werkzeug-1.0.1       | 243 KB    | ####################################################################################### | 100%
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
+(tf) [ls565@n0058 ~]$ conda install -c conda-forge tensorflow-gpu
 ```
-Check to see if TensorFlow can be loaded
+
+- Check if TensorFlow can be loaded
 ```
-(tf) login1-41 ~ >: python
-Python 3.9.13 (main, Oct 13 2022, 21:15:33)
-[GCC 11.2.0] :: Anaconda, Inc. on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>>
+(tf) [ls565@n0058 ~]$ python -c "import tensorflow as tf; print( tf.__version__)"
 ```
-Simple TensorFlow test program to make sure the virtual env can access a GPU. Program is called 
+
+- Check if TensorFlow is compiled with GPU
+```
+(tf) [ls565@n0058 ~]$ python -c "import tensorflow as tf; print(tf.test.is_built_with_gpu_support())"
+```
+
+You can also verify using this simple TensorFlow test program to make sure the virtual env can access a GPU. 
 ??? Example "tf.gpu.test.py"
 
     ```python
@@ -221,38 +170,7 @@ Simple TensorFlow test program to make sure the virtual env can access a GPU. Pr
         conda activate tf
         srun python tf.gpu.test.py
         ```
-Result:
-```bash
-Starting /home/g/guest24/.bash_profile ... standard AFS bash profile
 
-Home directory : /home/g/guest24 is not in AFS -- skipping quota check
-
-On host node430 :
-         17:14:13 up 1 day,  1:17,  0 users,  load average: 0.01, 0.07, 0.06
-
-      Your Kerberos ticket and AFS token status 
-klist: No credentials cache found (filename: /tmp/krb5cc_22967_HvCVvuvMMX)
-Kerberos :
-AFS      :
-
-Loading default modules ...
-Create file : "/home/g/guest24/.modules" to customize.
-
-No modules loaded
-2020-07-29 17:14:19.047276: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
-2020-07-29 17:14:19.059941: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 2200070000 Hz
-2020-07-29 17:14:19.060093: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55ea8ebfdb90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-07-29 17:14:19.060136: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-07-29 17:14:19.061484: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
-
-<ouput snipped>
-
-2020-07-29 17:14:19.817386: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
-2020-07-29 17:14:19.817392: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0
-2020-07-29 17:14:19.817397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N
-2020-07-29 17:14:19.819082: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/device:GPU:0 with 15064 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:02:00.0, compute capability: 6.0)
-Default GPU Device: /device:GPU:0
-```
 Next, deactivate the environment using `conda deactivate tf` command.
 
 ### Install PyTorch with GPU

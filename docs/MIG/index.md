@@ -4,8 +4,6 @@ MIG (Multi-Instance GPU) is a technology introduced by NVIDIA starting with its 
 
 This allows multiple users or processes to simultaneously run GPU workloads without interfering with one another, improving resource utilization, reducing wait times in job queues, and increasing throughput in shared computing environments like Wulver.
 
-For a quick overview of MIG in action, see [NVIDIA’s demo video](https://developer.nvidia.com/techdemos/video/disc03).
-
 
 ## Why MIG on Wulver
 

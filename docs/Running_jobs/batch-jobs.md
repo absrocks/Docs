@@ -9,7 +9,7 @@ Unlike your personal laptop where you run commands interactively, HPC jobs are q
 - How long your job may take?
 
 ### Example of batch job slurm script
-#### Submitting Jobs on CPU Nodes
+
 === "CPU Nodes"
     ??? example "Sample Job Script to use: submit.sh"
 

@@ -1,6 +1,6 @@
 # MIG Job Submission and SU Charges
 
-When submitting jobs on Wulver's MIG-enabled A100 GPUs, you must explicitly request the desired MIG profile using the --gres directive in your SLURM script.
+When submitting jobs on Wulver's MIG-enabled A100 GPUs, you must explicitly request the desired MIG profile using the `--gres` directive in your SLURM script.
 
 | GPU MIG |          Slurm Directive           | 
 |---------|:----------------------------------:|
@@ -9,8 +9,8 @@ When submitting jobs on Wulver's MIG-enabled A100 GPUs, you must explicitly requ
 | 40G MIG |      `--gres=gpu:a100_40g:1 `      |
 
 
-!!! warning
-    Please note that MIGs are available in partition=`debug_gpu` and qos=`debug`. However, when you use a full GPU using `--gres=gpu:a100:1` use the partition `gpu` and qos `standard` or `low`. If you want to see a job script example of requesting a full GPU, please refer to the sample [GPU job scripts](../Software/slurm/index.md/#submitting-jobs-on-gpu-nodes).
+!!! note
+    If you want to see a job script example of requesting a full GPU, please refer to the sample [GPU job scripts](../Running_jobs/batch-jobs.md/#example-of-batch-job-slurm-script-gpu-nodes).
 
 ## Running Jobs with MIG
 
@@ -21,8 +21,8 @@ When submitting jobs on Wulver's MIG-enabled A100 GPUs, you must explicitly requ
     #SBATCH --job-name=gpu_job
     #SBATCH --output=%x.%j.out
     #SBATCH --error=%x.%j.err
-    #SBATCH --partition=debug_gpu
-    #SBATCH --qos=debug
+    #SBATCH --partition=gpu
+    #SBATCH --qos=standard
     #SBATCH --account=$PI_ucid         # Replace with PI's UCID
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=8
@@ -36,9 +36,9 @@ When submitting jobs on Wulver's MIG-enabled A100 GPUs, you must explicitly requ
 === "Interactive session with MIG"
 
     ```shell
-    $srun --partition=debug_gpu \
+    $srun --partition=gpu \
     --account=$PI_ucid \
-    --qos=debug \
+    --qos=standard \
     --gres=gpu:a100_10g:1 \
     --time=00:59:00 \
     --pty bash

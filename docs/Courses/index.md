@@ -1,9 +1,9 @@
-# HPC Resources for Courses
+# HPC Resources for Teaching & Coursework
 
 ## Introduction
 Instructors can utilize High-Performance Computing (HPC) resources for academic courses. Whether faculty are planning a course that involves computationally intensive tasks or introducing students to parallel computing concepts, the HPC environment can offer valuable resources.
 
-## Course Details
+## Course Request
 To request HPC resources for course, you need to provide the following information at [HPC Course Request Form](https://nexus.njit.edu/highlander_nexus?id=sc_cat_item&sys_id=cd6eaea13b97e210e914eb0864e45a7f). 
 
 ### Name of Course:
@@ -25,7 +25,7 @@ To request HPC resources for course, you need to provide the following informati
 
     A minimum of 30 days' notice is required for requesting specific software installations or substantial resource allocations.
 
-## Utilizing HPC in a Course
+## When to Use HPC in a Course
 HPC resources are good for the courses if they satisfy the following requirements.
 
 * **Simulations and Modeling**:
@@ -39,8 +39,9 @@ Solve optimization problems that benefit from parallel processing and distribute
 * **Scientific Research Projects**:
 Enable students to work on scientific research projects that demand high-performance computing resources.
 
-## HPC Introduction
-The HPC Facilitator is available to provide an introduction to High-Performance Computing. This introduction can be conducted in person or online based on the preferences and requirements of the course. The session covers:
+## HPC Introduction for Courses
+
+The **HPC Facilitator** is available to provide an introduction to High-Performance Computing. This introduction can be conducted in person or online based on the preferences and requirements of the course. The session covers:
 
 * Overview of HPC concepts
 * Accessing and navigating the HPC cluster

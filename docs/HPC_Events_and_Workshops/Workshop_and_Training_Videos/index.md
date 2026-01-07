@@ -70,4 +70,26 @@ NJIT HPC provides practical training in high performance computing for students 
 
 </div>
 
+<div class="grid cards" markdown>
+
+-   ### [Conda for Shared Environments](../index.md)
+
+    ---
+
+    This webinar provides an introductory understanding of using Python for HPC and effectively managing their Python environments.
+    
+    **Key Highlights:**
+
+    * Access Python on Wulver
+    * Introduction to Conda environments
+    * Install, uninstall and upgrade packages
+    * Best Practices for managing conda environments
+    * Common Python libraries for scientific computing
+
+    <iframe src="https://njit.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=55a5ea04-60a4-4408-ac25-b38c016346b3&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646; box-sizing: border-box;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="Conda for Shared Environments"></iframe>
+
+    [<span class="octicon--arrow-right-24"></span> Download Slides](../../assets/slides/conda_training_11-05-2025.pdf)
+
+</div>
+
 

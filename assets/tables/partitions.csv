@@ -1,0 +1,6 @@
+Partition,Purpose,Rules,Nodes,Cores per Node,CPU,GPU,Memory
+--partition=general,General-purpose CPU jobs and everyday production workloads,,100,128,2.5G GHz AMD EPYC 7763 (2),NA,512 GB
+--partition=debug,Short interactive testing and debugging of CPU jobs,,1,4,2.5G GHz AMD EPYC 7763 (2),NA,16 GB
+--partition=debug_gpu,Short interactive testing and debugging of GPU jobs,,1,4,2.0 GHz AMD EPYC 7713 (2),"<a href='../../MIG'>MIG</a> (10g, 20g, 40g)",16 GB
+--partition=gpu,GPU-accelerated production workloads,,25,128,2.0 GHz AMD EPYC 7713 (2),"NVIDIA&nbsp;A100&nbsp;GPUs&nbsp;(4);<br><a href='../../MIG'>MIG</a> (10g, 20g, 40g)",512 GB
+--partition=bigmem,Memory-intensive jobs requiring large RAM,"1 job per user at a time; memory requested must be more than 500 GB",2,128,2.5G GHz AMD EPYC 7763 (2),NA,2 TB

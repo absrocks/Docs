@@ -1,0 +1,4815 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official HPC NJIT documentation website.">
+      
+      
+      
+        <link rel="canonical" href="https://hpc.njit.edu/faq/faq/">
+      
+      
+        <link rel="prev" href="../rhel_9_faq/">
+      
+      
+        <link rel="next" href="../../news/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>FAQs - NJIT HPC Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faqs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NJIT HPC Documentation" class="md-header__button md-logo" aria-label="NJIT HPC Documentation" data-md-component="logo">
+      
+  <img src="../../img/Logo_NJIT.png" alt="">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NJIT HPC Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  <fieldset style="border:0;margin:0;padding:0;">
+    <legend class="md-sr-only">Color scheme</legend>
+    
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+      
+        <label class="md-header__button md-icon" title="Switch to light mode" aria-label="Switch to light mode" for="__palette_1" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+        </label>
+      
+    
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+      
+        <label class="md-header__button md-icon" title="Switch to dark mode" aria-label="Switch to dark mode" for="__palette_2" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+        </label>
+      
+    
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to automatic mode"  type="radio" name="__palette" id="__palette_2">
+      
+        <label class="md-header__button md-icon" title="Switch to automatic mode" aria-label="Switch to automatic mode" for="__palette_0" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+        </label>
+      
+    
+  </fieldset>
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <div class="md-search__overlay" role="button" tabindex="0" aria-label="Close search" onclick="var t=document.getElementById('__search');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__search');if(t)t.checked=false;}"></div>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <div class="md-search__icon md-icon" role="button" tabindex="0" aria-label="Search" onclick="var t=document.getElementById('__search');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__search');if(t)t.checked=false;}">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </div>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/arcs-njit-edu/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__drawer');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__drawer');if(t)t.checked=false;}">
+    <span class="md-nav__button md-logo" aria-hidden="true" data-md-component="logo">
+      
+  <img src="../../img/Logo_NJIT.png" alt="">
+
+    </span>
+    NJIT HPC Documentation
+  </div>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/arcs-njit-edu/Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NJIT HPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    About Us
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0" aria-label="Expand About Us">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_2');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_2');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            About Us
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact Us
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/rcab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research Computing Advisory Board
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../clusters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Clusters
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0" aria-label="Expand Clusters">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_3');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_3');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Clusters
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/wulver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wulver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Decommissioned
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_3_3');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_3_3');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Decommissioned
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/decommissioned/stheno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stheno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/decommissioned/lochness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lochness
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/cluster_access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User access to clusters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/get_started_on_Wulver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting started on Wulver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clusters/Wulver_filesystems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wulver Filesystems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Policies/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Policies
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0" aria-label="Expand Policies">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_4');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_4');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Policies
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/wulver_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wulver policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/condo_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Condo policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Policies/allocation_policies/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Allocation policy
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0" aria-label="Expand Allocation policy">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_4_4');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_4_4');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Allocation policy
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/allocation_policies/1.allocation_categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Allocation Categories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/allocation_policies/2.review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Review and Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/allocation_policies/3.proposal_guidelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proposal Guideline Sections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/allocation_policies/4.acknowledgement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Acknowledgement and Reporting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/allocation_policies/5.data_policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data policies and HPC software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/allocation_policies/6.training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Training and Periodic Policy Review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Policies/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wulver Maintenance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facilities/facilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Facilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Services/hpc-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Status (on-campus or VPN)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_7');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_7');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Status (on-campus or VPN)
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hpc.njit.edu/Monitor/load.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Current Load
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hpc.njit.edu/Monitor/summary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resource Usage Summary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hpc.njit.edu/Monitor/cy2026.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resource Usage (this year so far)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hpc.njit.edu/Monitor/modules.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Usage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../HPC_Events_and_Workshops/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    HPC Events and Workshops
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0" aria-label="Expand HPC Events and Workshops">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_8');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_8');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            HPC Events and Workshops
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../HPC_Events_and_Workshops/Workshop_and_Training_Videos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workshop and Training Videos
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_2" id="__nav_8_2_label" tabindex="0" aria-label="Expand Workshop and Training Videos">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_8_2');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_8_2');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Workshop and Training Videos
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/Workshop_and_Training_Videos/archived/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Archived HPC Training Recordings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../HPC_Events_and_Workshops/archived/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Archived
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0" aria-label="Expand Archived">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_8_3');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_8_3');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Archived
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_2" id="__nav_8_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_2_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_8_3_2');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_8_3_2');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            2024
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/1_slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SLURM Batch System Basics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/2_containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Containers on Wulver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/3_slurm_advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Arrays and Advanced Submission Techniques for HPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/4_nvidia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NVIDIA Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/5_symposium/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HPC Research Symposium
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/6_slurm_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SLURM Workload Manager Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2024/7_Intro_to_MPI_Workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro to MPI Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3_3" id="__nav_8_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_3_3_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_8_3_3');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_8_3_3');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            2025
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2025/3_conda_training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python and Conda Environments in HPC: From Basics to Best Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2025/4_intro_to_linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2025/5_parallel_computing_with_matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parallel Computing with MATLAB: Hands on workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2025/7_MATLAB_on_Wulver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HPC Summer Workshop: MATLAB Parallel Computing Hands-On Using Wulver
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HPC_Events_and_Workshops/archived/2025/8_PSC_Machine_Learning_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HPC Summer Workshop: PSC Machine Learning and BIG DATA Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Running_jobs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Running Jobs
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0" aria-label="Expand Running Jobs">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_9');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_9');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Running Jobs
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/node-memory-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nodes and Memory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/service-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Service Units (SU)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/batch-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/interactive-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/managing-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Managing and Monitoring Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/job_limitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Limitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/array-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/dependency-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dependency Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/checkpointing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Checkpointing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/problems-and-misconceptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Problems and Misconceptions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Running_jobs/ondemand-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jobs on OnDemand
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Software
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0" aria-label="Expand Software">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CFD
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_2');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_2');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            CFD
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/ansys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ANSYS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/comsol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    COMSOL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/fluent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FLUENT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/CFD/openfoam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenFOAM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IDE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_3');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_3');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            IDE
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/IDE/VSCode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VS Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/MATLAB/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    MATLAB
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_4" id="__nav_10_4_label" tabindex="0" aria-label="Expand MATLAB">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_4');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_4');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            MATLAB
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/MATLAB/matlab_local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use MATLAB on NJIT HPC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_5" id="__nav_10_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Molecular Dynamics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_5_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_5');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_5');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Molecular Dynamics
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/Molecular_Dynamics/gromacs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GROMACS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/Molecular_Dynamics/lammps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LAMMPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/Molecular_Dynamics/plumed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PLUMED
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_6" id="__nav_10_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Chemistry
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_6');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_6');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Chemistry
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/cp2k/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CP2K
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/gaussian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gaussian
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/orca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORCA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/qe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Espresso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/siesta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SIESTA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/chemistry/vasp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VASP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_7');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_7');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/programming/compilers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compilers and Toolchains
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/python/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_8" id="__nav_10_8_label" tabindex="0" aria-label="Expand Python">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_8_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_8');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_8');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/python/conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conda Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/python/jupyter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter Notebook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Software/slurm/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Slurm
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_9_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_9');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_9');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_10" id="__nav_10_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utilities
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_10_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_10');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_10');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Utilities
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/utilities/apptainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apptainer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/utilities/dmtcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DMTCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/utilities/parallel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GNU Parallel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_11" id="__nav_10_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Visualization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_11_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_10_11');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_10_11');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Visualization
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/ase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ASE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/gnuplot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GNUPlot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/ovito/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OVITO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Software/visualization/paraview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paraview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../MIG/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    MIG
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0" aria-label="Expand MIG">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_11');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_11');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            MIG
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MIG/profile-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MIG/job-submission-and-su-charges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Submission and SU Charges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MIG/performance_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../OnDemand/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    OnDemand
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0" aria-label="Expand OnDemand">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_12');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_12');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            OnDemand
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/apps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../OnDemand/Jobs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Jobs
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_5" id="__nav_12_5_label" tabindex="0" aria-label="Expand Jobs">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_12_5');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_12_5');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Jobs
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/Jobs/job_composer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job composer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/Jobs/open_composer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Composer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/clusters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clusters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../OnDemand/Interactive_Apps/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Interactive Apps
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_7" id="__nav_12_7_label" tabindex="0" aria-label="Expand Interactive Apps">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_7_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_12_7');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_12_7');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            Interactive Apps
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/Interactive_Apps/Matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MATLAB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/Interactive_Apps/Notebook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/Interactive_Apps/Rstudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/my_interactive_sessions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Interactive Sessions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnDemand/submit_ticket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submit Support Ticket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    HPC for Courses
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0" aria-label="Expand HPC for Courses">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__nav_13');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__nav_13');if(t)t.checked=false;}">
+            <span class="md-nav__icon md-icon"></span>
+            HPC for Courses
+          </div>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Courses/course-resource-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Courses/course-job-submission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submitting Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rhel_9_faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RHEL 9 Upgrade FAQs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQs
+    
+  </span>
+  
+
+      </a>
+      
+        <!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+    
+  
+
+  <!-- Table of contents title and list -->
+  
+    <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__toc');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__toc');if(t)t.checked=false;}">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </div>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login-issues-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login Issues / Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-systems-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Systems / Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobs-and-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jobs and scheduling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-and-hardware-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software and Hardware Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    News and Announcements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Determine title -->
+
+
+
+<!-- Table of contents -->
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+  <!--
+    Check whether the content starts with a level 1 headline. If it does, the
+    top-level anchor must be skipped, since it would be redundant to the link
+    to the current page that is located just above the anchor. Therefore we
+    directly continue with the children of the anchor.
+  -->
+  
+  
+    
+  
+
+  <!-- Table of contents title and list -->
+  
+    <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('__toc');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('__toc');if(t)t.checked=false;}">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </div>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login-issues-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login Issues / Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-systems-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Systems / Storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jobs-and-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jobs and scheduling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-and-hardware-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software and Hardware Specifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+                  
+
+
+  
+  
+
+
+<h1 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h1>
+<p>Welcome to our most frequently asked questions. If you cannot find an entry related to your question, please <a href="../../about/contact/">contact us</a>, and we will add it.</p>
+<h2 id="login-issues-access">Login Issues / Access<a class="headerlink" href="#login-issues-access" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>How do I get access to the Wulver HPC cluster?</summary>
+<ul>
+<li>If you are a student or researcher, your research/faculty advisor will need to request an account on your behalf. </li>
+<li>If you are a faculty member, then you can directly email us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;">&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;</a> for an account.</li>
+<li>For individuals non affiliated with NJIT have to contact a faculty member in NJIT to sponsor you a guest account</li>
+<li>If you are taking a course that requires computation on Wulver please ask your course instructor to email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;">&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;</a> to request access for the students.</li>
+<li>For detail information please click <a href="../../clusters/cluster_access/">here</a>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>How do I connect to the Wulver HPC cluster?</summary>
+<ul>
+<li>For detail information please click <a href="../../clusters/cluster_access/">here</a>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Why can’t I log in to the HPC?</summary>
+<ul>
+<li>It’s possible that your account is not activated on Wulver. Make sure to follow the instructions in <a href="">How do I get access to the Wulver HPC cluster?</a>. Once your account is created, you will receive a confirmation in your NJIT email.</li>
+<li>It’s possible that your account is not activated on Wulver. Make sure to follow the instructions in <a href="">How do I get access to the Wulver HPC cluster?</a>. Once your account is created, you will receive a confirmation in your NJIT email.</li>
+<li>Ensure that your UCID and password are correct.</li>
+<li>If you are working off-campus, make sure to connect to NJIT VPN before logging into Wulver. Visit <a href="https://ist.njit.edu/vpn">https://ist.njit.edu/vpn</a> for more information on VPN installation.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Why is my password not showing in the terminal when I type?</summary>
+<ul>
+<li>The Command Line Interface hides passwords as you type to protect against visual exposure and enhance security.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Why am I getting “permission denied” ?</summary>
+<ul>
+<li>You might not have access to the HPC yet. For requesting access, please check our <a href="../../clusters/cluster_access/">user access</a>.</li>
+<li>Your instructor/PI might not have added you into the group yet.</li>
+<li>Cluster might be having downtime due to maintenance or other reasons.</li>
+</ul>
+</details>
+<details class="question">
+<summary>How do I transfer data to and from the HPC cluster?</summary>
+<ul>
+<li>Detailed instructions are given  <a href="../../clusters/cluster_access/#transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa">here</a>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>What security measures should I be aware of when using the HPC cluster?</summary>
+<ul>
+<li>Do not share your login information with anyone else or allow anyone to login with your account.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Which directory will I land on when I log in?</summary>
+<ul>
+<li>You will enter into your home directory named under your UCID.</li>
+<li>Please note that you are on the login node of Wulver. Do not run any computations on the login nodes, as CPU and memory usage are limited per user on these nodes. To perform computations, you need to request resources from the compute nodes via <a href="../../Running_jobs/">SLURM</a>.</li>
+</ul>
+</details>
+<h2 id="file-systems-storage">File Systems / Storage<a class="headerlink" href="#file-systems-storage" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>What are the different file storage systems available on Wulver?</summary>
+<ul>
+<li>Please visit our <a href="../../clusters/Wulver_filesystems/">file system</a> page for detailed information. </li>
+</ul>
+</details>
+<details class="question">
+<summary>How can I get more storage?</summary>
+<ul>
+<li>When your account is active on Wulver, you will have access to following file systems<ul>
+<li><strong>$HOME</strong> directory - Default quota of 50GB per user and cannot be increased</li>
+<li><strong>/project</strong> - Default quota of 2TB per PI group and can be increased by purchasing additional storage at $200/TB for 5 years.</li>
+<li><strong>/scratch</strong> - No quota but files will be deleted after 30 days or sooner if the directory reaches 80% capacity. Users will be notified prior to deletion so they can review and move important files to <code>/project</code> if necessary.</li>
+</ul>
+</li>
+<li>For more details, visit <a href="../../clusters/Wulver_filesystems/">file system</a>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>I have an error “disk quota exceeded” while running a job, how can I solve this error?</summary>
+<ul>
+<li>First, check which filesystem is causing the error. If it’s in <code>$HOME</code>, it means the 50GB quota has been exceeded. You can either delete files, compress them, or move them to <code>/project</code>. If the error is in <code>/project</code>, you need to compress or delete some files. Alternatively, you can ask your PI to purchase an increase  in the <code>/project</code> quota by emailing us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;">&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;</a>. You can also run your code in <code>/scratch</code> and, after the simulation, transfer the important files to <code>/project</code>. </li>
+<li>Use <code>quota_info</code> command to check the filesystem quota. </li>
+<li>If you are encountering this error while running Python or Jupyter Notebook via Conda, the issue is likely due to Conda packages or cache files stored in <code>$HOME</code>. Use the <code>sn p $HOME</code> command to view a detailed breakdown of each directory in $HOME, showing how much space it is consuming. If you notice that the <code>.cache</code> directory is consuming a significant amount of space, you should remove it. If the <code>.conda</code> directory is taking up too much space, you need to move the Conda environment to <code>/project</code>. Refer to <a href="../../Software/python/conda/#importing-to-a-different-location">this guide</a> for detailed steps. </li>
+</ul>
+</details>
+<details class="question">
+<summary>What is <code>/scratch</code> used for?</summary>
+<ul>
+<li>Run your code in <code>/scratch</code> and, after the simulation, transfer the important files to <code>/project</code>. </li>
+<li><strong>NB</strong> : This space is not backed up; files will be deleted after 30 days.</li>
+</ul>
+</details>
+<details class="question">
+<summary>How can I remove files from my project directory when a student leaves?</summary>
+<ul>
+<li>When a student leaves NJIT or a research group, their files and directories are the responsibility of the Principal Investigator (PI). PIs are the owners of these directories and should review, retain, or delete the data as needed. HPC support does not automatically delete user data; PIs should manage directory cleanup unless assistance is required due to permission or exceptional issues.</li>
+</ul>
+</details>
+<h2 id="jobs-and-scheduling">Jobs and scheduling<a class="headerlink" href="#jobs-and-scheduling" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>How do I submit and manage jobs on the Wulver HPC cluster?</summary>
+<ul>
+<li>We use the SLURM resource manager and scheduler on Wulver for submitting and managing jobs on the compute nodes. </li>
+<li>Check our <a href="../../Running_jobs/">Running Jobs page</a> on the website for more detailed guidance.</li>
+</ul>
+</details>
+<details class="question">
+<summary>What is Walltime?</summary>
+<ul>
+<li>Walltime refers to the maximum amount of real-world time a job is allowed to run on the cluster. The actual job may finish earlier. </li>
+<li>To set the walltime, you'll typically specify it in the job submission script: 
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#SBATCH --time=01:00:00      # Request 1 hour of walltime</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ul>
+</details>
+<details class="question">
+<summary>How can I monitor the status of my jobs?</summary>
+<ul>
+<li>For checking and monitoring the status of your job please use <a href="../../Running_jobs/managing-jobs/">this guide</a> for detailed information.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Where will my output appear after I submit a job?</summary>
+<ul>
+<li>Your output will appear in the file which you initialized in your job script which look like below:
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#SBATCH --output=file_name.%j.out # %j expands to slurm JobID</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>By default, this file is in the same directory as the job script, unless you specify the working directory via <code>sbatch</code></li>
+</ul>
+</details>
+<details class="question">
+<summary>How can I see the status of the cluster?</summary>
+<ul>
+<li>For checking the cluster load use this <a href="https://hpc.njit.edu/Monitor/load.html">link</a></li>
+</ul>
+</details>
+<h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>When does maintenance occur?</summary>
+<ul>
+<li>Second Tuesday 9AM - 9PM monthly.</li>
+</ul>
+</details>
+<details class="question">
+<summary>I submitted my job before maintenance, but why did it go to pending status as <em>"ReqNodeNotAvail, Reserved for maintenance"</em> ?</summary>
+<ul>
+<li>If your job walltime request indicates the job will not finish before the maintenance starts then the scheduler will hold the job.  </li>
+<li>If you resubmit the job with a shorter walltime, it will not be held. </li>
+<li>For example: If you submit a job on Monday with a walltime of 2 days and maintenance is scheduled on Tuesday then your job overlaps with the maintenance schedule. Hence, SLURM will immediately put it on hold until the maintenance is completed and start it later.</li>
+</ul>
+</details>
+<details class="question">
+<summary>How will maintenance affect me?</summary>
+<ul>
+<li>During the maintenance downtime, logins will be disabled, users will not have access to their stored data in <code>/project</code>, <code>/home</code> and <code>/scratch</code>.</li>
+<li>All jobs that do not end <strong>before 9AM</strong> will be held by the scheduler until the downtime is complete and the systems are returned to service.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Will I receive a notification before maintenance?</summary>
+<ul>
+<li>Our regular monthly maintenance cycle is every 2<sup>nd</sup> Tuesday. If there is a change to this cycle, all users will receive notification.</li>
+</ul>
+</details>
+<details class="question">
+<summary>What happens to my jobs during maintenance?</summary>
+<ul>
+<li>Jobs queued just before the maintenance will be held in <strong>Pending State</strong> and then later gets continued.</li>
+</ul>
+</details>
+<h2 id="software-and-hardware-specifications">Software and Hardware Specifications<a class="headerlink" href="#software-and-hardware-specifications" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>Is there any installed software?</summary>
+<ul>
+<li>We have a variety of software packages already installed on Wulver.</li>
+<li>For more information, please visit our <a href="../../Software/">Software guide</a>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>I want to install new software?</summary>
+<ul>
+<li>Please first check our already installed <a href="../../Software/#software-list">software list</a>, and if you still don’t find it then visit our <a href="../../Software/">guide</a> for detailed guidance on software installation.</li>
+</ul>
+</details>
+<details class="question">
+<summary>What are the hardware specifications of the Wulver HPC cluster?</summary>
+<ul>
+<li>Please check out our <a href="../../clusters/wulver/">Wulver</a> page for complete details on hardware specifications.</li>
+</ul>
+</details>
+<details class="question">
+<summary>What programming languages are commonly used on the HPC cluster?</summary>
+<ul>
+<li>Most common ones are C, C++, Fortran, Python, R</li>
+</ul>
+</details>
+<details class="question">
+<summary>What are the tools and compilers available on HPC cluster?</summary>
+<ul>
+<li>Common programming tools include Intel and GNU compilers as well as MPI for multi-node jobs.</li>
+<li>For GPU acceleration we have CUDA and OpenACC.</li>
+<li>Details on these resources are available <a href="../../Software/programming/compilers/">here</a>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>How can I optimize my code for parallel processing?</summary>
+<ul>
+<li>To optimize your code, you can use different parallelization techniques depending on your setup:<ul>
+<li><strong>MPI</strong> and <strong>OpenMP</strong> for parallelizing code and then specifying the cores.</li>
+<li><strong>CUDA</strong> and <strong>OpenACC</strong> for GPU acceleration, especially for compute-heavy tasks.</li>
+</ul>
+</li>
+<li>Focus on optimizing <strong>CPU</strong>, <strong>I/O</strong>, <strong>memory</strong>, and <strong>parallelism</strong>.</li>
+<li>If you have specific questions about this, please email HPC Help at <a href="mailto:hpc@njit.edu">hpc@njit.edu</a> to request support.</li>
+</ul>
+</details>
+<details class="question">
+<summary>Can I request additional resources or customization for my projects?</summary>
+<ul>
+<li>Please see <a href="../../Policies/wulver_policy/">Wulver Usage and Condo Policy</a> for resource allocation details. </li>
+<li>The Research Computing Advisory Board is working on establishing policies and procedures for requesting additional computing time beyond the standard <strong>300K SU/year</strong>.</li>
+</ul>
+</details>
+<details class="question">
+<summary>My software requires a license, how should I proceed?</summary>
+<ul>
+<li>License is purchased by the user and his/her department.</li>
+<li>Please visit the software’s documentation for your specific software.</li>
+</ul>
+</details>
+<h2 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>What documentation and support resources are available for Wulver users?</summary>
+<ul>
+<li>Please visit the <a href="../../HPC_Events_and_Workshops/">Education and Training tab</a> on our website.</li>
+<li>If you have any specific questions which are not covered, please contact us at <a href="mailto:hpc@njit.edu">hpc@njit.edu</a></li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../rhel_9_faq/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RHEL 9 Upgrade FAQs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                RHEL 9 Upgrade FAQs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../news/" class="md-footer__link md-footer__link--next" aria-label="Next: News and Announcements">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                News and Announcements
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      New Jersey Institute of Technology High Performance Computing &copy; 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://nexus.njit.edu/highlander_nexus?id=sc_cat_item&sys_id=3f1dd0320a0a0b99000a53f7604a2ef9" target="_blank" rel="noopener" title="Contact HPC support" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 20v2H4c-1.1 0-2-.9-2-2V7h2v13zm4-18H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5 12h-2v-2h2zm1.8-5.2c-.3.4-.7.7-1.1.9-.2.2-.4.3-.5.5-.2.2-.2.5-.2.8h-2q0-.75.3-1.2c.2-.3.5-.6 1-.9q.45-.3.6-.6c.2-.2.2-.5.2-.8s-.1-.6-.3-.8-.4-.3-.8-.3c-.3 0-.5.1-.7.2-.2.2-.3.4-.3.7h-1.9c0-.8.2-1.4.8-1.8.7-.3 1.4-.5 2.3-.5s1.7.2 2.2.7.8 1.1.8 1.8c0 .5-.2.9-.4 1.3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<hpc@njit.edu>" target="_blank" rel="noopener" title="Email HPC support" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://ondemand.njit.edu" target="_blank" rel="noopener" title="Open OnDemand" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://hpc.njit.edu/Monitor/summary.html" target="_blank" rel="noopener" title="HPC job metrics" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.45 15.18 22 7.31V21H2V3h2v12.54L9.5 6 16 9.78l4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L4.31 19h2.26l4.39-7.56z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "announce.dismiss", "content.tooltips", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+    
+  </body>
+</html>

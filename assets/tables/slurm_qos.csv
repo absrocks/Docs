@@ -1,0 +1,5 @@
+﻿"Qos","Purpose","Rules","Wall time limit (hours)",Valid Users
+"--qos=standard","Normal jobs. Faculty PIs are allocated 300,000 Service Units (SU) per year","SU charges based on node type (see <a href='../service-units/'>SU</a>, jobs can be preempted by high QoS enqueued jobs","72","Everyone"
+"--qos=low","Free access, no SU charge","Jobs can be preempted by high or standard QoS enqueued jobs",72,Everyone
+"--qos=high_$PI","Replace <code>$PI</code> with the UCID of PI, only available to owners/investors","Highest Priority Jobs, no SU Charges.",72,owner/investor PI Groups
+"--qos=debug","Intended for debugging and testing jobs","No SU Charges, 1 job per user, maximum 4 CPUs and 16G Mem is allowed, must be used with <code>--partition=debug</code> or <code>debug_gpu</code>",8,Everyone

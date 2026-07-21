@@ -1,0 +1,8 @@
+Resource,Mem (GB)/Core,Cost
+1 CPU,4,$150 
+1 CPU,8,$250 
+1 CPU,16,$300 
+A100 GPU (80GB) + 1 CPU,4,"$10,000 "
+40GB MIG + 1 CPU,4,"$5,000 "
+20GB MIG + 1 CPU,4,"$2,500 "
+10GB MIG + 1 CPU,4,"$1,250 "

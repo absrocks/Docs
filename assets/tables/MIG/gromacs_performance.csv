@@ -1,0 +1,9 @@
+GPU Profile,Nodes,Cores,Threads,Performance (ns/day),Walltime (s),SU Consumption,Cost/Performance
+A100_10gb MIG,1,1,4,43.28,499.131,6,3.327171904
+A100_20gb MIG,1,1,4,81.205,265.995,8,2.364386429
+A100_40gb MIG,1,1,4,115.507,187.003,12,2.493355381
+A100_80gb full GPU,1,1,4,118.59,182.142,20,4.047558816
+
+
+
+

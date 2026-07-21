@@ -1,0 +1,8 @@
+Flag,Explanation,Example
+`-a`,"Mandatory option. This is followed by your group's name. Use `quota_info` to check the account/group name.",`-a $PI_UCID`
+`-q`,"Mandatory option. Used to access the priority",`-q standard`
+`-j`,"Mandatory option. Specify whether you want CPU or GPU node.",`-j cpu`
+`-n`,"Optional. The total number of CPUs. Default is 1 core unless specified.",`-n 1`
+`-t`,"Optional. The amount of walltime to reserve for your job in hours. Default is 1 hour unless specified.",`-t 1`
+`-g`,"Optional. The total number of GPUs. Default is 1 GPU unless specified.",`-g 1`
+`-p`,"Optional. Specify the name of the partition. (Default: `general` for CPU jobs, `gpu` for GPU jobs).",`-p debug`

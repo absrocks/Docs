@@ -1,0 +1,8 @@
+GPU Profile,Walltime (h),SU Total,Tokens Processed,Tokens/s,Peak Allocated (GB),Peak Reserved (GB),SU per 1M Tokens
+A100_10gb MIG,1.092,3.28,166327,42.3,5.68,8.97,19.05
+A100_20gb MIG,0.556,2.78,166327,83.0,5.68,18.30,16.39
+A100_40gb MIG,0.353,3.18,166327,130.9,5.68,23.55,18.88
+A100_80gb full GPU,0.267,4.53,166327,173.2,5.68,23.55,27.04
+
+
+

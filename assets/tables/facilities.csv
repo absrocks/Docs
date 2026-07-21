@@ -1,0 +1,9 @@
+﻿Category,Wulver
+Total Nodes,127
+Total Cores,6256
+Total RAM / GB,68096
+Total GPUs,100
+Total GPU RAM / GB,8000
+Access,General
+Network (Infiniband; Ethernet),HDR100 and 10Gig
+Theoretical Peak Performance (TFLOPs),1584.19

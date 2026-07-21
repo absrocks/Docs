@@ -1,0 +1,6 @@
+Partition,Service Unit (SU) Charge
+`--partition=general`,"MAX(CPUs, RAM/4G) SU"
+`--partition=gpu`,"16 * (GPU Memory requested)/80G + MAX(CPUs, RAM/4G) SU"
+`--partition=bigmem`,"MAX(1.5 *CPUs, 1.5 *RAM/16G) SU"
+`--partition=debug`,"No charges, must be used with `--qos=debug`"
+`--partition=debug_gpu`,"No charges, must be used with `--qos=debug`"

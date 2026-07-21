@@ -118,6 +118,17 @@ md-typeset .admonition.question,
   font-weight: 700;
 }
 
+/* Contrast fix: source-fact (star/fork count) badges were
+   rendering at 3.02:1 against the red header, below WCAG's
+   4.5:1 minimum for small text. Whiter base color gives room
+   to stay dimmed/secondary-looking while clearing the ratio. */
+.md-source__facts {
+  opacity: 0.9;
+}
+.md-source__fact {
+  color: #fff;
+}
+
 .octicon--arrow-right-24 {
   display: inline-block;
   width: 1.2rem;

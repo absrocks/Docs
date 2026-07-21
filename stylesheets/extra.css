@@ -38,6 +38,7 @@
   --md-accent-fg-color: #d8272d;
   --md-accent-fg-color--transparent: rgba(122, 92, 46, 0.1);
   --md-typeset-a-color: #CC0000;
+  --md-footer-fg-color--lighter: #868686;
 }
 
 /* Dark mode */

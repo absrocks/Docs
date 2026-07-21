@@ -33,8 +33,8 @@
 
 [data-md-color-scheme="default"] {
   --md-primary-fg-color: #CC0000;
-  --md-primary-bg-color: #FFFFFF;
-  --md-accent-bg-color: #FFFFFF;
+  --md-primary-bg-color: #E7E7E7;
+  --md-accent-bg-color: #CBBA94;
   --md-accent-fg-color: #d8272d;
   --md-accent-fg-color--transparent: rgba(122, 92, 46, 0.1);
   --md-typeset-a-color: #CC0000;
@@ -43,9 +43,9 @@
 /* Dark mode */
 [data-md-color-scheme="slate"][data-md-color-primary] {
   --md-typeset-a-color: #ebd99f;
-  --md-primary-fg-color: #CC0000;
+  --md-primary-fg-color: #CBBA94;
   --md-primary-bg-color: #000000;
-  --md-accent-fg-color: #d8272d;
+  --md-accent-fg-color: #ebd99f;
   --md-accent-fg-color--transparent: rgba(235, 217, 159, 0.1);
 }
 

@@ -4542,10 +4542,22 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "announce.dismiss", "content.tooltips", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
+
       <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
       
     
+<script>
+  // Accessibility: give the breadcrumb path nav a unique landmark label so it
+  // is distinguishable from the primary "Navigation" landmark.
+  (function () {
+    var path = document.querySelector("nav.md-path[aria-label='Navigation']");
+    if (path) {
+      path.setAttribute("aria-label", "Breadcrumb");
+    }
+  })();
+</script>
+
   </body>
 </html>

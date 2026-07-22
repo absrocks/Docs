@@ -385,6 +385,10 @@
          <lastmod>2026-07-22</lastmod>
     </url>
     <url>
+         <loc>https://hpc.njit.edu/archived/rhel_9_faq/</loc>
+         <lastmod>2026-07-22</lastmod>
+    </url>
+    <url>
          <loc>https://hpc.njit.edu/archived/migration/</loc>
          <lastmod>2026-07-22</lastmod>
     </url>
@@ -458,10 +462,6 @@
     </url>
     <url>
          <loc>https://hpc.njit.edu/faq/faq/</loc>
-         <lastmod>2026-07-22</lastmod>
-    </url>
-    <url>
-         <loc>https://hpc.njit.edu/faq/rhel_9_faq/</loc>
          <lastmod>2026-07-22</lastmod>
     </url>
     <url>

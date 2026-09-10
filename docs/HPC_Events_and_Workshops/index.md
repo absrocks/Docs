@@ -13,7 +13,7 @@ Please check our workshop schedule for this Fall season. Expand each section to 
 import re
 import pandas as pd
 
-df = pd.read_csv('docs/assets/tables/trainings/2026_spring.csv', keep_default_na=False)
+df = pd.read_csv('docs/assets/tables/trainings/2026_fall.csv', keep_default_na=False)
 
 def fix_cell(s):
     if not isinstance(s, str):

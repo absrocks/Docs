@@ -77,13 +77,11 @@ Follow these steps to get up and running on HPC.
 -   :fontawesome-solid-door-open:{ .lg .middle } __Open Office Hours__
      
     ---       
-    Our regular weekly drop-in office hours have concluded for the summer. However, our facilitators remain available throughout the summer for **one-on-one consultations** to help you optimize your code, troubleshoot workflows, and make the most of NJIT's HPC resources.
+    Our weekly drop-in office hours are back this fall. Stop by with questions about getting an account, submitting jobs, installing software, or debugging a workflow on Wulver, no appointment needed. If you cannot make it to campus, you can join the same session over Zoom.
 
-     **How to book:** Email us at [hpc@njit.edu](mailto:hpc@njit.edu) with a brief description of what you'd like to discuss, and we will coordinate a one-on-one session with the appropriate facilitator.
-
-     - :material-email: **Contact:** [hpc@njit.edu](mailto:hpc@njit.edu)
-     - :material-account-tie: **Format:** One-on-one consultations (in-person or virtual)
-     - :material-calendar-clock: **Availability:** By appointment throughout the summer
+     - :material-calendar-clock: **When:** Every Monday 12pm - 2pm and Wednesday 2pm - 4 pm
+     - :material-map-marker: **Where:** GITC 5302M
+     - :material-video: **Join virtually:** [Zoom link](https://njit-edu.zoom.us/j/91850887854?pwd=DvdF0pUw3mNJEoogb1OnYm6Eg2Aiju.1)
 </div>
 
 ## HPC Highlights!

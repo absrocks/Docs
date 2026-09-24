@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -435,8 +435,6 @@
       
         
       
-        
-      
     
     
     
@@ -611,29 +609,6 @@
   
   <span class="md-ellipsis">
     User access to clusters
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../clusters/account_request/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Requesting an Account
     
   </span>
   
@@ -4458,21 +4433,21 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>Required<span class="w"> </span>options:
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span>-a<span class="w"> </span>ACCOUNT<span class="w">       </span>Specify<span class="w"> </span>the<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>use.
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span>-q<span class="w"> </span>QOS<span class="w">           </span>Specify<span class="w"> </span>the<span class="w"> </span>quality<span class="w"> </span>of<span class="w"> </span>service<span class="w"> </span><span class="o">(</span>QoS<span class="o">)</span>.
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span>-j<span class="w"> </span>JOB_TYPE<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span><span class="nb">type</span><span class="w"> </span>of<span class="w"> </span>job:<span class="w"> </span><span class="s1">&#39;cpu&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;gpu&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span>-j<span class="w"> </span>JOB_TYPE<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span><span class="nb">type</span><span class="w"> </span>of<span class="w"> </span>job:<span class="w"> </span><span class="s1">'cpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>or<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs.
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>Example:<span class="w"> </span>Run<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>GPU<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span>QoS:
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>Example:<span class="w"> </span>Run<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>GPU<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>QoS:
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span>/apps/site/bin/interactive<span class="w"> </span>-a<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-q<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-j<span class="w"> </span>gpu
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>This<span class="w"> </span>will<span class="w"> </span>launch<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>job<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;gpu&#39;</span><span class="w"> </span>partition<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span>QoS<span class="w"> </span><span class="s1">&#39;test&#39;</span>,
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>This<span class="w"> </span>will<span class="w"> </span>launch<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>job<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span>partition<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span>QoS<span class="w"> </span><span class="s1">'test'</span>,
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>using<span class="w"> </span><span class="m">1</span><span class="w"> </span>GPU,<span class="w"> </span><span class="m">1</span><span class="w"> </span>CPU,<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>walltime<span class="w"> </span>of<span class="w"> </span><span class="m">1</span><span class="w"> </span>hour<span class="w"> </span>by<span class="w"> </span>default.
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>Optional<span class="w"> </span>parameters<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>resources:
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span>-n<span class="w"> </span>NTASKS<span class="w">        </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CPU<span class="w"> </span>tasks<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">  </span>-t<span class="w"> </span>WALLTIME<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>hours<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">  </span>-g<span class="w"> </span>GPU<span class="w">           </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>GPUs<span class="w"> </span><span class="o">(</span>Only<span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs,<span class="w"> </span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">  </span>-p<span class="w"> </span>PARTITION<span class="w">     </span>Specify<span class="w"> </span>the<span class="w"> </span>SLURM<span class="w"> </span>partition<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span>jobs,<span class="w"> </span><span class="s1">&#39;gpu&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span><span class="nb">jobs</span><span class="o">)</span>.
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">  </span>-p<span class="w"> </span>PARTITION<span class="w">     </span>Specify<span class="w"> </span>the<span class="w"> </span>SLURM<span class="w"> </span>partition<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="s1">'general'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span>jobs,<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span><span class="nb">jobs</span><span class="o">)</span>.
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>Use<span class="w"> </span><span class="s1">&#39;-h&#39;</span><span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message.
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>Use<span class="w"> </span><span class="s1">'-h'</span><span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message.
 </span></code></pre></div></td></tr></table></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="the-interactive-command-cpu-nodes" name="__tabbed_1" type="radio" /><input id="the-interactive-command-gpu-nodes" name="__tabbed_1" type="radio" /><input id="the-interactive-command-debug-nodes" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="the-interactive-command-cpu-nodes">CPU Nodes</label><label for="the-interactive-command-gpu-nodes">GPU Nodes</label><label for="the-interactive-command-debug-nodes">Debug Nodes</label></div>
 <div class="tabbed-content">
@@ -4579,6 +4554,38 @@ Now, once you get the confirmation of job allocation, you will be assigned to a 
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 10, 2026 18:35:40 UTC">April 10, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 31, 2025 15:53:53 UTC">July 31, 2025</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
   
@@ -4767,7 +4774,7 @@ Now, once you get the confirmation of job allocation, you will be assigned to a 
     
     
 
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
       

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -435,8 +435,6 @@
       
         
       
-        
-      
     
     
     
@@ -611,29 +609,6 @@
   
   <span class="md-ellipsis">
     User access to clusters
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../clusters/account_request/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Requesting an Account
     
   </span>
   
@@ -4529,7 +4504,7 @@ If you are running transient problem and want to save the data at particular tim
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">   </span>/file/set-tui-version<span class="w"> </span><span class="s2">&quot;21.1&quot;</span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">   </span>/file/set-tui-version<span class="w"> </span><span class="s2">"21.1"</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">   </span>/file/read-case-data<span class="w"> </span>tube_vof.cas.h5
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">   </span>solve/dual-time-iterate<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">50</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">   </span><span class="o">(</span>print-case-timer<span class="o">)</span>
@@ -4580,7 +4555,7 @@ For more details on journal commands, see the Fluent text user interface (TUI) c
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kp">#SBATCH --job-name=fluent</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kp">#SBATCH --output=%x.%j.out # i%x.%j expands to slurm JobName.JobID</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1"># Use &quot;sinfo&quot; to see what partitions are available to you</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1"># Use "sinfo" to see what partitions are available to you</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kp">#SBATCH --partition=general</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kp">#SBATCH --ntasks=8</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kp">#SBATCH --qos=standard</span>
@@ -4602,10 +4577,10 @@ For more details on journal commands, see the Fluent text user interface (TUI) c
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>touch<span class="w"> </span><span class="nv">$machines</span>
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="k">for</span><span class="w"> </span>node<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>scontrol<span class="w"> </span>show<span class="w"> </span>hostnames<span class="sb">`</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">    </span><span class="k">do</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$node</span><span class="s2">&quot;</span><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="nv">$machines</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$node</span><span class="s2">"</span><span class="w">  </span>&gt;&gt;<span class="w"> </span><span class="nv">$machines</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">    </span><span class="k">done</span>
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a>fluent<span class="w"> </span>3ddp<span class="w"> </span>-affinity<span class="o">=</span>off<span class="w"> </span>-ssh<span class="w"> </span>-t<span class="nv">$SLURM_NTASKS</span><span class="w"> </span>-pib<span class="w"> </span>-mpi<span class="o">=</span>intel<span class="w"> </span>-cnf<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$machines</span><span class="s2">&quot;</span><span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>journal.JOU
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a>fluent<span class="w"> </span>3ddp<span class="w"> </span>-affinity<span class="o">=</span>off<span class="w"> </span>-ssh<span class="w"> </span>-t<span class="nv">$SLURM_NTASKS</span><span class="w"> </span>-pib<span class="w"> </span>-mpi<span class="o">=</span>intel<span class="w"> </span>-cnf<span class="o">=</span><span class="s2">"</span><span class="nv">$machines</span><span class="s2">"</span><span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>journal.JOU
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4629,8 +4604,37 @@ For more details on journal commands, see the Fluent text user interface (TUI) c
 
 
   
+    
+  
+  
+    
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 3, 2026 23:11:26 UTC">April 3, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 13, 2023 17:59:07 UTC">April 13, 2023</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
   
@@ -4819,7 +4823,7 @@ For more details on journal commands, see the Fluent text user interface (TUI) c
     
     
 
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
       

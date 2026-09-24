@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -435,8 +435,6 @@
       
         
       
-        
-      
     
     
     
@@ -611,29 +609,6 @@
   
   <span class="md-ellipsis">
     User access to clusters
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../clusters/account_request/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Requesting an Account
     
   </span>
   
@@ -4590,7 +4565,7 @@
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="c1">################################################</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="c1">#</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="c1"># Source OpenFOAM bashrc</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="c1"># The modulefile doesn&#39;t do this</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="c1"># The modulefile doesn't do this</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="c1">#</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="c1">################################################</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_BASH</span>
@@ -4690,7 +4665,7 @@
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="c1">################################################</span>
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="c1">#</span>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="c1"># Source OpenFOAM bashrc</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="c1"># The modulefile doesn&#39;t do this</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="c1"># The modulefile doesn't do this</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="c1">#</span>
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="c1">################################################</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_BASH</span>
@@ -4787,7 +4762,7 @@
 <span class="normal"><a href="#__codelineno-2-70">70</a></span>
 <span class="normal"><a href="#__codelineno-2-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">  </span><span class="c1"># This is to build a completely self contained OpenFOAM using MPICH mpi. Everything from GCC on up will be built.</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="c1"># start an interactive session with compute node. Replace &quot;PI_UCID&quot; with the UCID of PI. Modify the other parameters if required.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="c1"># start an interactive session with compute node. Replace "PI_UCID" with the UCID of PI. Modify the other parameters if required.</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span>srun<span class="w"> </span>--partition<span class="o">=</span>general<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">16</span><span class="w"> </span>--mem-per-cpu<span class="o">=</span>2G<span class="w"> </span>--account<span class="o">=</span>PI_UCID<span class="w"> </span>--qos<span class="o">=</span>standard<span class="w"> </span>--time<span class="o">=</span><span class="m">2</span>:00:00<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w">  </span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="c1"># purge all loaded modules</span>
@@ -4813,7 +4788,7 @@
 </span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">  </span>vi<span class="w"> </span>../OpenFOAM-v2212/etc/bashrc
 </span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">  </span><span class="c1"># Change the following in bashrc </span>
 </span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">  </span><span class="c1"># User needs to specify the full path of the project directory below, it can be either the research directory or $HOME directory.</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">    </span><span class="nv">projectDir</span><span class="o">=</span><span class="s2">&quot;path/to/OpenFOAM/2212/OpenFOAM-</span><span class="nv">$WM_PROJECT_VERSION</span><span class="s2">&quot;</span><span class="w"> </span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w">    </span><span class="nv">projectDir</span><span class="o">=</span><span class="s2">"path/to/OpenFOAM/2212/OpenFOAM-</span><span class="nv">$WM_PROJECT_VERSION</span><span class="s2">"</span><span class="w"> </span>
 </span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">WM_MPLIB</span><span class="o">=</span>MPICH
 </span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">WM_LABEL_SIZE</span><span class="o">=</span><span class="m">64</span>
 </span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a>
@@ -4823,19 +4798,19 @@
 </span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w">    </span><span class="nv">default_mpfr_version</span><span class="o">=</span>mpfr-system
 </span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="w">    </span><span class="nv">default_mpc_version</span><span class="o">=</span>mpc-system
 </span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a>
-</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="w">    </span><span class="nv">gmp_version</span><span class="o">=</span><span class="s2">&quot;gmp-6.2.0&quot;</span>
-</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w">    </span><span class="nv">mpfr_version</span><span class="o">=</span><span class="s2">&quot;mpfr-4.0.2&quot;</span>
-</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="w">    </span><span class="nv">mpc_version</span><span class="o">=</span><span class="s2">&quot;mpc-1.1.0&quot;</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="w">    </span><span class="nv">gmp_version</span><span class="o">=</span><span class="s2">"gmp-6.2.0"</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w">    </span><span class="nv">mpfr_version</span><span class="o">=</span><span class="s2">"mpfr-4.0.2"</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="w">    </span><span class="nv">mpc_version</span><span class="o">=</span><span class="s2">"mpc-1.1.0"</span>
 </span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="w">  </span><span class="c1"># Source the RC script</span>
 </span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="w">  </span><span class="nb">source</span><span class="w"> </span>../OpenFOAM-v2212/etc/bashrc<span class="w"> </span><span class="nv">FOAMY_HEX_MESH</span><span class="o">=</span>yes
 </span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="w">  </span><span class="c1"># You might see the following warning message</span>
 </span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45"></a><span class="w">  </span><span class="o">===============================================================================</span>
 </span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46"></a><span class="w">  </span>Warning<span class="w"> </span><span class="k">in</span><span class="w"> </span>/opt/site/apps/OpenFOAM/2212/OpenFOAM-v2212/etc/config.sh/settings:
-</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47"></a><span class="w">  </span>Cannot<span class="w"> </span>find<span class="w"> </span><span class="s1">&#39;Gcc&#39;</span><span class="w"> </span>compiler<span class="w"> </span>installation
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47"></a><span class="w">  </span>Cannot<span class="w"> </span>find<span class="w"> </span><span class="s1">'Gcc'</span><span class="w"> </span>compiler<span class="w"> </span>installation
 </span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48"></a><span class="w">    </span>/opt/site/apps/OpenFOAM/2212/ThirdParty-v2212/platforms/linux64/gcc-4.8.5
 </span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49"></a>
 </span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50"></a><span class="w">  </span>Either<span class="w"> </span>install<span class="w"> </span>this<span class="w"> </span>compiler<span class="w"> </span>version,<span class="w"> </span>or<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span>system<span class="w"> </span>compiler<span class="w"> </span>by<span class="w"> </span>setting
-</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51"></a><span class="w">  </span>WM_COMPILER_TYPE<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;system&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$WM_PROJECT_DIR</span>/etc/bashrc.
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51"></a><span class="w">  </span>WM_COMPILER_TYPE<span class="w"> </span>to<span class="w"> </span><span class="s1">'system'</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$WM_PROJECT_DIR</span>/etc/bashrc.
 </span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52"></a><span class="w">  </span><span class="o">===============================================================================</span>
 </span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53"></a><span class="w">  </span>No<span class="w"> </span>completions<span class="w"> </span><span class="k">for</span><span class="w"> </span>/opt/site/apps/OpenFOAM/2212/OpenFOAM-v2212/platforms/linux64GccDPInt64Opt/bin
 </span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54"></a><span class="w">  </span><span class="o">[</span>ignore<span class="w"> </span><span class="k">if</span><span class="w"> </span>OpenFOAM<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>yet<span class="w"> </span>compiled<span class="o">]</span>
@@ -4874,8 +4849,37 @@
 
 
   
+    
+  
+  
+    
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 10, 2025 22:05:04 UTC">September 10, 2025</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 13, 2023 17:59:07 UTC">April 13, 2023</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
   
@@ -5064,7 +5068,7 @@
     
     
 
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
       

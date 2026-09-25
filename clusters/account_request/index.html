@@ -4651,23 +4651,19 @@ for details.</p>
 </div>
 </div>
 <div class="tabbed-block">
-<p>An NJIT faculty member sponsors the guest account. Guest access lasts one year, and can be renewed annually.</p>
+<p>Guest accounts are for external collaborators and NJIT alumni, and each one must be sponsored by an NJIT faculty member. Guest access lasts one year and can be renewed annually.</p>
 <p><a class="md-button" href="https://njit.service-now.com/highlander_nexus?id=sc_cat_item&amp;sys_id=afee4ca83b547e10ed2df90eb3e45a6f&amp;table=sc_cat_item">Request Guest Access</a></p>
 <h4 id="what-to-include-in-the-guest-access-request-form">What to Include in the Guest Access Request Form<a class="headerlink" href="#what-to-include-in-the-guest-access-request-form" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Contact ID for each person</strong> — enter the NJIT UCID (in "UCID") if the guest is NJIT alumni, otherwise give their institutional or personal email address (in "Guest's Email").</li>
+<li><strong>Contact ID for each person</strong> — enter the NJIT UCID (in "UCID") if the guest is an NJIT alum; otherwise, give their institutional or personal email address (in "Guest's Email").</li>
 <li><strong>Sponsor</strong> — the UCID of the sponsoring NJIT faculty member.</li>
 <li><strong>What are you requesting the account for?</strong> — select "Research Computing" and check "HPC (Wulver)".</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Select HPC (Wulver) to get the export control questions</p>
-<p>Checking <strong>HPC (Wulver)</strong> adds a questionnaire to the form that routes the
-request through export control review with the Office of Research Integrity
-and Compliance. Submitting without it delays activation of the guest account.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Most common delay</p>
-<p>If HPC account request is submitted without the Export Control Questionnaire. Make sure to check the HPC (Wulver) box to avoid this delay.</p>
+<p class="admonition-title">Most common delay: select HPC (Wulver)</p>
+<p>Checking <strong>HPC (Wulver)</strong> adds an export control questionnaire to the form, which routes the
+request through review with the Office of Research Integrity and Compliance. A request
+submitted without the questionnaire delays activation of the guest account.</p>
 </div>
 </div>
 </div>
@@ -4676,7 +4672,7 @@ and Compliance. Submitting without it delays activation of the guest account.</p
 <ol>
 <li><strong>Sponsorship is confirmed.</strong> If the PI sent or answered the request, the account is created. If not, we write back asking for their approval.</li>
 <li><strong>The account is created and added to the group</strong>, so jobs draw on that group's Service Units.</li>
-<li><strong>An automated welcome email</strong> with login details and first-step instructions is sent to the NJIT email address.</li>
+<li><strong>An automated welcome email</strong> with login details and first-step instructions is sent to the user's email address.</li>
 <li>
 <p><strong>The user logs in</strong>, either over SSH or through <a href="https://ondemand.njit.edu">Open OnDemand</a>. See <a href="../cluster_access/">Access to NJIT Clusters</a> for connection instructions.</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>localhost&gt; ssh -X -Y $UCID@wulver.njit.edu
@@ -4776,7 +4772,7 @@ and Compliance. Submitting without it delays activation of the guest account.</p
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 25, 2026 15:21:55 UTC">September 25, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 25, 2026 17:59:15 UTC">September 25, 2026</span>
   </span>
 
     

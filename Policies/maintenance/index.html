@@ -4500,13 +4500,13 @@
 <h1 id="wulver-maintenance">Wulver Maintenance<a class="headerlink" href="#wulver-maintenance" title="Permanent link">&para;</a></h1>
 <p>ARCS HPC performs regular maintenance on Wulver and its associated storage to apply security patches, perform hardware repairs, upgrade system software, and deploy new features. This page describes the maintenance schedule, how maintenance affects users and jobs, and how notifications are handled.</p>
 <h2 id="maintenance-schedule">Maintenance Schedule<a class="headerlink" href="#maintenance-schedule" title="Permanent link">&para;</a></h2>
-<p>Wulver follows a <strong>monthly maintenance cycle</strong> on the <strong>second Tuesday of every month</strong>, from <strong>9:00 AM to 9:00 PM (Eastern Time)</strong>. During this window, Wulver and the associated GPFS storage are taken out of service for maintenance, repairs, patches, and upgrades.</p>
+<p>Wulver follows a <strong>monthly maintenance cycle</strong> on the <strong>second Tuesday of every month</strong>, from <strong>8:00 AM to 9:00 PM (Eastern Time)</strong>. During this window, Wulver and the associated GPFS storage are taken out of service for maintenance, repairs, patches, and upgrades.</p>
 <div class="admonition important">
 <p class="admonition-title">Regular Maintenance Window</p>
 <ul>
 <li><strong>Frequency:</strong> Monthly</li>
 <li><strong>Day:</strong> Second Tuesday of every month</li>
-<li><strong>Time:</strong> 9:00 AM – 9:00 PM (ET)</li>
+<li><strong>Time:</strong> 8:00 AM – 9:00 PM (ET)</li>
 <li><strong>Systems affected:</strong> Wulver compute nodes, login nodes, and GPFS storage (<code>/home</code>, <code>/project</code>, <code>/scratch</code>)</li>
 </ul>
 </div>
@@ -4523,7 +4523,7 @@
 <h2 id="how-maintenance-affects-your-jobs">How Maintenance Affects Your Jobs<a class="headerlink" href="#how-maintenance-affects-your-jobs" title="Permanent link">&para;</a></h2>
 <p>The SLURM scheduler is configured with a reservation for the maintenance window. Jobs are handled as follows:</p>
 <ul>
-<li><strong>Jobs that complete before 9:00 AM on the maintenance day</strong> run normally to completion.</li>
+<li><strong>Jobs that complete before 8:00 AM on the maintenance day</strong> run normally to completion.</li>
 <li><strong>Jobs whose requested walltime would overlap with the maintenance window</strong> are held by the scheduler and shown in pending state with the reason <code>(ReqNodeNotAvail, Reserved for maintenance)</code>. They will start automatically after maintenance concludes.</li>
 <li><strong>Jobs submitted during the maintenance window</strong> are accepted into the queue but will not start until maintenance is complete.</li>
 </ul>
@@ -4555,7 +4555,7 @@
 <h2 id="user-responsibilities">User Responsibilities<a class="headerlink" href="#user-responsibilities" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Plan your work around the maintenance window.</strong> Take the second-Tuesday cycle into account when scheduling jobs and when developing plans to meet research, course, or grant deadlines.</li>
-<li><strong>Choose appropriate walltimes.</strong> If your job must complete before maintenance, request a walltime that ensures completion before 9:00 AM on the second Tuesday.</li>
+<li><strong>Choose appropriate walltimes.</strong> If your job must complete before maintenance, request a walltime that ensures completion before 8:00 AM on the second Tuesday.</li>
 <li><strong>Do not contact the help desk</strong> or open SNOW tickets to request access to the cluster or data during the maintenance downtime. Tickets opened during the maintenance window asking for access will not expedite the return to service.</li>
 <li><strong>Pay attention to the MOTD</strong> and mailing list announcements for upcoming downtimes and other cluster-related information.</li>
 </ul>
@@ -4588,7 +4588,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 3, 2026 18:53:05 UTC">June 3, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2026 13:43:12 UTC">October 13, 2026</span>
   </span>
 
     

@@ -104,13 +104,13 @@
             </a>
             {% if nav_item.children | length > 1 %}
               {% set tabindex = "0" if not is_section %}
-              <label class="md-nav__link {{ class }}" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}" aria-label="Expand {{ nav_item.title }}">
+              <label class="md-nav__link {{ class }}" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}" title="Expand {{ nav_item.title }}">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             {% endif %}
           </div>
         {% endif %}
-        <nav class="md-nav" data-md-level="{{ level }}" aria-labelledby="{{ path }}_label" aria-expanded="{{ nav_item.active | tojson }}">
+        <nav class="md-nav" data-md-level="{{ level }}" aria-label="{{ nav_item.title }}" aria-expanded="{{ nav_item.active | tojson }}">
           <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('{{ path }}');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('{{ path }}');if(t)t.checked=false;}">
             <span class="md-nav__icon md-icon"></span>
             {{ nav_item.title }}

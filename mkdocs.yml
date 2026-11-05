@@ -51,7 +51,7 @@ nav:
         - Common Problems and Misconceptions: Running_jobs/problems-and-misconceptions.md
         - Jobs on OnDemand: Running_jobs/ondemand-jobs.md
     - Software : Software/
-    - MIG :
+    - MIG (Multi-Instance GPU) :
         - MIG Overview: MIG/index.md
         - Profile Comparison: MIG/profile-comparison.md
         - Job Submission and SU Charges: MIG/job-submission-and-su-charges.md

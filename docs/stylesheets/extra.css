@@ -130,6 +130,23 @@ md-typeset .admonition.question,
   color: #fff;
 }
 
+/* Contrast fix: in code blocks the theme colors comments (e.g.
+   #SBATCH lines), variables, operators, punctuation, prompt/
+   output text and line numbers with 54%-black, which lands at
+   4.47:1 on the #f5f5f5 code background, just under WCAG's
+   4.5:1 minimum for small text. #666 gives 5.26:1. */
+[data-md-color-scheme="default"] {
+  --md-code-hl-comment-color: #666;
+  --md-code-hl-generic-color: #666;
+  --md-code-hl-operator-color: #666;
+  --md-code-hl-punctuation-color: #666;
+  --md-code-hl-variable-color: #666;
+}
+[data-md-color-scheme="default"] .md-typeset .highlighttable .linenodiv pre,
+[data-md-color-scheme="default"] .md-typeset .highlight [data-linenos]::before {
+  color: #666;
+}
+
 .octicon--arrow-right-24 {
   display: inline-block;
   width: 1.2rem;

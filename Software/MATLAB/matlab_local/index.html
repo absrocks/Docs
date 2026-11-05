@@ -4545,16 +4545,16 @@
 <ul>
 <li>Open MATLAB &rarr; select <kbd>Create and Manage Clusters</kbd>.</li>
 </ul>
-<p><img 50_="50%" alt="matlab_slurm_profile_1" height="height" src="../img/matlab_slurm_profile_1.png" width="50%" /></p>
+<p><img 50_ alt="matlab_slurm_profile_1" height src="../img/matlab_slurm_profile_1.png" width="50%" /></p>
 <ul>
 <li>A new dialogue box will open and under the <kbd>Add Cluster Profile</kbd>, select <kbd>Slurm</kbd>.</li>
 </ul>
-<p><img 50_="50%" alt="matlab_slurm_profile_2" height="height" src="../img/matlab_slurm_profile_2.png" width="50%" /></p>
-<p><img 50_="50%" alt="matlab_slurm_profile_3" height="height" src="../img/matlab_slurm_profile_3.png" width="50%" /></p>
+<p><img 50_ alt="matlab_slurm_profile_2" height src="../img/matlab_slurm_profile_2.png" width="50%" /></p>
+<p><img 50_ alt="matlab_slurm_profile_3" height src="../img/matlab_slurm_profile_3.png" width="50%" /></p>
 <ul>
 <li>This will open a Slurm cluster Profile and select the <kbd>edit</kbd> option to modify the parameters</li>
 </ul>
-<p><img 50_="50%" alt="matlab_slurm_profile_4" height="height" src="../img/matlab_slurm_profile_settings.png" width="50%" /></p>
+<p><img 50_ alt="matlab_slurm_profile_4" height src="../img/matlab_slurm_profile_settings.png" width="50%" /></p>
 <ul>
 <li>Modify the following parameters as mentioned in the screenshot</li>
 </ul>
@@ -4752,7 +4752,7 @@ Since this is a parallel job a 'Pool' must be started. The actual number of task
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a> &gt;&gt; fetchOutputs(j) 
 </span></code></pre></div></td></tr></table></div>
 As can be seen the parfor loop was completed in 6.7591 seconds.</p>
-<p><img 70_="70%" alt="matlab_fetch" height="height" src="../img/FetchOutputs.png" width="70%" /></p>
+<p><img 70_ alt="matlab_fetch" height src="../img/FetchOutputs.png" width="70%" /></p>
 <h2 id="submitting-a-script-requiring-a-gpu">Submitting a Script Requiring a GPU<a class="headerlink" href="#submitting-a-script-requiring-a-gpu" title="Permanent link">&para;</a></h2>
 <p>In this section we will submit a matlab script using a GPU. The results will be written to the job diary. The code for this example is as follows:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
@@ -4846,7 +4846,7 @@ As can be seen the parfor loop was completed in 6.7591 seconds.</p>
 We will need to change the partition to <code>gpu</code> to request a gpu. In the Matlab window enter:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a> &gt;&gt; c.AdditionalProperties.AdditionalSubmitArgs=['--partition=gpu --qos=standard --account=PI_UCID --gres=gpu:1 --mem-per-cpu=4G --time=2-00:00:00'] 
 </span></code></pre></div></td></tr></table></div>
- <img 70_="70%" alt="matlab_profile12" height="height" src="../img/md8jfxI.jpeg" width="70%" /></p>
+ <img 70_ alt="matlab_profile12" height src="../img/md8jfxI.jpeg" width="70%" /></p>
 <p>Submit the job as before. Since a script is submitted as opposed to a function, only the name of the script is included in the batch command. Do not include the <code>@</code> symbol. In a script there are no inputs or ouptuts.
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a> &gt;&gt; j=c.batch('gpu', 'AutoAddClientPath', false) 
 </span></code></pre></div></td></tr></table></div></p>

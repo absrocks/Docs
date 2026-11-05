@@ -4601,11 +4601,11 @@
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">wait</span>
 </span></code></pre></div></td></tr></table></div>
 <p>This works most efficiently when all jobs have the same or almost the same run time. If run times for jobs are unequal, then <strong>n</strong> jobs are run simultaneously and the cpus remain idle until all <strong>n</strong> jobs are completed before looping through the next <strong>n</strong> jobs. This will lead to idle time and inefficient consumption of cpu time.</p>
-<p><img alt="Without Parallel" src="http://i.stack.imgur.com/uH0Dh.png" width="width" /></p>
+<p><img alt="Without Parallel" src="http://i.stack.imgur.com/uH0Dh.png" width /></p>
 <p>GNU Parallel solves this issue by first launching <strong>n</strong> jobs. When one job completes, then the next job in sequence is started. This permits efficient use of cpu time by reducing the wait time and letting a number of small jobs to run while some cpus work on longer jobs.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>parallel<span class="w"> </span>job_<span class="o">{</span><span class="m">1</span><span class="o">}</span><span class="w"> </span>:::<span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span>3n<span class="k">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p><img alt="With Parallel" src="http://i.stack.imgur.com/17FsG.png" width="width" /></p>
+<p><img alt="With Parallel" src="http://i.stack.imgur.com/17FsG.png" width /></p>
 <h2 id="single-node-example">Single Node example<a class="headerlink" href="#single-node-example" title="Permanent link">&para;</a></h2>
 <h2 id="multi-node-example">Multi Node example<a class="headerlink" href="#multi-node-example" title="Permanent link">&para;</a></h2>
 <h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>

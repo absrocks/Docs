@@ -37,7 +37,7 @@ For prompt response, please consider the following when submitting a ticket.
 Please sign up [here](https://urldefense.com/v3/__https://calendar.google.com/calendar/u/0/selfsched?sstoken=UU1uWWVENjQ1RDBrfGRlZmF1bHR8N2U3NDE5N2FmYmZlNTVjNmM1YTg1YTU4OWRjZjUxZTc__;!!DLa72PTfQgg!NI9D2P_24BWGDFYmfvSE_i2yop8CMUyYd1cpNnETP3jD6sunqnVHrKsQ2XmN7xYIpuOgJ-w6G1ivrmw$).
      - We also provide one-on-one consultations for HPC related issues. Schedule an appointment directly from below.
   
-        <iframe src="https://scheduler.zoom.us/d/2k-yd02b/research-computing-facilitator-user-assistance?embed=true" frameborder="0" style="width: 875px; height: 850px;"></iframe>
+        <iframe src="https://scheduler.zoom.us/d/2k-yd02b/research-computing-facilitator-user-assistance?embed=true" title="Schedule a one-on-one consultation with a research computing facilitator" frameborder="0" style="width: 875px; height: 850px;"></iframe>
   
      - Please note that, when requesting assistance provide the information described above (where applicable), so we can most effectively assist you. Before requesting one-on-one consultations, please send you query to [hpc@njit.edu](mailto:hpc@njit.edu), so that an incident number will be created which is required to schedule an appointment. 
 

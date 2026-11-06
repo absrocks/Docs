@@ -217,4 +217,8 @@ plugins:
         - index.md
         - news/*
 
+# Adds a descriptive aria-label to the "¶" heading permalinks
+hooks:
+  - scripts/a11y_hooks.py
+
 copyright: New Jersey Institute of Technology High Performance Computing &copy; 2026

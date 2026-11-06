@@ -4476,10 +4476,10 @@
 
   <h1>Array Jobs</h1>
 
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h2 id="overview">Overview<a class="headerlink" aria-label="Permanent link to Overview" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Array jobs allow you to submit many similar jobs (like simulations or data processing tasks) with a single sbatch command. Each job in the array runs the same script but can process different input parameters.</p>
 <p><strong>Analogy:</strong> Imagine you're baking cookies in multiple batches. Each tray (array job) uses the same recipe (your script), but maybe with a different flavor (input). Instead of submitting each tray separately, you give the oven a list and it bakes them one by one or in parallel!</p>
-<h3 id="why-use-array-jobs">Why use Array jobs?<a class="headerlink" href="#why-use-array-jobs" title="Permanent link">&para;</a></h3>
+<h3 id="why-use-array-jobs">Why use Array jobs?<a class="headerlink" aria-label="Permanent link to Why use Array jobs?" href="#why-use-array-jobs" title="Permanent link">&para;</a></h3>
 <p>Array jobs are powerful and efficient for batch-processing many similar tasks. They save time, simplify management, and optimize cluster usage.</p>
 <p>If you’re running <code>50</code> experiments with the same script — don’t submit <code>50</code> jobs. Use an array job instead!</p>
 <ul>
@@ -4491,7 +4491,7 @@
 <li>Useful for running simulations across a range of input parameters</li>
 <li>Efficient for processing large datasets by splitting them into manageable chunks</li>
 </ul>
-<h2 id="special-variables-in-array-jobs">Special Variables in Array Jobs<a class="headerlink" href="#special-variables-in-array-jobs" title="Permanent link">&para;</a></h2>
+<h2 id="special-variables-in-array-jobs">Special Variables in Array Jobs<a class="headerlink" aria-label="Permanent link to Special Variables in Array Jobs" href="#special-variables-in-array-jobs" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -4526,7 +4526,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="array-job-examples">Array Job Examples<a class="headerlink" href="#array-job-examples" title="Permanent link">&para;</a></h2>
+<h2 id="array-job-examples">Array Job Examples<a class="headerlink" aria-label="Permanent link to Array Job Examples" href="#array-job-examples" title="Permanent link">&para;</a></h2>
 <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -4574,7 +4574,7 @@
 <p><code>sleep 10</code>: This is just a placeholder command to simulate a small wait time. You can remove or replace it as needed.</p>
 </li>
 </ul>
-<h2 id="job-array-use-case">Job Array Use Case<a class="headerlink" href="#job-array-use-case" title="Permanent link">&para;</a></h2>
+<h2 id="job-array-use-case">Job Array Use Case<a class="headerlink" aria-label="Permanent link to Job Array Use Case" href="#job-array-use-case" title="Permanent link">&para;</a></h2>
 <p>I have an application, app, that needs to be run against every line of my dataset. Every line changes how app runs slightly, but I need to compare the runs against each other.</p>
 <p>Older, slower way of homogenous batch submission:</p>
 <div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>

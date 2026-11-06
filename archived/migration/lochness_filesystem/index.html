@@ -4336,18 +4336,18 @@
   
 
 
-<h1 id="lochness-to-wulver-migration-file-directory-changes">Lochness to Wulver Migration: File Directory Changes<a class="headerlink" href="#lochness-to-wulver-migration-file-directory-changes" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h1 id="lochness-to-wulver-migration-file-directory-changes">Lochness to Wulver Migration: File Directory Changes<a class="headerlink" aria-label="Permanent link to Lochness to Wulver Migration: File Directory Changes" href="#lochness-to-wulver-migration-file-directory-changes" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" aria-label="Permanent link to Overview" href="#overview" title="Permanent link">&para;</a></h2>
 <p>As part of the HPC cluster migration from Lochness to Wulver, there will be changes in the file directory structure to ensure a smooth transition. This documentation provides details on how the <code>/research</code> and home directories will be handled on the new Wulver cluster.</p>
-<h3 id="research-directory"><code>/research</code> Directory<a class="headerlink" href="#research-directory" title="Permanent link">&para;</a></h3>
+<h3 id="research-directory"><code>/research</code> Directory<a class="headerlink" aria-label="Permanent link to /research Directory" href="#research-directory" title="Permanent link">&para;</a></h3>
 <p>The <code>/research</code> directory from Lochness will be mounted on Wulver as <code>/research</code>. This ensures that users can seamlessly access their research-related files and data in the familiar directory structure. All content, including subdirectories and files, within <code>/research</code> on Lochness will be avaialble on the same location on Wulver.</p>
-<h3 id="home-directories">Home Directories<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h3>
-<h4 id="lochness-home-directory">Lochness Home Directory<a class="headerlink" href="#lochness-home-directory" title="Permanent link">&para;</a></h4>
+<h3 id="home-directories">Home Directories<a class="headerlink" aria-label="Permanent link to Home Directories" href="#home-directories" title="Permanent link">&para;</a></h3>
+<h4 id="lochness-home-directory">Lochness Home Directory<a class="headerlink" aria-label="Permanent link to Lochness Home Directory" href="#lochness-home-directory" title="Permanent link">&para;</a></h4>
 <p>The home directories from Lochness will be available on Wulver under the directory <code>/oldhome</code>. Users will find their personal home directories within <code>/oldhome</code>, allowing them to access their files and configurations.</p>
-<h4 id="locking-of-oldhome-directory">Locking of <code>/oldhome</code> Directory<a class="headerlink" href="#locking-of-oldhome-directory" title="Permanent link">&para;</a></h4>
+<h4 id="locking-of-oldhome-directory">Locking of <code>/oldhome</code> Directory<a class="headerlink" aria-label="Permanent link to Locking of /oldhome Directory" href="#locking-of-oldhome-directory" title="Permanent link">&para;</a></h4>
 <p>After the migration is completed, the <code>/oldhome</code> directory on Lochness will be locked. This means that no additional files or directories can be created in <code>/oldhome</code>. The locking of this directory is a crucial step to maintain the integrity of the migrated data and to ensure a stable environment on both clusters.</p>
 <p>Users are advised to review and transfer any necessary files from <code>/oldhome</code> on Lochness to their new home directories on Wulver during the migration period.</p>
-<h3 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h3>
+<h3 id="important-notes">Important Notes<a class="headerlink" aria-label="Permanent link to Important Notes" href="#important-notes" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Migration Date:</strong> The migration process is scheduled to start on January 16, 2024.</li>
 <li><strong>Locking Date for <code>/oldhome</code>:</strong> After the migration, the <code>/oldhome</code> directory on Lochness will be locked to prevent further modifications.</li>

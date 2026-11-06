@@ -4512,9 +4512,9 @@
   
 
 
-<h1 id="wulver-maintenance">Wulver Maintenance<a class="headerlink" href="#wulver-maintenance" title="Permanent link">&para;</a></h1>
+<h1 id="wulver-maintenance">Wulver Maintenance<a class="headerlink" aria-label="Permanent link to Wulver Maintenance" href="#wulver-maintenance" title="Permanent link">&para;</a></h1>
 <p>ARCS HPC performs regular maintenance on Wulver and its associated storage to apply security patches, perform hardware repairs, upgrade system software, and deploy new features. This page describes the maintenance schedule, how maintenance affects users and jobs, and how notifications are handled.</p>
-<h2 id="maintenance-schedule">Maintenance Schedule<a class="headerlink" href="#maintenance-schedule" title="Permanent link">&para;</a></h2>
+<h2 id="maintenance-schedule">Maintenance Schedule<a class="headerlink" aria-label="Permanent link to Maintenance Schedule" href="#maintenance-schedule" title="Permanent link">&para;</a></h2>
 <p>Wulver follows a <strong>monthly maintenance cycle</strong> on the <strong>second Tuesday of every month</strong>, from <strong>8:00 AM to 9:00 PM (Eastern Time)</strong>. During this window, Wulver and the associated GPFS storage are taken out of service for maintenance, repairs, patches, and upgrades.</p>
 <div class="admonition important">
 <p class="admonition-title">Regular Maintenance Window</p>
@@ -4526,7 +4526,7 @@
 </ul>
 </div>
 <p>ARCS HPC reserves the right to reboot nodes once a month for maintenance on this same schedule.</p>
-<h2 id="what-happens-during-maintenance">What Happens During Maintenance<a class="headerlink" href="#what-happens-during-maintenance" title="Permanent link">&para;</a></h2>
+<h2 id="what-happens-during-maintenance">What Happens During Maintenance<a class="headerlink" aria-label="Permanent link to What Happens During Maintenance" href="#what-happens-during-maintenance" title="Permanent link">&para;</a></h2>
 <p>During the scheduled maintenance window:</p>
 <ul>
 <li>Logins to Wulver and Open OnDemand are <strong>disabled</strong>.</li>
@@ -4535,7 +4535,7 @@
 <li>Data transfers to and from the cluster are unavailable.</li>
 </ul>
 <p>Users will see a cluster service information message upon attempting to log in to Wulver during the maintenance window.</p>
-<h2 id="how-maintenance-affects-your-jobs">How Maintenance Affects Your Jobs<a class="headerlink" href="#how-maintenance-affects-your-jobs" title="Permanent link">&para;</a></h2>
+<h2 id="how-maintenance-affects-your-jobs">How Maintenance Affects Your Jobs<a class="headerlink" aria-label="Permanent link to How Maintenance Affects Your Jobs" href="#how-maintenance-affects-your-jobs" title="Permanent link">&para;</a></h2>
 <p>The SLURM scheduler is configured with a reservation for the maintenance window. Jobs are handled as follows:</p>
 <ul>
 <li><strong>Jobs that complete before 8:00 AM on the maintenance day</strong> run normally to completion.</li>
@@ -4552,7 +4552,7 @@
 <p>Example: A job submitted on Monday with a 2-day walltime when maintenance is scheduled for Tuesday will be held immediately because its runtime overlaps with the maintenance reservation.</p>
 </div>
 <p>For more details on the SLURM job states during maintenance, see <a href="../../Running_jobs/managing-jobs/">Managing and Monitoring Jobs</a>.</p>
-<h2 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h2>
+<h2 id="notifications">Notifications<a class="headerlink" aria-label="Permanent link to Notifications" href="#notifications" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Routine monthly maintenance</strong> (second Tuesday) does not require advance announcement, as the schedule is fixed and published here.</li>
 <li><strong>Any change</strong> to the regular cycle, an <strong>extended maintenance window</strong>, or <strong>emergency maintenance</strong> will be communicated to all users via the user mailing list.</li>
@@ -4560,21 +4560,21 @@
 <li>The <strong>Message of the Day (MOTD)</strong> displayed at login serves as a reminder for upcoming downtimes and other crucial cluster-related information. Users are encouraged to read the MOTD at every login.</li>
 <li>Specific upcoming and past maintenance announcements are posted at <a href="../../news/">Cluster Maintenance Updates and News</a>.</li>
 </ul>
-<h2 id="extended-and-emergency-maintenance">Extended and Emergency Maintenance<a class="headerlink" href="#extended-and-emergency-maintenance" title="Permanent link">&para;</a></h2>
+<h2 id="extended-and-emergency-maintenance">Extended and Emergency Maintenance<a class="headerlink" aria-label="Permanent link to Extended and Emergency Maintenance" href="#extended-and-emergency-maintenance" title="Permanent link">&para;</a></h2>
 <p>ARCS HPC anticipates that regular maintenance will be completed within the scheduled window. However:</p>
 <ul>
 <li>Maintenance may occasionally finish <strong>earlier</strong> than scheduled, in which case the cluster is returned to service early.</li>
 <li>Maintenance may be <strong>extended</strong> into the following day(s) if issues are encountered. Users will be notified by email.</li>
 <li>In the case of <strong>emergency maintenance</strong> (e.g., critical security patches, hardware failures, or storage incidents), ARCS HPC may take Wulver out of service outside the regular maintenance window. Users will be notified as soon as possible via the user mailing list.</li>
 </ul>
-<h2 id="user-responsibilities">User Responsibilities<a class="headerlink" href="#user-responsibilities" title="Permanent link">&para;</a></h2>
+<h2 id="user-responsibilities">User Responsibilities<a class="headerlink" aria-label="Permanent link to User Responsibilities" href="#user-responsibilities" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Plan your work around the maintenance window.</strong> Take the second-Tuesday cycle into account when scheduling jobs and when developing plans to meet research, course, or grant deadlines.</li>
 <li><strong>Choose appropriate walltimes.</strong> If your job must complete before maintenance, request a walltime that ensures completion before 8:00 AM on the second Tuesday.</li>
 <li><strong>Do not contact the help desk</strong> or open SNOW tickets to request access to the cluster or data during the maintenance downtime. Tickets opened during the maintenance window asking for access will not expedite the return to service.</li>
 <li><strong>Pay attention to the MOTD</strong> and mailing list announcements for upcoming downtimes and other cluster-related information.</li>
 </ul>
-<h2 id="related-information">Related Information<a class="headerlink" href="#related-information" title="Permanent link">&para;</a></h2>
+<h2 id="related-information">Related Information<a class="headerlink" aria-label="Permanent link to Related Information" href="#related-information" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../news/">Cluster Maintenance Updates and News</a> — latest maintenance announcements</li>
 <li><a href="../../faq/faq/#maintenance">FAQ: Maintenance</a> — frequently asked questions</li>

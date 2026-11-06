@@ -4337,10 +4337,10 @@
   
 
 
-<h1 id="mig-overview">MIG Overview<a class="headerlink" href="#mig-overview" title="Permanent link">&para;</a></h1>
+<h1 id="mig-overview">MIG Overview<a class="headerlink" aria-label="Permanent link to MIG Overview" href="#mig-overview" title="Permanent link">&para;</a></h1>
 <p>MIG (Multi-Instance GPU) is a technology introduced by NVIDIA starting with its Ampere architecture (e.g., A100). It enables a single physical GPU to be partitioned into multiple smaller, isolated GPU instances — each with dedicated compute cores, memory, cache, and bandwidth. These instances function independently and appear to software as discrete GPUs.</p>
 <p>This allows multiple users or processes to simultaneously run GPU workloads without interfering with one another, improving resource utilization, reducing wait times in job queues, and increasing throughput in shared computing environments like Wulver.</p>
-<h2 id="why-mig-on-wulver">Why MIG on Wulver<a class="headerlink" href="#why-mig-on-wulver" title="Permanent link">&para;</a></h2>
+<h2 id="why-mig-on-wulver">Why MIG on Wulver<a class="headerlink" aria-label="Permanent link to Why MIG on Wulver" href="#why-mig-on-wulver" title="Permanent link">&para;</a></h2>
 <!-- Using HTML to display images side by side -->
 <div style="display: flex; justify-content: center; gap: 10px;">
     <img src="../assets/images/MIG/gpu-alloc-vs-util-3mo.png" alt="GPUs allocated vs. utilized (3 months)" width="48%">
@@ -4359,7 +4359,7 @@
 <p><strong>MIG rationale</strong>: Partitioning A100s into 10/20/40 GB slices lets multiple right-sized jobs run concurrently, improving SU efficiency and time-to-results without requiring more hardware.</p>
 </li>
 </ul>
-<h2 id="mig-implementation-in-wulver">MIG Implementation in Wulver<a class="headerlink" href="#mig-implementation-in-wulver" title="Permanent link">&para;</a></h2>
+<h2 id="mig-implementation-in-wulver">MIG Implementation in Wulver<a class="headerlink" aria-label="Permanent link to MIG Implementation in Wulver" href="#mig-implementation-in-wulver" title="Permanent link">&para;</a></h2>
 <p>MIG is implemented on selected <strong>NVIDIA A100 80GB</strong> GPUs. Wulver currently supports the following MIG configurations:</p>
 <ul>
 <li>10gb</li>
@@ -4383,7 +4383,7 @@
 <p><strong>Reduced idle time</strong>: MIG reduces GPU underutilization by splitting large resources into usable chunks.</p>
 </li>
 </ul>
-<h2 id="why-you-should-use-mig-instances">Why You Should Use MIG Instances<a class="headerlink" href="#why-you-should-use-mig-instances" title="Permanent link">&para;</a></h2>
+<h2 id="why-you-should-use-mig-instances">Why You Should Use MIG Instances<a class="headerlink" aria-label="Permanent link to Why You Should Use MIG Instances" href="#why-you-should-use-mig-instances" title="Permanent link">&para;</a></h2>
 <p><strong>Lower SU Cost for Smaller Workloads</strong>:<br> 
 MIG lets you select a GPU slice that meets your job’s needs without paying for more power than you use.
 For example:</p>

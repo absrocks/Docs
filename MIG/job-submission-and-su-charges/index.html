@@ -4424,7 +4424,7 @@
   
 
 
-<h1 id="mig-job-submission-and-su-charges">MIG Job Submission and SU Charges<a class="headerlink" href="#mig-job-submission-and-su-charges" title="Permanent link">&para;</a></h1>
+<h1 id="mig-job-submission-and-su-charges">MIG Job Submission and SU Charges<a class="headerlink" aria-label="Permanent link to MIG Job Submission and SU Charges" href="#mig-job-submission-and-su-charges" title="Permanent link">&para;</a></h1>
 <p>When submitting jobs on Wulver's MIG-enabled A100 GPUs, you must explicitly request the desired MIG profile using the <code>--gres</code> directive in your SLURM script.</p>
 <table>
 <thead>
@@ -4452,7 +4452,7 @@
 <p class="admonition-title">Note</p>
 <p>If you want to see a job script example of requesting a full GPU, please refer to the sample <a href="../../Running_jobs/batch-jobs/#example-of-batch-job-slurm-script-gpu-nodes">GPU job scripts</a>.</p>
 </div>
-<h2 id="running-jobs-with-mig">Running Jobs with MIG<a class="headerlink" href="#running-jobs-with-mig" title="Permanent link">&para;</a></h2>
+<h2 id="running-jobs-with-mig">Running Jobs with MIG<a class="headerlink" aria-label="Permanent link to Running Jobs with MIG" href="#running-jobs-with-mig" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="running-jobs-with-mig-sample-slurm-script-for-a-mig-job" name="__tabbed_1" type="radio" /><input id="running-jobs-with-mig-interactive-session-with-mig" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="running-jobs-with-mig-sample-slurm-script-for-a-mig-job">Sample SLURM Script for a MIG Job</label><label for="running-jobs-with-mig-interactive-session-with-mig">Interactive session with MIG</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4505,7 +4505,7 @@
 <p class="admonition-title">Warning</p>
 <p>You cannot run your job using multiple MIG instances. For example, <code>--gres=gpu:a100_10g:2</code> will allocate two instances of the 10G MIG, but it will either raise an error or some jobs may assume it as a single MIG, even if multiple instances are requested.</p>
 </div>
-<h2 id="understanding-su-charges">Understanding SU Charges<a class="headerlink" href="#understanding-su-charges" title="Permanent link">&para;</a></h2>
+<h2 id="understanding-su-charges">Understanding SU Charges<a class="headerlink" aria-label="Permanent link to Understanding SU Charges" href="#understanding-su-charges" title="Permanent link">&para;</a></h2>
 <p>Wulver uses a Service Unit (SU) model to track computing usage. Your job's SU cost is based on:</p>
 <ul>
 <li>CPU usage</li>
@@ -4560,7 +4560,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="tips-for-efficient-job-submission-think-fit-not-power">Tips for Efficient Job Submission <em><strong>(Think Fit, Not Power)</strong></em><a class="headerlink" href="#tips-for-efficient-job-submission-think-fit-not-power" title="Permanent link">&para;</a></h2>
+<h2 id="tips-for-efficient-job-submission-think-fit-not-power">Tips for Efficient Job Submission <em><strong>(Think Fit, Not Power)</strong></em><a class="headerlink" aria-label="Permanent link to Tips for Efficient Job Submission (Think Fit, Not Power)" href="#tips-for-efficient-job-submission-think-fit-not-power" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Choose the profile that fits your workload, not the biggest one available. You’ll save SUs, get scheduled faster, and help the cluster stay responsive for everyone.</li>
 <li>Avoid requesting a full GPU unless your job cannot run on a MIG.</li>

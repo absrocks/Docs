@@ -4436,7 +4436,7 @@
   
 
 
-<h1 id="submitting-course-jobs">Submitting Course Jobs<a class="headerlink" href="#submitting-course-jobs" title="Permanent link">&para;</a></h1>
+<h1 id="submitting-course-jobs">Submitting Course Jobs<a class="headerlink" aria-label="Permanent link to Submitting Course Jobs" href="#submitting-course-jobs" title="Permanent link">&para;</a></h1>
 <p>Submit scripts on Wulver must include specification of partition, account, qos, and time limit. Also the first line in the batch file must be <code>#!/bin/bash -l</code>. </p>
 <p>Below is the minimal example for a 10-minute test job:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -4449,7 +4449,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#SBATCH --qos=course</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#SBATCH --time=00:10:00</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="sample-job-scripts">Sample Job scripts<a class="headerlink" href="#sample-job-scripts" title="Permanent link">&para;</a></h2>
+<h2 id="sample-job-scripts">Sample Job scripts<a class="headerlink" aria-label="Permanent link to Sample Job scripts" href="#sample-job-scripts" title="Permanent link">&para;</a></h2>
 <p>Make sure to replace <code>--account</code> with your assigned course account.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="sample-job-scripts-cpu-job" name="__tabbed_1" type="radio" /><input id="sample-job-scripts-gpu-job" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="sample-job-scripts-cpu-job">CPU Job</label><label for="sample-job-scripts-gpu-job">GPU Job</label></div>
 <div class="tabbed-content">
@@ -4525,7 +4525,7 @@
 </div>
 </div>
 </div>
-<h3 id="limitation-of-gpu-jobs">Limitation of GPU Jobs<a class="headerlink" href="#limitation-of-gpu-jobs" title="Permanent link">&para;</a></h3>
+<h3 id="limitation-of-gpu-jobs">Limitation of GPU Jobs<a class="headerlink" aria-label="Permanent link to Limitation of GPU Jobs" href="#limitation-of-gpu-jobs" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>You cannot request multiple MIG instances in one job. <br>
@@ -4537,7 +4537,7 @@ This will either cause an error or misinterpretation as a single GPU.</p>
 For multiple tasks, use job arrays instead of multiple MIGs.</p>
 </li>
 </ul>
-<h2 id="interactive-jobs">Interactive jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
+<h2 id="interactive-jobs">Interactive jobs<a class="headerlink" aria-label="Permanent link to Interactive jobs" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
 <p>You can also start an interactive session instead of a batch job.</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>interactive<span class="w"> </span>-a<span class="w"> </span>ACCOUNT<span class="w"> </span>-q<span class="w"> </span>QOS<span class="w"> </span>-p<span class="w"> </span>PARTITION<span class="w"> </span>-j<span class="w"> </span>JOB_TYPE
 </span></code></pre></div></td></tr></table></div>

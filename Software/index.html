@@ -4409,7 +4409,7 @@
   
 
 
-<h1 id="software-environment">Software Environment<a class="headerlink" href="#software-environment" title="Permanent link">&para;</a></h1>
+<h1 id="software-environment">Software Environment<a class="headerlink" aria-label="Permanent link to Software Environment" href="#software-environment" title="Permanent link">&para;</a></h1>
 <p>All software and numerical libraries available at the cluster can be found at <code>/apps/easybuild/software/</code>. We use <a href="https://docs.easybuild.io/en/latest">EasyBuild</a> to install, build and manage different version of packages. </p>
 <p>If you could not find software or libraries on HPC cluster, please submit a request for <a href="https://njit.service-now.com/sp?id=sc_cat_item&amp;sys_id=0746c1f31b6691d04c82cddf034bcbe2&amp;sysparm_category=405f99b41b5b1d507241400abc4bcb6b">HPC Software Installation</a> by visiting the <a href="https://njit.service-now.com/sp?id=sc_category">Service Catalog</a>. The list of installed software or packages on HPC cluster can be found in <a href="#software-list">Software List</a>.</p>
 <div class="admonition warning">
@@ -4420,9 +4420,9 @@
 <p class="admonition-title">Tip</p>
 <p>If you cannot find the required software or libraries on the cluster, you are welcome to install open-source tools directly into your project directory for immediate use. If you encounter any technical hurdles during a local installation, please contact us for support. However, if you believe the software would benefit the broader community, please submit a formal request for a system-wide HPC Software Installation via the <a href="https://njit.service-now.com/sp?id=sc_category">Service Catalog</a>.</p>
 </div>
-<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<h2 id="modules">Modules<a class="headerlink" aria-label="Permanent link to Modules" href="#modules" title="Permanent link">&para;</a></h2>
 <p>We use Environment Modules to manage the user environment in HPC, which help users to easily load and unload software packages, switch between different versions of software, and manage complex software dependencies. <a href="https://lmod.readthedocs.io/en/latest">Lmod</a> is an extension of the Environment Modules system, implemented in Lua. It enhances the functionality of traditional Environment Modules by introducing features such as hierarchical module naming, module caching, and improved flexibility in managing environment variables.</p>
-<h3 id="search-for-specific-package">Search for Specific Package<a class="headerlink" href="#search-for-specific-package" title="Permanent link">&para;</a></h3>
+<h3 id="search-for-specific-package">Search for Specific Package<a class="headerlink" aria-label="Permanent link to Search for Specific Package" href="#search-for-specific-package" title="Permanent link">&para;</a></h3>
 <p>You can check specific packages and list of their versions using <code>module spider</code>. For example, the list of Python installed on cluster can be checked by using</p>
 <p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -4534,7 +4534,7 @@ This will show the which prerequisite modules need to be loaded prior to loading
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="go">       - Homepage: https://python.org/</span>
 </span></code></pre></div></td></tr></table></div>
 If you are unsure about the version, you can also use <code>module spider Python</code> to see the different versions of Python and prerequisite modules to be loaded. </p>
-<h3 id="load-modules">Load Modules<a class="headerlink" href="#load-modules" title="Permanent link">&para;</a></h3>
+<h3 id="load-modules">Load Modules<a class="headerlink" aria-label="Permanent link to Load Modules" href="#load-modules" title="Permanent link">&para;</a></h3>
 <p>To use specific package, you need to use <code>module load</code> command which modified the environment to load the software package(s).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4554,23 +4554,23 @@ and this will result is the following output
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="go">Currently Loaded Modules:</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="go">  1) easybuild   2) wulver   3) slurm/wulver   4) null   5) GCCcore/11.2.0   6) zlib/1.2.11   7) binutils/2.37   8) bzip2/1.0.8   9) ncurses/6.2  10) libreadline/8.1  11) Tcl/8.6.11  12) SQLite/3.36  13) XZ/5.2.5  14) GMP/6.2.1  15) libffi/3.4.2  16) OpenSSL/1.1  17) Python/3.9.6</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="module-unload">Module unload<a class="headerlink" href="#module-unload" title="Permanent link">&para;</a></h3>
+<h3 id="module-unload">Module unload<a class="headerlink" aria-label="Permanent link to Module unload" href="#module-unload" title="Permanent link">&para;</a></h3>
 <p>To unload a specific module that you've previously loaded:
 <div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="go">module unload Python</span>
 </span></code></pre></div></td></tr></table></div>
 You can unload all modules at once with
 <div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="go">module purge</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="module-save-collections">Module Save Collections<a class="headerlink" href="#module-save-collections" title="Permanent link">&para;</a></h3>
+<h3 id="module-save-collections">Module Save Collections<a class="headerlink" aria-label="Permanent link to Module Save Collections" href="#module-save-collections" title="Permanent link">&para;</a></h3>
 <p>Since some packages require prerequisite modules, it may be inconvenient for users to load them every time. Therefore, you can save those modules in particular environment after loading those modules. For example
 <div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="go">module save environment_name</span>
 </span></code></pre></div></td></tr></table></div>
 This will save the collection of  modules in <code>environment_name</code>. </p>
-<h3 id="module-list-collections">Module List Collections<a class="headerlink" href="#module-list-collections" title="Permanent link">&para;</a></h3>
+<h3 id="module-list-collections">Module List Collections<a class="headerlink" aria-label="Permanent link to Module List Collections" href="#module-list-collections" title="Permanent link">&para;</a></h3>
 <p>To get a list of your collections, run:
 <div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="go">module savelist</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="module-command-summary">Module Command Summary<a class="headerlink" href="#module-command-summary" title="Permanent link">&para;</a></h3>
+<h3 id="module-command-summary">Module Command Summary<a class="headerlink" aria-label="Permanent link to Module Command Summary" href="#module-command-summary" title="Permanent link">&para;</a></h3>
 <p>Here are the list of <code>module</code> commands</p>
 <table>
 <thead>
@@ -4670,11 +4670,11 @@ This will save the collection of  modules in <code>environment_name</code>. </p>
 </tr>
 </tbody>
 </table>
-<h3 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h3>
+<h3 id="further-reading">Further Reading<a class="headerlink" aria-label="Permanent link to Further Reading" href="#further-reading" title="Permanent link">&para;</a></h3>
 <p>You can check the documentation of <code>module</code> on the cluster using the following command:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>man module
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="software-list">Software List<a class="headerlink" href="#software-list" title="Permanent link">&para;</a></h2>
+<h2 id="software-list">Software List<a class="headerlink" aria-label="Permanent link to Software List" href="#software-list" title="Permanent link">&para;</a></h2>
 <p>The following applications are installed on Wulver.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="software-list-wulver-rhel9" name="__tabbed_1" type="radio" /><input id="software-list-wulver-rhel8" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="software-list-wulver-rhel9">Wulver RHEL9</label><label for="software-list-wulver-rhel8">Wulver RHEL8</label></div>
 <div class="tabbed-content">

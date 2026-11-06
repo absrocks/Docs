@@ -4558,12 +4558,12 @@
   
 
 
-<h1 id="course-resource-configuration">Course Resource Configuration<a class="headerlink" href="#course-resource-configuration" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h1 id="course-resource-configuration">Course Resource Configuration<a class="headerlink" aria-label="Permanent link to Course Resource Configuration" href="#course-resource-configuration" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" aria-label="Permanent link to Overview" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Before submitting a job on Wulver, it’s important to understand how resources such as <strong>cores</strong>, <strong>memory</strong>, and <strong>GPUs</strong> are allocated for course users.<br />
 Each job’s runtime and Service Unit (SU) charge depend on how many nodes and resources are requested.</p>
 <p><img alt="Course Partition Overview" src="../../assets/images/course-config-schematic.png" width="80%" /></p>
-<h2 id="partition-use-partition">Partition (Use <code>--partition</code>)<a class="headerlink" href="#partition-use-partition" title="Permanent link">&para;</a></h2>
+<h2 id="partition-use-partition">Partition (Use <code>--partition</code>)<a class="headerlink" aria-label="Permanent link to Partition (Use --partition)" href="#partition-use-partition" title="Permanent link">&para;</a></h2>
 <p>Course-related jobs must be submitted to one of the <strong>course partitions</strong> listed below:</p>
 <table>
 <thead>
@@ -4596,10 +4596,10 @@ Each job’s runtime and Service Unit (SU) charge depend on how many nodes and r
 </tbody>
 </table>
 <p>Courses that require GPU computing are assigned <strong>NVIDIA A100 10G MIG</strong> units for GPU-enabled coursework.</p>
-<h2 id="service-units">Service Units<a class="headerlink" href="#service-units" title="Permanent link">&para;</a></h2>
+<h2 id="service-units">Service Units<a class="headerlink" aria-label="Permanent link to Service Units" href="#service-units" title="Permanent link">&para;</a></h2>
 <p>Each user is allocated <strong>2500 Service Units (SUs)</strong> in their account for the duration of their course.<br />
 SUs are consumed based on how many cores, memory, and GPUs your job requests and how long it runs.</p>
-<h4 id="su-calculation-examples">SU Calculation Examples<a class="headerlink" href="#su-calculation-examples" title="Permanent link">&para;</a></h4>
+<h4 id="su-calculation-examples">SU Calculation Examples<a class="headerlink" aria-label="Permanent link to SU Calculation Examples" href="#su-calculation-examples" title="Permanent link">&para;</a></h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="su-calculation-examples-cpu-job" name="__tabbed_1" type="radio" /><input id="su-calculation-examples-gpu-job" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="su-calculation-examples-cpu-job">CPU Job</label><label for="su-calculation-examples-gpu-job">GPU Job</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4622,7 +4622,7 @@ SUs are consumed based on how many cores, memory, and GPUs your job requests and
 </div>
 <p><em>To make the most of your SUs, avoid overestimating cores or memory. Over-allocation wastes SUs and delays scheduling.</em></p>
 <p>Please visit <a href="../../Running_jobs/service-units/">here</a> for more info on Service Units</p>
-<h2 id="account">Account<a class="headerlink" href="#account" title="Permanent link">&para;</a></h2>
+<h2 id="account">Account<a class="headerlink" aria-label="Permanent link to Account" href="#account" title="Permanent link">&para;</a></h2>
 <p>Every course is assigned a dedicated <strong>account</strong> for SU billing.<br />
 You must specify this account in all SLURM job scripts using the <code>--account</code> flag.</p>
 <p>Account Format
@@ -4645,14 +4645,14 @@ You must specify this account in all SLURM job scripts using the <code>--account
 <p class="admonition-title">Note</p>
 <p>Each user’s specific account information will be emailed to them when HPC resources for that course is allocated. You can also view all accounts assigned to you using the <code>quota_info</code> command.</p>
 </div>
-<h4 id="important-notes">Important Notes:<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h4>
+<h4 id="important-notes">Important Notes:<a class="headerlink" aria-label="Permanent link to Important Notes:" href="#important-notes" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Your UCID and password are used to log in to the cluster.</li>
 <li>Your account name is used for SU tracking and billing.</li>
 <li>If you are enrolled in multiple courses or research projects, ensure that you submit jobs using the correct account to avoid suspension or access issues.</li>
 <li>Use the <code>quota_info</code> command to view all accounts assigned to you.</li>
 </ul>
-<h2 id="priority-use-qos">Priority (Use <code>--qos</code>)<a class="headerlink" href="#priority-use-qos" title="Permanent link">&para;</a></h2>
+<h2 id="priority-use-qos">Priority (Use <code>--qos</code>)<a class="headerlink" aria-label="Permanent link to Priority (Use --qos)" href="#priority-use-qos" title="Permanent link">&para;</a></h2>
 <p>All course-related jobs must include the <code>--qos=course</code> flag.<br />
 This ensures fair scheduling and appropriate priority for classwork jobs.</p>
 <table>
@@ -4676,7 +4676,7 @@ This ensures fair scheduling and appropriate priority for classwork jobs.</p>
 <p>Example:
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">#SBATCH --qos=course</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="course-directory">Course Directory<a class="headerlink" href="#course-directory" title="Permanent link">&para;</a></h2>
+<h2 id="course-directory">Course Directory<a class="headerlink" aria-label="Permanent link to Course Directory" href="#course-directory" title="Permanent link">&para;</a></h2>
 <p>Each student is assigned a dedicated <strong>course directory</strong>, and <strong>all work must be done inside it</strong>, including job scripts and outputs.</p>
 <p>Directory Format
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>/course/&lt;year&gt;/&lt;semester&gt;/&lt;course&gt;/&lt;instructor_ucid&gt;/&lt;student_ucid&gt;

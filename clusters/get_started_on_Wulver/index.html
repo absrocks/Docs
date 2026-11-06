@@ -4536,10 +4536,10 @@
   
 
 
-<h1 id="getting-started-on-wulver">Getting Started on Wulver<a class="headerlink" href="#getting-started-on-wulver" title="Permanent link">&para;</a></h1>
+<h1 id="getting-started-on-wulver">Getting Started on Wulver<a class="headerlink" aria-label="Permanent link to Getting Started on Wulver" href="#getting-started-on-wulver" title="Permanent link">&para;</a></h1>
 <p><a href="../wulver/">Wulver</a> is a high performance computing (HPC) cluster – a collection of computers and data storage connected with high-speed low-latency networks. We refer to individual computers in this network as nodes. Wulver is only accessible to researchers remotely; your gateways to the cluster are the <strong>login nodes</strong>. From these nodes, you can view and edit files and dispatch jobs to computers configured for computation, called <strong>compute nodes</strong>. The tool we use to manage these jobs is called a <strong>job scheduler</strong>. All compute nodes on a cluster mount several shared <strong>filesystems</strong>; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. </p>
 <p><img alt="Schematic of the Wulver cluster: users connect by SSH terminal or the OnDemand portal to login nodes, which link to compute nodes and shared storage" height="50%" src="../../assets/images/Wulver-schematic.png" width="50%" /></p>
-<h2 id="being-a-good-hpc-citizen">Being a Good HPC Citizen<a class="headerlink" href="#being-a-good-hpc-citizen" title="Permanent link">&para;</a></h2>
+<h2 id="being-a-good-hpc-citizen">Being a Good HPC Citizen<a class="headerlink" aria-label="Permanent link to Being a Good HPC Citizen" href="#being-a-good-hpc-citizen" title="Permanent link">&para;</a></h2>
 <p>While using HPC resources, here are some important things to remember:</p>
 <ul>
 <li>Do not run jobs or computation on a login node, instead submit jobs to compute nodes.  You should be using <code>sbatch</code>, <code>srun</code>, or OnDemand to run your jobs.  </li>
@@ -4547,25 +4547,25 @@
 <li>Do not run larger numbers of very short (less than a minute) jobs
 Use of the clusters is also governed by our official guidelines. Violating the guidelines might result in having your access to Wulver revoked, but more often the result is your jobs will run painfully slower.</li>
 </ul>
-<h2 id="request-an-account">Request an Account<a class="headerlink" href="#request-an-account" title="Permanent link">&para;</a></h2>
+<h2 id="request-an-account">Request an Account<a class="headerlink" aria-label="Permanent link to Request an Account" href="#request-an-account" title="Permanent link">&para;</a></h2>
 <p>Every Wulver account is sponsored by an NJIT faculty member. Faculty and PIs request accounts for their group members by emailing <a href="mailto:hpc@njit.edu">hpc@njit.edu</a> with each person's UCID; students should copy their advisor on the request. Course instructors and sponsors of guest accounts use a request form instead. See <a href="../account_request/">Requesting an Account on Wulver</a> for what to include and what happens next.</p>
-<h2 id="remote-access">Remote Access<a class="headerlink" href="#remote-access" title="Permanent link">&para;</a></h2>
+<h2 id="remote-access">Remote Access<a class="headerlink" aria-label="Permanent link to Remote Access" href="#remote-access" title="Permanent link">&para;</a></h2>
 <p>All users access the Wulver cluster remotely, either through ssh or a browser using the Open OnDemand portal. See these detailed <a href="../cluster_access/">login instructions</a>. NB: If you want to access the clusters from outside NJIT’s network, you must use the VPN.</p>
-<h2 id="schedule-a-job">Schedule a Job<a class="headerlink" href="#schedule-a-job" title="Permanent link">&para;</a></h2>
+<h2 id="schedule-a-job">Schedule a Job<a class="headerlink" aria-label="Permanent link to Schedule a Job" href="#schedule-a-job" title="Permanent link">&para;</a></h2>
 <p>On our cluster, you control your jobs using a job scheduling system called <strong>Slurm</strong> that allocates and manages compute resources for you. You can submit your jobs in one of two ways. For testing and small jobs, you may want to run a job interactively. This way you can directly interact with the compute node(s) in real time. The other way, which is the preferred way for multiple jobs or long-running jobs, involves writing your job commands in a script and submitting that to the job scheduler. Please see our <a href="../../Running_jobs/">Running Jobs</a> or review our <a href="../../HPC_Events_and_Workshops/">training materials</a> for more details.  </p>
-<h2 id="use-software">Use Software<a class="headerlink" href="#use-software" title="Permanent link">&para;</a></h2>
+<h2 id="use-software">Use Software<a class="headerlink" aria-label="Permanent link to Use Software" href="#use-software" title="Permanent link">&para;</a></h2>
 <p>To best serve the diverse needs of all our researchers, we use software modules to make multiple versions of popular software available. <strong>Modules</strong> allow you to swap between different applications and versions of those applications. The software can be loaded via <code>module load</code> command. You see the following modules are loaded once you log in to the Wulver. Use the <code>module li</code> command to see the modules. 
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">   </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>easybuild<span class="w">   </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>slurm/wulver<span class="w">   </span><span class="m">3</span><span class="o">)</span><span class="w"> </span>null
 </span></code></pre></div></td></tr></table></div>
 If you cannot find certain software or libraries on the Wulver cluster, please submit a request for <a href="https://njit.service-now.com/sp?id=sc_cat_item&amp;sys_id=0746c1f31b6691d04c82cddf034bcbe2&amp;sysparm_category=405f99b41b5b1d507241400abc4bcb6b">HPC Software Installation</a> by visiting the <a href="https://njit.service-now.com/sp?id=sc_category">Service Catalog</a>. The list of installed software or packages on the Wulver HPC cluster can be found in the <a href="../../Software/#software-list">Software List</a>.</p>
-<h2 id="shared-filesystems">Shared Filesystems<a class="headerlink" href="#shared-filesystems" title="Permanent link">&para;</a></h2>
+<h2 id="shared-filesystems">Shared Filesystems<a class="headerlink" aria-label="Permanent link to Shared Filesystems" href="#shared-filesystems" title="Permanent link">&para;</a></h2>
 <p>A critical component of Wulver is its shared filesystem, which facilitates the efficient storage, retrieval, and sharing of data among the various compute nodes. It enables multiple users and applications to read from and write to a common storage pool, ensuring data consistency and accessibility across the entire system.
 See <a href="../Wulver_filesystems/">Wulver Filesystems</a> for a different type of shared filesystems.</p>
-<h2 id="transfer-your-files">Transfer Your Files<a class="headerlink" href="#transfer-your-files" title="Permanent link">&para;</a></h2>
+<h2 id="transfer-your-files">Transfer Your Files<a class="headerlink" aria-label="Permanent link to Transfer Your Files" href="#transfer-your-files" title="Permanent link">&para;</a></h2>
 <p>As part of setting up and running jobs and collecting results, you will want to copy files between your computer and the clusters. We have a few options, and the best for each situation usually depends on the size and number of files you would like to transfer. For most situations, uploading a small number of smaller files through Open OnDemand's upload interface is the best option. This can be done directly through the file viewer interface by clicking the <kbd>Upload</kbd> button and dragging and dropping your files into the upload window. Check the <a href="../../OnDemand/#files">Ondemand file transfer</a> for more details. For more information on other upload methods, see our <a href="../cluster_access/#transfer-your-files">transferring data instructions</a>. </p>
-<h2 id="workshop-and-training-videos">Workshop and Training Videos<a class="headerlink" href="#workshop-and-training-videos" title="Permanent link">&para;</a></h2>
+<h2 id="workshop-and-training-videos">Workshop and Training Videos<a class="headerlink" aria-label="Permanent link to Workshop and Training Videos" href="#workshop-and-training-videos" title="Permanent link">&para;</a></h2>
 <p>Each semester, we host webinars and training sessions. Please check the list of events and register from <a href="../../HPC_Events_and_Workshops/">HPC Events</a>. You can also check the recordings of previously hosted webinars at <a href="../../HPC_Events_and_Workshops/Workshop_and_Training_Videos/">HPC Training</a>.</p>
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<h2 id="linux">Linux<a class="headerlink" aria-label="Permanent link to Linux" href="#linux" title="Permanent link">&para;</a></h2>
 <p>Our cluster runs Red Hat Enterprise Linux 8, utilizing the bash (or zsh set via <a href="https://myucid.njit.edu">https://myucid.njit.edu</a>) command line interface (CLI).  A basic familiarity with Linux commands is required for interacting with the clusters. We have a list of commonly used commands here. We periodically run an Intro to Linux Training to get you started, see our Events for upcoming training. There are also many excellent beginner tutorials available for free online, including the following:</p>
 <ul>
 <li><a href="https://info-ee.surrey.ac.uk/Teaching/Unix/index.html">Unix Tutorial for Beginners</a></li>
@@ -4630,7 +4630,7 @@ See <a href="../Wulver_filesystems/">Wulver Filesystems</a> for a different type
 </tr>
 </tbody>
 </table>
-<h2 id="get-help">Get Help<a class="headerlink" href="#get-help" title="Permanent link">&para;</a></h2>
+<h2 id="get-help">Get Help<a class="headerlink" aria-label="Permanent link to Get Help" href="#get-help" title="Permanent link">&para;</a></h2>
 <p>If you have additional questions, please email us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;">&#104;&#112;&#99;&#64;&#110;&#106;&#105;&#116;&#46;&#101;&#100;&#117;</a>. If you are having a problem with <code>sbatch</code> or <code>srun</code>, please include the following information:</p>
 <ul>
 <li>Job ID#(s)</li>

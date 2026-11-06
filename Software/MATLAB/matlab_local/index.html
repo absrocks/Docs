@@ -4522,12 +4522,12 @@
   
 
 
-<h1 id="use-matlab-on-njit-hpc">Use MATLAB on NJIT HPC<a class="headerlink" href="#use-matlab-on-njit-hpc" title="Permanent link">&para;</a></h1>
+<h1 id="use-matlab-on-njit-hpc">Use MATLAB on NJIT HPC<a class="headerlink" aria-label="Permanent link to Use MATLAB on NJIT HPC" href="#use-matlab-on-njit-hpc" title="Permanent link">&para;</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Since MFA is enabled, the instructions for running MATLAB via HPC resources have been modified. If you already installed MATLAB on the local machine, skip to <a href="./#setup-slurm-profile-to-run-matlab-on-wulver">Setup Slurm profile to run MATLAB on Wulver</a>. </p>
 </div>
-<h2 id="installation-steps-of-matlab-on-local-machine">Installation steps of MATLAB on local machine<a class="headerlink" href="#installation-steps-of-matlab-on-local-machine" title="Permanent link">&para;</a></h2>
+<h2 id="installation-steps-of-matlab-on-local-machine">Installation steps of MATLAB on local machine<a class="headerlink" aria-label="Permanent link to Installation steps of MATLAB on local machine" href="#installation-steps-of-matlab-on-local-machine" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Go to <a href="https://www.mathworks.com/downloads/">Mathworks Download</a> and register with your NJIT email address.</li>
 <li>Select the <a href="../#availability">MATLAB version</a> installed on Wulver.</li>
@@ -4543,7 +4543,7 @@
 <ul>
 <li>Continue by selecting <strong>Next</strong> and MATLAB will be installed on your computer.</li>
 </ul>
-<h2 id="setup-slurm-profile-to-run-matlab-on-wulver">Setup Slurm profile to run MATLAB on Wulver<a class="headerlink" href="#setup-slurm-profile-to-run-matlab-on-wulver" title="Permanent link">&para;</a></h2>
+<h2 id="setup-slurm-profile-to-run-matlab-on-wulver">Setup Slurm profile to run MATLAB on Wulver<a class="headerlink" aria-label="Permanent link to Setup Slurm profile to run MATLAB on Wulver" href="#setup-slurm-profile-to-run-matlab-on-wulver" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Open MATLAB &rarr; select <kbd>Create and Manage Clusters</kbd>.</li>
 </ul>
@@ -4683,7 +4683,7 @@ The MATLAB installation path is defined by the <code>EBROOTMATLAB</code> environ
 </tbody>
 </table>
 <p>Replace <code>$PATH</code> with the actual path of Wulver where you want to save the output file. Make sure to use <code>/project</code> directory for remote job storage as <code>$HOME</code> has fixed quota of 50GB and cannot be increased. See <a href="../../../clusters/Wulver_filesystems/">Wulver Filesystems</a> for details. Replace <code>$UCID</code> with the NJIT UCID.</p>
-<h2 id="submitting-a-serial-job">Submitting a Serial Job<a class="headerlink" href="#submitting-a-serial-job" title="Permanent link">&para;</a></h2>
+<h2 id="submitting-a-serial-job">Submitting a Serial Job<a class="headerlink" aria-label="Permanent link to Submitting a Serial Job" href="#submitting-a-serial-job" title="Permanent link">&para;</a></h2>
 <p>This section will demonstrate how to create a cluster object and submit a simple job to the cluster. The job will run the 'hostname' command on the node assigned to the job. The output will indicate clearly that the job ran on the cluster and not on the local computer.</p>
 <p>The hostname.m file used in this demonstration can be downloaded <a href="https://www.mathworks.com/matlabcentral/fileexchange/24096-hostname-m">here</a>.</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a> &gt;&gt; c=parcluster 
@@ -4719,7 +4719,7 @@ To make this persistent between Matlab sessions these arguments need to be saved
 Finally, to get the results:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a> &gt;&gt;fetchOutputs(j)
 </span></code></pre></div></td></tr></table></div></p>
-<h3 id="submitting-a-parallel-function">Submitting a Parallel Function<a class="headerlink" href="#submitting-a-parallel-function" title="Permanent link">&para;</a></h3>
+<h3 id="submitting-a-parallel-function">Submitting a Parallel Function<a class="headerlink" aria-label="Permanent link to Submitting a Parallel Function" href="#submitting-a-parallel-function" title="Permanent link">&para;</a></h3>
 <p>The <code>Job Monitor</code> is a convenient way to monitor jobs submitted to the cluster. In the Matlab window select <code>Parallel</code> and then <code>Monitor Jobs</code>.</p>
 <p>For more information see the Mathworks page: <a href="https://www.mathworks.com/help/parallel-computing/job-monitor.html">Job Monitor</a>.</p>
 <p>Here we will submit a simple function using a "parfor" loop. The code for this example is as follows:
@@ -4755,7 +4755,7 @@ Since this is a parallel job a 'Pool' must be started. The actual number of task
 </span></code></pre></div></td></tr></table></div>
 As can be seen the parfor loop was completed in 6.7591 seconds.</p>
 <p><img 70_ alt="matlab_fetch" height src="../img/FetchOutputs.png" width="70%" /></p>
-<h2 id="submitting-a-script-requiring-a-gpu">Submitting a Script Requiring a GPU<a class="headerlink" href="#submitting-a-script-requiring-a-gpu" title="Permanent link">&para;</a></h2>
+<h2 id="submitting-a-script-requiring-a-gpu">Submitting a Script Requiring a GPU<a class="headerlink" aria-label="Permanent link to Submitting a Script Requiring a GPU" href="#submitting-a-script-requiring-a-gpu" title="Permanent link">&para;</a></h2>
 <p>In this section we will submit a matlab script using a GPU. The results will be written to the job diary. The code for this example is as follows:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
@@ -4855,7 +4855,7 @@ We will need to change the partition to <code>gpu</code> to request a gpu. In th
 <p>To get the result:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a> &gt;&gt; j.diary 
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="load-and-plot-results-from-a-job">Load and Plot Results from A Job<a class="headerlink" href="#load-and-plot-results-from-a-job" title="Permanent link">&para;</a></h2>
+<h2 id="load-and-plot-results-from-a-job">Load and Plot Results from A Job<a class="headerlink" aria-label="Permanent link to Load and Plot Results from A Job" href="#load-and-plot-results-from-a-job" title="Permanent link">&para;</a></h2>
 <p>In this section we will run a job on the cluster and then load and plot the results in the local Matlab workspace. The code for this example is as follows:
 <div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>

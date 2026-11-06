@@ -4402,9 +4402,9 @@
   
 
 
-<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<h1 id="overview">Overview<a class="headerlink" aria-label="Permanent link to Overview" href="#overview" title="Permanent link">&para;</a></h1>
 <p>New HPC users often assume that requesting more resources (CPUs, GPUs, memory) will automatically make their jobs run faster. In reality, performance depends on how the software is written and configured. Submitting jobs with incorrect resource requests can result in wasted allocations, slower performance, and unnecessary load on shared compute nodes. Below are some common mistakes and their solutions.</p>
-<h3 id="misconception-if-i-allocate-more-cpus-my-software-will-automatically-use-them"><strong>Misconception:</strong> “If I allocate more CPUs, my software will automatically use them”<a class="headerlink" href="#misconception-if-i-allocate-more-cpus-my-software-will-automatically-use-them" title="Permanent link">&para;</a></h3>
+<h3 id="misconception-if-i-allocate-more-cpus-my-software-will-automatically-use-them"><strong>Misconception:</strong> “If I allocate more CPUs, my software will automatically use them”<a class="headerlink" aria-label="Permanent link to Misconception: “If I allocate more CPUs, my software will automatically use them”" href="#misconception-if-i-allocate-more-cpus-my-software-will-automatically-use-them" title="Permanent link">&para;</a></h3>
 <p>Many applications are not parallelized by default. Requesting multiple CPUs (--ntasks &gt; 1) will not speed up execution unless your software is explicitly written to take advantage of parallelism (e.g., via MPI, OpenMP, or job arrays). Otherwise, the job may simply run the program multiple times in parallel instead of speeding it up.</p>
 <p><strong>Example of incorrect job script:</strong></p>
 <div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -4432,7 +4432,7 @@
 <p><strong>Problem:</strong> This script launches test.py 4 times since no parallelism is enabled in the code.</p>
 <p><strong>Solution:</strong> If your code is serial, request only 1 task: <code>srun -n1 python test.py</code> or <code>python test.py</code></p>
 <p>To truly leverage multiple CPUs, use parallel programming libraries such as <a href="https://mpi4py.readthedocs.io/en/stable/tutorial.html">mpi4py</a> and <a href="https://parsl.readthedocs.io/en/stable/quickstart.html">Parsl</a></p>
-<h3 id="misconception-my-jobs-run-slower-when-i-request-more-resources"><strong>Misconception:</strong> “My jobs run slower when I request more resources”<a class="headerlink" href="#misconception-my-jobs-run-slower-when-i-request-more-resources" title="Permanent link">&para;</a></h3>
+<h3 id="misconception-my-jobs-run-slower-when-i-request-more-resources"><strong>Misconception:</strong> “My jobs run slower when I request more resources”<a class="headerlink" aria-label="Permanent link to Misconception: “My jobs run slower when I request more resources”" href="#misconception-my-jobs-run-slower-when-i-request-more-resources" title="Permanent link">&para;</a></h3>
 <p>Requesting excessive resources can actually degrade performance. For example, oversubscribing CPUs (assigning more threads than available cores) leads to CPU contention, slowing down computations.</p>
 <p><strong>Example of problematic job script:</strong></p>
 <div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>

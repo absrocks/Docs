@@ -4432,7 +4432,7 @@
 
   <h1>Interactive Jobs</h1>
 
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h2 id="overview">Overview<a class="headerlink" aria-label="Permanent link to Overview" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Interactive jobs allow users to directly access a compute node in real time — as if you were working on your personal computer, but with the power of HPC behind it.</p>
 <p>Unlike batch jobs, which are queued and run in the background, interactive jobs open a live terminal session on a compute node. This is useful for:</p>
 <ul>
@@ -4442,7 +4442,7 @@
 <li>Exploring the system environment or dependencies</li>
 </ul>
 <p>You still need to request resources via Slurm, but instead of submitting a script with sbatch, you request an interactive shell using our <code>interactive</code> command.</p>
-<h4 id="the-interactive-command">The <code>interactive</code> Command<a class="headerlink" href="#the-interactive-command" title="Permanent link">&para;</a></h4>
+<h4 id="the-interactive-command">The <code>interactive</code> Command<a class="headerlink" aria-label="Permanent link to The interactive Command" href="#the-interactive-command" title="Permanent link">&para;</a></h4>
 <p>We provide a built-in shortcut command, <code>interactive</code>, that allows you to quickly and easily request a session in compute node.</p>
 <p>The <code>interactive</code> command acts as a convenient wrapper for Slurm’s <a href="https://slurm.schedmd.com/salloc.html">salloc</a> command. Similar to <a href="https://slurm.schedmd.com/sbatch.html">sbatch</a>, which is used for batch jobs, <code>salloc</code> is specifically designed for interactive jobs. </p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -4531,7 +4531,7 @@
 </div>
 <p>Replace <code>$PI_UCID</code> with PI's NJIT UCID. 
 Now, once you get the confirmation of job allocation, you will be assigned to a compute node.</p>
-<h4 id="customizing-your-resources">Customizing Your Resources<a class="headerlink" href="#customizing-your-resources" title="Permanent link">&para;</a></h4>
+<h4 id="customizing-your-resources">Customizing Your Resources<a class="headerlink" aria-label="Permanent link to Customizing Your Resources" href="#customizing-your-resources" title="Permanent link">&para;</a></h4>
 <p>Please note that, by default, this interactive session will request 1 core (for CPU jobs), 1 GPU (for GPU jobs), with a 1-hour walltime. To customize the resources, use the <code>-h</code> option for help. Run <code>interactive -h</code> for more details. Here is an explanation of each flag given below.</p>
 <table>
 <thead>

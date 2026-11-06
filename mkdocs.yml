@@ -51,7 +51,7 @@ nav:
         - Common Problems and Misconceptions: Running_jobs/problems-and-misconceptions.md
         - Jobs on OnDemand: Running_jobs/ondemand-jobs.md
     - Software : Software/
-    - MIG :
+    - MIG (Multi-Instance GPU) :
         - MIG Overview: MIG/index.md
         - Profile Comparison: MIG/profile-comparison.md
         - Job Submission and SU Charges: MIG/job-submission-and-su-charges.md
@@ -216,5 +216,9 @@ plugins:
       exclude:
         - index.md
         - news/*
+
+# Adds a descriptive aria-label to the "¶" heading permalinks
+hooks:
+  - scripts/a11y_hooks.py
 
 copyright: New Jersey Institute of Technology High Performance Computing &copy; 2026

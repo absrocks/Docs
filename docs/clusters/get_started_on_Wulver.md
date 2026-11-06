@@ -1,7 +1,7 @@
 # Getting Started on Wulver
 [Wulver](wulver.md) is a high performance computing (HPC) cluster – a collection of computers and data storage connected with high-speed low-latency networks. We refer to individual computers in this network as nodes. Wulver is only accessible to researchers remotely; your gateways to the cluster are the **login nodes**. From these nodes, you can view and edit files and dispatch jobs to computers configured for computation, called **compute nodes**. The tool we use to manage these jobs is called a **job scheduler**. All compute nodes on a cluster mount several shared **filesystems**; a file server or set of servers store files on a large array of disks. This allows your jobs to access and edit your data from any compute node. 
 
-![Wulver](../assets/images/Wulver-schematic.png){ width=50% height=50%}
+![Schematic of the Wulver cluster: users connect by SSH terminal or the OnDemand portal to login nodes, which link to compute nodes and shared storage](../assets/images/Wulver-schematic.png){ width=50% height=50%}
 
 ## Being a Good HPC Citizen
 While using HPC resources, here are some important things to remember:

@@ -89,7 +89,11 @@
         {% if "navigation.expand" in features and not checked %}
           {% set indeterminate = "md-toggle--indeterminate" %}
         {% endif %}
-        <input class="md-nav__toggle md-toggle {{ indeterminate }}" type="checkbox" id="{{ path }}" {{ checked }}>
+        {#- aria-labelledby lets the theme's script find this checkbox when the
+            section is toggled; it sets aria-expanded here, where ARIA allows it,
+            instead of on the <nav> landmark below, where it is not allowed -#}
+        {% set has_label = not index or nav_item.children | length > 1 %}
+        <input class="md-nav__toggle md-toggle {{ indeterminate }}" type="checkbox" id="{{ path }}" {% if has_label %}aria-labelledby="{{ path }}_label"{% endif %} {{ checked }}>
         {% if not index %}
           {% set tabindex = "0" if not is_section %}
           <label class="md-nav__link" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}">
@@ -110,7 +114,7 @@
             {% endif %}
           </div>
         {% endif %}
-        <nav class="md-nav" data-md-level="{{ level }}" aria-label="{{ nav_item.title }}" aria-expanded="{{ nav_item.active | tojson }}">
+        <nav class="md-nav" data-md-level="{{ level }}" aria-label="{{ nav_item.title }}">
           <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('{{ path }}');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('{{ path }}');if(t)t.checked=false;}">
             <span class="md-nav__icon md-icon"></span>
             {{ nav_item.title }}

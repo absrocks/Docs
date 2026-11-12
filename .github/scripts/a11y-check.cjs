@@ -157,6 +157,22 @@ async function scanPage(tags) {
           `The link's name is "${name}"`);
       }
     }
+
+    // Level Access rule: aria-expanded used where it is not allowed.
+    // ARIA 1.2 allows it only on these roles (and the roles that inherit from
+    // them). axe-core still accepts it on nav/region, following ARIA 1.1.
+    const expandable = new Set([
+      'application', 'button', 'checkbox', 'columnheader', 'combobox', 'gridcell', 'link', 'listbox',
+      'menuitem', 'menuitemcheckbox', 'menuitemradio', 'row', 'rowheader', 'switch', 'tab', 'treeitem',
+    ]);
+    for (const el of document.querySelectorAll('[aria-expanded]')) {
+      if (!exposed(el)) continue;
+      const role = axe.commons.aria.getRole(el);
+      if (!expandable.has(role)) {
+        add('aria-expanded-not-allowed', 'error', 'aria-expanded is only allowed on elements that open or close something', el,
+          role ? `The element's role is "${role}"` : 'The element has no role');
+      }
+    }
   } finally {
     axe.teardown();
   }

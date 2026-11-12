@@ -81,7 +81,6 @@
 .grid.cards > ul > li, .md-typeset .grid > .card {
   background-color:  rgba(84, 15, 17, 0.05);
 }
-.md-nav__list:empty { display: none; }
 md-typeset .admonition.njit,
 .md-typeset details.njit {
   border-color: rgb(84, 15, 17);
@@ -145,6 +144,19 @@ md-typeset .admonition.question,
 [data-md-color-scheme="default"] .md-typeset .highlighttable .linenodiv pre,
 [data-md-color-scheme="default"] .md-typeset .highlight [data-linenos]::before {
   color: #666;
+}
+
+/* Contrast fix: the theme paints the footer and the "Skip to content"
+   link with 87%-transparent black (#000000de). Accessibility scanners
+   that follow Level Access do not count a translucent layer and
+   measure the white text against the white page behind it (1:1).
+   These are the solid colours those layers render as on white. */
+[data-md-color-scheme="default"] {
+  --md-footer-bg-color: #212121;
+  --md-footer-bg-color--dark: #161616;
+}
+[data-md-color-scheme="default"] .md-skip {
+  background-color: #212121;
 }
 
 .octicon--arrow-right-24 {

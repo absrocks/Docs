@@ -89,11 +89,15 @@
         {% if "navigation.expand" in features and not checked %}
           {% set indeterminate = "md-toggle--indeterminate" %}
         {% endif %}
-        {#- aria-labelledby lets the theme's script find this checkbox when the
+        {#- A section whose only page is its own index has nothing to expand:
+            no toggle, no label and no <nav> (which would hold an empty list).
+            aria-labelledby lets the theme's script find this checkbox when the
             section is toggled; it sets aria-expanded here, where ARIA allows it,
             instead of on the <nav> landmark below, where it is not allowed -#}
-        {% set has_label = not index or nav_item.children | length > 1 %}
-        <input class="md-nav__toggle md-toggle {{ indeterminate }}" type="checkbox" id="{{ path }}" {% if has_label %}aria-labelledby="{{ path }}_label"{% endif %} {{ checked }}>
+        {% set expandable = not index or nav_item.children | length > 1 %}
+        {% if expandable %}
+          <input class="md-nav__toggle md-toggle {{ indeterminate }}" type="checkbox" id="{{ path }}" aria-labelledby="{{ path }}_label" {{ checked }}>
+        {% endif %}
         {% if not index %}
           {% set tabindex = "0" if not is_section %}
           <label class="md-nav__link" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}">
@@ -114,19 +118,21 @@
             {% endif %}
           </div>
         {% endif %}
-        <nav class="md-nav" data-md-level="{{ level }}" aria-label="{{ nav_item.title }}">
-          <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('{{ path }}');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('{{ path }}');if(t)t.checked=false;}">
-            <span class="md-nav__icon md-icon"></span>
-            {{ nav_item.title }}
-          </div>
-          <ul class="md-nav__list" data-md-scrollfix>
-            {% for item in nav_item.children %}
-              {% if not index or item != index %}
-                {{ render(item, path ~ "_" ~ loop.index, level + 1, nav_item) }}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </nav>
+        {% if expandable %}
+          <nav class="md-nav" data-md-level="{{ level }}" aria-label="{{ nav_item.title }}">
+            <div class="md-nav__title" role="button" tabindex="0" onclick="var t=document.getElementById('{{ path }}');if(t)t.checked=false;" onkeydown="if(event.key==='Enter'||event.key===' '){var t=document.getElementById('{{ path }}');if(t)t.checked=false;}">
+              <span class="md-nav__icon md-icon"></span>
+              {{ nav_item.title }}
+            </div>
+            <ul class="md-nav__list" data-md-scrollfix>
+              {% for item in nav_item.children %}
+                {% if not index or item != index %}
+                  {{ render(item, path ~ "_" ~ loop.index, level + 1, nav_item) }}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endif %}
       {% else %}
         {{ render_pruned(nav_item) }}
       {% endif %}

@@ -4662,7 +4662,7 @@
 <li>Due to differences in hardware, code may need to be recompiled to ensure optimal performance on Wulver. The research facilitation team is ready to assist you in this process, offering support to recompile code and address any related issues.</li>
 <li>If you code is compiled based on <a href="../../../Software/programming/compilers/#free-open-source-software-(foss)">FOSS Toolchain</a> (GCC and OpenMPI), you need to compile the code the same way you did in Lochness. Just make sure all the dependency libraries are installed on Wulver. Please visit <a href="../Software/index.md">Software</a> to check the list of applications installed on Wulver.</li>
 <li>If your code is based on the <a href="../../../Software/programming/compilers/#intel">Intel toolchain</a>, you need to add the following while configuring your code. 
-    <div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="go">./configure CFLAGS="-march=core-avx2"</span>
+    <div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="go">./configure CFLAGS="-march=core-avx2"</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>When installing codes, ensure that you perform the installation on the compute node rather than the login node. Since the hardware architecture is different on the login node, it's best practice to compile your code on the compute node. You need to initiate an <a href="slurm.md#interactive-session-on-a-compute-node">interactive session with compute node</a> before compiling your code.</li>
 </ul>
@@ -4934,6 +4934,8 @@
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

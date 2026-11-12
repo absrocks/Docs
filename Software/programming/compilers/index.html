@@ -4685,49 +4685,49 @@
 <p>We use <a href="https://easybuild.io">EasyBuild</a> to install the packages as modules and to avoid too many packages tol load as a module, we use pre-defined build environment modules called toolchains which include a combination of tools such as compilers, libraries etc. We use <code>foss</code> and <code>intel</code> toolchains in Wulver. The advantage of using toolchains is that user can load either <code>foss</code> or <code>intel</code> as base package and the additional libraries such as MPI, LAPACK and other math libraries will be automatically loaded. </p>
 <h3 id="free-open-source-software-foss">Free Open Source Software (foss)<a class="headerlink" href="#free-open-source-software-foss" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Free Open Source Software (foss)</span></a></h3>
 <p>The <code>foss</code> toolchains are versioned with a yearletter scheme, e.g. <code>foss/2021b</code> is the second foss toolchain composed in 2021. The <code>foss</code> toolchain comprises the following </p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>📁<span class="w"> </span>foss
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>├──<span class="w"> </span>📁<span class="w"> </span>gompi<span class="w"> </span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>│<span class="w">   </span>├──<span class="w"> </span>📁<span class="w"> </span>GCC
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>GCCcore
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>zlib
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>binutils
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>OpenMPI
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>numactl
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>XZ
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libxml2
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libpciaccess
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>hwloc
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>OpenSSL
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libevent
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>UCX
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libfabric
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>PMIx
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>│<span class="w">   </span>└──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>UCC
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>FFTW
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>OpenBLAS
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>ScaLAPACK
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>└──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>FlexiBLAS
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">📁<span class="w"> </span>foss
+</span><span id="__span-0-2">├──<span class="w"> </span>📁<span class="w"> </span>gompi<span class="w"> </span>
+</span><span id="__span-0-3">│<span class="w">   </span>├──<span class="w"> </span>📁<span class="w"> </span>GCC
+</span><span id="__span-0-4">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>GCCcore
+</span><span id="__span-0-5">│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>zlib
+</span><span id="__span-0-6">│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>binutils
+</span><span id="__span-0-7">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>OpenMPI
+</span><span id="__span-0-8">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>numactl
+</span><span id="__span-0-9">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>XZ
+</span><span id="__span-0-10">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libxml2
+</span><span id="__span-0-11">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libpciaccess
+</span><span id="__span-0-12">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>hwloc
+</span><span id="__span-0-13">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>OpenSSL
+</span><span id="__span-0-14">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libevent
+</span><span id="__span-0-15">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>UCX
+</span><span id="__span-0-16">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>libfabric
+</span><span id="__span-0-17">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>PMIx
+</span><span id="__span-0-18">│<span class="w">   </span>└──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>UCC
+</span><span id="__span-0-19">├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>FFTW
+</span><span id="__span-0-20">├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>OpenBLAS
+</span><span id="__span-0-21">├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>ScaLAPACK
+</span><span id="__span-0-22">└──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>FlexiBLAS
 </span></code></pre></div></td></tr></table></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="free-open-source-software-foss-wulver" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="free-open-source-software-foss-wulver">Wulver</label></div>
 <div class="tabbed-content">
@@ -4762,27 +4762,27 @@
 <p>To see GCC and OpenMPI versions details in each toolchain, see the list of <a href="./#gnu-and-intel-compilers">compiler versions</a> and <a href="./#mpi-libraries">OpenMPI versions</a>.</p>
 <h3 id="intel">Intel<a class="headerlink" href="#intel" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Intel</span></a></h3>
 <p>Like <code>foss</code>, <code>intel</code> toolchains are versioned with yearletter scheme, e.g. <code>intel/2021b</code> is the second intel toolchain composed in 2021.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>📁<span class="w"> </span>intel
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>├──<span class="w"> </span>📁<span class="w"> </span>intel-compilers
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>GCCcore<span class="w">   </span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>zlib
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>│<span class="w">   </span>└──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>binutils
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>├──<span class="w"> </span>📁<span class="w"> </span>iimpi
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>iccifort
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>Intel<span class="w"> </span>MPI
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>│<span class="w">   </span>├──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>numactl
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>│<span class="w">   </span>└──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>UCX
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>└──<span class="w"> </span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>Intel<span class="w"> </span>Math<span class="w"> </span>Kernel<span class="w"> </span>Library
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">📁<span class="w"> </span>intel
+</span><span id="__span-0-2">├──<span class="w"> </span>📁<span class="w"> </span>intel-compilers
+</span><span id="__span-0-3">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>GCCcore<span class="w">   </span>
+</span><span id="__span-0-4">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>zlib
+</span><span id="__span-0-5">│<span class="w">   </span>└──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>binutils
+</span><span id="__span-0-6">├──<span class="w"> </span>📁<span class="w"> </span>iimpi
+</span><span id="__span-0-7">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>iccifort
+</span><span id="__span-0-8">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>Intel<span class="w"> </span>MPI
+</span><span id="__span-0-9">│<span class="w">   </span>├──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>numactl
+</span><span id="__span-0-10">│<span class="w">   </span>└──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>UCX
+</span><span id="__span-0-11">└──<span class="w"> </span><span aria-hidden="true" class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V3.5L18.5 9M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg></span><span class="w"> </span>Intel<span class="w"> </span>Math<span class="w"> </span>Kernel<span class="w"> </span>Library
 </span></code></pre></div></td></tr></table></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="intel-wulver" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="intel-wulver">Wulver</label></div>
 <div class="tabbed-content">
@@ -5061,6 +5061,8 @@ To see the versions of <code>GCCcore</code> and <code>mkl</code> libraries of <c
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

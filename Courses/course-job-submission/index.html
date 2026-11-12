@@ -4536,44 +4536,44 @@
 <h1 id="submitting-course-jobs">Submitting Course Jobs<a class="headerlink" href="#submitting-course-jobs" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Submitting Course Jobs</span></a></h1>
 <p>Submit scripts on Wulver must include specification of partition, account, qos, and time limit. Also the first line in the batch file must be <code>#!/bin/bash -l</code>. </p>
 <p>Below is the minimal example for a 10-minute test job:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#SBATCH --partition=course</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#SBATCH --qos=course</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#SBATCH --time=00:10:00</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-0-2"><span class="c1">#SBATCH --partition=course</span>
+</span><span id="__span-0-3"><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
+</span><span id="__span-0-4"><span class="c1">#SBATCH --qos=course</span>
+</span><span id="__span-0-5"><span class="c1">#SBATCH --time=00:10:00</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="sample-job-scripts">Sample Job scripts<a class="headerlink" href="#sample-job-scripts" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Sample Job scripts</span></a></h2>
 <p>Make sure to replace <code>--account</code> with your assigned course account.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="sample-job-scripts-cpu-job" name="__tabbed_1" type="radio" /><input id="sample-job-scripts-gpu-job" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="sample-job-scripts-cpu-job">CPU Job</label><label for="sample-job-scripts-gpu-job">GPU Job</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#SBATCH --job-name=mpi_test_job</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#SBATCH --output=%x.%j.out</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">#SBATCH --partition=course</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#SBATCH --qos=course</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1">#SBATCH --time=00:10:00</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">#SBATCH --ntasks=64</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># Run application commands</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>srun<span class="w"> </span>/apps/testjobs/bin/mpihello
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-1-2"><span class="c1">#SBATCH --job-name=mpi_test_job</span>
+</span><span id="__span-1-3"><span class="c1">#SBATCH --output=%x.%j.out</span>
+</span><span id="__span-1-4"><span class="c1">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-1-5"><span class="c1">#SBATCH --partition=course</span>
+</span><span id="__span-1-6"><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
+</span><span id="__span-1-7"><span class="c1">#SBATCH --qos=course</span>
+</span><span id="__span-1-8"><span class="c1">#SBATCH --time=00:10:00</span>
+</span><span id="__span-1-9"><span class="c1">#SBATCH --ntasks=64</span>
+</span><span id="__span-1-10">
+</span><span id="__span-1-11"><span class="c1"># Run application commands</span>
+</span><span id="__span-1-12">srun<span class="w"> </span>/apps/testjobs/bin/mpihello
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>Runs an MPI job named mpi_test_job.</li>
@@ -4582,37 +4582,37 @@
 </ul>
 </div>
 <div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">#SBATCH --job-name=test_gpu_job</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">#SBATCH --output=%x.%j.out</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1">#SBATCH --partition=course_gpu</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">#SBATCH --qos=course</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1">#SBATCH --time=00:20:00</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">#SBATCH --ntasks=2</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">#SBATCH --gres=gpu:a100_10g:1</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1"># Load application environment</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>module<span class="w"> </span>load<span class="w"> </span>CUDA
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="c1"># Run application commands</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>nvidia-smi
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-2-2"><span class="c1">#SBATCH --job-name=test_gpu_job</span>
+</span><span id="__span-2-3"><span class="c1">#SBATCH --output=%x.%j.out</span>
+</span><span id="__span-2-4"><span class="c1">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-2-5"><span class="c1">#SBATCH --partition=course_gpu</span>
+</span><span id="__span-2-6"><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
+</span><span id="__span-2-7"><span class="c1">#SBATCH --qos=course</span>
+</span><span id="__span-2-8"><span class="c1">#SBATCH --time=00:20:00</span>
+</span><span id="__span-2-9"><span class="c1">#SBATCH --ntasks=2</span>
+</span><span id="__span-2-10"><span class="c1">#SBATCH --gres=gpu:a100_10g:1</span>
+</span><span id="__span-2-11">
+</span><span id="__span-2-12"><span class="c1"># Load application environment</span>
+</span><span id="__span-2-13">module<span class="w"> </span>load<span class="w"> </span>CUDA
+</span><span id="__span-2-14">
+</span><span id="__span-2-15"><span class="c1"># Run application commands</span>
+</span><span id="__span-2-16">nvidia-smi
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>Runs a GPU job named test_gpu_job.</li>
@@ -4636,7 +4636,7 @@ For multiple tasks, use job arrays instead of multiple MIGs.</p>
 </ul>
 <h2 id="interactive-jobs">Interactive jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Interactive jobs</span></a></h2>
 <p>You can also start an interactive session instead of a batch job.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>interactive<span class="w"> </span>-a<span class="w"> </span>ACCOUNT<span class="w"> </span>-q<span class="w"> </span>QOS<span class="w"> </span>-p<span class="w"> </span>PARTITION<span class="w"> </span>-j<span class="w"> </span>JOB_TYPE
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">interactive<span class="w"> </span>-a<span class="w"> </span>ACCOUNT<span class="w"> </span>-q<span class="w"> </span>QOS<span class="w"> </span>-p<span class="w"> </span>PARTITION<span class="w"> </span>-j<span class="w"> </span>JOB_TYPE
 </span></code></pre></div></td></tr></table></div>
 <p>Parameters:</p>
 <ul>
@@ -4646,7 +4646,7 @@ For multiple tasks, use job arrays instead of multiple MIGs.</p>
 <li><code>-j JOB_TYPE</code> → Type of job (e.g., cpu or gpu)</li>
 </ul>
 <p>Example</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>interactive<span class="w"> </span>-a<span class="w"> </span><span class="m">2025</span>-fall-ds-492-kjc59-ls565<span class="w"> </span>-q<span class="w"> </span>course<span class="w"> </span>-p<span class="w"> </span>course
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">interactive<span class="w"> </span>-a<span class="w"> </span><span class="m">2025</span>-fall-ds-492-kjc59-ls565<span class="w"> </span>-q<span class="w"> </span>course<span class="w"> </span>-p<span class="w"> </span>course
 </span></code></pre></div></td></tr></table></div>
 <p>This command launches a temporary compute session for hands-on work or testing.</p>
 <div class="admonition info">
@@ -4898,6 +4898,8 @@ For multiple tasks, use job arrays instead of multiple MIGs.</p>
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

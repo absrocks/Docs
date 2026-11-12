@@ -203,12 +203,15 @@ md-typeset .admonition.question,
   pointer-events: none;
 }
 
+/* Contrast: the text band and the buttons use solid colours. Translucent
+   backgrounds over the photo cannot be measured by accessibility scanners,
+   which then report the white text as having no contrast. */
 .hero-content {
   position: relative;
   z-index: 1;
   width: 100%;
   padding: 2rem 3rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #262626;
 }
 
 .hero-text {
@@ -225,10 +228,16 @@ md-typeset .admonition.question,
 }
 
 .hero-text p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ededed;
   font-size: 1.05rem;
   line-height: 1.5;
   margin: 0;
+}
+
+/* The content link colour (#CC0000) is unreadable on the dark band */
+.hero-text a {
+  color: #fff !important;
+  text-decoration: underline;
 }
 
 .hero-accent-bar {
@@ -248,9 +257,8 @@ md-typeset .admonition.question,
 .hero-link {
   display: inline-block;
   color: #fff !important;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #404040;
+  border: 1px solid #5c5c5c;
   border-radius: 4px;
   padding: 0.5rem 1.1rem;
   font-size: 0.85rem;
@@ -260,7 +268,7 @@ md-typeset .admonition.question,
 }
 
 .hero-link:hover {
-  background: rgba(216, 39, 45, 0.55);
+  background: #8a1d21;
   border-color: #d8272d;
   color: #fff !important;
 }

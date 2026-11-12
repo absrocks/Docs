@@ -5005,7 +5005,7 @@
 <p>The login node has limited memory and processing resources, which can slow down conda environment creation and package installation. It is recommended to start an <a href="../../../Running_jobs/interactive-jobs/">interactive session</a> on a compute node before creating or modifying your conda environment.</p>
 </div>
 <p>Load the Miniforge3 Module</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>module load Miniforge3
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">module load Miniforge3
 </span></code></pre></div></td></tr></table></div>
 <h3 id="create-environment-with-conda">Create Environment with <code>conda</code><a class="headerlink" href="#create-environment-with-conda" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Create Environment with conda</span></a></h3>
 <p>To create an environment use the <code>conda create</code> command. Once the environment is created, you need to use <code>conda activate</code> to activate the environment.
@@ -5017,13 +5017,13 @@ To create an environment with a specific python version, use <code>conda create 
 <h3 id="activate-and-deactivate-conda-environment">Activate and Deactivate Conda Environment<a class="headerlink" href="#activate-and-deactivate-conda-environment" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Activate and Deactivate Conda Environment</span></a></h3>
 <p>Once you create an environment, you need to activate the environment to install python packages
 Use <code>conda activate ENV</code> to activate the Conda environment (<code>ENV</code> is the name of the environment). Following the activation of the conda environment, the name of the environment appears at the left of the hostname in the terminal. </p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>ENV<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>ENV
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
+</span><span id="__span-1-2"><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>ENV<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+</span><span id="__span-1-3"><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>ENV
+</span><span id="__span-1-4"><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$
 </span></code></pre></div></td></tr></table></div>
 <p>Once you finish the installation of Python packages, deactivate the conda environment using <code>conda deactivate ENV</code>. </p>
 <div class="admonition warning">
@@ -5032,7 +5032,7 @@ Use <code>conda activate ENV</code> to activate the Conda environment (<code>ENV
 </div>
 <h2 id="install-python-packages-via-conda">Install Python Packages Via Conda<a class="headerlink" href="#install-python-packages-via-conda" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Install Python Packages Via Conda</span></a></h2>
 <p>Once Conda environment is activated, you can install packages via <code>conda install package_name</code> command. For example, if you want to install <code>matplotlib</code>, you need to use</p>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>matplotlib
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="o">(</span>ENV<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>matplotlib
 </span></code></pre></div></td></tr></table></div>
 where <code>conda-forge</code> is the name of the conda channel. </p>
 <div class="admonition warning">
@@ -5048,11 +5048,11 @@ where <code>conda-forge</code> is the name of the conda channel. </p>
 </div>
 <p>In the above example, the command <code>conda install -c conda-forge matplotlib</code> will install <code>matplotlib</code> from <code>conda-forge</code> channel which is a community-maintained collection of Conda packages where a wide range of packages contributed by the community are available. 
 Users can prioritize channels by listing them in a specific order, so that Conda searches channels in the order they are listed, installing the first version of a package that it finds. To list the channels, create a file <code>.condarc</code> in the <code>$HOME</code> directory and add the following</p>
-<p><div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>auto_activate_base: false
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>channels:
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>  - conda-forge
+<p><div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">auto_activate_base: false
+</span><span id="__span-3-2">channels:
+</span><span id="__span-3-3">  - conda-forge
 </span></code></pre></div></td></tr></table></div>
 The advantage of using <code>.condarc</code> is that you don't have to mention the channel name every time you install a package. However, please note that you still need to use the channel name if you want to install Python packages that require a specific channel other than the <code>conda-forge</code> channel.</p>
 <h2 id="examples-of-conda-environemnt">Examples of Conda Environemnt<a class="headerlink" href="#examples-of-conda-environemnt" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Examples of Conda Environemnt</span></a></h2>
@@ -5065,54 +5065,54 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 <ul>
 <li>
 <p>The following example will create a new conda environment and install TensorFlow in the environment.
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf<span class="w"> </span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
+</span><span id="__span-4-2"><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>tf<span class="w"> </span>
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Activate the new 'tf' environment
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>tf
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="o">(</span>tf<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>tf
+</span><span id="__span-5-2"><span class="o">(</span>tf<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Install tensorflow-gpu
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">(</span>tf<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>tensorflow-gpu
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="o">(</span>tf<span class="o">)</span><span class="w"> </span><span class="o">[</span>ls565@n0058<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>tensorflow-gpu
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Check if TensorFlow can be loaded
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>(tf) [ls565@n0058 ~]$ python -c "import tensorflow as tf; print( tf.__version__)"
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">(tf) [ls565@n0058 ~]$ python -c "import tensorflow as tf; print( tf.__version__)"
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Check if TensorFlow is compiled with GPU
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a>(tf) [ls565@n0058 ~]$ python -c "import tensorflow as tf; print(tf.test.is_built_with_gpu_support())"
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">(tf) [ls565@n0058 ~]$ python -c "import tensorflow as tf; print(tf.test.is_built_with_gpu_support())"
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 </ul>
 <p>You can also verify using this simple TensorFlow test program to make sure the virtual env can access a GPU. </p>
 <details class="example">
 <summary>tf.gpu.test.py</summary>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span>
-<span class="normal"><a href="#__codelineno-9-6">6</a></span>
-<span class="normal"><a href="#__codelineno-9-7">7</a></span>
-<span class="normal"><a href="#__codelineno-9-8">8</a></span>
-<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">if</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">():</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Default GPU Device: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">()))</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="k">else</span><span class="p">:</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>   <span class="nb">print</span><span class="p">(</span><span class="s2">"Please install GPU version of TF"</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+</span><span id="__span-9-2">
+</span><span id="__span-9-3"><span class="k">if</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">():</span>
+</span><span id="__span-9-4">
+</span><span id="__span-9-5">    <span class="nb">print</span><span class="p">(</span><span class="s1">'Default GPU Device: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">gpu_device_name</span><span class="p">()))</span>
+</span><span id="__span-9-6">
+</span><span id="__span-9-7"><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-9-8">
+</span><span id="__span-9-9">   <span class="nb">print</span><span class="p">(</span><span class="s2">"Please install GPU version of TF"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </details>
 <details class="example">
@@ -5120,41 +5120,41 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="install-tensorflow-with-gpu-wulver" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="install-tensorflow-with-gpu-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span>
-<span class="normal"><a href="#__codelineno-10-14">14</a></span>
-<span class="normal"><a href="#__codelineno-10-15">15</a></span>
-<span class="normal"><a href="#__codelineno-10-16">16</a></span>
-<span class="normal"><a href="#__codelineno-10-17">17</a></span>
-<span class="normal"><a href="#__codelineno-10-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="kp">#SBATCH --ntasks-per-node=1</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="kp">#SBATCH --gres=gpu:1</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="c1"># Purge any module loaded by default</span>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a>module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a>conda<span class="w"> </span>activate<span class="w"> </span>tf
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>tf.gpu.test.py
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-10-2"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-10-3"><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
+</span><span id="__span-10-4"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-10-5"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-10-6"><span class="kp">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-10-7"><span class="kp">#SBATCH --gres=gpu:1</span>
+</span><span id="__span-10-8"><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
+</span><span id="__span-10-9"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-10-10"><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-10-11"><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
+</span><span id="__span-10-12">
+</span><span id="__span-10-13"><span class="c1"># Purge any module loaded by default</span>
+</span><span id="__span-10-14">module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span><span id="__span-10-15">module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
+</span><span id="__span-10-16">module<span class="w"> </span>load<span class="w"> </span>Miniforge3
+</span><span id="__span-10-17">conda<span class="w"> </span>activate<span class="w"> </span>tf
+</span><span id="__span-10-18"><span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>tf.gpu.test.py
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5165,13 +5165,13 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 <ul>
 <li>To install PyTorch with GPU, load the <code>Miniforge3</code> module as described above and then use the following</li>
 </ul>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span>
-<span class="normal"><a href="#__codelineno-11-3">3</a></span>
-<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>conda create --name torch-cuda
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>conda activate torch-cuda
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>conda install -c "nvidia/label/cuda-12.2.0" cuda-toolkit
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda -y
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">conda create --name torch-cuda
+</span><span id="__span-11-2">conda activate torch-cuda
+</span><span id="__span-11-3">conda install -c "nvidia/label/cuda-12.2.0" cuda-toolkit
+</span><span id="__span-11-4">conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda -y
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -5179,13 +5179,13 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 </div>
 <ul>
 <li>Check the Torch version
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>python -c "import torch; print( torch.__version__)"
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">python -c "import torch; print( torch.__version__)"
 </span></code></pre></div></td></tr></table></div></li>
 <li>Check the CUDA version
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>python -c "import torch; print(torch. version .cuda)"
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">python -c "import torch; print(torch. version .cuda)"
 </span></code></pre></div></td></tr></table></div></li>
 <li>Check whether Torch is compiled with CUDA
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a>python -c "import torch; print(torch.cuda. is_available())"
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">python -c "import torch; print(torch.cuda. is_available())"
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 <div class="admonition warning">
@@ -5197,95 +5197,95 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 </ul>
 <details class="program">
 <summary>torch_tensor.py</summary>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-15-10">10</a></span>
-<span class="normal"><a href="#__codelineno-15-11">11</a></span>
-<span class="normal"><a href="#__codelineno-15-12">12</a></span>
-<span class="normal"><a href="#__codelineno-15-13">13</a></span>
-<span class="normal"><a href="#__codelineno-15-14">14</a></span>
-<span class="normal"><a href="#__codelineno-15-15">15</a></span>
-<span class="normal"><a href="#__codelineno-15-16">16</a></span>
-<span class="normal"><a href="#__codelineno-15-17">17</a></span>
-<span class="normal"><a href="#__codelineno-15-18">18</a></span>
-<span class="normal"><a href="#__codelineno-15-19">19</a></span>
-<span class="normal"><a href="#__codelineno-15-20">20</a></span>
-<span class="normal"><a href="#__codelineno-15-21">21</a></span>
-<span class="normal"><a href="#__codelineno-15-22">22</a></span>
-<span class="normal"><a href="#__codelineno-15-23">23</a></span>
-<span class="normal"><a href="#__codelineno-15-24">24</a></span>
-<span class="normal"><a href="#__codelineno-15-25">25</a></span>
-<span class="normal"><a href="#__codelineno-15-26">26</a></span>
-<span class="normal"><a href="#__codelineno-15-27">27</a></span>
-<span class="normal"><a href="#__codelineno-15-28">28</a></span>
-<span class="normal"><a href="#__codelineno-15-29">29</a></span>
-<span class="normal"><a href="#__codelineno-15-30">30</a></span>
-<span class="normal"><a href="#__codelineno-15-31">31</a></span>
-<span class="normal"><a href="#__codelineno-15-32">32</a></span>
-<span class="normal"><a href="#__codelineno-15-33">33</a></span>
-<span class="normal"><a href="#__codelineno-15-34">34</a></span>
-<span class="normal"><a href="#__codelineno-15-35">35</a></span>
-<span class="normal"><a href="#__codelineno-15-36">36</a></span>
-<span class="normal"><a href="#__codelineno-15-37">37</a></span>
-<span class="normal"><a href="#__codelineno-15-38">38</a></span>
-<span class="normal"><a href="#__codelineno-15-39">39</a></span>
-<span class="normal"><a href="#__codelineno-15-40">40</a></span>
-<span class="normal"><a href="#__codelineno-15-41">41</a></span>
-<span class="normal"><a href="#__codelineno-15-42">42</a></span>
-<span class="normal"><a href="#__codelineno-15-43">43</a></span>
-<span class="normal"><a href="#__codelineno-15-44">44</a></span>
-<span class="normal"><a href="#__codelineno-15-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="c1">#device = torch.device("cpu")   # Uncomment this to run on CPU</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda:0"</span><span class="p">)</span> <span class="c1"># Uncomment this to run on GPU</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="c1"># Create random input and output data</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14"></a>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="c1"># Randomly initialize weights</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="n">d</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20"></a>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-6</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23"></a>    <span class="c1"># Forward pass: compute predicted y</span>
-</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24"></a>    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
-</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25"></a>
-</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26"></a>    <span class="c1"># Compute and print loss</span>
-</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27"></a>    <span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28"></a>    <span class="k">if</span> <span class="n">t</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">99</span><span class="p">:</span>
-</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
-</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30"></a>
-</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31"></a>    <span class="c1"># Backprop to compute gradients of a, b, c, d with respect to loss</span>
-</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32"></a>    <span class="n">grad_y_pred</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
-</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33"></a>    <span class="n">grad_a</span> <span class="o">=</span> <span class="n">grad_y_pred</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34"></a>    <span class="n">grad_b</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35"></a>    <span class="n">grad_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36"></a>    <span class="n">grad_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37"></a>
-</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38"></a>    <span class="c1"># Update weights using gradient descent</span>
-</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39"></a>    <span class="n">a</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_a</span>
-</span><span id="__span-15-40"><a id="__codelineno-15-40" name="__codelineno-15-40"></a>    <span class="n">b</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_b</span>
-</span><span id="__span-15-41"><a id="__codelineno-15-41" name="__codelineno-15-41"></a>    <span class="n">c</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_c</span>
-</span><span id="__span-15-42"><a id="__codelineno-15-42" name="__codelineno-15-42"></a>    <span class="n">d</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_d</span>
-</span><span id="__span-15-43"><a id="__codelineno-15-43" name="__codelineno-15-43"></a>
-</span><span id="__span-15-44"><a id="__codelineno-15-44" name="__codelineno-15-44"></a>
-</span><span id="__span-15-45"><a id="__codelineno-15-45" name="__codelineno-15-45"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Result: y = </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x + </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x^2 + </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x^3'</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="c1"># -*- coding: utf-8 -*-</span>
+</span><span id="__span-15-2">
+</span><span id="__span-15-3"><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+</span><span id="__span-15-4"><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</span><span id="__span-15-5">
+</span><span id="__span-15-6">
+</span><span id="__span-15-7"><span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">float</span>
+</span><span id="__span-15-8"><span class="c1">#device = torch.device("cpu")   # Uncomment this to run on CPU</span>
+</span><span id="__span-15-9"><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda:0"</span><span class="p">)</span> <span class="c1"># Uncomment this to run on GPU</span>
+</span><span id="__span-15-10">
+</span><span id="__span-15-11"><span class="c1"># Create random input and output data</span>
+</span><span id="__span-15-12"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+</span><span id="__span-15-13"><span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-15-14">
+</span><span id="__span-15-15"><span class="c1"># Randomly initialize weights</span>
+</span><span id="__span-15-16"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+</span><span id="__span-15-17"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+</span><span id="__span-15-18"><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+</span><span id="__span-15-19"><span class="n">d</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((),</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+</span><span id="__span-15-20">
+</span><span id="__span-15-21"><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-6</span>
+</span><span id="__span-15-22"><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+</span><span id="__span-15-23">    <span class="c1"># Forward pass: compute predicted y</span>
+</span><span id="__span-15-24">    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+</span><span id="__span-15-25">
+</span><span id="__span-15-26">    <span class="c1"># Compute and print loss</span>
+</span><span id="__span-15-27">    <span class="n">loss</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</span><span id="__span-15-28">    <span class="k">if</span> <span class="n">t</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">99</span><span class="p">:</span>
+</span><span id="__span-15-29">        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">loss</span><span class="p">)</span>
+</span><span id="__span-15-30">
+</span><span id="__span-15-31">    <span class="c1"># Backprop to compute gradients of a, b, c, d with respect to loss</span>
+</span><span id="__span-15-32">    <span class="n">grad_y_pred</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="__span-15-33">    <span class="n">grad_a</span> <span class="o">=</span> <span class="n">grad_y_pred</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</span><span id="__span-15-34">    <span class="n">grad_b</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</span><span id="__span-15-35">    <span class="n">grad_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</span><span id="__span-15-36">    <span class="n">grad_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">grad_y_pred</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</span><span id="__span-15-37">
+</span><span id="__span-15-38">    <span class="c1"># Update weights using gradient descent</span>
+</span><span id="__span-15-39">    <span class="n">a</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_a</span>
+</span><span id="__span-15-40">    <span class="n">b</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_b</span>
+</span><span id="__span-15-41">    <span class="n">c</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_c</span>
+</span><span id="__span-15-42">    <span class="n">d</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">grad_d</span>
+</span><span id="__span-15-43">
+</span><span id="__span-15-44">
+</span><span id="__span-15-45"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Result: y = </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x + </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x^2 + </span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">}</span><span class="s1"> x^3'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </details>
 <p>User can use the following job script to run the script.</p>
@@ -5294,43 +5294,43 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="install-pytorch-with-gpu-wulver" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="install-pytorch-with-gpu-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-16-10">10</a></span>
-<span class="normal"><a href="#__codelineno-16-11">11</a></span>
-<span class="normal"><a href="#__codelineno-16-12">12</a></span>
-<span class="normal"><a href="#__codelineno-16-13">13</a></span>
-<span class="normal"><a href="#__codelineno-16-14">14</a></span>
-<span class="normal"><a href="#__codelineno-16-15">15</a></span>
-<span class="normal"><a href="#__codelineno-16-16">16</a></span>
-<span class="normal"><a href="#__codelineno-16-17">17</a></span>
-<span class="normal"><a href="#__codelineno-16-18">18</a></span>
-<span class="normal"><a href="#__codelineno-16-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="kp">#SBATCH --job-name=torch_test</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to JobName.JobID</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="kp">#SBATCH --ntasks-per-node=1</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="kp">#SBATCH --gres=gpu:1</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="c1"># Purge any module loaded by default</span>
-</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a>module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a>module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
-</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
-</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a>conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
-</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>torch_tensor.py
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-16-2"><span class="kp">#SBATCH --job-name=torch_test</span>
+</span><span id="__span-16-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to JobName.JobID</span>
+</span><span id="__span-16-4"><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
+</span><span id="__span-16-5"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-16-6"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-16-7"><span class="kp">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-16-8"><span class="kp">#SBATCH --gres=gpu:1</span>
+</span><span id="__span-16-9"><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable mempry per CPU 4G</span>
+</span><span id="__span-16-10"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-16-11"><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-16-12"><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
+</span><span id="__span-16-13">
+</span><span id="__span-16-14"><span class="c1"># Purge any module loaded by default</span>
+</span><span id="__span-16-15">module<span class="w"> </span>purge<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span><span id="__span-16-16">module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
+</span><span id="__span-16-17">module<span class="w"> </span>load<span class="w"> </span>Miniforge3
+</span><span id="__span-16-18">conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
+</span><span id="__span-16-19"><span class="nb">srun</span><span class="w"> </span>python<span class="w"> </span>torch_tensor.py
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5343,28 +5343,28 @@ The advantage of using <code>.condarc</code> is that you don't have to mention t
 <h2 id="mamba-the-conda-alternative">Mamba: The Conda Alternative<a class="headerlink" href="#mamba-the-conda-alternative" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Mamba: The Conda Alternative</span></a></h2>
 <p>Mamba is a fast, robust, and cross-platform package manager and particularly useful for building complicated environments, where <code>conda</code> is unable to 'solve' the required set of packages within a reasonable amount of time.
 Users can install packages with <code>mamba</code> in the same way as with <code>conda</code>.
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span>
-<span class="normal"><a href="#__codelineno-17-4">4</a></span>
-<span class="normal"><a href="#__codelineno-17-5">5</a></span>
-<span class="normal"><a href="#__codelineno-17-6">6</a></span>
-<span class="normal"><a href="#__codelineno-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="c1"># create new environment</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>env_name<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="c1"># install a new package into an existing environment</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a>conda<span class="w"> </span>activate<span class="w"> </span>env_name
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a>mamba<span class="w"> </span>install<span class="w"> </span>scipy
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1">module<span class="w"> </span>load<span class="w"> </span>Miniforge3
+</span><span id="__span-17-2">
+</span><span id="__span-17-3"><span class="c1"># create new environment</span>
+</span><span id="__span-17-4">conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>env_name<span class="w"> </span>python<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>
+</span><span id="__span-17-5"><span class="c1"># install a new package into an existing environment</span>
+</span><span id="__span-17-6">conda<span class="w"> </span>activate<span class="w"> </span>env_name
+</span><span id="__span-17-7">mamba<span class="w"> </span>install<span class="w"> </span>scipy
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="example-of-installing-pytorch-via-mamba">Example of Installing PyTorch via mamba<a class="headerlink" href="#example-of-installing-pytorch-via-mamba" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Example of Installing PyTorch via mamba</span></a></h3>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
-<span class="normal"><a href="#__codelineno-18-2">2</a></span>
-<span class="normal"><a href="#__codelineno-18-3">3</a></span>
-<span class="normal"><a href="#__codelineno-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a>module<span class="w"> </span>load<span class="w"> </span>Miniforge3
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>torch-cuda
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a>conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a>mamba<span class="w"> </span>install<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.1<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1">module<span class="w"> </span>load<span class="w"> </span>Miniforge3
+</span><span id="__span-18-2">conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>torch-cuda
+</span><span id="__span-18-3">conda<span class="w"> </span>activate<span class="w"> </span>torch-cuda
+</span><span id="__span-18-4">mamba<span class="w"> </span>install<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">12</span>.1<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
 </span></code></pre></div></td></tr></table></div>
 <p>This will install pytorch in the <code>torch-cuda</code> environment.</p>
 <h2 id="export-and-import-conda-environment">Export and Import Conda Environment<a class="headerlink" href="#export-and-import-conda-environment" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Export and Import Conda Environment</span></a></h2>
@@ -5375,105 +5375,105 @@ Users can install packages with <code>mamba</code> in the same way as with <code
 </div>
 <h3 id="export-conda-environment">Export Conda Environment<a class="headerlink" href="#export-conda-environment" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Export Conda Environment</span></a></h3>
 <p>To export a conda environment to a new directory or a different machine, you need to activate the environment first that you intend to export. Please see <a href="#activate-and-deactivate-conda-environment">Conda environment</a> on how to activate the environment. Once your environment is activated, you can export it to a YAML file:
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="go">conda env export &gt; my_environment.yml</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><span class="go">conda env export &gt; my_environment.yml</span>
 </span></code></pre></div></td></tr></table></div>
 The YAML should look like this</p>
-<p><div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-20-10">10</a></span>
-<span class="normal"><a href="#__codelineno-20-11">11</a></span>
-<span class="normal"><a href="#__codelineno-20-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_env</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="nt">channels</span><span class="p">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="nt">dependencies</span><span class="p">:</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_libgcc_mutex=0.1=main</span>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_openmp_mutex=5.1=1_gnu</span>
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blas=1.0=mkl</span>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a>
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="l l-Scalar l-Scalar-Plain">&lt;ouput snipped&gt;</span>
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10"></a>
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="c1">#the last line is the path of the env</span>
-</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/a/abc3/.conda/envs/my_env.</span>
+<p><div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_env</span>
+</span><span id="__span-20-2"><span class="nt">channels</span><span class="p">:</span>
+</span><span id="__span-20-3"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+</span><span id="__span-20-4"><span class="nt">dependencies</span><span class="p">:</span>
+</span><span id="__span-20-5"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_libgcc_mutex=0.1=main</span>
+</span><span id="__span-20-6"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_openmp_mutex=5.1=1_gnu</span>
+</span><span id="__span-20-7"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blas=1.0=mkl</span>
+</span><span id="__span-20-8">
+</span><span id="__span-20-9"><span class="l l-Scalar l-Scalar-Plain">&lt;ouput snipped&gt;</span>
+</span><span id="__span-20-10">
+</span><span id="__span-20-11"><span class="c1">#the last line is the path of the env</span>
+</span><span id="__span-20-12"><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/a/abc3/.conda/envs/my_env.</span>
 </span></code></pre></div></td></tr></table></div>
 Next, edit the <code>my_environment.yml</code> file to make sure it has the correct environment name and other settings. The last line of the file specifies the path of the environment.</p>
 <p>Once the YAML file is ready, you can transfer the <code>my_environment.yml</code> file to the new machine or directory where you want to replicate the environment. See <a href="../../../clusters/cluster_access/#transfer-the-data-from-the-local-machine-to-clusters-or-vice-versa">cluster file transfer</a> for details on transferring the files to clusters.</p>
 <h3 id="set-different-location-for-conda-environment-and-package">Set Different Location for Conda Environment and Package<a class="headerlink" href="#set-different-location-for-conda-environment-and-package" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Set Different Location for Conda Environment and Package</span></a></h3>
 <p>Since Conda, by default, downloads packages and creates environments in the <code>$HOME</code> directory, users might encounter disk quota errors if multiple environments are created. In such cases, please follow the above <a href="#export-conda-environment">steps</a> to move the existing environments from <code>$HOME</code> to <code>/project</code>. For future environment and package downloads, create a <code>.condarc</code> file in the <code>$HOME</code> directory and add the following:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
-<span class="normal"><a href="#__codelineno-21-2">2</a></span>
-<span class="normal"><a href="#__codelineno-21-3">3</a></span>
-<span class="normal"><a href="#__codelineno-21-4">4</a></span>
-<span class="normal"><a href="#__codelineno-21-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a>auto_activate_base: false
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a>envs_dirs:
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a>  - /path/to/custom/conda/envs/directory
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a>pkgs_dirs:
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a>  - /path/to/custom/conda/pkgs
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1">auto_activate_base: false
+</span><span id="__span-21-2">envs_dirs:
+</span><span id="__span-21-3">  - /path/to/custom/conda/envs/directory
+</span><span id="__span-21-4">pkgs_dirs:
+</span><span id="__span-21-5">  - /path/to/custom/conda/pkgs
 </span></code></pre></div></td></tr></table></div></p>
 <p>Replace <code>/path/to/custom/conda/envs/directory</code> with the path you want to use. </p>
 <h3 id="import-environment-on-new-machine">Import Environment on New Machine<a class="headerlink" href="#import-environment-on-new-machine" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Import Environment on New Machine</span></a></h3>
 <p>On the new machine, first load Anaconda and initialize conda as before. Then, create the
 environment from the YAML file:</p>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-22-10">10</a></span>
-<span class="normal"><a href="#__codelineno-22-11">11</a></span>
-<span class="normal"><a href="#__codelineno-22-12">12</a></span>
-<span class="normal"><a href="#__codelineno-22-13">13</a></span>
-<span class="normal"><a href="#__codelineno-22-14">14</a></span>
-<span class="normal"><a href="#__codelineno-22-15">15</a></span>
-<span class="normal"><a href="#__codelineno-22-16">16</a></span>
-<span class="normal"><a href="#__codelineno-22-17">17</a></span>
-<span class="normal"><a href="#__codelineno-22-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>my_environment.yml
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a>Collecting<span class="w"> </span>package<span class="w"> </span>metadata<span class="w"> </span><span class="o">(</span>repodata.json<span class="o">)</span>:<span class="w"> </span><span class="k">done</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a>Solving<span class="w"> </span>environment:<span class="w"> </span><span class="k">done</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a>&lt;ouput<span class="w"> </span>snipped&gt;
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a>Downloading<span class="w"> </span>and<span class="w"> </span>Extracting<span class="w"> </span>Packages
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a>Preparing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a>Verifying<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>Executing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
-</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="c1">#</span>
-</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="c1"># To activate this environment, use</span>
-</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="c1">#</span>
-</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="c1"># $ conda activate my_env</span>
-</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15"></a><span class="c1">#</span>
-</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16"></a><span class="c1"># To deactivate an active environment, use</span>
-</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17"></a><span class="c1">#</span>
-</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18"></a><span class="c1"># $ conda deactivate</span>
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1">conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>my_environment.yml
+</span><span id="__span-22-2">Collecting<span class="w"> </span>package<span class="w"> </span>metadata<span class="w"> </span><span class="o">(</span>repodata.json<span class="o">)</span>:<span class="w"> </span><span class="k">done</span>
+</span><span id="__span-22-3">Solving<span class="w"> </span>environment:<span class="w"> </span><span class="k">done</span>
+</span><span id="__span-22-4">
+</span><span id="__span-22-5">&lt;ouput<span class="w"> </span>snipped&gt;
+</span><span id="__span-22-6">
+</span><span id="__span-22-7">Downloading<span class="w"> </span>and<span class="w"> </span>Extracting<span class="w"> </span>Packages
+</span><span id="__span-22-8">Preparing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+</span><span id="__span-22-9">Verifying<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+</span><span id="__span-22-10">Executing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+</span><span id="__span-22-11"><span class="c1">#</span>
+</span><span id="__span-22-12"><span class="c1"># To activate this environment, use</span>
+</span><span id="__span-22-13"><span class="c1">#</span>
+</span><span id="__span-22-14"><span class="c1"># $ conda activate my_env</span>
+</span><span id="__span-22-15"><span class="c1">#</span>
+</span><span id="__span-22-16"><span class="c1"># To deactivate an active environment, use</span>
+</span><span id="__span-22-17"><span class="c1">#</span>
+</span><span id="__span-22-18"><span class="c1"># $ conda deactivate</span>
 </span></code></pre></div></td></tr></table></div>
 After running this command, Conda will set up the environment as it was on the original machine, including downloading and installing packages. To activate the New Environment use <code>conda activate my_env</code> where <code>my_env</code> is the environment name.
 You can check your current environments using <code>conda env list</code>.</p>
 <h3 id="importing-to-a-different-location">Importing to a Different Location<a class="headerlink" href="#importing-to-a-different-location" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Importing to a Different Location</span></a></h3>
 <p>If you want to import the conda environment to a different location, use the <code>--prefix</code> or <code>-p</code> option
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="go">conda env create -f my_environment.yml -p /project/hpcadmins/abc3/conda_env/my_env</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><span class="go">conda env create -f my_environment.yml -p /project/hpcadmins/abc3/conda_env/my_env</span>
 </span></code></pre></div></td></tr></table></div>
 This will create the environment in the specified directory instead of the default conda environment directory. Please note that in that case, you need to provide the full path of the environment to activate it.</p>
-<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
-<span class="normal"><a href="#__codelineno-24-2">2</a></span>
-<span class="normal"><a href="#__codelineno-24-3">3</a></span>
-<span class="normal"><a href="#__codelineno-24-4">4</a></span>
-<span class="normal"><a href="#__codelineno-24-5">5</a></span>
-<span class="normal"><a href="#__codelineno-24-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="o">(</span>/project/hpcadmins/abc3/conda_env/my_env<span class="o">)</span><span class="w"> </span>abc3@login01:~$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="c1"># conda environments:</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="c1">#</span>
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a>base<span class="w"> </span>/apps/easybuild/software/Miniforge3/2023.09-0
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a>*<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
+<p><div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1">conda<span class="w"> </span>activate<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
+</span><span id="__span-24-2"><span class="o">(</span>/project/hpcadmins/abc3/conda_env/my_env<span class="o">)</span><span class="w"> </span>abc3@login01:~$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
+</span><span id="__span-24-3"><span class="c1"># conda environments:</span>
+</span><span id="__span-24-4"><span class="c1">#</span>
+</span><span id="__span-24-5">base<span class="w"> </span>/apps/easybuild/software/Miniforge3/2023.09-0
+</span><span id="__span-24-6">*<span class="w"> </span>/project/hpcadmins/abc3/conda_env/my_env
 </span></code></pre></div></td></tr></table></div>
 By following these steps, you can successfully export a conda environment from one machine and import it to another, ensuring a consistent working environment across different machines or directories.</p>
 <div class="admonition warning">
@@ -5725,6 +5725,8 @@ By following these steps, you can successfully export a conda environment from o
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

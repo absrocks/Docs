@@ -4787,18 +4787,18 @@ submitted without the questionnaire delays activation of the guest account.</p>
 <li><strong>An automated welcome email</strong> with login details and first-step instructions is sent to the user's email address.</li>
 <li>
 <p><strong>The user logs in</strong>, either over SSH or through <a href="https://ondemand.njit.edu">Open OnDemand</a>. See <a href="../cluster_access/">Access to NJIT Clusters</a> for connection instructions.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>localhost&gt; ssh -X -Y $UCID@wulver.njit.edu
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">localhost&gt; ssh -X -Y $UCID@wulver.njit.edu
 </span></code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p><strong>The user sets the account in their job scripts.</strong> Jobs must name the group account they are charged to:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#SBATCH --account=&lt;PI_UCID&gt;</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c1">#SBATCH --account=&lt;PI_UCID&gt;</span>
 </span></code></pre></div></td></tr></table></div>
 <p>To see which associations an account belongs to:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span><span class="nv">$USER</span><span class="w"> </span><span class="nv">format</span><span class="o">=</span>account,partition,qos
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">sacctmgr<span class="w"> </span>show<span class="w"> </span>assoc<span class="w"> </span><span class="nv">user</span><span class="o">=</span><span class="nv">$USER</span><span class="w"> </span><span class="nv">format</span><span class="o">=</span>account,partition,qos
 </span></code></pre></div></td></tr></table></div>
 <p>To check the account allocation usage:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>quota_info
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">quota_info
 </span></code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -5107,6 +5107,8 @@ submitted without the questionnaire delays activation of the guest account.</p>
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

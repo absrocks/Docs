@@ -4452,13 +4452,13 @@
 <details class="question" open="open">
 <summary>Who can use them?</summary>
 <p>All Wulver users are welcome to test their workflows on these new MIG profiles. Using the <code>debug_gpu</code> partition no Service Units (SUs) will be charged for these jobs. Modify your batch scripts to include these directives:</p>
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kp">#SBATCH --partition=debug_gpu</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kp">#SBATCH --qos=debug</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kp">#SBATCH --gres=gpu:a100_10g:1      # Change to 20g or 40g as needed</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kp">#SBATCH --time=59:00 # Debug_gpu partition has a 12 hour walltime limit</span>
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kp">#SBATCH --partition=debug_gpu</span>
+</span><span id="__span-0-2"><span class="kp">#SBATCH --qos=debug</span>
+</span><span id="__span-0-3"><span class="kp">#SBATCH --gres=gpu:a100_10g:1      # Change to 20g or 40g as needed</span>
+</span><span id="__span-0-4"><span class="kp">#SBATCH --time=59:00 # Debug_gpu partition has a 12 hour walltime limit</span>
 </span></code></pre></div></td></tr></table></div>
 </details>
 <details class="question" open="open">
@@ -4688,6 +4688,8 @@
       <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../javascripts/a11y.js"></script>
       
     
 <script>

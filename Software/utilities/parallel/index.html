@@ -4629,9 +4629,9 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use GNU Parallel on your Mac OSX laptop/desktop to run applications in parallel. Just install using either brew or Macports</p>
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="go">sudo port install parallel</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="go">brew install parallel</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="go">sudo port install parallel</span>
+</span><span id="__span-0-2"><span class="go">brew install parallel</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Availability</span></a></h2>
@@ -4662,47 +4662,47 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Usage</span></a></h2>
 <details class="example" open="open">
 <summary>Usage</summary>
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="go">module load parallel/20200422</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="go">parallel echo ::: 1 2 3 ::: 4 5 6</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="go">module load parallel/20200422</span>
+</span><span id="__span-1-2"><span class="go">parallel echo ::: 1 2 3 ::: 4 5 6</span>
 </span></code></pre></div></td></tr></table></div>
 </details>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Purpose</span></a></h2>
 <p>GNU Parallel is a tool for running a series of jobs, mostly serial jobs, in parallel. This tool is best suited for running a bunch of serial jobs that may not run for the same simulation time. For example, the most easiest way to run a series of serial jobs in parallel on <strong>n cpus</strong> within one submit script is as follows</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>./job_1<span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>./job_2<span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>...
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>./job_n<span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">wait</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>./job_<span class="o">(</span>n+1<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>./job_<span class="o">(</span>n+2<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>...
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>./job_2n<span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">wait</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>./job_<span class="o">(</span>2n+1<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>./job_<span class="o">(</span>2n+2<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>...
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>./job_3n<span class="w"> </span><span class="p">&amp;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">wait</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">./job_1<span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-2">./job_2<span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-3">...
+</span><span id="__span-2-4">./job_n<span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-5"><span class="nb">wait</span>
+</span><span id="__span-2-6">./job_<span class="o">(</span>n+1<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-7">./job_<span class="o">(</span>n+2<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-8">...
+</span><span id="__span-2-9">./job_2n<span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-10"><span class="nb">wait</span>
+</span><span id="__span-2-11">./job_<span class="o">(</span>2n+1<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-12">./job_<span class="o">(</span>2n+2<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-13">...
+</span><span id="__span-2-14">./job_3n<span class="w"> </span><span class="p">&amp;</span>
+</span><span id="__span-2-15"><span class="nb">wait</span>
 </span></code></pre></div></td></tr></table></div>
 <p>This works most efficiently when all jobs have the same or almost the same run time. If run times for jobs are unequal, then <strong>n</strong> jobs are run simultaneously and the cpus remain idle until all <strong>n</strong> jobs are completed before looping through the next <strong>n</strong> jobs. This will lead to idle time and inefficient consumption of cpu time.</p>
 <p><img alt="Without Parallel" src="http://i.stack.imgur.com/uH0Dh.png" width /></p>
 <p>GNU Parallel solves this issue by first launching <strong>n</strong> jobs. When one job completes, then the next job in sequence is started. This permits efficient use of cpu time by reducing the wait time and letting a number of small jobs to run while some cpus work on longer jobs.</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>parallel<span class="w"> </span>job_<span class="o">{</span><span class="m">1</span><span class="o">}</span><span class="w"> </span>:::<span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span>3n<span class="k">)</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">parallel<span class="w"> </span>job_<span class="o">{</span><span class="m">1</span><span class="o">}</span><span class="w"> </span>:::<span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span>3n<span class="k">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="With Parallel" src="http://i.stack.imgur.com/17FsG.png" width /></p>
 <h2 id="single-node-example">Single Node example<a class="headerlink" href="#single-node-example" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Single Node example</span></a></h2>
@@ -4967,6 +4967,8 @@
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

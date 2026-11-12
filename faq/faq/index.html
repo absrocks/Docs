@@ -4659,7 +4659,7 @@
 <ul>
 <li>Walltime refers to the maximum amount of real-world time a job is allowed to run on the cluster. The actual job may finish earlier. </li>
 <li>To set the walltime, you'll typically specify it in the job submission script: 
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#SBATCH --time=01:00:00      # Request 1 hour of walltime</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="c1">#SBATCH --time=01:00:00      # Request 1 hour of walltime</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ul>
 </details>
@@ -4673,7 +4673,7 @@
 <summary>Where will my output appear after I submit a job?</summary>
 <ul>
 <li>Your output will appear in the file which you initialized in your job script which look like below:
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#SBATCH --output=file_name.%j.out # %j expands to slurm JobID</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c1">#SBATCH --output=file_name.%j.out # %j expands to slurm JobID</span>
 </span></code></pre></div></td></tr></table></div></li>
 <li>By default, this file is in the same directory as the job script, unless you specify the working directory via <code>sbatch</code></li>
 </ul>
@@ -5031,6 +5031,8 @@
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

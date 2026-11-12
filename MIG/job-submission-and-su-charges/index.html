@@ -4553,47 +4553,47 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="running-jobs-with-mig-sample-slurm-script-for-a-mig-job" name="__tabbed_1" type="radio" /><input id="running-jobs-with-mig-interactive-session-with-mig" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="running-jobs-with-mig-sample-slurm-script-for-a-mig-job">Sample SLURM Script for a MIG Job</label><label for="running-jobs-with-mig-interactive-session-with-mig">Interactive session with MIG</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#SBATCH --job-name=gpu_job</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#SBATCH --output=%x.%j.out</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#SBATCH --partition=gpu</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#SBATCH --qos=standard</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#SBATCH --account=$PI_ucid         # Replace with PI's UCID</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#SBATCH --nodes=1</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">#SBATCH --gres=gpu:a100_10g:1      # Change to 20g or 40g as needed</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1">#SBATCH --time=59:00</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>srun<span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;
+<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-0-2"><span class="c1">#SBATCH --job-name=gpu_job</span>
+</span><span id="__span-0-3"><span class="c1">#SBATCH --output=%x.%j.out</span>
+</span><span id="__span-0-4"><span class="c1">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-0-5"><span class="c1">#SBATCH --partition=gpu</span>
+</span><span id="__span-0-6"><span class="c1">#SBATCH --qos=standard</span>
+</span><span id="__span-0-7"><span class="c1">#SBATCH --account=$PI_ucid         # Replace with PI's UCID</span>
+</span><span id="__span-0-8"><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-0-9"><span class="c1">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-0-10"><span class="c1">#SBATCH --gres=gpu:a100_10g:1      # Change to 20g or 40g as needed</span>
+</span><span id="__span-0-11"><span class="c1">#SBATCH --time=59:00</span>
+</span><span id="__span-0-12"><span class="c1">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-0-13">
+</span><span id="__span-0-14">srun<span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">$srun</span><span class="w"> </span>--partition<span class="o">=</span>gpu<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>--account<span class="o">=</span><span class="nv">$PI_ucid</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>--qos<span class="o">=</span>standard<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>--gres<span class="o">=</span>gpu:a100_10g:1<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>--time<span class="o">=</span><span class="m">00</span>:59:00<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>--pty<span class="w"> </span>bash
+<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nv">$srun</span><span class="w"> </span>--partition<span class="o">=</span>gpu<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2">--account<span class="o">=</span><span class="nv">$PI_ucid</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3">--qos<span class="o">=</span>standard<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4">--gres<span class="o">=</span>gpu:a100_10g:1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-5">--time<span class="o">=</span><span class="m">00</span>:59:00<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-6">--pty<span class="w"> </span>bash
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -4610,7 +4610,7 @@
 <li>GPU memory allocation (via MIG)</li>
 </ul>
 <p>Each component contributes to the SU calculation. The SU cost is charged per hour using the formula:</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>SU = MAX(#CPUs, Memory (in GB) / 4) + 16 × (GPU memory requested / 80GB)
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">SU = MAX(#CPUs, Memory (in GB) / 4) + 16 × (GPU memory requested / 80GB)
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -4911,6 +4911,8 @@
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

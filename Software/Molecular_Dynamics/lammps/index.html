@@ -4661,114 +4661,114 @@ with the module, please file a ticket with <a href="mailto:hpc@njit.edu">Service
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="using-lammps-cpu" name="__tabbed_2" type="radio" /><input id="using-lammps-gpu" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="using-lammps-cpu">CPU</label><label for="using-lammps-gpu">GPU</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kp">#SBATCH -J test_lammps</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kp">#SBATCH --partition=general </span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kp">#SBATCH --ntasks-per-node=128</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable memory per CPU 4G</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="c1">###############################################</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="c1">#</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1"># Purge and load modules needed for run</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="c1">#</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="c1">################################################</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>module<span class="w"> </span>purge
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a>module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2024a<span class="w"> </span>LAMMPS
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="nb">srun</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span>test.in
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-0-2"><span class="kp">#SBATCH -J test_lammps</span>
+</span><span id="__span-0-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-0-4"><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
+</span><span id="__span-0-5"><span class="kp">#SBATCH --partition=general </span>
+</span><span id="__span-0-6"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-0-7"><span class="kp">#SBATCH --ntasks-per-node=128</span>
+</span><span id="__span-0-8"><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable memory per CPU 4G</span>
+</span><span id="__span-0-9"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-0-10"><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-0-11"><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
+</span><span id="__span-0-12">
+</span><span id="__span-0-13"><span class="c1">###############################################</span>
+</span><span id="__span-0-14"><span class="c1">#</span>
+</span><span id="__span-0-15"><span class="c1"># Purge and load modules needed for run</span>
+</span><span id="__span-0-16"><span class="c1">#</span>
+</span><span id="__span-0-17"><span class="c1">################################################</span>
+</span><span id="__span-0-18">module<span class="w"> </span>purge
+</span><span id="__span-0-19">module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
+</span><span id="__span-0-20">module<span class="w"> </span>load<span class="w"> </span>foss/2024a<span class="w"> </span>LAMMPS
+</span><span id="__span-0-21">
+</span><span id="__span-0-22"><span class="nb">srun</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span>test.in
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kp">#SBATCH -J gpu_lammps</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kp">#SBATCH --partition=gpu </span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kp">#SBATCH --ntasks-per-node=128</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable memory per CPU 4G</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="kp">#SBATCH --gres=gpu:2</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="c1">###############################################</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">#</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="c1"># Purge and load modules needed for run</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="c1">#</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="c1">################################################</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>module<span class="w"> </span>purge
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2024a<span class="w"> </span>LAMMPS/29Aug2024_update2-kokkos-CUDA-12.6.0
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PROC_BIND</span><span class="o">=</span>spread
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PLACES</span><span class="o">=</span>threads
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="nb">srun</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span><span class="k">in</span>.lj<span class="w"> </span>-k<span class="w"> </span>on<span class="w"> </span>g<span class="w"> </span><span class="m">2</span><span class="w"> </span>-sf<span class="w"> </span>kk<span class="w"> </span>-pk<span class="w"> </span>kokkos<span class="w"> </span>newton<span class="w"> </span>off<span class="w"> </span>neigh<span class="w"> </span>full<span class="w"> </span>comm<span class="w"> </span>device
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-1-2"><span class="kp">#SBATCH -J gpu_lammps</span>
+</span><span id="__span-1-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-1-4"><span class="kp">#SBATCH --error=%x.%j.err # prints the error message</span>
+</span><span id="__span-1-5"><span class="kp">#SBATCH --partition=gpu </span>
+</span><span id="__span-1-6"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-1-7"><span class="kp">#SBATCH --ntasks-per-node=128</span>
+</span><span id="__span-1-8"><span class="kp">#SBATCH --mem-per-cpu=4000M # Maximum allowable memory per CPU 4G</span>
+</span><span id="__span-1-9"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-1-10"><span class="kp">#SBATCH --gres=gpu:2</span>
+</span><span id="__span-1-11"><span class="kp">#SBATCH --account=PI_ucid # Replace PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-1-12"><span class="kp">#SBATCH --time=71:59:59  # D-HH:MM:SS</span>
+</span><span id="__span-1-13">
+</span><span id="__span-1-14"><span class="c1">###############################################</span>
+</span><span id="__span-1-15"><span class="c1">#</span>
+</span><span id="__span-1-16"><span class="c1"># Purge and load modules needed for run</span>
+</span><span id="__span-1-17"><span class="c1">#</span>
+</span><span id="__span-1-18"><span class="c1">################################################</span>
+</span><span id="__span-1-19">module<span class="w"> </span>purge
+</span><span id="__span-1-20">module<span class="w"> </span>load<span class="w"> </span>wulver<span class="w"> </span><span class="c1"># Load slurm, easybuild</span>
+</span><span id="__span-1-21">module<span class="w"> </span>load<span class="w"> </span>foss/2024a<span class="w"> </span>LAMMPS/29Aug2024_update2-kokkos-CUDA-12.6.0
+</span><span id="__span-1-22">
+</span><span id="__span-1-23"><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+</span><span id="__span-1-24"><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PROC_BIND</span><span class="o">=</span>spread
+</span><span id="__span-1-25"><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PLACES</span><span class="o">=</span>threads
+</span><span id="__span-1-26">
+</span><span id="__span-1-27">
+</span><span id="__span-1-28"><span class="nb">srun</span><span class="w"> </span>lmp<span class="w"> </span>-in<span class="w"> </span><span class="k">in</span>.lj<span class="w"> </span>-k<span class="w"> </span>on<span class="w"> </span>g<span class="w"> </span><span class="m">2</span><span class="w"> </span>-sf<span class="w"> </span>kk<span class="w"> </span>-pk<span class="w"> </span>kokkos<span class="w"> </span>newton<span class="w"> </span>off<span class="w"> </span>neigh<span class="w"> </span>full<span class="w"> </span>comm<span class="w"> </span>device
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
 </details>
 <p>Then submit the job script using the sbatch command, e.g., assuming the job script name is <code>test_lammps.slurm</code>:</p>
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="go">sbatch test_lammps.slurm</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="go">sbatch test_lammps.slurm</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="building-lammps-from-source">Building LAMMPS from source<a class="headerlink" href="#building-lammps-from-source" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Building LAMMPS from source</span></a></h2>
 <p>Some users may be interested in building LAMMPS from source to enable more specific LAMMPS packages. 
@@ -4781,41 +4781,41 @@ In the terminal:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="building-lammps-from-source-wulver" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="building-lammps-from-source-wulver">Wulver</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>module<span class="w"> </span>purge
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>module<span class="w"> </span>load<span class="w"> </span>foss
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>module<span class="w"> </span>load<span class="w"> </span>CMake
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lammps/lammps.git
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nb">cd</span><span class="w"> </span>lammps
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>mkdir<span class="w"> </span>build
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>cmake<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$PWD</span>/../install_hsw<span class="w"> </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>mpicxx<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">            </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>-D<span class="w"> </span><span class="nv">BUILD_MPI</span><span class="o">=</span>yes<span class="w"> </span>-DKokkos_ENABLE_OPENMP<span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">            </span>-DKokkos_ARCH_HSW<span class="o">=</span>ON<span class="w"> </span>-DCMAKE_CXX_STANDARD<span class="o">=</span><span class="m">17</span><span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_MANYBODY</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">            </span>-D<span class="w"> </span><span class="nv">PKG_MOLECULE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_KSPACE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_REPLICA</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_ASPHERE</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">            </span>-D<span class="w"> </span><span class="nv">PKG_RIGID</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_KOKKOS</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">DOWNLOAD_KOKKOS</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">            </span>-D<span class="w"> </span><span class="nv">CMAKE_POSITION_INDEPENDENT_CODE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_EXE_FLAGS</span><span class="o">=</span><span class="s2">"-dynamic"</span><span class="w"> </span>../cmake
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a>make<span class="w"> </span>-j16
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a>make<span class="w"> </span>install
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">module<span class="w"> </span>purge
+</span><span id="__span-3-2">module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-3-3">module<span class="w"> </span>load<span class="w"> </span>foss
+</span><span id="__span-3-4">module<span class="w"> </span>load<span class="w"> </span>CMake
+</span><span id="__span-3-5">
+</span><span id="__span-3-6">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lammps/lammps.git
+</span><span id="__span-3-7"><span class="nb">cd</span><span class="w"> </span>lammps
+</span><span id="__span-3-8">mkdir<span class="w"> </span>build
+</span><span id="__span-3-9"><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-3-10">
+</span><span id="__span-3-11">cmake<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$PWD</span>/../install_hsw<span class="w"> </span>-DCMAKE_CXX_COMPILER<span class="o">=</span>mpicxx<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-12"><span class="w">            </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>-D<span class="w"> </span><span class="nv">BUILD_MPI</span><span class="o">=</span>yes<span class="w"> </span>-DKokkos_ENABLE_OPENMP<span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-13"><span class="w">            </span>-DKokkos_ARCH_HSW<span class="o">=</span>ON<span class="w"> </span>-DCMAKE_CXX_STANDARD<span class="o">=</span><span class="m">17</span><span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_MANYBODY</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-14"><span class="w">            </span>-D<span class="w"> </span><span class="nv">PKG_MOLECULE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_KSPACE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_REPLICA</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_ASPHERE</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-15"><span class="w">            </span>-D<span class="w"> </span><span class="nv">PKG_RIGID</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">PKG_KOKKOS</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">DOWNLOAD_KOKKOS</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-16"><span class="w">            </span>-D<span class="w"> </span><span class="nv">CMAKE_POSITION_INDEPENDENT_CODE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_EXE_FLAGS</span><span class="o">=</span><span class="s2">"-dynamic"</span><span class="w"> </span>../cmake
+</span><span id="__span-3-17">make<span class="w"> </span>-j16
+</span><span id="__span-3-18">make<span class="w"> </span>install
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5075,6 +5075,8 @@ In the terminal:</p>
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

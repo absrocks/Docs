@@ -4721,25 +4721,25 @@ See the table below to see SU will be charged for different partitions.
 ### Check Quota
 
 Users can check the SUs utilization in `--qos=standard`, and space usage via `quota_info UCID` command. 
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>quota_info<span class="w"> </span><span class="nv">$LOGNAME</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>Usage<span class="w"> </span><span class="k">for</span><span class="w"> </span>account:<span class="w"> </span>xy1234
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">   </span>SLURM<span class="w"> </span>Service<span class="w"> </span>Units<span class="w"> </span><span class="o">(</span>CPU<span class="w"> </span>Hours<span class="o">)</span>:<span class="w"> </span><span class="m">277557</span><span class="w"> </span><span class="o">(</span><span class="m">300000</span><span class="w"> </span>Quota<span class="o">)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">1703</span><span class="w"> </span>CPU<span class="w"> </span>Hours<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">277557</span><span class="w"> </span>CPU<span class="w"> </span>Hours<span class="o">)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">   </span>PROJECT<span class="w"> </span>Storage:<span class="w"> </span><span class="m">867</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">2048</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">11</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">   </span>SCRATCH<span class="w"> </span>Storage:<span class="w"> </span><span class="m">791</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">10240</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>HOME<span class="w"> </span>Storage<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">0</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-0-2"><span class="o">[</span>ab1234@login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>quota_info<span class="w"> </span><span class="nv">$LOGNAME</span>
+</span><span id="__span-0-3">Usage<span class="w"> </span><span class="k">for</span><span class="w"> </span>account:<span class="w"> </span>xy1234
+</span><span id="__span-0-4"><span class="w">   </span>SLURM<span class="w"> </span>Service<span class="w"> </span>Units<span class="w"> </span><span class="o">(</span>CPU<span class="w"> </span>Hours<span class="o">)</span>:<span class="w"> </span><span class="m">277557</span><span class="w"> </span><span class="o">(</span><span class="m">300000</span><span class="w"> </span>Quota<span class="o">)</span>
+</span><span id="__span-0-5"><span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">1703</span><span class="w"> </span>CPU<span class="w"> </span>Hours<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">277557</span><span class="w"> </span>CPU<span class="w"> </span>Hours<span class="o">)</span>
+</span><span id="__span-0-6"><span class="w">   </span>PROJECT<span class="w"> </span>Storage:<span class="w"> </span><span class="m">867</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">2048</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
+</span><span id="__span-0-7"><span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">11</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
+</span><span id="__span-0-8"><span class="w">   </span>SCRATCH<span class="w"> </span>Storage:<span class="w"> </span><span class="m">791</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">10240</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
+</span><span id="__span-0-9"><span class="w">     </span>User<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>quota<span class="o">)</span>
+</span><span id="__span-0-10">HOME<span class="w"> </span>Storage<span class="w"> </span>ab1234<span class="w"> </span>Usage:<span class="w"> </span><span class="m">0</span><span class="w"> </span>GB<span class="w"> </span><span class="o">(</span>of<span class="w"> </span><span class="m">50</span><span class="w"> </span>GB<span class="w"> </span>quota<span class="o">)</span>
 </span></code></pre></div></td></tr></table></div>
 Here, `xy1234` represents the UCID of the PI, and "SLURM Service Units (CPU Hours): 277557 (300000 Quota)" indicates that members of the PI group have already utilized 277,557 CPU hours out of the allocated 300,000 SUs, and the user `xy1234` utilized 1703 CPU Hours out of 277,557 CPU Hours. This command also displays the storage usage of directories such as `$HOME`, `/project`, and `/scratch`. Users can view both the group usage and individual usage of each storage. In the given example, the group usage from the 2TB project quota is 867 GB, with the user's usage being 11 GB out of that 867 GB. For more details file system quota, see [Wulver Filesystem](../../clusters/get_started_on_Wulver.md#wulver-filesystems).
 
@@ -4748,118 +4748,118 @@ Here, `xy1234` represents the UCID of the PI, and "SLURM Service Units (CPU Hour
 ??? example "Sample Job Script to use: submit.sh"
 
     === "Using 1 core"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kp">#SBATCH --job-name=job_nme</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kp">#SBATCH --partition=general</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kp">#SBATCH --ntasks=1</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-1-2"><span class="kp">#SBATCH --job-name=job_nme</span>
+</span><span id="__span-1-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-1-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-1-5"><span class="kp">#SBATCH --partition=general</span>
+</span><span id="__span-1-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-1-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-1-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-1-9"><span class="kp">#SBATCH --ntasks=1</span>
+</span><span id="__span-1-10"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-1-11"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-1-12">
+</span><span id="__span-1-13">./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
 </span></code></pre></div></td></tr></table></div>
 
     === "Using multiple cores"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kp">#SBATCH --job-name=job_nme</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kp">#SBATCH --partition=general</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-2-2"><span class="kp">#SBATCH --job-name=job_nme</span>
+</span><span id="__span-2-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-2-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-2-5"><span class="kp">#SBATCH --partition=general</span>
+</span><span id="__span-2-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-2-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-2-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-2-9"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-2-10"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-2-11"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-2-12">
+</span><span id="__span-2-13"><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
 </span></code></pre></div></td></tr></table></div>
 
     === "Using multiple threads"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kp">#SBATCH --job-name=job_nme</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kp">#SBATCH --partition=general</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-3-2"><span class="kp">#SBATCH --job-name=job_nme</span>
+</span><span id="__span-3-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-3-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-3-5"><span class="kp">#SBATCH --partition=general</span>
+</span><span id="__span-3-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-3-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-3-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-3-9"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-3-10"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-3-11"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-3-12">
+</span><span id="__span-3-13"><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_NTASKS</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;
 </span></code></pre></div></td></tr></table></div>
         Use this script, if your code relies on threads instead of cores. 
 
     === "Using multiple cores and threads"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kp">#SBATCH --job-name=job_nme</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="kp">#SBATCH --partition=general</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="kp">#SBATCH --ntasks=64</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="kp">#SBATCH --cpus-per-task=2</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>...<span class="w"> </span>-ntomp<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="w"> </span>...
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-4-2"><span class="kp">#SBATCH --job-name=job_nme</span>
+</span><span id="__span-4-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-4-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-4-5"><span class="kp">#SBATCH --partition=general</span>
+</span><span id="__span-4-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-4-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-4-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-4-9"><span class="kp">#SBATCH --ntasks=64</span>
+</span><span id="__span-4-10"><span class="kp">#SBATCH --cpus-per-task=2</span>
+</span><span id="__span-4-11"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-4-12"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-4-13">
+</span><span id="__span-4-14"><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>...<span class="w"> </span>-ntomp<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="w"> </span>...
 </span></code></pre></div></td></tr></table></div>
         This is the example script of [GROAMCS](../Molecular_Dynamics/gromacs.md) which uses both CPUs and threads.      
 !!! warning
@@ -4871,9 +4871,9 @@ Here, `xy1234` represents the UCID of the PI, and "SLURM Service Units (CPU Hour
 * In this above script `--time` indicates the wall time which is used to specify the maximum amount of time that a job is allowed to run. The maximum allowable wall time depends on SLURM QoS, which you can find in [QoS](../../index.md#using-slurm-on-cluster). 
 * To submit the job, use `sbatch submit.sh` where the `submit.sh` is the job script. Once the job has been submitted, the jobs will be in the queue, which will be executed based on priority-based scheduling. 
 * To check the status of the job use `squeue -u $LOGNAME` and you should see the following 
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">  </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w">  </span>ST<span class="w">    </span>TIME<span class="w">    </span>NODES<span class="w">  </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">   </span><span class="m">635</span><span class="w">   </span>general<span class="w">     </span>job_nme<span class="w">   </span>ucid<span class="w">   </span>R<span class="w">   </span><span class="m">00</span>:02:19<span class="w">    </span><span class="m">1</span><span class="w">      </span>n0088
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="w">  </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w">  </span>ST<span class="w">    </span>TIME<span class="w">    </span>NODES<span class="w">  </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+</span><span id="__span-5-2"><span class="w">   </span><span class="m">635</span><span class="w">   </span>general<span class="w">     </span>job_nme<span class="w">   </span>ucid<span class="w">   </span>R<span class="w">   </span><span class="m">00</span>:02:19<span class="w">    </span><span class="m">1</span><span class="w">      </span>n0088
 </span></code></pre></div></td></tr></table></div>
 Here, the `ST` stands for the status of the job. You may see the status of the job `ST` as `PD` which means the job is pending and has not been assigned yet. The status change depends upon the number of users using the partition and resources requested in the job. Once the job starts, you will see the output file with an extension of `.out`. If the job causes any errors, you can check the details of the error in the file with the `.err` extension.
 
@@ -4883,123 +4883,123 @@ In case of submitting the jobs on GPU, you can use the following SLURM script
 ??? example "Sample Job Script to use: gpu_submit.sh"
 
     === "Using 1 core, 1 GPU"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span>
-<span class="normal"><a href="#__codelineno-6-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kp">#SBATCH --job-name=gpu_job</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="kp">#SBATCH --ntasks-per-node=1</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="kp">#SBATCH --gres=gpu:1</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-6-2"><span class="kp">#SBATCH --job-name=gpu_job</span>
+</span><span id="__span-6-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-6-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-6-5"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-6-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-6-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-6-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-6-9"><span class="kp">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-6-10"><span class="kp">#SBATCH --gres=gpu:1</span>
+</span><span id="__span-6-11"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-6-12"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-6-13">
+</span><span id="__span-6-14">./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
 </span></code></pre></div></td></tr></table></div>
 
     === "Using multiple cores, 1 GPU"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span>
-<span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span>
-<span class="normal"><a href="#__codelineno-7-13">13</a></span>
-<span class="normal"><a href="#__codelineno-7-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kp">#SBATCH --job-name=gpu_job</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="kp">#SBATCH --gres=gpu:1</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-7-2"><span class="kp">#SBATCH --job-name=gpu_job</span>
+</span><span id="__span-7-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-7-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-7-5"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-7-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-7-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-7-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-7-9"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-7-10"><span class="kp">#SBATCH --gres=gpu:1</span>
+</span><span id="__span-7-11"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-7-12"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-7-13">
+</span><span id="__span-7-14"><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
 </span></code></pre></div></td></tr></table></div>
 
     === "Using multiple cores, GPUs"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kp">#SBATCH --job-name=gpu_job</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="kp">#SBATCH --gres=gpu:2</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-8-2"><span class="kp">#SBATCH --job-name=gpu_job</span>
+</span><span id="__span-8-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-8-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-8-5"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-8-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-8-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-8-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-8-9"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-8-10"><span class="kp">#SBATCH --gres=gpu:2</span>
+</span><span id="__span-8-11"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-8-12"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-8-13">
+</span><span id="__span-8-14"><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
 </span></code></pre></div></td></tr></table></div>
 
     === "Using MIGs"
-        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span>
-<span class="normal"><a href="#__codelineno-9-11">11</a></span>
-<span class="normal"><a href="#__codelineno-9-12">12</a></span>
-<span class="normal"><a href="#__codelineno-9-13">13</a></span>
-<span class="normal"><a href="#__codelineno-9-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kp">#SBATCH --job-name=gpu_job</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="kp">#SBATCH --gres=gpu:a100_10g:1  # This uses 10G MIG, to use 20G or 40G MIG, modify 10g to 20g or 40g </span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
+        <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-9-2"><span class="kp">#SBATCH --job-name=gpu_job</span>
+</span><span id="__span-9-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-9-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-9-5"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-9-6"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-9-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-9-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-9-9"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-9-10"><span class="kp">#SBATCH --gres=gpu:a100_10g:1  # This uses 10G MIG, to use 20G or 40G MIG, modify 10g to 20g or 40g </span>
+</span><span id="__span-9-11"><span class="kp">#SBATCH --time=59:00  # D-HH:MM:SS</span>
+</span><span id="__span-9-12"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-9-13">
+</span><span id="__span-9-14"><span class="nb">srun</span><span class="w"> </span>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;<span class="w"> </span><span class="c1"># myexe is the executable in this example.</span>
 </span></code></pre></div></td></tr></table></div>
 
 !!! warning
@@ -5011,31 +5011,31 @@ The `debug` QoS in Slurm is intended for debugging and testing jobs. It usually 
 
 ??? example "Sample Job Script to use: debug_submit.sh"
 
-    <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="kp">#SBATCH --job-name=debug</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="kp">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kp">#SBATCH --partition=debug</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="kp">#SBATCH --qos=debug</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="kp">#SBATCH --ntasks-per-node=1</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="kp">#SBATCH --time=7:59:00  # D-HH:MM:SS, Maximum allowable Wall Time 8 hours</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a>./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;
+    <div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-10-2"><span class="kp">#SBATCH --job-name=debug</span>
+</span><span id="__span-10-3"><span class="kp">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID</span>
+</span><span id="__span-10-4"><span class="kp">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-10-5"><span class="kp">#SBATCH --partition=debug</span>
+</span><span id="__span-10-6"><span class="kp">#SBATCH --qos=debug</span>
+</span><span id="__span-10-7"><span class="kp">#SBATCH --account=$PI_ucid # Replace $PI_ucid which the NJIT UCID of PI</span>
+</span><span id="__span-10-8"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-10-9"><span class="kp">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-10-10"><span class="kp">#SBATCH --time=7:59:00  # D-HH:MM:SS, Maximum allowable Wall Time 8 hours</span>
+</span><span id="__span-10-11"><span class="kp">#SBATCH --mem-per-cpu=4000M</span>
+</span><span id="__span-10-12">
+</span><span id="__span-10-13">./myexe<span class="w"> </span>&lt;input/output<span class="w"> </span>options&gt;
 </span></code></pre></div></td></tr></table></div>
 To submit the jobs, `sbatch` command.
 ### Interactive session on a compute node
@@ -5047,66 +5047,66 @@ We provide a built-in shortcut command, `interactive`, that allows you to quickl
 
 The `interactive` command acts as a convenient wrapper for Slurm’s [salloc](https://slurm.schedmd.com/salloc.html) command. Similar to [sbatch](https://slurm.schedmd.com/sbatch.html), which is used for batch jobs, `salloc` is specifically designed for interactive jobs. 
 
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-11-10">10</a></span>
-<span class="normal"><a href="#__codelineno-11-11">11</a></span>
-<span class="normal"><a href="#__codelineno-11-12">12</a></span>
-<span class="normal"><a href="#__codelineno-11-13">13</a></span>
-<span class="normal"><a href="#__codelineno-11-14">14</a></span>
-<span class="normal"><a href="#__codelineno-11-15">15</a></span>
-<span class="normal"><a href="#__codelineno-11-16">16</a></span>
-<span class="normal"><a href="#__codelineno-11-17">17</a></span>
-<span class="normal"><a href="#__codelineno-11-18">18</a></span>
-<span class="normal"><a href="#__codelineno-11-19">19</a></span>
-<span class="normal"><a href="#__codelineno-11-20">20</a></span>
-<span class="normal"><a href="#__codelineno-11-21">21</a></span>
-<span class="normal"><a href="#__codelineno-11-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a>$<span class="w"> </span>interactive<span class="w"> </span>-h
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>Usage:<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span>ACCOUNT<span class="w"> </span>-q<span class="w"> </span>QOS<span class="w"> </span>-j<span class="w"> </span>JOB_TYPE
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a>Starts<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>SLURM<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>required<span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span>QoS<span class="w"> </span>settings.
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>Required<span class="w"> </span>options:
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">  </span>-a<span class="w"> </span>ACCOUNT<span class="w">       </span>Specify<span class="w"> </span>the<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>use.
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">  </span>-q<span class="w"> </span>QOS<span class="w">           </span>Specify<span class="w"> </span>the<span class="w"> </span>quality<span class="w"> </span>of<span class="w"> </span>service<span class="w"> </span><span class="o">(</span>QoS<span class="o">)</span>.
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">  </span>-j<span class="w"> </span>JOB_TYPE<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span><span class="nb">type</span><span class="w"> </span>of<span class="w"> </span>job:<span class="w"> </span><span class="s1">'cpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>or<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs.
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a>Example:<span class="w"> </span>Run<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>GPU<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>QoS:
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">  </span>/apps/site/bin/interactive<span class="w"> </span>-a<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-q<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-j<span class="w"> </span>gpu
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a>This<span class="w"> </span>will<span class="w"> </span>launch<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>job<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span>partition<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span>QoS<span class="w"> </span><span class="s1">'test'</span>,
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a>using<span class="w"> </span><span class="m">1</span><span class="w"> </span>GPU,<span class="w"> </span><span class="m">1</span><span class="w"> </span>CPU,<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>walltime<span class="w"> </span>of<span class="w"> </span><span class="m">1</span><span class="w"> </span>hour<span class="w"> </span>by<span class="w"> </span>default.
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a>
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a>Optional<span class="w"> </span>parameters<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>resources:
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">  </span>-n<span class="w"> </span>NTASKS<span class="w">        </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CPU<span class="w"> </span>tasks<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">  </span>-t<span class="w"> </span>WALLTIME<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>hours<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w">  </span>-g<span class="w"> </span>GPU<span class="w">           </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>GPUs<span class="w"> </span><span class="o">(</span>Only<span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs,<span class="w"> </span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">  </span>-p<span class="w"> </span>PARTITION<span class="w">     </span>Specify<span class="w"> </span>the<span class="w"> </span>SLURM<span class="w"> </span>partition<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="s1">'general'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span>jobs,<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span><span class="nb">jobs</span><span class="o">)</span>.
-</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21"></a>
-</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22"></a>Use<span class="w"> </span><span class="s1">'-h'</span><span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message.
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">$<span class="w"> </span>interactive<span class="w"> </span>-h
+</span><span id="__span-11-2">Usage:<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span>ACCOUNT<span class="w"> </span>-q<span class="w"> </span>QOS<span class="w"> </span>-j<span class="w"> </span>JOB_TYPE
+</span><span id="__span-11-3">Starts<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>SLURM<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>required<span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span>QoS<span class="w"> </span>settings.
+</span><span id="__span-11-4">
+</span><span id="__span-11-5">Required<span class="w"> </span>options:
+</span><span id="__span-11-6"><span class="w">  </span>-a<span class="w"> </span>ACCOUNT<span class="w">       </span>Specify<span class="w"> </span>the<span class="w"> </span>account<span class="w"> </span>to<span class="w"> </span>use.
+</span><span id="__span-11-7"><span class="w">  </span>-q<span class="w"> </span>QOS<span class="w">           </span>Specify<span class="w"> </span>the<span class="w"> </span>quality<span class="w"> </span>of<span class="w"> </span>service<span class="w"> </span><span class="o">(</span>QoS<span class="o">)</span>.
+</span><span id="__span-11-8"><span class="w">  </span>-j<span class="w"> </span>JOB_TYPE<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span><span class="nb">type</span><span class="w"> </span>of<span class="w"> </span>job:<span class="w"> </span><span class="s1">'cpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>or<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs.
+</span><span id="__span-11-9">
+</span><span id="__span-11-10">Example:<span class="w"> </span>Run<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>GPU<span class="w"> </span>job<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>QoS:
+</span><span id="__span-11-11"><span class="w">  </span>/apps/site/bin/interactive<span class="w"> </span>-a<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-q<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-j<span class="w"> </span>gpu
+</span><span id="__span-11-12">
+</span><span id="__span-11-13">This<span class="w"> </span>will<span class="w"> </span>launch<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>job<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span>partition<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span><span class="s1">'test'</span><span class="w"> </span>account<span class="w"> </span>and<span class="w"> </span>QoS<span class="w"> </span><span class="s1">'test'</span>,
+</span><span id="__span-11-14">using<span class="w"> </span><span class="m">1</span><span class="w"> </span>GPU,<span class="w"> </span><span class="m">1</span><span class="w"> </span>CPU,<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>walltime<span class="w"> </span>of<span class="w"> </span><span class="m">1</span><span class="w"> </span>hour<span class="w"> </span>by<span class="w"> </span>default.
+</span><span id="__span-11-15">
+</span><span id="__span-11-16">Optional<span class="w"> </span>parameters<span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>resources:
+</span><span id="__span-11-17"><span class="w">  </span>-n<span class="w"> </span>NTASKS<span class="w">        </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CPU<span class="w"> </span>tasks<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
+</span><span id="__span-11-18"><span class="w">  </span>-t<span class="w"> </span>WALLTIME<span class="w">      </span>Specify<span class="w"> </span>the<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>hours<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
+</span><span id="__span-11-19"><span class="w">  </span>-g<span class="w"> </span>GPU<span class="w">           </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>GPUs<span class="w"> </span><span class="o">(</span>Only<span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span>jobs,<span class="w"> </span>Default:<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
+</span><span id="__span-11-20"><span class="w">  </span>-p<span class="w"> </span>PARTITION<span class="w">     </span>Specify<span class="w"> </span>the<span class="w"> </span>SLURM<span class="w"> </span>partition<span class="w"> </span><span class="o">(</span>Default:<span class="w"> </span><span class="s1">'general'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>CPU<span class="w"> </span>jobs,<span class="w"> </span><span class="s1">'gpu'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>GPU<span class="w"> </span><span class="nb">jobs</span><span class="o">)</span>.
+</span><span id="__span-11-21">
+</span><span id="__span-11-22">Use<span class="w"> </span><span class="s1">'-h'</span><span class="w"> </span>to<span class="w"> </span>display<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span><span class="w"> </span>message.
 </span></code></pre></div></td></tr></table></div>
 
 === "CPU Nodes"
 
-     <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span>
-<span class="normal"><a href="#__codelineno-12-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a>$<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span><span class="nv">$PI_UCID</span><span class="w"> </span>-q<span class="w"> </span>standard<span class="w"> </span>-j<span class="w"> </span>cpu
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>Starting<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>general<span class="w"> </span>partition<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>core<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>of<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>standard<span class="w"> </span>priority
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>salloc:<span class="w"> </span>Pending<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466577</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466577</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466577</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>salloc:<span class="w"> </span>Granted<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466577</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>salloc:<span class="w"> </span>Nodes<span class="w"> </span>n0103<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
+     <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">$<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span><span class="nv">$PI_UCID</span><span class="w"> </span>-q<span class="w"> </span>standard<span class="w"> </span>-j<span class="w"> </span>cpu
+</span><span id="__span-12-2">Starting<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>general<span class="w"> </span>partition<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>core<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>of<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>standard<span class="w"> </span>priority
+</span><span id="__span-12-3">salloc:<span class="w"> </span>Pending<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466577</span>
+</span><span id="__span-12-4">salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466577</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+</span><span id="__span-12-5">salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466577</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+</span><span id="__span-12-6">salloc:<span class="w"> </span>Granted<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466577</span>
+</span><span id="__span-12-7">salloc:<span class="w"> </span>Nodes<span class="w"> </span>n0103<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
 </span></code></pre></div></td></tr></table></div>
      Use `ssh` or `srun` 
 
@@ -5115,19 +5115,19 @@ The `interactive` command acts as a convenient wrapper for Slurm’s [salloc](ht
      `ssh n0103`
 === "GPU Nodes"
 
-     <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span>
-<span class="normal"><a href="#__codelineno-13-4">4</a></span>
-<span class="normal"><a href="#__codelineno-13-5">5</a></span>
-<span class="normal"><a href="#__codelineno-13-6">6</a></span>
-<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>$<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span><span class="nv">$PI_UCID</span><span class="w"> </span>-q<span class="w"> </span>standard<span class="w"> </span>-j<span class="w"> </span>gpu
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>Starting<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>GPU<span class="w"> </span>partition,<span class="w"> </span><span class="m">1</span><span class="w"> </span>core<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>GPU<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>of<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>standard<span class="w"> </span>priority
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>salloc:<span class="w"> </span>Pending<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466579</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466579</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466579</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a>salloc:<span class="w"> </span>Granted<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466579</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a>salloc:<span class="w"> </span>Nodes<span class="w"> </span>n0048<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
+     <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">$<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span><span class="nv">$PI_UCID</span><span class="w"> </span>-q<span class="w"> </span>standard<span class="w"> </span>-j<span class="w"> </span>gpu
+</span><span id="__span-13-2">Starting<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>GPU<span class="w"> </span>partition,<span class="w"> </span><span class="m">1</span><span class="w"> </span>core<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>GPU<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>of<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>standard<span class="w"> </span>priority
+</span><span id="__span-13-3">salloc:<span class="w"> </span>Pending<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466579</span>
+</span><span id="__span-13-4">salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466579</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+</span><span id="__span-13-5">salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466579</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+</span><span id="__span-13-6">salloc:<span class="w"> </span>Granted<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466579</span>
+</span><span id="__span-13-7">salloc:<span class="w"> </span>Nodes<span class="w"> </span>n0048<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
 </span></code></pre></div></td></tr></table></div>
      Use `ssh` or `srun` 
 
@@ -5137,21 +5137,21 @@ The `interactive` command acts as a convenient wrapper for Slurm’s [salloc](ht
 
 === "Debug Nodes"
 
-     <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span>
-<span class="normal"><a href="#__codelineno-14-6">6</a></span>
-<span class="normal"><a href="#__codelineno-14-7">7</a></span>
-<span class="normal"><a href="#__codelineno-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a>$<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span><span class="nv">$PI_UCID</span><span class="w"> </span>-q<span class="w"> </span>debug<span class="w"> </span>-j<span class="w"> </span>cpu<span class="w"> </span>-p<span class="w"> </span>debug
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>Starting<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>debug<span class="w"> </span>partition<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>core<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>of<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>debug<span class="w"> </span>priority
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a>salloc:<span class="w"> </span>Pending<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466581</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466581</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466581</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a>salloc:<span class="w"> </span>Granted<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466581</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>salloc:<span class="w"> </span>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resource<span class="w"> </span>configuration
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>salloc:<span class="w"> </span>Nodes<span class="w"> </span>n0127<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
+     <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">$<span class="w"> </span>interactive<span class="w"> </span>-a<span class="w"> </span><span class="nv">$PI_UCID</span><span class="w"> </span>-q<span class="w"> </span>debug<span class="w"> </span>-j<span class="w"> </span>cpu<span class="w"> </span>-p<span class="w"> </span>debug
+</span><span id="__span-14-2">Starting<span class="w"> </span>an<span class="w"> </span>interactive<span class="w"> </span>session<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>debug<span class="w"> </span>partition<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>core<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>of<span class="w"> </span>walltime<span class="w"> </span><span class="k">in</span><span class="w"> </span>debug<span class="w"> </span>priority
+</span><span id="__span-14-3">salloc:<span class="w"> </span>Pending<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466581</span>
+</span><span id="__span-14-4">salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466581</span><span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+</span><span id="__span-14-5">salloc:<span class="w"> </span>job<span class="w"> </span><span class="m">466581</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+</span><span id="__span-14-6">salloc:<span class="w"> </span>Granted<span class="w"> </span>job<span class="w"> </span>allocation<span class="w"> </span><span class="m">466581</span>
+</span><span id="__span-14-7">salloc:<span class="w"> </span>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resource<span class="w"> </span>configuration
+</span><span id="__span-14-8">salloc:<span class="w"> </span>Nodes<span class="w"> </span>n0127<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
 </span></code></pre></div></td></tr></table></div>
      Use `ssh` or `srun`.
 
@@ -5468,6 +5468,8 @@ Please note that, by default, this interactive session will request 1 core (for 
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

@@ -4614,21 +4614,21 @@
 <ol>
 <li>In the Job Composer, locate your job and click Open Editor under the Submit Script section.</li>
 <li>Modify the main_job.sh script with your desired commands and SLURM directives. For example:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>#SBATCH --error=%x.%j.err
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>#SBATCH --partition=general
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>#SBATCH --qos=standard
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>#SBATCH --nodes=1
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>#SBATCH --ntasks-per-node=1
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>#SBATCH --time=01:00  # D-HH:MM:SS
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>#SBATCH --mem-per-cpu=4000M
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID
+</span><span id="__span-0-2">#SBATCH --error=%x.%j.err
+</span><span id="__span-0-3">#SBATCH --partition=general
+</span><span id="__span-0-4">#SBATCH --qos=standard
+</span><span id="__span-0-5">#SBATCH --nodes=1
+</span><span id="__span-0-6">#SBATCH --ntasks-per-node=1
+</span><span id="__span-0-7">#SBATCH --time=01:00  # D-HH:MM:SS
+</span><span id="__span-0-8">#SBATCH --mem-per-cpu=4000M
 </span></code></pre></div></td></tr></table></div></li>
 <li>Ensure you adjust the SLURM directives (#SBATCH lines) according to your job’s requirements.</li>
 <li>Click <strong>Save</strong> after editing.</li>
@@ -4903,6 +4903,8 @@
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

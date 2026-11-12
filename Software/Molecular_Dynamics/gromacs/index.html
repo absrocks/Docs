@@ -4635,159 +4635,159 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="using-gromacs-gpu" name="__tabbed_2" type="radio" /><input id="using-gromacs-cpu" name="__tabbed_2" type="radio" /><input id="using-gromacs-cpu-with-threads" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="using-gromacs-gpu">GPU</label><label for="using-gromacs-cpu">CPU</label><label for="using-gromacs-cpu-with-threads">CPU with threads</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1"># NOTE the -l (login) flag!</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kp">#SBATCH -J gmx2023</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kp">#SBATCH -o test.%x.%j.out</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kp">#SBATCH -e test.%x.%j.err</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="kp">#SBATCH --mail-type=ALL</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kp">#SBATCH --partition=gpu</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="kp">#SBATCH --nodes=2</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="kp">#SBATCH --ntasks-per-node=2</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="kp">#SBATCH --gpus-per-node=2  </span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="kp">#SBATCH --account=$PI_ucid  # Replace PI_ucid with the UCID of PI</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>module<span class="w"> </span>purge
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS/2025.2-CUDA-12.8.0
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/INPUT
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/OUTPUT
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-nb<span class="w"> </span>gpu<span class="w"> </span>-noappend
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-0-2"><span class="c1"># NOTE the -l (login) flag!</span>
+</span><span id="__span-0-3"><span class="kp">#SBATCH -J gmx2023</span>
+</span><span id="__span-0-4"><span class="kp">#SBATCH -o test.%x.%j.out</span>
+</span><span id="__span-0-5"><span class="kp">#SBATCH -e test.%x.%j.err</span>
+</span><span id="__span-0-6"><span class="kp">#SBATCH --mail-type=ALL</span>
+</span><span id="__span-0-7"><span class="kp">#SBATCH --partition=gpu</span>
+</span><span id="__span-0-8"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-0-9"><span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
+</span><span id="__span-0-10"><span class="kp">#SBATCH --nodes=2</span>
+</span><span id="__span-0-11"><span class="kp">#SBATCH --ntasks-per-node=2</span>
+</span><span id="__span-0-12"><span class="kp">#SBATCH --gpus-per-node=2  </span>
+</span><span id="__span-0-13"><span class="kp">#SBATCH --account=$PI_ucid  # Replace PI_ucid with the UCID of PI</span>
+</span><span id="__span-0-14">
+</span><span id="__span-0-15">module<span class="w"> </span>purge
+</span><span id="__span-0-16">module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-0-17">module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS/2025.2-CUDA-12.8.0
+</span><span id="__span-0-18">
+</span><span id="__span-0-19"><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/INPUT
+</span><span id="__span-0-20"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/OUTPUT
+</span><span id="__span-0-21">
+</span><span id="__span-0-22">cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
+</span><span id="__span-0-23"><span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
+</span><span id="__span-0-24">
+</span><span id="__span-0-25"><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-nb<span class="w"> </span>gpu<span class="w"> </span>-noappend
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1"># NOTE the -l (login) flag!</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kp">#SBATCH -J gmx2021</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kp">#SBATCH -o test.%x.%j.out</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kp">#SBATCH -e test.%x.%j.err</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kp">#SBATCH --mail-type=ALL</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kp">#SBATCH --partition=general</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="kp">#SBATCH --account=$PI_ucid  # Replace PI_ucid with the UCID of PI</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>module<span class="w"> </span>purge
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS/2025.2
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/INPUT
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/OUTPUT
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-1-2"><span class="c1"># NOTE the -l (login) flag!</span>
+</span><span id="__span-1-3"><span class="kp">#SBATCH -J gmx2021</span>
+</span><span id="__span-1-4"><span class="kp">#SBATCH -o test.%x.%j.out</span>
+</span><span id="__span-1-5"><span class="kp">#SBATCH -e test.%x.%j.err</span>
+</span><span id="__span-1-6"><span class="kp">#SBATCH --mail-type=ALL</span>
+</span><span id="__span-1-7"><span class="kp">#SBATCH --partition=general</span>
+</span><span id="__span-1-8"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-1-9"><span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
+</span><span id="__span-1-10"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-1-11"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-1-12"><span class="kp">#SBATCH --account=$PI_ucid  # Replace PI_ucid with the UCID of PI</span>
+</span><span id="__span-1-13">
+</span><span id="__span-1-14">module<span class="w"> </span>purge
+</span><span id="__span-1-15">module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-1-16">module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS/2025.2
+</span><span id="__span-1-17">
+</span><span id="__span-1-18"><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/INPUT
+</span><span id="__span-1-19"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/OUTPUT
+</span><span id="__span-1-20">
+</span><span id="__span-1-21">cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
+</span><span id="__span-1-22"><span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
+</span><span id="__span-1-23">
+</span><span id="__span-1-24"><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">1</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span>
-<span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span>
-<span class="normal"><a href="#__codelineno-2-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># NOTE the -l (login) flag!</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="kp">#SBATCH -J gmx2021</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="kp">#SBATCH -o test.%x.%j.out</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="kp">#SBATCH -e test.%x.%j.err</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="kp">#SBATCH --mail-type=ALL</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kp">#SBATCH --partition=general</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="kp">#SBATCH --qos=standard</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="kp">#SBATCH --nodes=1</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="kp">#SBATCH --ntasks-per-node=8</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="kp">#SBATCH --cpus-per-task=2</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="kp">#SBATCH --account=$PI_ucid  # Replace PI_ucid with the UCID of PI</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>module<span class="w"> </span>purge
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS/2025.2
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/INPUT
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/OUTPUT
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
+<div class="language-slurm highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-2-2"><span class="c1"># NOTE the -l (login) flag!</span>
+</span><span id="__span-2-3"><span class="kp">#SBATCH -J gmx2021</span>
+</span><span id="__span-2-4"><span class="kp">#SBATCH -o test.%x.%j.out</span>
+</span><span id="__span-2-5"><span class="kp">#SBATCH -e test.%x.%j.err</span>
+</span><span id="__span-2-6"><span class="kp">#SBATCH --mail-type=ALL</span>
+</span><span id="__span-2-7"><span class="kp">#SBATCH --partition=general</span>
+</span><span id="__span-2-8"><span class="kp">#SBATCH --qos=standard</span>
+</span><span id="__span-2-9"><span class="kp">#SBATCH --time 72:00:00   # Max 3 days</span>
+</span><span id="__span-2-10"><span class="kp">#SBATCH --nodes=1</span>
+</span><span id="__span-2-11"><span class="kp">#SBATCH --ntasks-per-node=8</span>
+</span><span id="__span-2-12"><span class="kp">#SBATCH --cpus-per-task=2</span>
+</span><span id="__span-2-13"><span class="kp">#SBATCH --account=$PI_ucid  # Replace PI_ucid with the UCID of PI</span>
+</span><span id="__span-2-14">
+</span><span id="__span-2-15">module<span class="w"> </span>purge
+</span><span id="__span-2-16">module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-2-17">module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS/2025.2
+</span><span id="__span-2-18">
+</span><span id="__span-2-19"><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/INPUT
+</span><span id="__span-2-20"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/OUTPUT
+</span><span id="__span-2-21"><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+</span><span id="__span-2-22">
+</span><span id="__span-2-23">cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$INPUT_DIR</span>/*<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/
+</span><span id="__span-2-24"><span class="nb">cd</span><span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
+</span><span id="__span-2-25">
+</span><span id="__span-2-26"><span class="nb">srun</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-v<span class="w"> </span>-deffnm<span class="w"> </span>em<span class="w"> </span>-cpi<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -5048,6 +5048,8 @@
       <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../../javascripts/a11y.js"></script>
       
     
 <script>

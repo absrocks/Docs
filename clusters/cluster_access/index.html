@@ -4593,26 +4593,26 @@ Here we will provide instructions for connecting to NJIT HPC on Mac/Linux and Wi
 <div class="tabbed-block">
 <p>Open terminal from <kbd>Launchpad</kbd> and select <kbd>terminal</kbd>.
 Type the following in the terminal and replace <code>$UCID</code> with your NJIT UCID..
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>  localhost&gt; ssh -X -Y $UCID@wulver.njit.edu  
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">  localhost&gt; ssh -X -Y $UCID@wulver.njit.edu  
 </span></code></pre></div></td></tr></table></div></p>
 <p>Users will be prompted for your password. Enter your NJIT UCID password. Users can omit the <code>-X -Y</code> if you are not using a graphic interface. Once the password is provided, User will authenticate via Cisco two-factor authentication (TFA)</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span>
-<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>(guest@wulver.njit.edu) Duo two-factor login for guest
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>Enter a passcode or select one of the following options:
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>1. Duo Push to XXX-XXX-2332
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>2. Phone call to XXX-XXX-2332
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>3. SMS passcodes to XXX-XXX-2332 (next code starts with: 1)
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>Passcode or option (1-3):
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">(guest@wulver.njit.edu) Duo two-factor login for guest
+</span><span id="__span-1-2">
+</span><span id="__span-1-3">Enter a passcode or select one of the following options:
+</span><span id="__span-1-4">
+</span><span id="__span-1-5">1. Duo Push to XXX-XXX-2332
+</span><span id="__span-1-6">2. Phone call to XXX-XXX-2332
+</span><span id="__span-1-7">3. SMS passcodes to XXX-XXX-2332 (next code starts with: 1)
+</span><span id="__span-1-8">
+</span><span id="__span-1-9">Passcode or option (1-3):
 </span></code></pre></div></td></tr></table></div>
 <p>Based on the option provided, user will be logged in after succesfull authetication.  </p>
 </div>
@@ -4625,43 +4625,43 @@ Select <kbd>Start local terminal</kbd> to open the terminal.</p>
 <p><img alt="mobaxterm2" src="../img/Mobaxterm2.png" />. </p>
 <p>User will be prompted to type the password. The password is NJIT UCID password.
 After successful login, user will see the following in the terminal, which means the user is now connected to HPC.</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>Last login: Tue Oct 25 12:37:31 2022 from 10.192.228.138
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>Starting /home/a/user/.bash_profile ... standard AFS bash profile
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>========================
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>Home directory : /home/u/user is not in AFS -- skipping quota check
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>========================
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>On host login-1 :
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>         12:38:05 up 315 days, 22:36, 35 users,  load average: 10.32, 10.10, 10.63
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>=== === === Your Kerberos ticket and AFS token status === === ===
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>Kerberos :  Renew until 10/26/22 12:38:01, Flags: FRIA Renew until 10/26/22 12:38:01, Flags: FRA
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>AFS      :  User's (AFS ID 105631) tokens for afs@cad.njit.edu [Expires Oct 25 22:38]
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>Running your /home/u/user/.modules file:
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>To see your aliases, enter "alias"
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>login-1-41 ~ &gt;:
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">Last login: Tue Oct 25 12:37:31 2022 from 10.192.228.138
+</span><span id="__span-2-2">Starting /home/a/user/.bash_profile ... standard AFS bash profile
+</span><span id="__span-2-3">
+</span><span id="__span-2-4">========================
+</span><span id="__span-2-5">Home directory : /home/u/user is not in AFS -- skipping quota check
+</span><span id="__span-2-6">========================
+</span><span id="__span-2-7">
+</span><span id="__span-2-8">On host login-1 :
+</span><span id="__span-2-9">         12:38:05 up 315 days, 22:36, 35 users,  load average: 10.32, 10.10, 10.63
+</span><span id="__span-2-10">
+</span><span id="__span-2-11">=== === === Your Kerberos ticket and AFS token status === === ===
+</span><span id="__span-2-12">Kerberos :  Renew until 10/26/22 12:38:01, Flags: FRIA Renew until 10/26/22 12:38:01, Flags: FRA
+</span><span id="__span-2-13">AFS      :  User's (AFS ID 105631) tokens for afs@cad.njit.edu [Expires Oct 25 22:38]
+</span><span id="__span-2-14">
+</span><span id="__span-2-15">Running your /home/u/user/.modules file:
+</span><span id="__span-2-16">
+</span><span id="__span-2-17">To see your aliases, enter "alias"
+</span><span id="__span-2-18">
+</span><span id="__span-2-19">login-1-41 ~ &gt;:
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -4684,12 +4684,12 @@ After successful login, user will see the following in the terminal, which means
 <ul>
 <li>
 <p>Transfer the data from local machine to HPC cluster
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>rsync -avzP /path/to/local/machine $UCID@wulver.njit.edu:/path/to/destination
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">rsync -avzP /path/to/local/machine $UCID@wulver.njit.edu:/path/to/destination
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>To transfer the data from HPC cluster to local machine use
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a>rsync -avzP $UCID@wulver.njit.edu:/path/to/source /path/to/local/machine
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">rsync -avzP $UCID@wulver.njit.edu:/path/to/source /path/to/local/machine
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 </ul>
@@ -4697,17 +4697,17 @@ After successful login, user will see the following in the terminal, which means
 <ul>
 <li>
 <p>Copy files from remote machine to local machine
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>scp [option] [$UCID@wulver.njit.edu:path/to/source/file] [target/path]
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">scp [option] [$UCID@wulver.njit.edu:path/to/source/file] [target/path]
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Copy files from local machine to remote machine
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>scp [option] [path/to/source/file] [$UCID@wulver.njit.edu:target/path] 
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">scp [option] [path/to/source/file] [$UCID@wulver.njit.edu:target/path] 
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Example of scp:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a>scp -r example $UCID@wulver.njit.edu:/home/dir 
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">scp -r example $UCID@wulver.njit.edu:/home/dir 
 </span></code></pre></div></td></tr></table></div>
 Copy the “example” folder recursively to <code>/home/dir</code></p>
 </li>
@@ -4981,6 +4981,8 @@ Copy the “example” folder recursively to <code>/home/dir</code></p>
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

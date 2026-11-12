@@ -4701,18 +4701,18 @@ SUs are consumed based on how many cores, memory, and GPUs your job requests and
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>20 cores for 8 hours (no <code>--mem</code> specified, so default 4G per core will be allocated) 
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>SU = MAX(CPUs, Memory/4G) x Hours 
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>SU = (20, 4/4) × 8 = 160  
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">SU = MAX(CPUs, Memory/4G) x Hours 
+</span><span id="__span-0-2">SU = (20, 4/4) × 8 = 160  
 </span></code></pre></div></td></tr></table></div></p>
 </div>
 <div class="tabbed-block">
 <p>20 cores + 1 GPU for 8 hours with <code>--mem=128G</code> <br>
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>SU = [2 + MAX(CPUs, Memory/4G)] x Hours 
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>SU = [2 + MAX(20, 128/4)] × 8 
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>SU = (2 + 32) × 8 = 34 × 8 = 272
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">SU = [2 + MAX(CPUs, Memory/4G)] x Hours 
+</span><span id="__span-1-2">SU = [2 + MAX(20, 128/4)] × 8 
+</span><span id="__span-1-3">SU = (2 + 32) × 8 = 34 × 8 = 272
 </span></code></pre></div></td></tr></table></div></p>
 </div>
 </div>
@@ -4723,20 +4723,20 @@ SUs are consumed based on how many cores, memory, and GPUs your job requests and
 <p>Every course is assigned a dedicated <strong>account</strong> for SU billing.<br />
 You must specify this account in all SLURM job scripts using the <code>--account</code> flag.</p>
 <p>Account Format
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>&lt;semester&gt;-&lt;course&gt;-&lt;instructor_ucid&gt;-&lt;student_ucid&gt;
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">&lt;semester&gt;-&lt;course&gt;-&lt;instructor_ucid&gt;-&lt;student_ucid&gt;
 </span></code></pre></div></td></tr></table></div></p>
 <p>For example:
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># 2025-fall → Semester</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># ds-492 → Course code</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1"># kjc59 → Instructor’s UCID</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1"># ls565 → Student’s UCID</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="c1">#SBATCH --account=2025-fall-ds-492-kjc59-ls565</span>
+</span><span id="__span-3-2">
+</span><span id="__span-3-3"><span class="c1"># 2025-fall → Semester</span>
+</span><span id="__span-3-4"><span class="c1"># ds-492 → Course code</span>
+</span><span id="__span-3-5"><span class="c1"># kjc59 → Instructor’s UCID</span>
+</span><span id="__span-3-6"><span class="c1"># ls565 → Student’s UCID</span>
 </span></code></pre></div></td></tr></table></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4771,21 +4771,21 @@ This ensures fair scheduling and appropriate priority for classwork jobs.</p>
 </tbody>
 </table>
 <p>Example:
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">#SBATCH --qos=course</span>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="c1">#SBATCH --qos=course</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="course-directory">Course Directory<a class="headerlink" href="#course-directory" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Course Directory</span></a></h2>
 <p>Each student is assigned a dedicated <strong>course directory</strong>, and <strong>all work must be done inside it</strong>, including job scripts and outputs.</p>
 <p>Directory Format
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a>/course/&lt;year&gt;/&lt;semester&gt;/&lt;course&gt;/&lt;instructor_ucid&gt;/&lt;student_ucid&gt;
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">/course/&lt;year&gt;/&lt;semester&gt;/&lt;course&gt;/&lt;instructor_ucid&gt;/&lt;student_ucid&gt;
 </span></code></pre></div></td></tr></table></div></p>
 <p>Example:
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>/course/2025/fall/ds/492/kjc59/ls565
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">/course/2025/fall/ds/492/kjc59/ls565
 </span></code></pre></div></td></tr></table></div></p>
 <p>To switch to your course directory after logging in:
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>/course/2025/fall/ds/492/kjc59/ls565
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="nb">cd</span><span class="w"> </span>/course/2025/fall/ds/492/kjc59/ls565
 </span></code></pre></div></td></tr></table></div></p>
 <p>Or add it to your <code>.bash_profile</code> for automatic navigation:
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'cd /course/2025/fall/ds/492/kjc59/ls565'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bash_profile
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="nb">echo</span><span class="w"> </span><span class="s1">'cd /course/2025/fall/ds/492/kjc59/ls565'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bash_profile
 </span></code></pre></div></td></tr></table></div></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -5036,6 +5036,8 @@ This ensures fair scheduling and appropriate priority for classwork jobs.</p>
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

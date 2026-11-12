@@ -4521,114 +4521,114 @@
 <p>We use Environment Modules to manage the user environment in HPC, which help users to easily load and unload software packages, switch between different versions of software, and manage complex software dependencies. <a href="https://lmod.readthedocs.io/en/latest">Lmod</a> is an extension of the Environment Modules system, implemented in Lua. It enhances the functionality of traditional Environment Modules by introducing features such as hierarchical module naming, module caching, and improved flexibility in managing environment variables.</p>
 <h3 id="search-for-specific-package">Search for Specific Package<a class="headerlink" href="#search-for-specific-package" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Search for Specific Package</span></a></h3>
 <p>You can check specific packages and list of their versions using <code>module spider</code>. For example, the list of Python installed on cluster can be checked by using</p>
-<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="go">module spider Python</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="go">    Description:</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="go">      Python is a programming language that lets you work more quickly and integrate your systems more effectively.</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="go">     Versions:</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="go">        Python/2.7.18-bare</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="go">        Python/3.9.6-bare</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="go">        Python/3.9.6</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="go">        Python/3.10.4-bare</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="go">        Python/3.10.4</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="go">        Python/3.10.8-bare</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="go">        Python/3.10.8</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="go">        Python/3.11.5</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="go">     Other possible modules matches:</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="go">        Biopython  Boost.Python  Python-bundle-PyPI  meson-python  python3  python39</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="go">  To find other possible module matches execute:</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="gp">      $ </span>module<span class="w"> </span>-r<span class="w"> </span>spider<span class="w"> </span><span class="s1">'.*Python.*'</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="go">  For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="go">  Note that names that have a trailing (E) are extensions provided by other modules.</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="go">  For example:</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="gp">     $ </span>module<span class="w"> </span>spider<span class="w"> </span>Python/3.11.5
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="go">module spider Python</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+</span><span id="__span-0-4"><span class="go">    Description:</span>
+</span><span id="__span-0-5"><span class="go">      Python is a programming language that lets you work more quickly and integrate your systems more effectively.</span>
+</span><span id="__span-0-6">
+</span><span id="__span-0-7"><span class="go">     Versions:</span>
+</span><span id="__span-0-8"><span class="go">        Python/2.7.18-bare</span>
+</span><span id="__span-0-9"><span class="go">        Python/3.9.6-bare</span>
+</span><span id="__span-0-10"><span class="go">        Python/3.9.6</span>
+</span><span id="__span-0-11"><span class="go">        Python/3.10.4-bare</span>
+</span><span id="__span-0-12"><span class="go">        Python/3.10.4</span>
+</span><span id="__span-0-13"><span class="go">        Python/3.10.8-bare</span>
+</span><span id="__span-0-14"><span class="go">        Python/3.10.8</span>
+</span><span id="__span-0-15"><span class="go">        Python/3.11.5</span>
+</span><span id="__span-0-16"><span class="go">     Other possible modules matches:</span>
+</span><span id="__span-0-17"><span class="go">        Biopython  Boost.Python  Python-bundle-PyPI  meson-python  python3  python39</span>
+</span><span id="__span-0-18">
+</span><span id="__span-0-19"><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+</span><span id="__span-0-20"><span class="go">  To find other possible module matches execute:</span>
+</span><span id="__span-0-21">
+</span><span id="__span-0-22"><span class="gp">      $ </span>module<span class="w"> </span>-r<span class="w"> </span>spider<span class="w"> </span><span class="s1">'.*Python.*'</span>
+</span><span id="__span-0-23">
+</span><span id="__span-0-24"><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+</span><span id="__span-0-25"><span class="go">  For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.</span>
+</span><span id="__span-0-26"><span class="go">  Note that names that have a trailing (E) are extensions provided by other modules.</span>
+</span><span id="__span-0-27"><span class="go">  For example:</span>
+</span><span id="__span-0-28">
+</span><span id="__span-0-29"><span class="gp">     $ </span>module<span class="w"> </span>spider<span class="w"> </span>Python/3.11.5
+</span><span id="__span-0-30"><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
 </span></code></pre></div></td></tr></table></div>
 This will show the different versions of Python available on Wulver. </p>
 <p>To see how to load the specific version of software (for example <code>Python/3.9.6</code>), the following command needs to be used.</p>
-<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="go">module spider Python/3.9.6</span>
+<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="go">module spider Python/3.9.6</span>
 </span></code></pre></div></td></tr></table></div>
 This will show the which prerequisite modules need to be loaded prior to loading <code>Python/3.9.6</code></p>
-<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="go">  Python: Python/3.9.6</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="go">    Description:</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="go">      Python is a programming language that lets you work more quickly and integrate your systems more effectively.</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="go">    You will need to load all module(s) on any one of the lines below before the "Python/3.9.6" module is available to load.</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="go">      easybuild  GCCcore/11.2.0</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="go">      slurm/wulver  GCCcore/11.2.0</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="go">    Help:</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="go">      Description</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="go">      ===========</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="go">      Python is a programming language that lets you work more quickly and integrate your systems</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="go">       more effectively.</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="go">      More information</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="go">      ================</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="go">       - Homepage: https://python.org/</span>
+<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+</span><span id="__span-2-2"><span class="go">  Python: Python/3.9.6</span>
+</span><span id="__span-2-3"><span class="go">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+</span><span id="__span-2-4"><span class="go">    Description:</span>
+</span><span id="__span-2-5"><span class="go">      Python is a programming language that lets you work more quickly and integrate your systems more effectively.</span>
+</span><span id="__span-2-6">
+</span><span id="__span-2-7">
+</span><span id="__span-2-8"><span class="go">    You will need to load all module(s) on any one of the lines below before the "Python/3.9.6" module is available to load.</span>
+</span><span id="__span-2-9">
+</span><span id="__span-2-10"><span class="go">      easybuild  GCCcore/11.2.0</span>
+</span><span id="__span-2-11"><span class="go">      slurm/wulver  GCCcore/11.2.0</span>
+</span><span id="__span-2-12">
+</span><span id="__span-2-13"><span class="go">    Help:</span>
+</span><span id="__span-2-14"><span class="go">      Description</span>
+</span><span id="__span-2-15"><span class="go">      ===========</span>
+</span><span id="__span-2-16"><span class="go">      Python is a programming language that lets you work more quickly and integrate your systems</span>
+</span><span id="__span-2-17"><span class="go">       more effectively.</span>
+</span><span id="__span-2-18">
+</span><span id="__span-2-19">
+</span><span id="__span-2-20"><span class="go">      More information</span>
+</span><span id="__span-2-21"><span class="go">      ================</span>
+</span><span id="__span-2-22"><span class="go">       - Homepage: https://python.org/</span>
 </span></code></pre></div></td></tr></table></div>
 If you are unsure about the version, you can also use <code>module spider Python</code> to see the different versions of Python and prerequisite modules to be loaded. </p>
 <h3 id="load-modules">Load Modules<a class="headerlink" href="#load-modules" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Load Modules</span></a></h3>
@@ -4641,31 +4641,31 @@ If you are unsure about the version, you can also use <code>module spider Python
 </ul>
 </div>
 <p>For example, to load <code>Python</code> version <code>3.9.6</code> as shown in the above example, you need to load <code>GCCcore/11.2.0</code> module first before loading the Python module is available to load. To use <code>Python 3.9.6</code>, use the following command
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="go">module load GCCcore/11.2.0 Python</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="go">module load GCCcore/11.2.0 Python</span>
 </span></code></pre></div></td></tr></table></div>
 You can verify whether Python is loaded using</p>
-<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="go">module li</span>
+<p><div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="go">module li</span>
 </span></code></pre></div></td></tr></table></div>
 and this will result is the following output
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="go">Currently Loaded Modules:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="go">  1) easybuild   2) wulver   3) slurm/wulver   4) null   5) GCCcore/11.2.0   6) zlib/1.2.11   7) binutils/2.37   8) bzip2/1.0.8   9) ncurses/6.2  10) libreadline/8.1  11) Tcl/8.6.11  12) SQLite/3.36  13) XZ/5.2.5  14) GMP/6.2.1  15) libffi/3.4.2  16) OpenSSL/1.1  17) Python/3.9.6</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="go">Currently Loaded Modules:</span>
+</span><span id="__span-5-2"><span class="go">  1) easybuild   2) wulver   3) slurm/wulver   4) null   5) GCCcore/11.2.0   6) zlib/1.2.11   7) binutils/2.37   8) bzip2/1.0.8   9) ncurses/6.2  10) libreadline/8.1  11) Tcl/8.6.11  12) SQLite/3.36  13) XZ/5.2.5  14) GMP/6.2.1  15) libffi/3.4.2  16) OpenSSL/1.1  17) Python/3.9.6</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="module-unload">Module unload<a class="headerlink" href="#module-unload" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Module unload</span></a></h3>
 <p>To unload a specific module that you've previously loaded:
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="go">module unload Python</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="go">module unload Python</span>
 </span></code></pre></div></td></tr></table></div>
 You can unload all modules at once with
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="go">module purge</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="go">module purge</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="module-save-collections">Module Save Collections<a class="headerlink" href="#module-save-collections" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Module Save Collections</span></a></h3>
 <p>Since some packages require prerequisite modules, it may be inconvenient for users to load them every time. Therefore, you can save those modules in particular environment after loading those modules. For example
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="go">module save environment_name</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="go">module save environment_name</span>
 </span></code></pre></div></td></tr></table></div>
 This will save the collection of  modules in <code>environment_name</code>. </p>
 <h3 id="module-list-collections">Module List Collections<a class="headerlink" href="#module-list-collections" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Module List Collections</span></a></h3>
 <p>To get a list of your collections, run:
-<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="go">module savelist</span>
+<div class="language-console highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="go">module savelist</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="module-command-summary">Module Command Summary<a class="headerlink" href="#module-command-summary" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Module Command Summary</span></a></h3>
 <p>Here are the list of <code>module</code> commands</p>
@@ -4769,7 +4769,7 @@ This will save the collection of  modules in <code>environment_name</code>. </p>
 </table>
 <h3 id="further-reading">Further Reading<a class="headerlink" href="#further-reading" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Further Reading</span></a></h3>
 <p>You can check the documentation of <code>module</code> on the cluster using the following command:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a>man module
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">man module
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="software-list">Software List<a class="headerlink" href="#software-list" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Software List</span></a></h2>
 <p>The following applications are installed on Wulver.</p>
@@ -13306,6 +13306,8 @@ This will save the collection of  modules in <code>environment_name</code>. </p>
       <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../javascripts/a11y.js"></script>
       
     
 <script>

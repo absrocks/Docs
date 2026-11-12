@@ -4504,27 +4504,27 @@
 <h3 id="misconception-if-i-allocate-more-cpus-my-software-will-automatically-use-them"><strong>Misconception:</strong> “If I allocate more CPUs, my software will automatically use them”<a class="headerlink" href="#misconception-if-i-allocate-more-cpus-my-software-will-automatically-use-them" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Misconception: “If I allocate more CPUs, my software will automatically use them”</span></a></h3>
 <p>Many applications are not parallelized by default. Requesting multiple CPUs (--ntasks &gt; 1) will not speed up execution unless your software is explicitly written to take advantage of parallelism (e.g., via MPI, OpenMP, or job arrays). Otherwise, the job may simply run the program multiple times in parallel instead of speeding it up.</p>
 <p><strong>Example of incorrect job script:</strong></p>
-<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">#SBATCH --job-name=python</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">#SBATCH --output=%x.%j.out</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">#SBATCH --error=%x.%j.err</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">#SBATCH --partition=general</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1">#SBATCH --ntasks=4</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#SBATCH --qos=standard</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="c1">#SBATCH --time=30:00</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#################################################################################</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2024a<span class="w"> </span>Python
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>srun<span class="w"> </span>python<span class="w"> </span>test.py
+<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-0-2"><span class="c1">#SBATCH --job-name=python</span>
+</span><span id="__span-0-3"><span class="c1">#SBATCH --output=%x.%j.out</span>
+</span><span id="__span-0-4"><span class="c1">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-0-5"><span class="c1">#SBATCH --partition=general</span>
+</span><span id="__span-0-6"><span class="c1">#SBATCH --ntasks=4</span>
+</span><span id="__span-0-7"><span class="c1">#SBATCH --qos=standard</span>
+</span><span id="__span-0-8"><span class="c1">#SBATCH --time=30:00</span>
+</span><span id="__span-0-9"><span class="c1">#################################################################################</span>
+</span><span id="__span-0-10">module<span class="w"> </span>load<span class="w"> </span>foss/2024a<span class="w"> </span>Python
+</span><span id="__span-0-11">srun<span class="w"> </span>python<span class="w"> </span>test.py
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Problem:</strong> This script launches test.py 4 times since no parallelism is enabled in the code.</p>
 <p><strong>Solution:</strong> If your code is serial, request only 1 task: <code>srun -n1 python test.py</code> or <code>python test.py</code></p>
@@ -4532,74 +4532,74 @@
 <h3 id="misconception-my-jobs-run-slower-when-i-request-more-resources"><strong>Misconception:</strong> “My jobs run slower when I request more resources”<a class="headerlink" href="#misconception-my-jobs-run-slower-when-i-request-more-resources" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Misconception: “My jobs run slower when I request more resources”</span></a></h3>
 <p>Requesting excessive resources can actually degrade performance. For example, oversubscribing CPUs (assigning more threads than available cores) leads to CPU contention, slowing down computations.</p>
 <p><strong>Example of problematic job script:</strong></p>
-<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">#SBATCH -J gmx-test</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#SBATCH -o %x.%j.out</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">#SBATCH -e %x.%j.err</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">#SBATCH --partition=gpu</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#SBATCH --qos=standard</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#SBATCH --time 72:00:00</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1">#SBATCH --nodes=1</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">#SBATCH --ntasks-per-node=128</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1">#SBATCH --gres=gpu:4</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">#################################################################################</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>module<span class="w"> </span>purge
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>gmx<span class="w"> </span>grompp<span class="w"> </span>-f<span class="w"> </span>run.mdp<span class="w"> </span>-c<span class="w"> </span>npt2.gro<span class="w"> </span>-r<span class="w"> </span>npt2.gro<span class="w"> </span>-p<span class="w"> </span>topol.top<span class="w"> </span>-o<span class="w"> </span>run.tpr
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>srun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>run.cpt<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
+<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-1-2"><span class="c1">#SBATCH -J gmx-test</span>
+</span><span id="__span-1-3"><span class="c1">#SBATCH -o %x.%j.out</span>
+</span><span id="__span-1-4"><span class="c1">#SBATCH -e %x.%j.err</span>
+</span><span id="__span-1-5"><span class="c1">#SBATCH --partition=gpu</span>
+</span><span id="__span-1-6"><span class="c1">#SBATCH --qos=standard</span>
+</span><span id="__span-1-7"><span class="c1">#SBATCH --time 72:00:00</span>
+</span><span id="__span-1-8"><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-1-9"><span class="c1">#SBATCH --ntasks-per-node=128</span>
+</span><span id="__span-1-10"><span class="c1">#SBATCH --gres=gpu:4</span>
+</span><span id="__span-1-11"><span class="c1">#################################################################################</span>
+</span><span id="__span-1-12">module<span class="w"> </span>purge
+</span><span id="__span-1-13">module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-1-14">module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS
+</span><span id="__span-1-15">gmx<span class="w"> </span>grompp<span class="w"> </span>-f<span class="w"> </span>run.mdp<span class="w"> </span>-c<span class="w"> </span>npt2.gro<span class="w"> </span>-r<span class="w"> </span>npt2.gro<span class="w"> </span>-p<span class="w"> </span>topol.top<span class="w"> </span>-o<span class="w"> </span>run.tpr
+</span><span id="__span-1-16">srun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>run.cpt<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Problem:</strong> With <code>--ntasks-per-node=128</code> and <code>-ntomp 2</code>, the job requests <strong>256</strong> CPUs, but the node only has 128. This overloads the node and slows down execution.</p>
 <p><strong>Solution:</strong> Match resource requests to the available hardware. For example:</p>
 <p>This job will launch using 64 cores with 2 threads per core.</p>
-<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/bin/bash -l</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">#SBATCH -J gmx-test</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">#SBATCH -o %x.%j.out</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#SBATCH -e %x.%j.err</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1">#SBATCH --partition=gpu</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">#SBATCH --qos=standard</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">#SBATCH --time=72:00:00</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1">#SBATCH --nodes=1</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1">#SBATCH --ntasks-per-node=64</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="c1">#SBATCH --cpus-per-task=2</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1">#SBATCH --gres=gpu:4</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">#################################################################################</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>module<span class="w"> </span>purge
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>module<span class="w"> </span>load<span class="w"> </span>wulver
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>gmx<span class="w"> </span>grompp<span class="w"> </span>-f<span class="w"> </span>run.mdp<span class="w"> </span>-c<span class="w"> </span>npt2.gro<span class="w"> </span>-r<span class="w"> </span>npt2.gro<span class="w"> </span>-p<span class="w"> </span>topol.top<span class="w"> </span>-o<span class="w"> </span>run.tpr
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>srun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>run.cpt<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
+<div class="language-shell highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="ch">#!/bin/bash -l</span>
+</span><span id="__span-2-2"><span class="c1">#SBATCH -J gmx-test</span>
+</span><span id="__span-2-3"><span class="c1">#SBATCH -o %x.%j.out</span>
+</span><span id="__span-2-4"><span class="c1">#SBATCH -e %x.%j.err</span>
+</span><span id="__span-2-5"><span class="c1">#SBATCH --partition=gpu</span>
+</span><span id="__span-2-6"><span class="c1">#SBATCH --qos=standard</span>
+</span><span id="__span-2-7"><span class="c1">#SBATCH --time=72:00:00</span>
+</span><span id="__span-2-8"><span class="c1">#SBATCH --nodes=1</span>
+</span><span id="__span-2-9"><span class="c1">#SBATCH --ntasks-per-node=64</span>
+</span><span id="__span-2-10"><span class="c1">#SBATCH --cpus-per-task=2</span>
+</span><span id="__span-2-11"><span class="c1">#SBATCH --gres=gpu:4</span>
+</span><span id="__span-2-12"><span class="c1">#################################################################################</span>
+</span><span id="__span-2-13">module<span class="w"> </span>purge
+</span><span id="__span-2-14">module<span class="w"> </span>load<span class="w"> </span>wulver
+</span><span id="__span-2-15">module<span class="w"> </span>load<span class="w"> </span>foss/2025a<span class="w"> </span>GROMACS
+</span><span id="__span-2-16">gmx<span class="w"> </span>grompp<span class="w"> </span>-f<span class="w"> </span>run.mdp<span class="w"> </span>-c<span class="w"> </span>npt2.gro<span class="w"> </span>-r<span class="w"> </span>npt2.gro<span class="w"> </span>-p<span class="w"> </span>topol.top<span class="w"> </span>-o<span class="w"> </span>run.tpr
+</span><span id="__span-2-17">srun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>run<span class="w"> </span>-cpi<span class="w"> </span>run.cpt<span class="w"> </span>-v<span class="w"> </span>-ntomp<span class="w"> </span><span class="m">2</span><span class="w"> </span>-pin<span class="w"> </span>on<span class="w"> </span>-tunepme<span class="w"> </span>-dlb<span class="w"> </span>yes<span class="w"> </span>-noappend
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
@@ -4854,6 +4854,8 @@
       <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/a11y.js"></script>
       
     
 <script>

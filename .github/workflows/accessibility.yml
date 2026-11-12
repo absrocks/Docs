@@ -1,0 +1,52 @@
+name: Check accessibility
+
+# Runs after every successful GitHub Pages deployment (and on demand from
+# the Actions tab). It scans every page of the deployed site, i.e. the
+# contents of the gh-pages branch, with .github/scripts/a11y-check.cjs.
+# The results appear on the run's Summary page; the full list is in the
+# "accessibility-report" artifact.
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Check out the checker script
+        uses: actions/checkout@v5
+
+      - name: Check out the deployed site (gh-pages branch)
+        uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: site
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Install axe-core and Playwright
+        run: |
+          npm install --no-save axe-core@4 playwright@1
+          npx playwright install --with-deps chromium
+
+      - name: Accessibility check ♿
+        run: node .github/scripts/a11y-check.cjs site
+
+      - name: Upload full report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: accessibility-report
+          path: a11y-report.json
+          if-no-files-found: ignore

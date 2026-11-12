@@ -4,7 +4,3 @@ site*/
 
 # Python
 __pycache__/
-
-# Accessibility check (.github/scripts/a11y-check.cjs) when run locally
-node_modules/
-a11y-report.json

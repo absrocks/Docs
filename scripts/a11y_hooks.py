@@ -31,6 +31,19 @@
    aria-hidden="true". It is not inside a template block, so it cannot
    be changed through a theme override.
 
+3. Icons are hidden from assistive technology.
+
+   Icon shortcodes such as `:material-calendar:` (pymdownx.emoji with the
+   Material index) and the file icons that markdown-exec draws in
+   ```tree fences render as inline SVG without a name:
+
+       <span class="twemoji"><svg xmlns="..." viewBox="0 0 24 24">...</svg></span>
+
+   Every one of these is reported as an "svg without an accessible
+   name". On this site they are decorative, always next to text, so the
+   wrapper gets aria-hidden="true". Links whose only content is an icon
+   keep their own aria-label (the event cards), which is unaffected.
+
 Enabled through `hooks:` in mkdocs.yml.
 """
 
@@ -44,6 +57,16 @@ _MAX_TEXT = 100
 
 _OVERLAY = '<label class="md-overlay" for="__drawer">'
 _OVERLAY_HIDDEN = '<label class="md-overlay" for="__drawer" aria-hidden="true">'
+
+# <span class="twemoji"> or <span class="lg middle twemoji"> (attr_list)
+_ICON = re.compile(r'<span\b([^>]*\bclass="[^"]*\btwemoji\b[^"]*"[^>]*)>')
+
+
+def _hide_icon(match):
+    attrs = match.group(1)
+    if "aria-hidden" in attrs:
+        return match.group(0)
+    return f'<span aria-hidden="true"{attrs}>'
 
 
 def _label_permalink(match):
@@ -70,6 +93,7 @@ def _label_permalink(match):
 
 def on_post_page(output, page, config):
     output = _HEADING.sub(_label_permalink, output)
+    output = _ICON.sub(_hide_icon, output)
     return output.replace(_OVERLAY, _OVERLAY_HIDDEN, 1)
 
 

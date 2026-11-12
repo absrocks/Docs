@@ -58,10 +58,10 @@ This webinar provides an introduction to High-Performance Computing for coursewo
 
 If students have any issues or questions regarding HPC resources for their courses, they can stop by to meet with our student consultants and ask any questions you have about using HPC resources. We have also added a virtual option in case students are unable to come to the office in person (See the Zoom link below). There's no need to create a ticket or register in advance; if follow-up is needed, the student consultants will open a ticket on your behalf, and you'll receive further instructions. 
 
-- :material-calendar: **Every Monday and Wednesday**
-- :material-office-building-marker: **GITC 5302N**
-- :material-video: [Zoom](https://njit-edu.zoom.us/j/92024804621?pwd=1D7r69Dt02JZbLwE5sd4abbry3Mgay.1)
-- :material-clock: **2:00 PM - 4:00 PM**
+- :material-calendar:{ aria-hidden="true" } **Every Monday and Wednesday**
+- :material-office-building-marker:{ aria-hidden="true" } **GITC 5302N**
+- :material-video:{ aria-hidden="true" } [Zoom](https://njit-edu.zoom.us/j/92024804621?pwd=1D7r69Dt02JZbLwE5sd4abbry3Mgay.1)
+- :material-clock:{ aria-hidden="true" } **2:00 PM - 4:00 PM**
 
 You can also email us at [hpc@njit.edu](mailto:hpc@njit.edu).
 

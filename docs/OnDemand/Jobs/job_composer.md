@@ -1,84 +1,77 @@
-![jobs-dashboard.png](../../assets/ondemand/jobs/jobs-dashboard.png){ width=100% height=100%}
+# Job Composer
 
-### Creating a New Job
+The Job Composer provides a graphical interface for creating, editing, and
+submitting Slurm jobs from templates, with a built-in file editor and job list.
+No shell or local SSH required.
 
-=== "From Default Template"
+![Job Script (Slurm) form with script location, account, QOS, partition, walltime, cores and memory fields on the left, and the generated script and Submit button on the right](../../assets/ondemand/jobs/job-composer-submit.png){ width=100% height=100%}
 
-    - Click New Job > From Default Template
+### Setting the Script Location and Names
 
-    ![jobcomposer-1.png](../../assets/ondemand/jobs/jobcomposer-1.png){ width=100% height=100%}
+At the top of the form:
 
-    - A new job (e.g., Simple Sequential Job) will appear in your job list.
+- **Script location** — the directory where the script will be saved (defaults to
+  your home directory, e.g. `/home/<UCID>`). Use **Select Path** to browse.
+- **Script name** — the filename for the generated script (defaults to `job.sh`).
+- **Job name** — the name your job will appear under in the scheduler.
 
-    - Click Open Editor to open the directory in the File Editor.
+### Job Parameters
 
-    ![jobcomposer-2.png](../../assets/ondemand/jobs/jobcomposer-2.png){ width=100% height=100%}
+Set the resource request on the left. As you change these, the corresponding
+`#SBATCH` directives update in the **Script Content** box on the right.
 
-    - Modify the main_job.sh script as needed.
+- **SLURM Account** — the account the job is charged to (defaults to your account,
+  e.g. `kjc59`). If you have more than one account, select the correct one.
+- **QOS** — the quality of service (e.g. `debug`, `standard`). Use the
+  [qoslist](../tools/) tool to confirm which QoS values your account can use.
+- **Partition** — the partition to run on (`general`, `gpu`, `bigmem`, etc.).
+- **Walltime (hours)** — the maximum run time.
+- **Number of cores (1 – 128)** — cores requested on the node.
+- **Memory (up to 512 GB)** — total memory; if left blank it defaults to 4 GB per core.
 
-    ![jobcomposer-3.png](../../assets/ondemand/jobs/jobcomposer-3.png){ width=100% height=100%}
+Check **Show advanced option** to configure additional settings such as a job array.
 
-    - Return to the Job Composer and click Job Options to adjust:
-        - Job Name
-        - Cluster (ensure it’s set to wulver)
-        - Account (It will take the default account. If you have or ever had multiple accounts then you have to specify your account)
+### Script Content
 
-    ![jobcomposer-4.png](../../assets/ondemand/jobs/jobcomposer-4.png){ width=100% height=100%}
+The **Script Content** box shows the generated script, which you can edit directly:
 
-    - Click Save to apply changes.    
+```bash
+#!/bin/bash
 
-
-=== "From Existing Job"
-
-    - Select an existing job from your list.
-    - Click New Job > From Selected Job.
-    - This duplicates the job, allowing you to modify it without altering the original.
-
-=== "From Specified Path"
-
-    - Click New Job > From Specified Path.
-	- Enter the full path to a directory containing your job script and necessary files.
-	- This is useful for jobs prepared outside the Job Composer.
-
-### Editing the Job Script
-
-1. In the Job Composer, locate your job and click Open Editor under the Submit Script section.
-2. Modify the main_job.sh script with your desired commands and SLURM directives. For example:
-```
-#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID
-#SBATCH --error=%x.%j.err
+#SBATCH --account=kjc59
+#SBATCH --qos=debug
 #SBATCH --partition=general
-#SBATCH --qos=standard
-#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --time=01:00  # D-HH:MM:SS
-#SBATCH --mem-per-cpu=4000M
+#SBATCH --time=1:00:00
+#SBATCH --output=%x.%j.out
+#SBATCH --error=%x.%j.err
+
+
+# Load application environment
+
+# Run application commands
 ```
-3. Ensure you adjust the SLURM directives (#SBATCH lines) according to your job’s requirements.
-4. Click **Save** after editing.
+
+Add your `module load` lines under **Load application environment** and your
+program commands under **Run application commands**. Adjust the `#SBATCH`
+directives as needed for your job.
+
+!!! Note
+    `%x.%j` in the output and error filenames expands to your job's name and job
+    ID (e.g. `myjob.123456.out`).
 
 ### Submitting the Job
 
-1. In the Job Composer, select your job.
-2. Click Submit.
-3. Monitor the job’s status under the Active Jobs tab.
-    - Queued: Waiting for resources.
-	- Running: Currently executing.
-	- Completed: Finished execution.
+Click **Submit** to send the job to Slurm. You can review previously submitted
+jobs from the **History** tab at the top of the application, and monitor active
+jobs from the **Active Jobs** tool.
 
-![jobcomposer-5.png](../../assets/ondemand/jobs/jobcomposer-5.png){ width=100% height=100%}
+### History
 
-### Outputs
+The **History** page lists jobs you've submitted through the composer along with
+their status. From there you can **Cancel** a running job or **Delete** an entry
+from the History view (deleting an entry does not remove the job's files).
 
-- You can check the output/error in folder contents
-
-![jobcomposer-6.png](../../assets/ondemand/jobs/jobcomposer-6.png){ width=100% height=100%}
-
-- Check both files to confirm your program ran successfully.
-
-![jobcomposer-7.png](../../assets/ondemand/jobs/jobcomposer-7.png){ width=100% height=100%}
-
-!!! Note
-    Even if an error might have occurred, your job status will still show complete.
+![Job Composer History page listing submitted jobs with their status and options to cancel or delete them](../../assets/ondemand/jobs/job-history-new.png){ width=100% height=100%}
 
 

@@ -1,5 +1,5 @@
 The Apps section in OpenOnDemand provides a centralized view of all available applications, tools, and features accessible through the web interface. It organizes cluster utilities, interactive applications, and file management tools in one place, making it easier to discover and launch resources without navigating multiple menus.
 
-![OpenOnDemand dashboard with the Apps menu expanded in the top navigation bar, listing pinned apps such as ANSYS, Abaqus, Active Jobs, Altair, Avogadro2 and Home Directory, with an All Apps link at the bottom](../assets/ondemand/apps/apps_dropdown.png){ width=100% height=100%}
+![OpenOnDemand dashboard with the Apps menu expanded in the top navigation bar, listing pinned apps such as ANSYS, Abaqus, Active Jobs, Altair, Avogadro2 and Home Directory, with an All Apps link at the bottom](../assets/ondemand/apps/apps-dropdown.png){ width=100% height=100%}
 
-![OpenOnDemand All Apps page showing a searchable, paginated table of available applications with Name, Category and Sub Category columns, including System Status, Wulver Shell Access, Files, Abaqus, ANSYS, Jupyter and Linux Desktop](../assets/ondemand/apps/apps_page.png){ width=100% height=100%}
+![OpenOnDemand All Apps page showing a searchable, paginated table of available applications with Name, Category and Sub Category columns, including System Status, Wulver Shell Access, Files, Abaqus, ANSYS, Jupyter and Linux Desktop](../assets/ondemand/apps/apps-new.png){ width=100% height=100%}

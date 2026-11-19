@@ -81,7 +81,6 @@
 .grid.cards > ul > li, .md-typeset .grid > .card {
   background-color:  rgba(84, 15, 17, 0.05);
 }
-.md-nav__list:empty { display: none; }
 md-typeset .admonition.njit,
 .md-typeset details.njit {
   border-color: rgb(84, 15, 17);
@@ -130,6 +129,36 @@ md-typeset .admonition.question,
   color: #fff;
 }
 
+/* Contrast fix: in code blocks the theme colors comments (e.g.
+   #SBATCH lines), variables, operators, punctuation, prompt/
+   output text and line numbers with 54%-black, which lands at
+   4.47:1 on the #f5f5f5 code background, just under WCAG's
+   4.5:1 minimum for small text. #666 gives 5.26:1. */
+[data-md-color-scheme="default"] {
+  --md-code-hl-comment-color: #666;
+  --md-code-hl-generic-color: #666;
+  --md-code-hl-operator-color: #666;
+  --md-code-hl-punctuation-color: #666;
+  --md-code-hl-variable-color: #666;
+}
+[data-md-color-scheme="default"] .md-typeset .highlighttable .linenodiv pre,
+[data-md-color-scheme="default"] .md-typeset .highlight [data-linenos]::before {
+  color: #666;
+}
+
+/* Contrast fix: the theme paints the footer and the "Skip to content"
+   link with 87%-transparent black (#000000de). Accessibility scanners
+   that follow Level Access do not count a translucent layer and
+   measure the white text against the white page behind it (1:1).
+   These are the solid colours those layers render as on white. */
+[data-md-color-scheme="default"] {
+  --md-footer-bg-color: #212121;
+  --md-footer-bg-color--dark: #161616;
+}
+[data-md-color-scheme="default"] .md-skip {
+  background-color: #212121;
+}
+
 .octicon--arrow-right-24 {
   display: inline-block;
   width: 1.2rem;
@@ -174,12 +203,15 @@ md-typeset .admonition.question,
   pointer-events: none;
 }
 
+/* Contrast: the text band and the buttons use solid colours. Translucent
+   backgrounds over the photo cannot be measured by accessibility scanners,
+   which then report the white text as having no contrast. */
 .hero-content {
   position: relative;
   z-index: 1;
   width: 100%;
   padding: 2rem 3rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #262626;
 }
 
 .hero-text {
@@ -196,10 +228,16 @@ md-typeset .admonition.question,
 }
 
 .hero-text p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ededed;
   font-size: 1.05rem;
   line-height: 1.5;
   margin: 0;
+}
+
+/* The content link colour (#CC0000) is unreadable on the dark band */
+.hero-text a {
+  color: #fff !important;
+  text-decoration: underline;
 }
 
 .hero-accent-bar {
@@ -219,9 +257,8 @@ md-typeset .admonition.question,
 .hero-link {
   display: inline-block;
   color: #fff !important;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #404040;
+  border: 1px solid #5c5c5c;
   border-radius: 4px;
   padding: 0.5rem 1.1rem;
   font-size: 0.85rem;
@@ -231,7 +268,7 @@ md-typeset .admonition.question,
 }
 
 .hero-link:hover {
-  background: rgba(216, 39, 45, 0.55);
+  background: #8a1d21;
   border-color: #d8272d;
   color: #fff !important;
 }

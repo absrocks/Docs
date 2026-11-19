@@ -51,7 +51,7 @@ nav:
         - Common Problems and Misconceptions: Running_jobs/problems-and-misconceptions.md
         - Jobs on OnDemand: Running_jobs/ondemand-jobs.md
     - Software : Software/
-    - MIG :
+    - MIG (Multi-Instance GPU) :
         - MIG Overview: MIG/index.md
         - Profile Comparison: MIG/profile-comparison.md
         - Job Submission and SU Charges: MIG/job-submission-and-su-charges.md
@@ -116,6 +116,8 @@ theme:
 
 extra_css:
     - stylesheets/extra.css
+extra_javascript:
+    - javascripts/a11y.js
 extra:
   social:
     - icon: material/help-box-multiple
@@ -173,7 +175,10 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.snippets
   - pymdownx.highlight:
-      anchor_linenums: true
+      # Line numbers stay visible but are no longer links: linked line
+      # numbers give every code block dozens of links named "1", "2", ...
+      # which fail WCAG link-name and target-size checks.
+      anchor_linenums: false
       line_spans: __span
       pygments_lang_class: true
       linenums: true
@@ -216,5 +221,9 @@ plugins:
       exclude:
         - index.md
         - news/*
+
+# Adds a descriptive aria-label to the "¶" heading permalinks
+hooks:
+  - scripts/a11y_hooks.py
 
 copyright: New Jersey Institute of Technology High Performance Computing &copy; 2026

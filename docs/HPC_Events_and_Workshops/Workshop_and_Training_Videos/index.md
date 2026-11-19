@@ -10,6 +10,29 @@ NJIT HPC provides practical training in high performance computing for students 
 
 <div class="grid cards" markdown>
 
+-   ### [Introduction to Wulver: Job Efficiency and Resource Utilization](../index.md)
+
+    ---
+
+    This webinar is the third session of the Fall 2026 series and covers advanced SLURM features for running jobs efficiently on the Wulver HPC cluster. Participants will learn how to automate many similar jobs, chain multi-step workflows, and keep long-running jobs going past the 72-hour walltime limit, along with common mistakes that slow jobs down and how to fix them.
+    
+    **Key Highlights:**
+
+    * Interactive jobs with `salloc` and `srun`, and when to use `--exclusive`
+    * Job dependencies for building automated pipelines
+    * Job arrays: syntax, array variables, mapping task IDs to inputs, and throttling
+    * Checkpointing, DMTCP, and chaining jobs to run beyond 72 hours
+    * Switch-aware placement for multi-node MPI jobs
+    * Common problems: serial code with multiple tasks and oversubscribed nodes
+
+    <iframe src="https://njit.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9ca98944-694b-4731-91e7-b4ea0152d242&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646; box-sizing: border-box;" allowfullscreen allow="autoplay" aria-label="Introduction to Wulver: Job Efficiency and Resource Utilization" aria-description="Introduction to Wulver: Job Efficiency and Resource Utilization"></iframe>
+
+    [<span class="octicon--arrow-right-24"></span> Download Slides](../../assets/slides/Advanced_SLURM_Fall_2026.pdf)
+
+</div>
+
+<div class="grid cards" markdown>
+
 -   ### [Introduction to Wulver: Job Submission and Resource Requests](../index.md)
 
     ---

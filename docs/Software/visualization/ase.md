@@ -1,5 +1,5 @@
 ---
-title: ASE
+title: ASE (Atomic Simulation Environment)
 ---
 ASE (Atomic Simulation Environment) is an open-source Python library for performing atomic-scale simulations of materials. It provides a collection of tools and interfaces for setting up, running, and analyzing simulations of atoms, molecules, and solids using a variety of simulation packages.
 

@@ -13,21 +13,21 @@
         <link rel="canonical" href="https://hpc.njit.edu/OnDemand/Jobs/job_composer/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../allocations/">
       
       
-        <link rel="next" href="../open_composer/">
+        <link rel="next" href="../my-jobs/">
       
       
         
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
-        <title>Job composer - NJIT HPC Documentation</title>
+        <title>Job Composer - NJIT HPC Documentation</title>
       
     
     
@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-a-new-job" class="md-skip">
+        <a href="#job-composer" class="md-skip">
           Skip to content
         </a>
       
@@ -130,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Job composer
+              Job Composer
             
           </span>
         </div>
@@ -3795,6 +3795,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3842,6 +3848,52 @@
                   
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../active_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Active jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Allocations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
     
   
   
@@ -3851,13 +3903,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    Job composer
+    Job Composer
     
   </span>
   
@@ -3870,7 +3924,7 @@
   
   
   <span class="md-ellipsis">
-    Job composer
+    Job Composer
     
   </span>
   
@@ -3893,6 +3947,8 @@
   -->
   
   
+    
+  
 
   <!-- Table of contents title and list -->
   
@@ -3903,10 +3959,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-a-new-job" class="md-nav__link">
+  <a href="#setting-the-script-location-and-names" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating a New Job
+        Setting the Script Location and Names
       
     </span>
   </a>
@@ -3914,10 +3970,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#editing-the-job-script" class="md-nav__link">
+  <a href="#job-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editing the Job Script
+        Job Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Content
       
     </span>
   </a>
@@ -3936,10 +4003,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#outputs" class="md-nav__link">
+  <a href="#history" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outputs
+        History
       
     </span>
   </a>
@@ -3962,12 +4029,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../open_composer/" class="md-nav__link">
+      <a href="../my-jobs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Open Composer
+    My Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Metrics
     
   </span>
   
@@ -4414,6 +4504,8 @@
   -->
   
   
+    
+  
 
   <!-- Table of contents title and list -->
   
@@ -4424,10 +4516,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-a-new-job" class="md-nav__link">
+  <a href="#setting-the-script-location-and-names" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating a New Job
+        Setting the Script Location and Names
       
     </span>
   </a>
@@ -4435,10 +4527,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#editing-the-job-script" class="md-nav__link">
+  <a href="#job-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editing the Job Script
+        Job Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Content
       
     </span>
   </a>
@@ -4457,10 +4560,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#outputs" class="md-nav__link">
+  <a href="#history" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outputs
+        History
       
     </span>
   </a>
@@ -4557,107 +4660,80 @@
   
 
 
-  <h1>Job composer</h1>
-
-<p><img alt="jobs-dashboard.png" height="100%" src="../../../assets/ondemand/jobs/jobs-dashboard.png" width="100%" /></p>
-<h3 id="creating-a-new-job">Creating a New Job<a class="headerlink" href="#creating-a-new-job" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Creating a New Job</span></a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="creating-a-new-job-from-default-template" name="__tabbed_1" type="radio" /><input id="creating-a-new-job-from-existing-job" name="__tabbed_1" type="radio" /><input id="creating-a-new-job-from-specified-path" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="creating-a-new-job-from-default-template">From Default Template</label><label for="creating-a-new-job-from-existing-job">From Existing Job</label><label for="creating-a-new-job-from-specified-path">From Specified Path</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<h1 id="job-composer">Job Composer<a class="headerlink" href="#job-composer" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Job Composer</span></a></h1>
+<p>The Job Composer provides a graphical interface for creating, editing, and
+submitting Slurm jobs from templates, with a built-in file editor and job list.
+No shell or local SSH required.</p>
+<p><img alt="Job Script (Slurm) form with script location, account, QOS, partition, walltime, cores and memory fields on the left, and the generated script and Submit button on the right" height="100%" src="../../../assets/ondemand/jobs/job-composer-submit.png" width="100%" /></p>
+<h3 id="setting-the-script-location-and-names">Setting the Script Location and Names<a class="headerlink" href="#setting-the-script-location-and-names" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Setting the Script Location and Names</span></a></h3>
+<p>At the top of the form:</p>
 <ul>
-<li>Click New Job &gt; From Default Template</li>
+<li><strong>Script location</strong> — the directory where the script will be saved (defaults to
+  your home directory, e.g. <code>/home/&lt;UCID&gt;</code>). Use <strong>Select Path</strong> to browse.</li>
+<li><strong>Script name</strong> — the filename for the generated script (defaults to <code>job.sh</code>).</li>
+<li><strong>Job name</strong> — the name your job will appear under in the scheduler.</li>
 </ul>
-<p><img alt="jobcomposer-1.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-1.png" width="100%" /></p>
+<h3 id="job-parameters">Job Parameters<a class="headerlink" href="#job-parameters" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Job Parameters</span></a></h3>
+<p>Set the resource request on the left. As you change these, the corresponding
+<code>#SBATCH</code> directives update in the <strong>Script Content</strong> box on the right.</p>
 <ul>
-<li>
-<p>A new job (e.g., Simple Sequential Job) will appear in your job list.</p>
-</li>
-<li>
-<p>Click Open Editor to open the directory in the File Editor.</p>
-</li>
+<li><strong>SLURM Account</strong> — the account the job is charged to (defaults to your account,
+  e.g. <code>kjc59</code>). If you have more than one account, select the correct one.</li>
+<li><strong>QOS</strong> — the quality of service (e.g. <code>debug</code>, <code>standard</code>). Use the
+  <a href="../tools/">qoslist</a> tool to confirm which QoS values your account can use.</li>
+<li><strong>Partition</strong> — the partition to run on (<code>general</code>, <code>gpu</code>, <code>bigmem</code>, etc.).</li>
+<li><strong>Walltime (hours)</strong> — the maximum run time.</li>
+<li><strong>Number of cores (1 – 128)</strong> — cores requested on the node.</li>
+<li><strong>Memory (up to 512 GB)</strong> — total memory; if left blank it defaults to 4 GB per core.</li>
 </ul>
-<p><img alt="jobcomposer-2.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-2.png" width="100%" /></p>
-<ul>
-<li>Modify the main_job.sh script as needed.</li>
-</ul>
-<p><img alt="jobcomposer-3.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-3.png" width="100%" /></p>
-<ul>
-<li>Return to the Job Composer and click Job Options to adjust:<ul>
-<li>Job Name</li>
-<li>Cluster (ensure it’s set to wulver)</li>
-<li>Account (It will take the default account. If you have or ever had multiple accounts then you have to specify your account)</li>
-</ul>
-</li>
-</ul>
-<p><img alt="jobcomposer-4.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-4.png" width="100%" /></p>
-<ul>
-<li>Click Save to apply changes.    </li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul>
-<li>Select an existing job from your list.</li>
-<li>Click New Job &gt; From Selected Job.</li>
-<li>This duplicates the job, allowing you to modify it without altering the original.</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul>
-<li>Click New Job &gt; From Specified Path.</li>
-<li>Enter the full path to a directory containing your job script and necessary files.</li>
-<li>This is useful for jobs prepared outside the Job Composer.</li>
-</ul>
-</div>
-</div>
-</div>
-<h3 id="editing-the-job-script">Editing the Job Script<a class="headerlink" href="#editing-the-job-script" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Editing the Job Script</span></a></h3>
-<ol>
-<li>In the Job Composer, locate your job and click Open Editor under the Submit Script section.</li>
-<li>Modify the main_job.sh script with your desired commands and SLURM directives. For example:
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">#SBATCH --output=%x.%j.out # %x.%j expands to slurm JobName.JobID
-</span><span id="__span-0-2">#SBATCH --error=%x.%j.err
-</span><span id="__span-0-3">#SBATCH --partition=general
-</span><span id="__span-0-4">#SBATCH --qos=standard
-</span><span id="__span-0-5">#SBATCH --nodes=1
-</span><span id="__span-0-6">#SBATCH --ntasks-per-node=1
-</span><span id="__span-0-7">#SBATCH --time=01:00  # D-HH:MM:SS
-</span><span id="__span-0-8">#SBATCH --mem-per-cpu=4000M
-</span></code></pre></div></td></tr></table></div></li>
-<li>Ensure you adjust the SLURM directives (#SBATCH lines) according to your job’s requirements.</li>
-<li>Click <strong>Save</strong> after editing.</li>
-</ol>
-<h3 id="submitting-the-job">Submitting the Job<a class="headerlink" href="#submitting-the-job" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Submitting the Job</span></a></h3>
-<ol>
-<li>In the Job Composer, select your job.</li>
-<li>Click Submit.</li>
-<li>Monitor the job’s status under the Active Jobs tab.<ul>
-<li>Queued: Waiting for resources.</li>
-<li>Running: Currently executing.</li>
-<li>Completed: Finished execution.</li>
-</ul>
-</li>
-</ol>
-<p><img alt="jobcomposer-5.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-5.png" width="100%" /></p>
-<h3 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Outputs</span></a></h3>
-<ul>
-<li>You can check the output/error in folder contents</li>
-</ul>
-<p><img alt="jobcomposer-6.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-6.png" width="100%" /></p>
-<ul>
-<li>Check both files to confirm your program ran successfully.</li>
-</ul>
-<p><img alt="jobcomposer-7.png" height="100%" src="../../../assets/ondemand/jobs/jobcomposer-7.png" width="100%" /></p>
+<p>Check <strong>Show advanced option</strong> to configure additional settings such as a job array.</p>
+<h3 id="script-content">Script Content<a class="headerlink" href="#script-content" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Script Content</span></a></h3>
+<p>The <strong>Script Content</strong> box shows the generated script, which you can edit directly:</p>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="ch">#!/bin/bash</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="c1">#SBATCH --account=kjc59</span>
+</span><span id="__span-0-4"><span class="c1">#SBATCH --qos=debug</span>
+</span><span id="__span-0-5"><span class="c1">#SBATCH --partition=general</span>
+</span><span id="__span-0-6"><span class="c1">#SBATCH --ntasks-per-node=1</span>
+</span><span id="__span-0-7"><span class="c1">#SBATCH --time=1:00:00</span>
+</span><span id="__span-0-8"><span class="c1">#SBATCH --output=%x.%j.out</span>
+</span><span id="__span-0-9"><span class="c1">#SBATCH --error=%x.%j.err</span>
+</span><span id="__span-0-10">
+</span><span id="__span-0-11">
+</span><span id="__span-0-12"><span class="c1"># Load application environment</span>
+</span><span id="__span-0-13">
+</span><span id="__span-0-14"><span class="c1"># Run application commands</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Add your <code>module load</code> lines under <strong>Load application environment</strong> and your
+program commands under <strong>Run application commands</strong>. Adjust the <code>#SBATCH</code>
+directives as needed for your job.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Even if an error might have occurred, your job status will still show complete.</p>
+<p><code>%x.%j</code> in the output and error filenames expands to your job's name and job
+ID (e.g. <code>myjob.123456.out</code>).</p>
 </div>
+<h3 id="submitting-the-job">Submitting the Job<a class="headerlink" href="#submitting-the-job" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Submitting the Job</span></a></h3>
+<p>Click <strong>Submit</strong> to send the job to Slurm. You can review previously submitted
+jobs from the <strong>History</strong> tab at the top of the application, and monitor active
+jobs from the <strong>Active Jobs</strong> tool.</p>
+<h3 id="history">History<a class="headerlink" href="#history" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to History</span></a></h3>
+<p>The <strong>History</strong> page lists jobs you've submitted through the composer along with
+their status. From there you can <strong>Cancel</strong> a running job or <strong>Delete</strong> an entry
+from the History view (deleting an entry does not remove the job's files).</p>
+<p><img alt="Job Composer History page listing submitted jobs with their status and options to cancel or delete them" height="100%" src="../../../assets/ondemand/jobs/job-history-new.png" width="100%" /></p>
 
 
 
@@ -4684,7 +4760,7 @@
   <svg role="img" aria-label="Last update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
 
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 22, 2026 20:30:05 UTC">January 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2026 18:45:24 UTC">November 10, 2026</span>
   </span>
 
     
@@ -4787,7 +4863,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Jobs">
+          <a href="../allocations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Allocations">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4797,20 +4873,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Jobs
+                Allocations
               </div>
             </div>
           </a>
         
         
           
-          <a href="../open_composer/" class="md-footer__link md-footer__link--next" aria-label="Next: Open Composer">
+          <a href="../my-jobs/" class="md-footer__link md-footer__link--next" aria-label="Next: My Jobs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Open Composer
+                My Jobs
               </div>
             </div>
             <div class="md-footer__button md-icon">

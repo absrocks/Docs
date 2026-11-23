@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -3793,6 +3793,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3843,12 +3849,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Jobs/job_composer/" class="md-nav__link">
+      <a href="../Jobs/active_jobs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Job composer
+    Active jobs
     
   </span>
   
@@ -3866,12 +3872,81 @@
   
   
     <li class="md-nav__item">
-      <a href="../Jobs/open_composer/" class="md-nav__link">
+      <a href="../Jobs/allocations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Open Composer
+    Allocations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jobs/job_composer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Composer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jobs/my-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jobs/performance-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Metrics
     
   </span>
   
@@ -4480,7 +4555,7 @@
 <h1 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Tools</span></a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Overview</span></a></h2>
 <p>The passenger apps (Tools) on OnDemand are some of the easiest and user-friendly ways to monitor key stats related to your account and Wulver in general.</p>
-<p><img alt="tools-dropdown.png" height="100%" src="../../assets/ondemand/tools/tools-dropdown.png" width="100%" /></p>
+<p><img alt="Tools menu open in the top navigation bar, listing Joblist, checkload, homespace, ps and qoslist" height="100%" src="../../assets/ondemand/tools/tools-dropdown-new.png" width="100%" /></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="overview-joblist" name="__tabbed_1" type="radio" /><input id="overview-checkload" name="__tabbed_1" type="radio" /><input id="overview-homespace" name="__tabbed_1" type="radio" /><input id="overview-ps" name="__tabbed_1" type="radio" /><input id="overview-qoslist" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="overview-joblist">Joblist</label><label for="overview-checkload">Checkload</label><label for="overview-homespace">Homespace</label><label for="overview-ps">PS</label><label for="overview-qoslist">Qoslist</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -4493,11 +4568,11 @@
 <p>Enter the start date and end date between which you want to monitor your past jobs</p>
 </li>
 </ul>
-<p><img alt="joblist-date-input.png" height="100%" src="../../assets/ondemand/tools/joblist-date-input.png" width="100%" /></p>
+<p><img alt="Joblist form with start time and end time date fields and a Submit button" height="100%" src="../../assets/ondemand/tools/joblist-date-input.png" width="100%" /></p>
 <ul>
 <li>You will be presented with a table of your jobs with a few job details atop which you find information like service units consumed, your specified date range and the qos.</li>
 </ul>
-<p><img alt="joblist-output.png" height="100%" src="../../assets/ondemand/tools/joblist-output.png" width="100%" /></p>
+<p><img alt="Joblist results showing a summary of service units used above a table of jobs in the chosen date range" height="100%" src="../../assets/ondemand/tools/joblist-output.png" width="100%" /></p>
 </div>
 <div class="tabbed-block">
 <p>This is a tool which can be used to monitor the CPU load, state, and other parameters on compute nodes across the entire wulver cluster. This tool is not specific to your account.</p>
@@ -4506,7 +4581,7 @@
 <li>It can also be used to cross check your requested configuration.</li>
 <li>It can also be crudely used to check the load on the cluster</li>
 </ul>
-<p><img alt="checkload-output.png" height="100%" src="../../assets/ondemand/tools/checkload-output.png" width="100%" /></p>
+<p><img alt="Checkload table listing each compute node with its partition, state, CPUs, memory, CPU load and time limit" height="100%" src="../../assets/ondemand/tools/checkload-output.png" width="100%" /></p>
 </div>
 <div class="tabbed-block">
 <p>This is one of the most useful tool to monitor your <code>/home</code> partition in detail. This gives you a list of subdirectories and their respective sizes (in MB). You should monitor your <code>/home</code> directory size at least twice a month depending on your usage to be sure you are below the upper limit of 50GB. Ideally you should clean your <code>/home</code> directory if it reaches 40GB or above. If your <code>/home</code> exceeds this limit it severely impacts some operations like creating new conda envs, installing new packages, etc.</p>
@@ -4515,11 +4590,11 @@
 <p class="admonition-title">Note</p>
 <p>Since it calculates the storage used by each subdirectory and file in your <code>/home</code> directory, it may take some time to load the results.</p>
 </div>
-<p><img alt="homespace-ouput.png" height="100%" src="../../assets/ondemand/tools/homespace-ouput.png" width="100%" /></p>
+<p><img alt="Homespace output listing the subdirectories in the home directory with their sizes in MB" height="100%" src="../../assets/ondemand/tools/homespace-ouput.png" width="100%" /></p>
 </div>
 <div class="tabbed-block">
 <p>This is also a very important tool to monitor processes running on your login node usage. </p>
-<p><img alt="ps-output.png" height="100%" src="../../assets/ondemand/tools/ps-output.png" width="100%" /></p>
+<p><img alt="PS output listing the processes currently running under your account on the login node" height="100%" src="../../assets/ondemand/tools/ps-output.png" width="100%" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is strictly advised to not run any resource consuming process on the login node, instead use compute node. The login node is shared between all the wulver users. Using login node for any such process like creating conda env, installing conda packages, running your jobs/programs is strictly not advised. Repeatedly using the login node for such processes will result in strict action. If you find there is high activity by any process on your login node and you are unsure of the cause please email to <a href="mailto:hpc@njit.edu">hpc@njit.edu</a> with the screenshot of the output of the PS tool.</p>
@@ -4527,7 +4602,7 @@
 </div>
 <div class="tabbed-block">
 <p>QOS is an important flag for any type of job submission. You can check all the available QOS for each of your accounts using this tool. Click <a href="../../Software/slurm/#partition-use-partition">here</a> for details about QOS.</p>
-<p><img alt="qoslist-output.png" height="100%" src="../../assets/ondemand/tools/qoslist-output.png" width="100%" /></p>
+<p><img alt="Qoslist output showing the QOS options available for each of your Slurm accounts" height="100%" src="../../assets/ondemand/tools/qoslist-output.png" width="100%" /></p>
 </div>
 </div>
 </div>
@@ -4557,7 +4632,7 @@
   <svg role="img" aria-label="Last update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
 
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 5, 2026 16:59:59 UTC">March 5, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 29, 2026 21:25:59 UTC">October 29, 2026</span>
   </span>
 
     

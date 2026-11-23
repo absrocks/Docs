@@ -16,14 +16,14 @@
         <link rel="prev" href="../files/">
       
       
-        <link rel="next" href="job_composer/">
+        <link rel="next" href="active_jobs/">
       
       
         
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -3795,6 +3795,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3845,12 +3851,12 @@
   
   
     <li class="md-nav__item">
-      <a href="job_composer/" class="md-nav__link">
+      <a href="active_jobs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Job composer
+    Active jobs
     
   </span>
   
@@ -3868,12 +3874,81 @@
   
   
     <li class="md-nav__item">
-      <a href="open_composer/" class="md-nav__link">
+      <a href="allocations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Open Composer
+    Allocations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="job_composer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Job Composer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="my-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Jobs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="performance-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Performance Metrics
     
   </span>
   
@@ -4342,17 +4417,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#active-jobs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Active Jobs
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4445,24 +4509,33 @@
 
 <h1 id="jobs">Jobs<a class="headerlink" href="#jobs" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Jobs</span></a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Overview</span></a></h2>
-<p>The Jobs menu on the menu bar includes Open Composer, Job Composer, and Active Jobs tools.</p>
+<p>The Jobs menu includes tools for creating jobs, monitoring them, and reviewing
+your allocation and performance.</p>
 <ul>
 <li>
-<p><a href="open_composer/">Open Composer</a> allows users to create and submit custom Slurm jobs by selecting job parameters and editing the job script directly in the browser. It is intended for users who want quick, flexible control over their job scripts.</p>
+<p><strong>Job Composer</strong> assists users to build and submit a custom Slurm job script in the browser:
+  set the account, QoS, partition, walltime, cores, and memory, then edit the
+  script content directly. Advanced options let you configure a job array.</p>
 </li>
 <li>
-<p><a href="job_composer/">Job Composer</a> assists users in setting up and submitting jobs through a graphical interface with file management tools and access to job templates.</p>
+<p><strong>Active Jobs</strong> allows users to view all jobs you currently have running or queued (whether
+  submitted through OnDemand or not), and monitor, cancel, or open a job's working
+  directory.</p>
 </li>
 <li>
-<p><a href="#active-jobs">Active Jobs</a> displays currently running or queued jobs and their status. You can monitor, cancel, or manage your jobs from this interface.</p>
+<p><strong>Allocations</strong> consists of the Allocations Usage dashboard that shows your account's SU
+  quota, SUs used, project/scratch storage, and a per-user breakdown.</p>
+</li>
+<li>
+<p><strong>My Jobs</strong> is a searchable, filterable history of your jobs over a date range,
+  with charts (e.g. Job State Distribution) and per-job efficiency data.</p>
+</li>
+<li>
+<p><strong>Performance Metrics</strong> summarizes statistics on your job efficiency (memory,
+  time, CPU), average wait time, mean job duration, and total wall time.</p>
 </li>
 </ul>
-<p><img alt="jobs-dropdown.png" height="100%" src="../../assets/ondemand/jobs/jobs-dropdown.png" width="100%" /></p>
-<h2 id="active-jobs">Active Jobs<a class="headerlink" href="#active-jobs" title="Permanent link"><span aria-hidden="true">&para;</span><span class="md-sr-only">Permanent link to Active Jobs</span></a></h2>
-<p>The Active Jobs tool will allow you to view all the jobs you’ve submitted that are currently in the queue, via OnDemand or not, so you can check on their status.  </p>
-<p><img alt="active_jobs1.png" height="100%" src="../../assets/ondemand/jobs/active_jobs1.png" width="100%" /></p>
-<p>You can expand each job to check more details. You can also open the current working directory of job in file manager or terminal by clicking <code>Open in File Manger</code> or <code>Open in Terminal</code> respectively.</p>
-<p><img alt="active_jobs2.png" height="100%" src="../../assets/ondemand/jobs/active_jobs2.png" width="100%" /></p>
+<p><img alt="Jobs menu open in the top navigation bar, listing Job Composer, Active Jobs, Allocations, My Jobs and Performance Metrics" height="100%" src="../../assets/ondemand/jobs/jobs-dropdown-new.png" width="100%" /></p>
 
 
 
@@ -4489,7 +4562,7 @@
   <svg role="img" aria-label="Last update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
 
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 2, 2026 18:41:05 UTC">March 2, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2026 18:44:27 UTC">November 10, 2026</span>
   </span>
 
     
@@ -4609,13 +4682,13 @@
         
         
           
-          <a href="job_composer/" class="md-footer__link md-footer__link--next" aria-label="Next: Job composer">
+          <a href="active_jobs/" class="md-footer__link md-footer__link--next" aria-label="Next: Active jobs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Job composer
+                Active jobs
               </div>
             </div>
             <div class="md-footer__button md-icon">

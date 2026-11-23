@@ -4,7 +4,7 @@
 
 The passenger apps (Tools) on OnDemand are some of the easiest and user-friendly ways to monitor key stats related to your account and Wulver in general.
 
-![tools-dropdown.png](../assets/ondemand/tools/tools-dropdown.png){ width=100% height=100%}
+![Tools menu open in the top navigation bar, listing Joblist, checkload, homespace, ps and qoslist](../assets/ondemand/tools/tools-dropdown-new.png){ width=100% height=100%}
 
 
 === "Joblist"
@@ -15,12 +15,11 @@ The passenger apps (Tools) on OnDemand are some of the easiest and user-friendly
 
     - Enter the start date and end date between which you want to monitor your past jobs
 
-    ![joblist-date-input.png](../assets/ondemand/tools/joblist-date-input.png){ width=100% height=100%}
+    ![Joblist form with start time and end time date fields and a Submit button](../assets/ondemand/tools/joblist-date-input.png){ width=100% height=100%}
 
     - You will be presented with a table of your jobs with a few job details atop which you find information like service units consumed, your specified date range and the qos.
 
-    ![joblist-output.png](../assets/ondemand/tools/joblist-output.png){ width=100% height=100%}
-
+    ![Joblist results showing a summary of service units used above a table of jobs in the chosen date range](../assets/ondemand/tools/joblist-output.png){ width=100% height=100%}
 
 === "Checkload"
 
@@ -30,7 +29,7 @@ The passenger apps (Tools) on OnDemand are some of the easiest and user-friendly
     - It can also be used to cross check your requested configuration.
     - It can also be crudely used to check the load on the cluster
 
-    ![checkload-output.png](../assets/ondemand/tools/checkload-output.png){ width=100% height=100%}
+    ![Checkload table listing each compute node with its partition, state, CPUs, memory, CPU load and time limit](../assets/ondemand/tools/checkload-output.png){ width=100% height=100%}
 
 
 === "Homespace"
@@ -43,13 +42,14 @@ The passenger apps (Tools) on OnDemand are some of the easiest and user-friendly
 
         Since it calculates the storage used by each subdirectory and file in your `/home` directory, it may take some time to load the results.
 
-    ![homespace-ouput.png](../assets/ondemand/tools/homespace-ouput.png){ width=100% height=100%}
+     ![Homespace output listing the subdirectories in the home directory with their sizes in MB](../assets/ondemand/tools/homespace-ouput.png){ width=100% height=100%}
 
 === "PS"
 
     This is also a very important tool to monitor processes running on your login node usage. 
+    
+    ![PS output listing the processes currently running under your account on the login node](../assets/ondemand/tools/ps-output.png){ width=100% height=100%}
 
-    ![ps-output.png](../assets/ondemand/tools/ps-output.png){ width=100% height=100%}
 
     !!! Warning
         It is strictly advised to not run any resource consuming process on the login node, instead use compute node. The login node is shared between all the wulver users. Using login node for any such process like creating conda env, installing conda packages, running your jobs/programs is strictly not advised. Repeatedly using the login node for such processes will result in strict action. If you find there is high activity by any process on your login node and you are unsure of the cause please email to [hpc@njit.edu](mailto:hpc@njit.edu) with the screenshot of the output of the PS tool.
@@ -59,4 +59,4 @@ The passenger apps (Tools) on OnDemand are some of the easiest and user-friendly
 
     QOS is an important flag for any type of job submission. You can check all the available QOS for each of your accounts using this tool. Click [here](../Software/slurm/index.md#partition-use-partition) for details about QOS.
 
-    ![qoslist-output.png](../assets/ondemand/tools/qoslist-output.png){ width=100% height=100%}
+    ![Qoslist output showing the QOS options available for each of your Slurm accounts](../assets/ondemand/tools/qoslist-output.png){ width=100% height=100%}

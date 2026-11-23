@@ -5,17 +5,16 @@
 All of your active OnDemand sessions will be shown. 
 
 
-![interactive-sessions-1.png](../assets/ondemand/interactive/interactive-sessions-1.png){ width=100% height=100%}
+![My Interactive Sessions page listing active session cards, with a sidebar of interactive apps on the left](../assets/ondemand/interactive/interactive-sessions-1.png){ width=100% height=100%}
 
 
-![interactive-sessions-2.png](../assets/ondemand/interactive/interactive-sessions-2.png){ width=100% height=100%}
-
+![A running interactive session card showing its host, time remaining, session ID and a blue connect button](../assets/ondemand/interactive/interactive-sessions-2.png){ width=100% height=100%}
 
 ## Canceling and Deleting Interactive Jobs
 
-![interactive-sessions-3.png](../assets/ondemand/interactive/interactive-sessions-3.png){ width=80% height=80%}
+![Interactive session card with the Cancel button highlighted](../assets/ondemand/interactive/interactive-sessions-3.png){ width=80% height=80%}
 
-![interactive-sessions-4.png](../assets/ondemand/interactive/interactive-sessions-4.png){ width=80% height=80%}
+![Cancelled session card with options to delete the card or resubmit the job](../assets/ondemand/interactive/interactive-sessions-4.png){ width=80% height=80%}
 
 **Cancel** — Terminates the running Slurm job. The job card remains visible so you can **resubmit** the job with the same parameters or **modify** them before launching again.
 

@@ -4,6 +4,10 @@ Once you log in, the Dashboard gives you a live overview of the cluster and your
 account. It is organized into panels, with a menu bar across the top for Apps,
 Files, Jobs, Clusters, Interactive Apps, Tools, and My Interactive Sessions.
 
+
+<iframe src="https://njit.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=7287ca8a-ec0b-4148-8002-b506014ad8a8&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646; box-sizing: border-box;" allowfullscreen allow="autoplay" aria-label="Open OnDemand Dashboard Overview" aria-description="Open OnDemand Dashboard Overview"></iframe>
+
+
 ![Open OnDemand dashboard showing the top menu bar and panels for Announcements, Recent Jobs, System Status, Allocations and Storage](<../assets/ondemand/dashboard/overview OOD.png>){ width=100% height=100%}
 
 ## Announcements

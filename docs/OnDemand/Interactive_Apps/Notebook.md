@@ -18,7 +18,7 @@
 
 * Choose the path where you want to start the Jupyter session in `Enter the full path of the case directory`. For session in `$HOME` directory keep this blank. 
 
-![jupyter1](../../assets/ondemand/jupyter/jupyter1.png){ width=60% height=60%}
+![Jupyter launch form with the Mode, Conda Environment and case directory fields](../../assets/ondemand/jupyter/jupyter1.png){ width=60% height=60%}
 
 ## Configuring Resources
 
@@ -27,16 +27,15 @@
 * Choose the number of cores you need.
 * If required, specify the number of GPUs.
 
-![jupyter2](../../assets/ondemand/jupyter/jupyter2.png){ width=60% height=60%}
+![Jupyter launch form fields for Slurm account, partition and QOS](../../assets/ondemand/jupyter/jupyter2.png){ width=60% height=60%}
 
-![jupyter3](../../assets/ondemand/jupyter/jupyter3.png){ width=60% height=60%}
+![Jupyter launch form fields for wall time, cores, GPUs and the Launch button](../../assets/ondemand/jupyter/jupyter3.png){ width=60% height=60%}
 
 
 ## Launching the Session
 
 Select the `Launch` option after finalizing the resources. Once clicking **Launch**, the request will be queued, and when resources have been allocated, you will be presented with the option to connect to the session by clicking on the blue `Connect to Jupyter` option.
 
-![jupyter4](../../assets/ondemand/jupyter/jupyter4.png){ width=60% height=60%}
+![Jupyter session card showing the request waiting in the queue](../../assets/ondemand/jupyter/jupyter4.png){ width=60% height=60%}
 
-![jupyter5](../../assets/ondemand/jupyter/jupyter5.png){ width=60% height=60%}
-
+![Jupyter session card with the blue Connect to Jupyter button](../../assets/ondemand/jupyter/jupyter5.png){ width=60% height=60%}

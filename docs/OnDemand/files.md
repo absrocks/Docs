@@ -3,12 +3,14 @@
 
 Files provide you UI based access to your `/home`, `/project` and `/scratch` directory. 
 
-![files-dropdown.png](../assets/ondemand/files/files-dropdown.png){ width=100% height=100% }
+![Files menu open in the top navigation bar, listing the home, project and scratch directories](../assets/ondemand/files/files-dropdown.png){ width=100% height=100% }
+
 
 
 ## Guide
 
-![files.png](../assets/ondemand/files/files.png){ width=100% height=100%}
+![File manager showing the home directory with Upload, Download, New File and New Directory buttons above a table of files and folders](../assets/ondemand/files/files.png){ width=100% height=100%}
+
 
 The File Manager tool is available under <kbd>Files</kbd> from the Dashboard. Here you can view, edit, and transfer files between your local computer and the cluster. You can access any of the shared filesystems on Wulver including your `$HOME` directory as well as Project, Research, and Scratch. This graphical interface makes it easy to navigate your directories and transfer files to the cluster. (This transfer is only for small files such as job scripts or input scripts, please use command line tools, such as [rsync](https://linux.die.net/man/1/rsync) for larger datasets).
 
